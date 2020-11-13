@@ -1,0 +1,9 @@
+<h1>People</h1>
+
+{{#each @model as |person|}}
+<p>
+  {{person.name}} was born in {{person.birthYear}}
+</p>
+{{/each}}
+
+{{outlet}}
