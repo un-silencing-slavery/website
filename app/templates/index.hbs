@@ -4,7 +4,7 @@
       Visualization
       <img src="https://d2mvzyuse3lwjc.cloudfront.net/doc/en/UserGuide/images/2D_B_and_W_Pie_Chart/2D_B_W_Pie_Chart_1.png?v=83139">
     </section>
-    <section id="information" class="bg-green-100 flex-grow md:flex-grow-0">
+    <section id="information" class="bg-green-100 flex-grow md:flex-grow-0 md:max-w-1/3">
       <!--
         <div id="person-card">
           Name: [some name]
@@ -26,8 +26,17 @@
       <div id="list-of-enslaved-persons">
         <h3>List of Enslaved Persons</h3>
         <ul>
-          <li>Alice</li>
-          <li>Bob</li>
+          {{#each @model as |person|}}
+            <li>
+              <h4 class="font-bold">
+                {{person.name}}
+              </h4>
+              <p>{{person.name}} arrived at or was born in
+              {{person.birthYear}}. They left Rose Hall in {{person.exitYear}}.
+            They were classified as “{{person.color}}” in color and
+            “{{person.origin}}” in origin.</p>
+            </li>
+          {{/each}}
         </ul>
       </div>
     </section>
