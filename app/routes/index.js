@@ -9,7 +9,9 @@ export default class IndexRoute extends Route {
       const birthYear = Math.floor(Math.random() * 70) + 1760;
       const exitYear = Math.random() < 0.66 
         ? 1832 
-        : Math.floor(Math.random() * 13) + 1818;
+        : birthYear < 1818 
+          ? Math.floor(Math.random() * 13) + 1818
+          : Math.floor(Math.random() * (1832 - birthYear) + birthYear);
       const name = faker.name.firstName();
       const person = this.store.createRecord("person", {
         id: `p${i}`,
