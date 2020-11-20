@@ -2,7 +2,8 @@
 
 {{#each @model as |person|}}
 <p>
-  {{person.name}} was born in {{person.birthYear}}
+  {{person.name}} ({{person.color}}, {{person.origin}}) was born in {{person.birthYear}} 
+  and left in {{person.exitYear}}
 </p>
 {{/each}}
 
