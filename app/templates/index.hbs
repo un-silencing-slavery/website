@@ -31,8 +31,14 @@
               <h4 class="font-bold">
                 {{person.name}}
               </h4>
-              <p>{{person.name}} arrived at or was born in
-              {{person.birthYear}}. They left Rose Hall in {{person.exitYear}}.
+              <p>
+                {{person.name}} 
+                {{#if (lte person.birthYear 1818)}}
+                  arrived at Rose Hall
+                {{else}} 
+                  was born 
+                {{/if}} in {{person.birthYear}}. 
+                They left Rose Hall in {{person.exitYear}}.
             They were classified as “{{person.color}}” in color and
             “{{person.origin}}” in origin.</p>
             </li>
