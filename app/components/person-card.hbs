@@ -1,0 +1,10 @@
+<h4 class="font-bold" {{on "click" this.toggleBiography}} role="button">
+  {{@person.name}}
+</h4>
+<div class={{if this.hiddenBio "hidden"}}>
+  <p>
+    {{@person.name}} was born in or around {{@person.birthYear}}. They left
+    Rose Hall in {{@person.exitYear}}. They were classified as
+    “{{@person.color}}” in color and “{{@person.origin}}” in origin.
+  </p>
+</div>
