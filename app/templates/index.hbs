@@ -28,14 +28,9 @@
         <ul>
           {{#each @model as |person|}}
             <li>
-              <h4 class="font-bold">
-                {{person.name}}
-              </h4>
-              <p>
-                {{person.name}} was born in or around {{person.birthYear}}. 
-                They left Rose Hall in {{person.exitYear}}.
-            They were classified as “{{person.color}}” in color and
-            “{{person.origin}}” in origin.</p>
+              <PersonCard 
+                @person={{person}} 
+              />
             </li>
           {{/each}}
         </ul>
