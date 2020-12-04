@@ -32,12 +32,7 @@
                 {{person.name}}
               </h4>
               <p>
-                {{person.name}} 
-                {{#if (lte person.birthYear 1818)}}
-                  arrived at Rose Hall
-                {{else}} 
-                  was born 
-                {{/if}} in {{person.birthYear}}. 
+                {{person.name}} was born in or around {{person.birthYear}}. 
                 They left Rose Hall in {{person.exitYear}}.
             They were classified as “{{person.color}}” in color and
             “{{person.origin}}” in origin.</p>
