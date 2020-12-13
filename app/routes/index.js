@@ -5,7 +5,7 @@ export default class IndexRoute extends Route {
   model() {
     const people = [];
 
-    for(let i = 1; i < 209; i += 1){
+    for(let i = 1; i < 10; i += 1){
       const birthYear = Math.floor(Math.random() * 70) + 1760;
       const exitYear = Math.random() < 0.66 
         ? 1832 
