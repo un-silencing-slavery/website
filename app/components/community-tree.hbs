@@ -1,0 +1,6 @@
+<svg class="community-tree" width={{this.width}} height={{this.height}}>
+{{#each @data as |person i|}}
+  <CommunityTree::Person @person={{person}} @i={{i}} />
+{{/each}}
+</svg>
+
