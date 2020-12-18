@@ -8,6 +8,7 @@ export default class CommunityTreePersonComponent extends Component {
     return arc()
     .innerRadius((this.args.i + 1) * 10)
     .outerRadius(100)
+    .padAngle(Math.PI / 270)
     .startAngle(this.args.i * 2 * Math.PI / this.args.dataLength)
     .endAngle((this.args.i + 1) * 2 * Math.PI / this.args.dataLength)();
   }
