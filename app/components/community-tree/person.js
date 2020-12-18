@@ -6,9 +6,9 @@ export default class CommunityTreePersonComponent extends Component {
 
   get arc(){
     return arc()
-    .innerRadius(0)
+    .innerRadius((this.args.i + 1) * 10)
     .outerRadius(100)
-    .startAngle(0)
-    .endAngle(Math.PI / 2)();
+    .startAngle(this.args.i * 2 * Math.PI / this.args.dataLength)
+    .endAngle((this.args.i + 1) * 2 * Math.PI / this.args.dataLength)();
   }
 }

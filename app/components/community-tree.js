@@ -5,6 +5,8 @@ export default class CommunityTreeComponent extends Component {
 
   height = 250;
 
+  dataLength = this.args.data.length;
+
   // transform(i) {
   //   const string = `translate(25,${i * 10})`;
   //   console.log(string);

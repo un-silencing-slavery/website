@@ -1,7 +1,11 @@
 <svg class="community-tree" width={{this.width}} height={{this.height}}>
   <g transform="translate({{div this.width 2}},{{div this.height 2}})">
     {{#each @data as |person i|}}
-      <CommunityTree::Person @person={{person}} @i={{i}} />
+    <CommunityTree::Person 
+      @person={{person}}
+      @i={{i}} 
+      @dataLength={{this.dataLength}}
+    />
     {{/each}}
   </g>
 </svg>
