@@ -10,7 +10,7 @@ export default class CommunityTreeComponent extends Component {
 
   get yearScale() {
     return scaleLinear()
-      .domain([1817, 1832])
+      .domain([1810, 1832])
       .range([0, this.height / 2]);
   }
 

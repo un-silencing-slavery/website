@@ -1,5 +1,13 @@
 <svg class="community-tree" width={{this.width}} height={{this.height}}>
-  <g transform="translate({{div this.width 2}},{{div this.height 2}})">
+  <defs>
+    <radialGradient id="community-tree-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="7%" style="stop-color:rgb(255,255,255);
+      stop-opacity:1" />
+      <stop offset="20%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <g 
+    transform="translate({{div this.width 2}},{{div this.height 2}})">
     {{#each @data as |person i|}}
     <CommunityTree::Person 
       @person={{person}}
@@ -8,6 +16,10 @@
       @yearScale={{this.yearScale}}
     />
     {{/each}}
-  </g>
+    <ellipse cx="0" cy="0" 
+      rx={{div this.height 2}} 
+      ry={{div this.height 2}} 
+      fill="url(#community-tree-gradient)" />
+    </g>
 </svg>
 
