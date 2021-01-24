@@ -2,9 +2,9 @@ import Component from '@glimmer/component';
 import { scaleLinear } from "d3-scale";
 
 export default class CommunityTreeComponent extends Component {
-  width = 250;
+  width = 400;
 
-  height = 250;
+  height = 400;
 
   dataLength = this.args.data.length;
 

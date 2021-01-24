@@ -9,13 +9,24 @@ export default class CommunityTreePersonComponent extends Component {
     return arc()
     .innerRadius(this.scaledArrivalYear)
     .outerRadius(this.args.yearScale(this.args.person.exitYear))
-    .padAngle(Math.PI / 270)
+    .padAngle(Math.PI / 360)
     .startAngle(this.args.i * 2 * Math.PI / this.args.dataLength)
     .endAngle((this.args.i + 1) * 2 * Math.PI / this.args.dataLength)();
   }
 
   get color(){
-    return schemeCategory10[this.args.i];
+    /* Potential color schemes:
+     * 
+     * Do we even need to color by these values? Are they important
+     * to us? Why?
+     *
+     * Age.
+     * Gender (2 val)
+     * Origin (4 val)
+     * Color (4 val)
+     *
+     */
+    return schemeCategory10[(this.args.i) % 10];
   }
 
   get scaledArrivalYear(){
