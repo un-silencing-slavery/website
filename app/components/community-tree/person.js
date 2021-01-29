@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { arc } from "d3-shape";
-import { schemeCategory10 } from "d3-scale-chromatic";
+import { interpolateCool } from "d3-scale-chromatic";
 
 export default class CommunityTreePersonComponent extends Component {
   age = this.args.person.exitYear - this.args.person.birthYear;
@@ -12,6 +12,10 @@ export default class CommunityTreePersonComponent extends Component {
     .padAngle(Math.PI / 360)
     .startAngle(this.args.i * 2 * Math.PI / this.args.dataLength)
     .endAngle((this.args.i + 1) * 2 * Math.PI / this.args.dataLength)();
+  }
+
+  get gradientUrl() {
+    return `url(#${this.args.person.id}-gradient)`;
   }
 
   get color(){
@@ -26,7 +30,7 @@ export default class CommunityTreePersonComponent extends Component {
      * Color (4 val)
      *
      */
-    return schemeCategory10[(this.args.i) % 10];
+    return interpolateCool(Math.random());
   }
 
   get scaledArrivalYear(){
