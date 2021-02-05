@@ -5,13 +5,17 @@ import { interpolateCool } from "d3-scale-chromatic";
 export default class CommunityTreePersonComponent extends Component {
   age = this.args.person.exitYear - this.args.person.birthYear;
 
+  get rotationAngle(){
+    return this.args.i * 360 / this.args.dataLength;
+  }
+
   get arc(){
     return arc()
     .innerRadius(this.scaledArrivalYear)
     .outerRadius(this.args.yearScale(this.args.person.exitYear))
     .padAngle(Math.PI / 360)
-    .startAngle(this.args.i * 2 * Math.PI / this.args.dataLength)
-    .endAngle((this.args.i + 1) * 2 * Math.PI / this.args.dataLength)();
+    .startAngle(0)
+    .endAngle(2 * Math.PI / this.args.dataLength)();
   }
 
   get gradientUrl() {
