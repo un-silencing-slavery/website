@@ -8,18 +8,8 @@
       <stop offset="20%" style="stop-color:rgb(255,255,255);
       stop-opacity:0" />
     </radialGradient>
-    {{#each @data as |person index|}}
-      <linearGradient 
-       id={{concat person.id "-gradient"}}
-       x1="0%"
-       y1="0%"
-       x2="0%"
-       y2="100%"
-      >
-                      <stop offset="0" style={{concat this.beginningStop "stop-opacity:1"}} />
-                      <stop offset="100%" style={{concat this.endingStop "stop-opacity:1"}} />
-      </linearGradient>
-
+    {{#each @data as |person|}}
+      <CommunityTree::PersonGradient @person={{person}} />
     {{/each}}
   </defs>
   <g 
