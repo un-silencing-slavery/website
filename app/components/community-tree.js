@@ -1,4 +1,6 @@
 import Component from '@glimmer/component';
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
 import { scaleLinear } from "d3-scale";
 import { interpolateCool } from "d3-scale-chromatic";
 
@@ -9,13 +11,6 @@ export default class CommunityTreeComponent extends Component {
 
   dataLength = this.args.data.length;
 
-  get beginningStop(){
-    return `stop-color: ${interpolateCool(0)}; `;
-  }
-
-  get endingStop(){
-    return `stop-color: ${interpolateCool(1)}; `;
-  }
 
   get colorScale() {
     return scaleLinear()
@@ -29,10 +24,4 @@ export default class CommunityTreeComponent extends Component {
       .range([0, this.height / 2]);
   }
 
-  // transform(i) {
-  //   const string = `translate(25,${i * 10})`;
-  //   console.log(string);
-  // return string;
-// }
-  //
 }
