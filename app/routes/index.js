@@ -33,6 +33,7 @@ export default class IndexRoute extends Route {
       people.push(person);
     }
 
-    return people.sort((a, b) => a.birthYear - b.birthYear);//.filter(p => p.birthYear > 1817);
+    // return people.sort((a, b) => a.birthYear - b.birthYear);//.filter(p => p.birthYear > 1817);
+    return [people[0]];
   }
  }
