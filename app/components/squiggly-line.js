@@ -14,7 +14,9 @@ export default class SquigglyLineComponent extends Component {
 
   offset = .1;
 
-  controlPoint = function([m, n], perpendicularSlope, index, centripetal) {
+  centripetal = false;
+
+  controlPoint = function([m, n], perpendicularSlope, index) {
     let offset = this.offset * this.args.length
     const midpoint = {
       x: (m.x + n.x) / 2,
@@ -25,7 +27,7 @@ export default class SquigglyLineComponent extends Component {
         .attr("cx", midpoint.x)
         .attr("cy", midpoint.y * -1)
         .attr("r", 2);
-    if (centripetal) {
+    if (this.centripetal) {
       if (index % 2 == 0) {
         offset = -1 * offset;
       }
@@ -63,18 +65,19 @@ export default class SquigglyLineComponent extends Component {
     return controlPoint;
   }
 
-  waveSegment([m, n], perpendicularSlope, index, centripetal){
+  waveSegment([m, n], perpendicularSlope, index){
 
-    const controlPoint = this.controlPoint([m, n], perpendicularSlope, index, centripetal);
+    const controlPoint = this.controlPoint([m, n], perpendicularSlope, index);
     return `Q ${controlPoint.x}, ${-controlPoint.y} ${n.x}, -${n.y} `;
   }
 
-  waves([m, n], centripetal) {
+  waves([m, n], centripetal = false) {
+    this.centripetal = centripetal;
     const numberOfSegments = 3;
     const slope = (n.y - m.y) / (n.x - m.x)
     const perpendicularSlope = -1 / slope;
     const segmentPoints = [m]
-    if(centripetal){
+    if(this.centripetal){
       for (let i = numberOfSegments; i > 0; i -= 1) {
         segmentPoints.push({
           x: (Math.pow(2, i) - 1)/(Math.pow(2, i)) * (m.x + n.x),
@@ -94,7 +97,7 @@ export default class SquigglyLineComponent extends Component {
     let path = "";
     for (let i = 0; i < segmentPoints.length - 1; i += 1) {
     //   console.log(segmentPoints[i], segmentPoints[i +1]);
-      path = path + this.waveSegment([segmentPoints[i], segmentPoints[i + 1]], perpendicularSlope, i, centripetal)
+      path = path + this.waveSegment([segmentPoints[i], segmentPoints[i + 1]], perpendicularSlope, i)
     }
     return path;
   }
