@@ -14,4 +14,5 @@ Router.map(function() {
   this.route('people', function() {
     this.route('person');
   });
+  this.route('squiggly-line');
 });
