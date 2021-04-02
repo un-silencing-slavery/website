@@ -12,7 +12,7 @@ export default class SquigglyLineComponent extends Component {
 
   segments = 3;
 
-  offset = .1;
+  offset = .025;
 
   centripetal = false;
 
@@ -22,11 +22,11 @@ export default class SquigglyLineComponent extends Component {
       x: (m.x + n.x) / 2,
       y: (m.y + n.y) / 2
     }
-    select(".squiggly-line-group")
-      .append("circle")
-        .attr("cx", midpoint.x)
-        .attr("cy", midpoint.y * -1)
-        .attr("r", 2);
+    // select(".squiggly-line-group")
+    //   .append("circle")
+    //     .attr("cx", midpoint.x)
+    //     .attr("cy", midpoint.y * -1)
+    //     .attr("r", 2);
     if (this.centripetal) {
       if (index % 2 == 0) {
         offset = -1 * offset;
@@ -46,21 +46,21 @@ export default class SquigglyLineComponent extends Component {
       midpoint: ${midpoint.x}, ${midpoint.y}
       controlPoint: ${controlPoint.x}, ${controlPoint.y}`)
 
-    select(".squiggly-line-group")
-      .append("circle")
-      .attr("cx", controlPoint.x)
-      .attr("cy", -controlPoint.y)
-      .attr("r", 2)
-      .attr("fill", "pink");
+    // select(".squiggly-line-group")
+    //   .append("circle")
+    //   .attr("cx", controlPoint.x)
+    //   .attr("cy", -controlPoint.y)
+    //   .attr("r", 2)
+    //   .attr("fill", "pink");
 
-    select(".squiggly-line-group")
-      .append("path")
-      .attr("d", `M ${m.x}, -${m.y} 
-      L ${controlPoint.x}, ${-controlPoint.y} 
-      L ${n.x}, -${n.y}
-      `)
-      .attr("fill", "none")
-      .attr("stroke", "orange")
+    // select(".squiggly-line-group")
+    //   .append("path")
+    //   .attr("d", `M ${m.x}, -${m.y} 
+    //   L ${controlPoint.x}, ${-controlPoint.y} 
+    //   L ${n.x}, -${n.y}
+    //   `)
+    //   .attr("fill", "none")
+    //   .attr("stroke", "orange")
 
     return controlPoint;
   }

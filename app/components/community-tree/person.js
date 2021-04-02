@@ -1,15 +1,121 @@
 import Component from '@glimmer/component';
 import { arc } from "d3-shape";
+import { tracked } from "@glimmer/tracking";
 import { interpolateCool } from "d3-scale-chromatic";
 
 export default class CommunityTreePersonComponent extends Component {
+
+  @tracked firstPoint = { x: 0, y: 0 };
+
+  @tracked secondPoint = { x: 0, y: 0 };
+
   age = this.args.person.exitYear - this.args.person.birthYear;
 
+  argsdataLength = this.args.dataLength;
+
   get rotationAngle(){
-    return this.args.i * 360 / this.args.dataLength;
+    return this.args.i * 360 / this.argsdataLength;
+  }
+
+  get path() {
+    const x = 0;
+    const origin = {
+      x,
+      y: -this.scaledArrivalYear,
+    };
+    const firstPoint = { x ,
+      y: -this.args.yearScale(this.args.person.exitYear)
+    };
+    const theta = 2 * Math.PI/this.argsdataLength;
+    const secondPoint = {
+      x: Math.sin(theta) * firstPoint.y * -1,
+      y: Math.cos(theta) * firstPoint.y, 
+    };
+    this.firstPoint = firstPoint;
+    this.secondPoint = secondPoint;
+    
+    const outWaves = this.waves([origin, firstPoint]);
+    const inWaves = this.waves([secondPoint, origin], true);
+
+    return `M${origin.x}, ${origin.y}
+      ${outWaves}
+      L ${secondPoint.x}, ${secondPoint.y}
+      ${inWaves}
+      Z
+    `;
+
+  }
+
+  waves([m, n], centripetal = false) {
+    this.centripetal = centripetal;
+    const numberOfSegments = 3;
+    const slope = (n.y - m.y) / (n.x - m.x)
+    const perpendicularSlope = -1 / slope;
+    const segmentPoints = [m]
+    if(this.centripetal){
+      for (let i = numberOfSegments; i > 0; i -= 1) {
+        segmentPoints.push({
+          x: (Math.pow(2, i) - 1)/(Math.pow(2, i)) * (m.x + n.x),
+          y: n.y + (Math.pow(2, i) - 1)/(Math.pow(2, i)) * (Math.abs(n.y) - Math.abs(m.y)),
+        });
+      }
+    } else {
+      for (let i = 1; i <= numberOfSegments; i += 1) {
+        segmentPoints.push({
+          x: (Math.pow(2, i) - 1)/(Math.pow(2, i)) * (m.x + n.x),
+          y: m.y - (Math.pow(2, i) - 1)/(Math.pow(2, i)) * 
+          (Math.abs(n.y) - Math.abs(m.y)),
+        });
+      }
+    }
+
+    segmentPoints.push(n);
+
+
+
+    let path = "";
+    for (let i = 0; i < segmentPoints.length - 1; i += 1) {
+      path = path + this.waveSegment([segmentPoints[i], segmentPoints[i + 1]], perpendicularSlope, i)
+    }
+
+    return path;
+  }
+
+  waveSegment([m, n], perpendicularSlope, index){
+    const controlPoint = this.controlPoint([m, n], perpendicularSlope, index);
+    return `Q ${controlPoint.x}, ${controlPoint.y} ${n.x}, ${n.y} `;
+  }
+
+  offset = .025;
+
+  centripetal = false;
+
+  controlPoint = function([m, n], perpendicularSlope, index) {
+    let offset = this.offset * this.argsdataLength
+    const midpoint = {
+      x: (m.x + n.x) / 2,
+      y: (m.y + n.y) / 2
+    }
+    if (this.centripetal) {
+      if (index % 2 == 0) {
+        offset = -1 * offset;
+      }
+    } else {
+      if (index % 2 == 1) {
+        offset = -1 * offset;
+      }
+    }
+
+    let theta = Math.atan(perpendicularSlope)
+    const controlPoint = {
+      x: (Math.cos(theta) * offset) + midpoint.x,
+      y: (Math.sin(theta) * offset) + midpoint.y };
+
+    return controlPoint;
   }
 
   get arc(){
+
     /*
     return arc()
     .innerRadius(this.scaledArrivalYear)
@@ -17,7 +123,7 @@ export default class CommunityTreePersonComponent extends Component {
     .padAngle(Math.PI / 360)
     .startAngle(0)
     .endAngle(2 * Math.PI / 10)();
-    // .endAngle(2 * Math.PI / this.args.dataLength)();
+    // .endAngle(2 * Math.PI / this.argsdataLength)();
     */
     // return `
     //   M 0, -200
@@ -48,7 +154,7 @@ export default class CommunityTreePersonComponent extends Component {
     // 2. know where to draw the end of the wedge
     // what is the angle width of the wedge?
     const wedgeWidth = Math.PI / 5;
-    // (2 * Math.PI / this.args.dataLength)
+    // (2 * Math.PI / this.argsdataLength)
     // 2pi / number of people
     const angle = (Math.PI / 2) - wedgeWidth;
     const x = Math.sin(wedgeWidth) * top;
