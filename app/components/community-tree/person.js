@@ -86,7 +86,7 @@ export default class CommunityTreePersonComponent extends Component {
     return `Q ${controlPoint.x}, ${controlPoint.y} ${n.x}, ${n.y} `;
   }
 
-  offset = .025;
+  offset = .025// * (n.y - m.y);
 
   centripetal = false;
 
