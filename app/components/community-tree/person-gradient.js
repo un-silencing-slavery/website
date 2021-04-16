@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { htmlSafe } from "@ember/template";
 import { interpolateWarm } from "d3-scale-chromatic";
 import { scaleLinear } from "d3-scale";
 
@@ -24,8 +25,8 @@ export default class CommunityTreePersonGradientComponent extends Component {
     return offsets.map(element => {
       return {
         offset: `${element}%`,
-        style: `stop-opacity: 1; 
-        stop-color: ${interpolateWarm(this.colorScale()(stopScale(element)))};`
+        style: htmlSafe(`stop-opacity: 1; 
+        stop-color: ${interpolateWarm(this.colorScale()(stopScale(element)))};`)
       }
     });
   }
