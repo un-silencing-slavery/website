@@ -7,7 +7,7 @@ export default class IndexRoute extends Route {
 
     for(let i = 1; i < 208; i += 1){
       const birthYear = Math.floor(Math.random() * 70) + 1760;
-      const exitYear = Math.random() < 0.66 
+      let exitYear = Math.random() < 0.66 
         ? 1832 
         : birthYear < 1818 
           ? Math.floor(Math.random() * 13) + 1818
@@ -17,7 +17,7 @@ export default class IndexRoute extends Route {
         id: `p${i}`,
         name,
         birthYear,
-        exitYear,
+        exitYear: exitYear += 0.1,
         slug: `${name.toLowerCase()}-p${i}`,
         gender: Math.random() < 0.5 ? "Male" : "Female",
         color: Math.random() < 0.85 

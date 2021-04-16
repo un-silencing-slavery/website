@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { arc } from "d3-shape";
 import { tracked } from "@glimmer/tracking";
 import { interpolateCool } from "d3-scale-chromatic";
+import { randomNormal } from "d3-random";
 
 export default class CommunityTreePersonComponent extends Component {
 
@@ -26,6 +27,8 @@ export default class CommunityTreePersonComponent extends Component {
     const firstPoint = { x ,
       y: -this.args.yearScale(this.args.person.exitYear)
     };
+    this.offset = .04 * (firstPoint.y - origin.y) * -1;
+
     const theta = 2 * Math.PI/this.argsdataLength;
     const secondPoint = {
       x: Math.sin(theta) * firstPoint.y * -1,
@@ -86,12 +89,12 @@ export default class CommunityTreePersonComponent extends Component {
     return `Q ${controlPoint.x}, ${controlPoint.y} ${n.x}, ${n.y} `;
   }
 
-  offset = .025// * (n.y - m.y);
+  @tracked offset = .025
 
   centripetal = false;
 
   controlPoint = function([m, n], perpendicularSlope, index) {
-    let offset = this.offset * this.argsdataLength
+    let offset = this.jitterOffset;
     const midpoint = {
       x: (m.x + n.x) / 2,
       y: (m.y + n.y) / 2
@@ -214,6 +217,10 @@ export default class CommunityTreePersonComponent extends Component {
 
     return this.args.yearScale(year)
     // return this.args.yearScale(this.args.person.birthYear)
+  }
+
+  get jitterOffset(){
+    return randomNormal(this.offset, .2 * this.offset)();
   }
 
 }
