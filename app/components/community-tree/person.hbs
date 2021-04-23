@@ -1,6 +1,9 @@
 <g 
+  class="cursor-pointer"
   id={{concat @person.id "-g"}} 
   transform="rotate({{this.rotationAngle}})" 
+  role="button"
+  {{on "click" (fn this.setActivePerson @person.id)}}
 >
   <path 
     fill={{this.gradientUrl}}

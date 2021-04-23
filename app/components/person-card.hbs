@@ -1,5 +1,5 @@
-<h4 class="font-bold" {{on "click" this.toggleBiography}} role="button">
-  {{@person.name}}
+<h4 class="{{if (eq this.activePersonId @person.id) "text-2xl" "text-sm"}} font-bold" {{on "click" this.toggleBiography}} role="button">
+  {{@person.name}} - {{@person.id}}
 </h4>
 <div class={{if this.hiddenBio "hidden"}}>
   <p>
