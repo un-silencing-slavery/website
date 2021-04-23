@@ -5,6 +5,7 @@ import { scaleLinear } from "d3-scale";
 import { interpolateCool } from "d3-scale-chromatic";
 
 export default class CommunityTreeComponent extends Component {
+
   width = 400;
 
   height = 400;

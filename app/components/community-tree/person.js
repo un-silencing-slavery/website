@@ -1,10 +1,14 @@
 import Component from '@glimmer/component';
-import { arc } from "d3-shape";
 import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
 import { interpolateCool } from "d3-scale-chromatic";
 import { randomNormal } from "d3-random";
+import { use } from 'ember-could-get-used-to-this';
+import ActivePerson from 'rose-hall/helpers/active-person';
 
 export default class CommunityTreePersonComponent extends Component {
+
+  // @use activePerson = new ActivePerson();
 
   @tracked firstPoint = { x: 0, y: 0 };
 
@@ -221,6 +225,12 @@ export default class CommunityTreePersonComponent extends Component {
 
   get jitterOffset(){
     return randomNormal(this.offset, .2 * this.offset)();
+  }
+
+  @action
+  setActivePerson(personId){
+    // this.activePerson.personId = personId;
+    console.log("in the action", this.activePerson);
   }
 
 }
