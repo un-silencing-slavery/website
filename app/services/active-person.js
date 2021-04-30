@@ -1,7 +1,8 @@
 import Service from '@ember/service';
+import { tracked } from "@glimmer/tracking";
 
 export default class ActivePersonService extends Service {
 
-  personId = null;
+  @tracked personId = null;
 
 }

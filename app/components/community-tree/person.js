@@ -3,12 +3,11 @@ import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { interpolateCool } from "d3-scale-chromatic";
 import { randomNormal } from "d3-random";
-import { use } from 'ember-could-get-used-to-this';
-import ActivePerson from 'rose-hall/helpers/active-person';
+import { inject as service } from "@ember/service";
 
 export default class CommunityTreePersonComponent extends Component {
 
-  // @use activePerson = new ActivePerson();
+  @service activePerson;
 
   @tracked firstPoint = { x: 0, y: 0 };
 
@@ -229,8 +228,8 @@ export default class CommunityTreePersonComponent extends Component {
 
   @action
   setActivePerson(personId){
-    // this.activePerson.personId = personId;
-    console.log("in the action", this.activePerson);
+    this.activePerson.personId = personId;
+    console.log("in the action", this.activePerson.personId);
   }
 
 }
