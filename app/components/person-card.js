@@ -7,8 +7,6 @@ export default class PersonCardComponent extends Component {
 
   @service activePerson;
 
-  @tracked activePersonId = this.activePerson.personId;
-
   @tracked hiddenBio = true;
 
   @action toggleBiography() {
