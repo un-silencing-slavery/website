@@ -1,6 +1,9 @@
 <svg 
-  class="m-2 community-tree cursor-pointer" 
-  width={{this.width}} height={{this.height}}>
+  class="m-2 community-tree" 
+  width={{this.width}} height={{this.height}}
+  {{on-key "ArrowRight" (fn this.selectPerson "forward")}}
+  {{on-key "ArrowLeft" (fn this.selectPerson "backward")}}
+  >
   <defs>
     <radialGradient id="community-tree-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
       <stop offset="15%" style="stop-color:rgb(255,255,255);
@@ -15,7 +18,6 @@
     {{/each}}
   </defs>
   <g 
-    class="cursor-pointer"
     transform="translate({{div this.width 2}},{{div this.height 2}})">
     {{#each @data as |person i|}}
     <CommunityTree::Person 
@@ -26,12 +28,13 @@
       @colorScale={{this.colorScale}}
     />
     {{/each}}
+    </g>
     <ellipse cx="0" cy="0" 
       class="pointer-events-none"
       rx={{div this.height 2}} 
       ry={{div this.height 2}} 
-      fill="url(#community-tree-gradient)" />
-    </g>
+      fill="url(#community-tree-gradient)" 
+      transform="translate({{div this.width 2}},{{div this.height 2}})"/>
     <!-- <CommunityTree::YearScaleBar/> -->
 </svg>
 

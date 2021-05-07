@@ -1,6 +1,6 @@
 <main class="">
   <article class="flex flex-row">
-    <section id="visualization" class="hidden md:block flex-grow">
+    <section id="visualization" class="w-3/4 hidden md:block flex-grow">
       Visualization
       <CommunityTree @data={{@model}} />
     </section>
@@ -23,18 +23,7 @@
           Relations: [other people]
         </div>
       -->
-      <div id="list-of-enslaved-persons">
-        <h3>List of Enslaved Persons</h3>
-        <ul>
-          {{#each @model as |person|}}
-            <li>
-              <PersonCard 
-                @person={{person}} 
-              />
-            </li>
-          {{/each}}
-        </ul>
-      </div>
+      <PersonsList @model={{@model}} />
     </section>
   </article>
 </main>

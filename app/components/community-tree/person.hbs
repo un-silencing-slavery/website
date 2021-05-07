@@ -1,12 +1,28 @@
 <g 
-  class="cursor-pointer"
+  class="person-petal"
   id={{concat @person.id "-g"}} 
   transform="rotate({{this.rotationAngle}})" 
-  role="button"
-  {{on "click" (fn this.setActivePerson @person.id)}}
 >
   <path 
+    class="cursor-pointer"
     fill={{this.gradientUrl}}
+    transform={{if (eq this.activePerson.personId @person.id) 
+      "scale(2, 1.02)"
+      "scale(1, 1)"
+    }}
+    d={{this.path}}
+    role="button"
+    {{on "click" (fn this.setActivePerson @person.id)}}
+    {{on "mouseover" this.hoverOn}}
+    />
+  <path 
+    class="pointer-events-none highlighter
+      {{if (eq this.activePerson.personId @person.id) " active "}}
+    "
+    transform={{if (eq this.activePerson.personId @person.id) 
+      "scale(2, 1.02)"
+      "scale(1, 1)"
+    }}
     d={{this.path}}
     />
 </g>
