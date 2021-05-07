@@ -229,7 +229,13 @@ export default class CommunityTreePersonComponent extends Component {
   @action
   setActivePerson(personId){
     this.activePerson.personId = personId;
-    console.log("in the action", this.activePerson.personId);
   }
 
+  @action hoverOn(mouseEvent){
+    const g = mouseEvent.fromElement.parentElement;
+    if (g.classList.contains("person-petal")) {
+      g.parentElement.appendChild(g);
+      this.setActivePerson(this.args.person.id);
+    }
+  }
 }
