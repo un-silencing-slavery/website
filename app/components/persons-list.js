@@ -1,8 +1,15 @@
 import Component from '@glimmer/component';
+import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
+import move from "ember-animated/motions/move";
 
 export default class PersonsListComponent extends Component {
   @service activePerson;
+
+  @action
+  *transition({ keptSprites }) {
+    keptSprites.forEach(move);
+  }
 
   get data() {
     const model = this.args.model.toArray();
