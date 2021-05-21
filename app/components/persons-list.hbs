@@ -1,12 +1,14 @@
 <div id="list-of-enslaved-persons">
   <h3>List of Enslaved Persons</h3>
-  <ul>
-    {{#each this.data as |person|}}
-      <li>
-        <PersonCard 
-          @person={{person}} 
-        />
-      </li>
-    {{/each}}
-  </ul>
+  <AnimatedContainer>
+    <ul>
+      {{#animated-each this.data use=this.transition as |person|}}
+        <li>
+          <PersonCard 
+            @person={{person}} 
+          />
+        </li>
+      {{/animated-each}}
+    </ul>
+  </AnimatedContainer>
 </div>
