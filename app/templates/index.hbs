@@ -1,30 +1,8 @@
-<main class="">
-  <article class="flex flex-row">
-    <section id="visualization" class="w-3/4 hidden md:block flex-grow">
-      Visualization
-      <CommunityTree @data={{@model}} />
-    </section>
-    <section id="information" class="bg-green-100 flex-grow md:flex-grow-0 md:max-w-1/3">
-      <!--
-        <div id="person-card">
-          Name: [some name]
-          Gender: [binary gender]
-          Year of Birth: [year]
-          Mother: [Mother]
-          Grandmother: [Grandmother]
-          Great-Grandmother: [Great Grandmother]
-          Arrival at Rose Hall: [year]
-          Departure from Rose Hall: [year]
-          Colour: [Colour]
-          Country: [Country]
-          Duties: [Duties]
-          Disposition in 1832: [Disposition]
-          Condition in 1832: [Condition]
-          Relations: [other people]
-        </div>
-      -->
-      <PersonsList @model={{@model}} />
-    </section>
-  </article>
-</main>
+<section id="visualization" class="w-3/4 hidden md:block">
+  <CommunityTree @data={{@model}} />
+</section>
+
+<section id="information" class="bg-green-100 md:w-1/4 overflow-auto">
+  <PersonsList @model={{@model}} />
+</section>
 
