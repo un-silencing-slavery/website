@@ -8,6 +8,7 @@ export default class PersonsListComponent extends Component {
 
   @action
   *transition({ keptSprites }) {
+
     keptSprites.forEach(move);
   }
 

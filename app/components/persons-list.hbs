@@ -1,13 +1,13 @@
-<div id="list-of-enslaved-persons">
-  <h3>List of Enslaved Persons</h3>
+<div id="list-of-enslaved-persons" class="py-2 px-4">
+  <h3 class="text-xl pb-2 font-bold text-green-900">List of Enslaved Persons</h3>
   <AnimatedContainer>
-    <ul>
-      {{#animated-each this.data use=this.transition as |person|}}
-        <li>
-          <PersonCard 
+    <ul class="relative">
+      {{#animated-each this.data use=this.transition  as |person|}}
+      {{!#each this.data as |person|}}
+        <PersonCard 
             @person={{person}} 
-          />
-        </li>
+        />
+      {{!/each}}
       {{/animated-each}}
     </ul>
   </AnimatedContainer>

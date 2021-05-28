@@ -1,10 +1,16 @@
-<h4 class=" font-bold" {{on "click" this.toggleBiography}} role="button">
-  {{@person.name}} - {{@person.id}}
-</h4>
-<div class={{if (eq this.activePerson.personId @person.id) "block" "hidden"}}>
-  <p>
-    {{@person.name}} was born in or around {{@person.birthYear}}. They left
-    Rose Hall in {{@person.exitYear}}. They were classified as
-    “{{@person.color}}” in color and “{{@person.origin}}” in origin.
-  </p>
-</div>
+<li class="bg-green-100 {{if (eq this.activePerson.personId @person.id) "z-10" "z-0"}}">
+  <h4 class=" font-bold" {{on "click" this.toggleBiography}} role="button">
+    {{@person.name}}
+  </h4>
+  <AnimatedContainer class="overflow-hidden">
+    {{#animated-if (eq this.activePerson.personId @person.id) use=this.transition}}
+      <div class="person-bio">
+        <p>
+          {{@person.name}} was born in or around {{@person.birthYear}}. They left
+          Rose Hall in {{@person.exitYear}}. They were classified as
+          “{{@person.color}}” in color and “{{@person.origin}}” in origin.
+        </p>
+      </div>
+    {{/animated-if}}
+  </AnimatedContainer>
+</li>
