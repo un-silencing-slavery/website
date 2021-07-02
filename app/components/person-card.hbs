@@ -1,5 +1,5 @@
 <li class="bg-green-100 {{if (eq this.activePerson.personId @person.id) "z-10" "z-0"}}">
-  <h4 class=" font-bold" {{on "click" this.toggleBiography}} role="button">
+  <h4 class=" font-bold" {{on "click" this.setActivePerson}} role="button">
     {{@person.name}}
   </h4>
   <AnimatedContainer class="overflow-hidden">

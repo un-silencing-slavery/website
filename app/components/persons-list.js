@@ -30,8 +30,6 @@ export default class PersonsListComponent extends Component {
         }
       }
 
-      console.log(data);
-
       return data;
     }
 

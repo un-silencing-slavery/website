@@ -23,7 +23,8 @@ export default class PersonCardComponent extends Component {
   }
 
 
-  @action toggleBiography() {
-    this.hiddenBio = !this.hiddenBio;
+  @action
+  setActivePerson(){
+    this.activePerson.personId = this.args.person.id;
   }
 }

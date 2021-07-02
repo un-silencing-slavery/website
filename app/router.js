@@ -12,7 +12,7 @@ Router.map(function() {
   this.route('essay');
   this.route('credits');
   this.route('people', function() {
-    this.route('person');
+    this.route('person', { path: "/:person_id" });
   });
   this.route('squiggly-line');
 });
