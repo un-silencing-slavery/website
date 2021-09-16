@@ -1,5 +1,5 @@
 .textbox {
-  @apply overflow-hidden p-8;
+  @apply overflow-hidden p-8 md:p-12;
 }
 
 h2 {
