@@ -67,7 +67,7 @@
     "prettier": "^2.2.1",
     "qunit": "^2.14.1",
     "qunit-dom": "^1.6.0",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.2.15"
   },
   "engines": {
     "node": "10.* || >= 12"
