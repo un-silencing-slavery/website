@@ -1,8 +1,6 @@
 <article class="w-full flex flex-row h-full flex-grow overflow-hidden">
 
-<section id="visualization" class="w-3/4 hidden md:block">
-  <CommunityTree @data={{@model}} />
-</section>
+<CommunityTree @data={{@model}} />
 
 <section id="information" class="bg-green-100 md:w-1/4 overflow-auto">
   <PersonsList @model={{@model}} />

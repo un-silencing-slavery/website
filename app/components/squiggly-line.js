@@ -6,9 +6,7 @@ import { action } from "@ember/object";
 
 export default class SquigglyLineComponent extends Component {
   @action gHandleClick() {
-    console.log("g click handled");
   }
   @action circleHandleClick() {
-    console.log("circle click handled");
   }
 }

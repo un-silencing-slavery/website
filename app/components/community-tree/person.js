@@ -13,7 +13,15 @@ export default class CommunityTreePersonComponent extends Component {
 
   @tracked secondPoint = { x: 0, y: 0 };
 
-  age = this.args.person.exitYear - this.args.person.birthYear;
+  get exitYear() {
+    if(this.args.person.exitYear === 1832) {
+      return 1834;
+    }
+
+    return this.args.person.exitYear;
+  }
+
+  age = this.exitYear - this.args.person.birthYear;
 
   argsdataLength = this.args.dataLength;
 
@@ -28,7 +36,7 @@ export default class CommunityTreePersonComponent extends Component {
       y: -this.scaledArrivalYear,
     };
     const firstPoint = { x ,
-      y: -this.args.yearScale(this.args.person.exitYear)
+      y: -this.args.yearScale(this.exitYear)
     };
     this.offset = .04 * (firstPoint.y - origin.y) * -1;
 
@@ -125,7 +133,7 @@ export default class CommunityTreePersonComponent extends Component {
     /*
     return arc()
     .innerRadius(this.scaledArrivalYear)
-    .outerRadius(this.args.yearScale(this.args.person.exitYear))
+    .outerRadius(this.args.yearScale(this.exitYear))
     .padAngle(Math.PI / 360)
     .startAngle(0)
     .endAngle(2 * Math.PI / 10)();
@@ -152,7 +160,7 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   buildPetal() {
-    let top = this.args.yearScale(this.args.person.exitYear);
+    let top = this.args.yearScale(this.exitYear);
 
     let d = "";
     // 1. know how tall to draw the wedge
@@ -213,7 +221,7 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   get scaledArrivalYear(){
-    let year = 1810;
+    let year = this.args.minYear;
     if (this.args.person.birthYear > 1817) {
       year = this.args.person.birthYear;
     }
