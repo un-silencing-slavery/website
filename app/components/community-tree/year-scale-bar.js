@@ -1,6 +1,20 @@
 import Component from '@glimmer/component';
+import { action } from "@ember/object";
+import { select } from "d3-selection";
+import { axisBottom } from "d3-axis";
+import { format } from "d3-format";
 
 export default class CommunityTreeYearScaleBarComponent extends Component {
+  @action callAxis(element){
+    while (element.hasChildNodes()) {
+      element.removeChild(element.lastChild);
+    }
+    select(element).append("g")
+      .call(axisBottom(this.args.yearScale)
+        .tickValues([1817, 1820, 1823, 1826, 1829, 1832])
+        .tickFormat(format(".4r"))
+      );
+  }
   // Gradient legend
   /*defs
     .append("linearGradient")

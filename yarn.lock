@@ -5798,7 +5798,7 @@ ember-modifier-manager-polyfill@^1.1.0, ember-modifier-manager-polyfill@^1.2.0:
     ember-cli-version-checker "^2.1.2"
     ember-compatibility-helpers "^1.2.0"
 
-ember-modifier@^2.1.1:
+ember-modifier@^2.1.0, ember-modifier@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ember-modifier/-/ember-modifier-2.1.2.tgz#62d18faedf972dcd9d34f90d5321fbc943d139b1"
   integrity sha512-3Lsu1fV1sIGa66HOW07RZc6EHISwKt5VA5AUnFss2HX6OTfpxTJ2qvPctt2Yt0XPQXJ4G6BQasr/F35CX7UGJA==
@@ -5818,6 +5818,16 @@ ember-named-arguments-polyfill@^1.0.0:
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-version-checker "^2.1.2"
+
+ember-on-resize-modifier@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/ember-on-resize-modifier/-/ember-on-resize-modifier-0.4.0.tgz#8ef3b74888111b12cb3befc46212772ef1c3cb46"
+  integrity sha512-GnwRTc7b2GwdzIOlWCKs9+Yjdz6L7cwjYH40V2kObmy1lOEVbnzk0gW404/+AEBDtc33Y+9SwGKHjF9QjM2ghA==
+  dependencies:
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
+    ember-modifier "^2.1.0"
+    ember-resize-observer-service "^0.4.2"
 
 ember-page-title@^6.2.1:
   version "6.2.2"
@@ -5840,6 +5850,14 @@ ember-qunit@^5.1.4:
     resolve-package-path "^3.1.0"
     silent-error "^1.1.1"
     validate-peer-dependencies "^1.1.0"
+
+ember-resize-observer-service@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/ember-resize-observer-service/-/ember-resize-observer-service-0.4.2.tgz#adf471a7a55ab6bcac47f16265050abb13a412b1"
+  integrity sha512-5LM90gBWaqVi4lAcf+jgd2rD0D8E9JbXVLkrRCfw+5pntdUhkrayrUYkrfiVTg8r+uP8d4ngKeJQXG00c290tQ==
+  dependencies:
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
 
 ember-resolver@^8.0.2:
   version "8.0.3"
@@ -11733,6 +11751,8 @@ to-object-path@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/to-object-path/-/to-object-path-0.3.0.tgz#297588b7b0e7e0ac08e04e672f85c1f4999e17af"
   integrity sha1-KXWIt7Dn4KwI4E5nL4XB9JmeF68=
+  dependencies:
+    kind-of "^3.0.2"
 
 to-regex-range@^2.1.0:
   version "2.1.1"

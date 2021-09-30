@@ -11,25 +11,70 @@ export default class CommunityTreeComponent extends Component {
 
   personIdsArray = this.args.data.mapBy("id");
 
-  width = .65 * document.getElementById("visualization").offsetWidth;
+  @tracked svgWidth = 200
 
-  height = .65 * document.getElementById("visualization").offsetWidth;
+  @tracked svgHeight = 200
 
-  // height = 400;
+  @action calculateSizes(){
+    this.svgWidth = document.getElementById("visualization").offsetWidth;
+    this.svgHeight = document.getElementById("visualization").offsetHeight;
+  }
+
+  margins = {
+    top: this.svgHeight/10,
+    left: this.svgWidth/10,
+    bottom: this.svgHeight/10,
+    right: this.svgWidth/10
+  };
+
+  get circleRadius(){
+    if (this.orientation === "portrait") {
+      return .5 * (this.svgWidth - this.margins.left - this.margins.right);
+    }
+
+    return .375 * (this.svgHeight - this.margins.top - this.margins.bottom);
+  }
 
   dataLength = this.args.data.length;
 
+  get orientation(){
+    if (this.svgWidth > this.svgHeight) {
+      return "landscape"
+    }
+
+    return "portrait"
+  }
+
+  get maxAge() {
+    return Math.floor(this.args.data.map(person => person.exitYear - person.birthYear).sort((a, b) => b - a)[0]);
+  }
 
   get colorScale() {
     return scaleLinear()
-      .domain([0,15])
+      .domain([0,this.maxAge])
       .range([0,1]);
+  }
+
+  maxYear = 1834;
+
+  minYear = 1813;
+
+  gradientStop(year) {
+    return 100 * (year - this.minYear) / (this.maxYear - this.minYear);
+  }
+
+  get gradient1817() {
+    return this.gradientStop(1817);
+  }
+
+  get gradient1832() {
+    return this.gradientStop(1832);
   }
 
   get yearScale() {
     return scaleLinear()
-      .domain([1810, 1832])
-      .range([0, this.height / 2.1]);
+      .domain([this.minYear, this.maxYear])
+      .range([0, this.circleRadius]);
   }
 
   @action selectPerson(direction) {
@@ -52,7 +97,6 @@ export default class CommunityTreeComponent extends Component {
     } else {
       this.activePerson.personId = this.personIdsArray[0];
     }
-    console.log(this.activePerson.personId);
   }
 
 

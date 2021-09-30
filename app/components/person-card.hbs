@@ -1,4 +1,4 @@
-<li class="overflow-y-hidden bg-green-100 {{if (eq this.activePerson.personId @person.id) "z-10" "z-0"}}">
+<li class="overflow-y-hidden {{if (eq this.activePerson.personId @person.id) "bg-green-200" "bg-green-100"}}">
   <h4 class=" font-bold" {{on "click" this.setActivePerson}} role="button">
     {{@person.name}}
   </h4>
