@@ -1,0 +1,16 @@
+<li class="overflow-y-hidden {{if (eq this.activePerson.personId @person.id) "bg-green-200" "bg-green-100"}}">
+  <h4 class=" font-bold" {{on "click" this.setActivePerson}} role="button">
+    {{@person.name}}
+  </h4>
+  <AnimatedContainer class="overflow-hidden">
+    {{#animated-if (eq this.activePerson.personId @person.id) use=this.transition}}
+      <div class="person-bio">
+        <p>
+          {{@person.name}} was born in or around {{@person.birthYear}}. They left
+          Rose Hall in {{@person.exitYear}}. They were classified as
+          “{{@person.color}}” in color and “{{@person.origin}}” in origin.
+        </p>
+      </div>
+    {{/animated-if}}
+  </AnimatedContainer>
+</li>
