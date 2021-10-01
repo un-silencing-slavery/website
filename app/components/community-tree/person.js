@@ -14,8 +14,8 @@ export default class CommunityTreePersonComponent extends Component {
   @tracked secondPoint = { x: 0, y: 0 };
 
   get exitYear() {
-    if(this.args.person.exitYear === 1832) {
-      return 1834;
+    if(this.args.person.exitYear >= 1832) {
+      return 1833.7;
     }
 
     return this.args.person.exitYear;
@@ -30,6 +30,7 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   get path() {
+    console.log(this.exitYear);
     const x = 0;
     const origin = {
       x,
@@ -245,5 +246,9 @@ export default class CommunityTreePersonComponent extends Component {
       g.parentElement.appendChild(g);
       this.setActivePerson(this.args.person.id);
     }
+  }
+
+  @action raisePetal(element){
+    console.log(`raising ${this.args.person.id}`);
   }
 }
