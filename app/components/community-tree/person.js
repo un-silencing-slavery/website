@@ -30,7 +30,6 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   get path() {
-    console.log(this.exitYear);
     const x = 0;
     const origin = {
       x,
@@ -248,7 +247,9 @@ export default class CommunityTreePersonComponent extends Component {
     }
   }
 
+  /*
   @action raisePetal(element){
     console.log(`raising ${this.args.person.id}`);
   }
+  */
 }
