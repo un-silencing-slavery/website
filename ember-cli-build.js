@@ -1,38 +1,9 @@
-'use strict';
+"use strict";
 
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const isProduction = EmberApp.env() === 'production';
+const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
-const purgeCSS = {
-  module: require('@fullhuman/postcss-purgecss'),
-  options: {
-    content: [
-      // add extra paths here for components/controllers which include tailwind classes
-      './app/index.html',
-      './app/templates/**/*.hbs',
-      './app/components/**/*.hbs'
-    ],
-    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-  }
-}
-
-module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
-    postcssOptions: {
-      compile: {
-        plugins: [
-          {
-            module: require('postcss-import'),
-            options: {
-              path: ['node_modules']
-            }
-          },
-          require('tailwindcss')('./app/tailwind/config.js'),
-          ...isProduction ? [purgeCSS] : []
-        ]
-      }
-    }
-  });
+module.exports = function (defaults) {
+  let app = new EmberApp(defaults, {});
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -47,5 +18,48 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  const { Webpack } = require("@embroider/webpack");
+  return require("@embroider/compat").compatBuild(app, Webpack, {
+    // staticAddonTestSupportTrees: true,
+    // staticAddonTrees: true,
+    // staticHelpers: true,
+    // staticModifiers: true,
+    // staticComponents: true,
+    // splitAtRoutes: ['route.name'], // can also be a RegExp
+    packagerOptions: {
+      cssLoaderOptions: {
+        sourceMap: process.env.EMBER_ENV !== "production" ? true : false,
+      },
+      webpackConfig: {
+        module: {
+          rules: [
+            {
+              test: (f) => /\.css$/i.test(f),
+              exclude: /node_modules/,
+              use: [
+                {
+                  loader: "postcss-loader",
+                  options: {
+                    sourceMap:
+                      process.env.EMBER_ENV !== "production" ? true : false,
+                    postcssOptions: {
+                      config: "./postcss.config.js",
+                    },
+                  },
+                },
+              ],
+            },
+          ],
+        },
+        resolve: {
+          fallback: {
+            stream: false,
+            crypto: false,
+            fs: false,
+            path: false,
+          },
+        },
+      },
+    },
+  });
 };
