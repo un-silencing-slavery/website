@@ -3,7 +3,9 @@
   
 "
   data-person-id={{@person.id}}>
-  <h4 class="font-bold {{if this.active "pl-2 pt-2 text-3xl"}}" {{on "click" this.setActivePerson}} role="button">
+  <h4 class="
+    {{if this.active "pl-2 pt-2 text-3xl" "hover:underline font-bold"}}" 
+    {{on "click" this.setActivePerson}} role="button">
     {{@person.name}}
   </h4>
   <AnimatedContainer class="overflow-hidden">

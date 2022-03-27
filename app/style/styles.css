@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mirza&family=Hina+Mincho&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,24 +27,4 @@ g.person-petal > .highlighter {
 g.person-petal > .highlighter.active {
   fill: #000000;
   opacity: 1;
-}
-
-.textbox {
-  @apply overflow-hidden p-8 md:p-12;
-}
-
-h2 {
-  @apply text-2xl leading-7 pt-8 pb-1;
-}
-
-h3 {
-  @apply text-xl;
-}
-
-p {
-  @apply mb-4;
-}
-
-a {
-  @apply bg-green-800;
 }
