@@ -1,11 +1,4 @@
 {
-  "app/gql/queries/*.graphql": {
-    "type": "query",
-  },
-  "app/controllers/*.js": {
-    "type": "controller",
-    "alternate": "tests/unit/controllers/{}-test.js"
-  },
   "tests/acceptance/*-test.js": {
     "type": "acceptanceTest"
   },
@@ -44,9 +37,6 @@
   "app/components/*.js": {
     "type": "cclass",
     "alternate": "app/components/{}.hbs"
-  },
-  "app/styles/components/*.css": {
-    "type": "sass"
   },
   "app/router.js": {
     "type": "router"

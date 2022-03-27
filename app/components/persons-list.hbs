@@ -2,7 +2,7 @@
   <h3 class="text-xl pb-2 font-bold text-green-900">List of Enslaved Persons</h3>
   <AnimatedContainer>
     <ul class="relative">
-      {{#animated-each this.data use=this.transition  as |person|}}
+      {{#animated-each this.data use=this.transition as |person|}}
       {{!#each this.data as |person|}}
         <PersonCard 
             @person={{person}} 
