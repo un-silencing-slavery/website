@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./leaflet.css";
-@import "./ember-promise-modals.css";
-
-body {
-  min-height: -webkit-fill-available;
-  @apply text-primary h-screen w-screen;
-}
-
-html {
-  height: -webkit-fill-available;
-}
-
-h3 {
-  @apply font-sans font-semibold;
-}
-
-a.active p {
-  @apply bg-columbiaBlue;
-}
-
 .menu-slide-enter,
 .menu-slide-leave-to {
   @apply translate-x-full;
@@ -35,4 +15,34 @@ a.active p {
 .menu-slide-enter-to,
 .menu-slide-leave {
   @apply translate-x-0;
+}
+
+g.person-petal > .highlighter {
+  fill: #000000;
+  opacity: 0;
+}
+
+g.person-petal > .highlighter.active {
+  fill: #000000;
+  opacity: 1;
+}
+
+.textbox {
+  @apply overflow-hidden p-8 md:p-12;
+}
+
+h2 {
+  @apply text-2xl leading-7 pt-8 pb-1;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+p {
+  @apply mb-4;
+}
+
+a {
+  @apply bg-green-800;
 }
