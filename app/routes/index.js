@@ -1,6 +1,7 @@
 import Route from "@ember/routing/route";
 import { inject as service } from "@ember/service";
 import faker from "faker";
+import "rose-hall/style/styles.css";
 
 export default class IndexRoute extends Route {
   @service store;
