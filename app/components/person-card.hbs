@@ -1,10 +1,14 @@
-<li class="overflow-y-hidden {{if (eq this.activePerson.personId @person.id) "bg-green-200" "bg-green-100"}}">
-  <h4 class=" font-bold" {{on "click" this.setActivePerson}} role="button">
+<li class="overflow-y-hidden 
+{{if this.active "bg-green-200 shadow-md mb-2" "bg-green-100"}}
+  
+"
+  data-person-id={{@person.id}}>
+  <h4 class="font-bold {{if this.active "pl-2 pt-2 text-3xl"}}" {{on "click" this.setActivePerson}} role="button">
     {{@person.name}}
   </h4>
   <AnimatedContainer class="overflow-hidden">
-    {{#animated-if (eq this.activePerson.personId @person.id) use=this.transition}}
-      <div class="person-bio">
+    {{#animated-if this.active use=this.transition duration = 1}}
+      <div class="p-2">
         <p>
           {{@person.name}} was born in or around {{@person.birthYear}}. They left
           Rose Hall in {{@person.exitYear}}. They were classified as
