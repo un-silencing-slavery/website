@@ -15,9 +15,9 @@ const plugins = [
   require("autoprefixer"),
 ];
 
-if (env === "production") {
-  plugins.push(require("cssnano"));
-}
+// if (env === "production") {
+//   plugins.push(require("cssnano"));
+// }
 
 module.exports = {
   plugins,
