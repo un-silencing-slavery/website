@@ -14,9 +14,11 @@ export default class CommunityTreeComponent extends Component {
 
   @tracked svgHeight = 200;
 
-  @action calculateSizes() {
-    this.svgWidth = document.getElementById("visualization").offsetWidth;
-    this.svgHeight = document.getElementById("visualization").offsetHeight;
+  @action calculateSizes({ contentRect }) {
+    if (contentRect) {
+      this.svgWidth = Math.floor(contentRect.width);
+      this.svgHeight = Math.floor(contentRect.height);
+    }
   }
 
   margins = {
