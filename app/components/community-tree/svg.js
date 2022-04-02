@@ -5,41 +5,30 @@ import { inject as service } from "@ember/service";
 import { scaleLinear } from "d3-scale";
 import { interpolateCool } from "d3-scale-chromatic";
 
-export default class CommunityTreeComponent extends Component {
+export default class CommunityTreeSvgComponent extends Component {
   @service activePerson;
 
   personIdsArray = this.args.data.mapBy("id");
 
-  @tracked svgWidth = 200;
-
-  @tracked svgHeight = 200;
-
-  @action calculateSizes({ contentRect }) {
-    if (contentRect) {
-      this.svgWidth = Math.floor(contentRect.width);
-      this.svgHeight = Math.floor(contentRect.height);
-    }
-  }
-
   margins = {
-    top: this.svgHeight / 10,
-    left: this.svgWidth / 10,
-    bottom: this.svgHeight / 10,
-    right: this.svgWidth / 10,
+    top: this.args.height / 10,
+    left: this.args.width / 10,
+    bottom: this.args.height / 10,
+    right: this.args.width / 10,
   };
 
   get circleRadius() {
     if (this.orientation === "portrait") {
-      return 0.5 * (this.svgWidth - this.margins.left - this.margins.right);
+      return 0.5 * (this.args.width - this.margins.left - this.margins.right);
     }
 
-    return 0.375 * (this.svgHeight - this.margins.top - this.margins.bottom);
+    return 0.375 * (this.args.height - this.margins.top - this.margins.bottom);
   }
 
   dataLength = this.args.data.length;
 
   get orientation() {
-    if (this.svgWidth > this.svgHeight) {
+    if (this.args.width > this.args.height) {
       return "landscape";
     }
 

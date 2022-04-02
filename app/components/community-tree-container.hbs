@@ -1,0 +1,10 @@
+<section id="visualization" class="bg-white w-3/4 hidden md:block"
+  {{on-resize this.calculateSizes}}
+>
+  <CommunityTree::Svg 
+    @data={{@data}} 
+    @width={{this.svgWidth}} 
+    @height={{this.svgHeight}} 
+    @calculateSizes={{this.calculateSizes}}
+    />
+</section>
