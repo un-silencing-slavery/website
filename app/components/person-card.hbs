@@ -10,13 +10,15 @@
   </h4>
   <AnimatedContainer class="overflow-hidden">
     {{#animated-if this.active use=this.transition duration = 1}}
+      {{#let (if (eq @person.gender "Male") "He" "She") as |pronoun|}}
       <div class="p-2">
         <p>
-          {{@person.name}} was born in or around {{@person.birthYear}}. They left
-          Rose Hall in {{@person.exitYear}}. They were classified as
-          “{{@person.color}}” in color and “{{@person.origin}}” in origin.
+          {{@person.name}} was born in or around {{@person.birthYear}}. {{pronoun}} left
+          Rose Hall in {{@person.exitYear}}. {{pronoun}} were classified as
+          “{{@person.colour}}” in color and “{{@person.country}}” in origin.
         </p>
       </div>
+      {{/let}}
     {{/animated-if}}
   </AnimatedContainer>
 </li>
