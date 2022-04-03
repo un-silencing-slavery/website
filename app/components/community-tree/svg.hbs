@@ -1,6 +1,6 @@
   <svg 
     class="community-tree" 
-    width={{@width}} height={{@height}}
+    width={{this.svg.width}} height={{this.svg.height}}
     {{on-key "ArrowRight" (fn this.selectPerson "forward")}}
     {{on-key "ArrowLeft" (fn this.selectPerson "backward")}}
     {{did-insert @calculateSizes}}
@@ -34,7 +34,7 @@
       {{/each}}
     </defs>
     <g 
-      transform="translate({{add this.margins.left this.circleRadius}},{{add this.margins.top this.circleRadius}})">
+      transform="translate({{add this.svg.margins.left this.svg.circleRadius}},{{add this.svg.margins.top this.svg.circleRadius}})">
       {{#each @data as |person i|}}
       <CommunityTree::Person 
         @person={{person}}
@@ -46,33 +46,33 @@
       />
       {{/each}}
     </g>
-    <g transform="translate({{add 200 (div @width 2)}},{{sub @height 50}})">
+    <g transform="translate({{add 200 (div this.svg.width 2)}},{{sub this.svg.height 50}})">
         <CommunityTree::AgeScaleBar @colorScale={{this.colorScale}}/>
     </g>
-      <rect x={{this.margins.left}} y={{this.margins.top}}
-        width={{sub @width (add this.margins.left this.margins.right) }}
-        height={{sub @height (add this.margins.top this.margins.bottom) }}
+      <rect x={{this.svg.margins.left}} y={{this.svg.margins.top}}
+        width={{sub this.svg.width (add this.svg.margins.left this.svg.margins.right) }}
+        height={{sub this.svg.height (add this.svg.margins.top this.svg.margins.bottom) }}
         fill="none"
         stroke="red"
         stroke-width="3"
         />
       <ellipse cx="0" cy="0" 
         class="pointer-events-none"
-        rx={{this.circleRadius}} 
-        ry={{this.circleRadius}} 
+        rx={{this.svg.circleRadius}} 
+        ry={{this.svg.circleRadius}} 
         fill="url(#community-tree-inner-gradient)" 
-        transform="translate({{add this.margins.left this.circleRadius}},{{add this.margins.top this.circleRadius}})"/>
+        transform="translate({{add this.svg.margins.left this.svg.circleRadius}},{{add this.svg.margins.top this.svg.circleRadius}})"/>
       <ellipse cx="0" cy="0" 
         class="pointer-events-none"
-        rx={{this.circleRadius}} 
-        ry={{this.circleRadius}} 
+        rx={{this.svg.circleRadius}} 
+        ry={{this.svg.circleRadius}} 
         fill="url(#community-tree-outer-gradient)" 
-        transform="translate({{add this.margins.left this.circleRadius}},{{add this.margins.top this.circleRadius}})"/>
-      <g transform="translate({{add this.margins.left this.circleRadius}},
-      {{add this.margins.top this.circleRadius}})">
+        transform="translate({{add this.svg.margins.left this.svg.circleRadius}},{{add this.svg.margins.top this.svg.circleRadius}})"/>
+      <g transform="translate({{add this.svg.margins.left this.svg.circleRadius}},
+      {{add this.svg.margins.top this.svg.circleRadius}})">
         <CommunityTree::YearScale
           @yearScale={{this.yearScale}} 
-          @width={{this.circleRadius}}
+          this.svg.width={{this.svg.circleRadius}}
           />
       </g>
   </svg>
