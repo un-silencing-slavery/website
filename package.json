@@ -11,6 +11,7 @@
     "test": "tests"
   },
   "scripts": {
+    "convertData": "python src/convert-data-from-excel.py",
     "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:hbs": "ember-template-lint .",
