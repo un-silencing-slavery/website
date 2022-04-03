@@ -178,6 +178,11 @@ def calculateLeavingYear(person):
 
     return 1832
     
-df["leavingYear"] = df.apply(calculateLeavingYear, axis=1)
+df["exitYear"] = df.apply(calculateLeavingYear, axis=1)
 
-df.to_json("app/data/rose-hall-data.json", orient="records")
+json_string = df.to_json(orient="records")
+
+output = "export default " + json_string + ";"
+f = open("mirage/fixtures/people.js", "w")
+f.write(output)
+f.close()
