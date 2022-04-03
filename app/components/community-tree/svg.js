@@ -6,34 +6,13 @@ import { scaleLinear } from "d3-scale";
 import { interpolateCool } from "d3-scale-chromatic";
 
 export default class CommunityTreeSvgComponent extends Component {
+  @service svg;
+
   @service activePerson;
 
   personIdsArray = this.args.data.mapBy("id");
 
-  margins = {
-    top: this.args.height / 10,
-    left: this.args.width / 10,
-    bottom: this.args.height / 10,
-    right: this.args.width / 10,
-  };
-
-  get circleRadius() {
-    if (this.orientation === "portrait") {
-      return 0.5 * (this.args.width - this.margins.left - this.margins.right);
-    }
-
-    return 0.375 * (this.args.height - this.margins.top - this.margins.bottom);
-  }
-
   dataLength = this.args.data.length;
-
-  get orientation() {
-    if (this.args.width > this.args.height) {
-      return "landscape";
-    }
-
-    return "portrait";
-  }
 
   get maxAge() {
     return Math.floor(
@@ -66,7 +45,7 @@ export default class CommunityTreeSvgComponent extends Component {
   get yearScale() {
     return scaleLinear()
       .domain([this.minYear, this.maxYear])
-      .range([0, this.circleRadius]);
+      .range([0, this.svg.circleRadius]);
   }
 
   @action selectPerson(direction) {
