@@ -3,6 +3,7 @@ import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { randomNormal } from "d3-random";
 import { interpolateCool } from "d3-scale-chromatic";
+import { line, curveBundle } from "d3";
 import { inject as service } from "@ember/service";
 
 export default class CommunityTreePersonComponent extends Component {
@@ -49,14 +50,15 @@ export default class CommunityTreePersonComponent extends Component {
     this.secondPoint = secondPoint;
 
     const outWaves = this.waves([origin, firstPoint]);
-    const inWaves = this.waves([secondPoint, origin], true);
+    const inWaves = this.waves([secondPoint, origin], true).replace("M", "L");
 
-    return `M${origin.x}, ${origin.y}
-      ${outWaves}
-      L ${secondPoint.x}, ${secondPoint.y}
-      ${inWaves}
+    const thePath = `${outWaves}
+    ${inWaves}
       Z
     `;
+
+    // console.log(thePath);
+    return thePath;
   }
 
   waves([m, n], centripetal = false) {
@@ -89,18 +91,32 @@ export default class CommunityTreePersonComponent extends Component {
 
     segmentPoints.push(n);
 
+    const linePSegments = [[m.x, m.y]];
+
     let path = "";
     for (let i = 0; i < segmentPoints.length - 1; i += 1) {
-      path =
-        path +
-        this.waveSegment(
-          [segmentPoints[i], segmentPoints[i + 1]],
-          perpendicularSlope,
-          i
-        );
+      let newSegment = this.waveSegment(
+        [segmentPoints[i], segmentPoints[i + 1]],
+        perpendicularSlope,
+        i
+      );
+
+      const [q, controlPointX, controlPointY] = newSegment.split(" ");
+
+      linePSegments.push([
+        parseFloat(controlPointX.replace(",", "")),
+        parseFloat(controlPointY),
+      ]);
+
+      path = path + newSegment;
     }
 
-    return path;
+    linePSegments.push([n.x, n.y]);
+
+    const lineP = line().curve(curveBundle)(linePSegments);
+    // console.log(lineP);
+
+    return lineP;
   }
 
   waveSegment([m, n], perpendicularSlope, index) {
