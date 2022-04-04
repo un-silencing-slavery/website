@@ -1,4 +1,25 @@
 <g id="age-scale-bar">
-  <rect x="0" y="0" width="300" height="15" />
+  <rect x="0" y="0" 
+    width={{this.svg.ageScaleBarWidth}} 
+    height={{this.barHeight}} 
+    fill="url(#age-scale-bar-gradient)"
+  />
+  <g id="age-scale-bar-axis"
+    transform="translate(0, {{this.barHeight}})">
+    <text text-anchor="middle"
+      transform="translate({{div this.svg.ageScaleBarWidth 2}}, 45)">
+        Age
+    </text>
+    <line x1="0" y1={{this.tickOffset}} x2={{this.svg.ageScaleBarWidth}} y2={{this.tickOffset}} stroke="black" />
+    {{#each (array 0 10 20 30 40 50 60 70 80) as |age|}}
+      <g transform="translate(
+        {{mult age (div this.svg.ageScaleBarWidth 80)}},0)">
+        <line x1="0" y1={{this.tickOffset}} x2="0" y2="{{this.tickLength}}" stroke="black" />
+        <text text-anchor="middle"
+          transform="translate(0, {{add this.tickLength 15}})"
+        >{{age}}</text>
+      </g>
+    {{/each}}
+  </g>
 </g>
 

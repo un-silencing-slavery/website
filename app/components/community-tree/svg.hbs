@@ -29,6 +29,7 @@
         offset="{{mult 1.04 this.gradient1832}}%" 
          style="stop-color:rgb(255,255,255); stop-opacity:1" />
       </radialGradient>
+      <CommunityTree::AgeScaleBarGradient />
       {{#each @data as |person|}}
         <CommunityTree::PersonGradient @person={{person}} />
       {{/each}}
@@ -46,14 +47,14 @@
       />
       {{/each}}
     </g>
-    <g transform="translate({{add 200 (div this.svg.width 2)}},{{sub this.svg.height 50}})">
-        <CommunityTree::AgeScaleBar @colorScale={{this.colorScale}}/>
+    <g transform="translate({{mult this.svg.width 0.1}},{{sub this.svg.height 100}})">
+        <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}} @width={{this.svg.ageScaleBarWidth}}/>
     </g>
       <rect x={{this.svg.margins.left}} y={{this.svg.margins.top}}
         width={{sub this.svg.width (add this.svg.margins.left this.svg.margins.right) }}
         height={{sub this.svg.height (add this.svg.margins.top this.svg.margins.bottom) }}
         fill="none"
-        stroke="red"
+        stroke="none"
         stroke-width="3"
         />
       <ellipse cx="0" cy="0" 
@@ -72,7 +73,7 @@
       {{add this.svg.margins.top this.svg.circleRadius}})">
         <CommunityTree::YearScale
           @yearScale={{this.yearScale}} 
-          this.svg.width={{this.svg.circleRadius}}
+          @width={{this.svg.circleRadius}}
           />
       </g>
   </svg>

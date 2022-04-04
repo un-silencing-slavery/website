@@ -7,7 +7,7 @@
     class="cursor-pointer"
     fill={{this.gradientUrl}}
     transform={{if (eq this.activePerson.personId @person.id) 
-      "scale(2, 1.02)"
+      "scale(2, 1)"
       "scale(1, 1)"
     }}
     d={{this.path}}
@@ -20,7 +20,7 @@
       {{if (eq this.activePerson.personId @person.id) " active "}}
     "
     transform={{if (eq this.activePerson.personId @person.id) 
-      "scale(2, 1.02)"
+      "scale(2, 1)"
       "scale(1, 1)"
     }}
     d={{this.path}}

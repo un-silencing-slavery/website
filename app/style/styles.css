@@ -20,11 +20,11 @@
 }
 
 g.person-petal > .highlighter {
-  fill: #000000;
+  fill: #166534;
   opacity: 0;
 }
 
 g.person-petal > .highlighter.active {
-  fill: #000000;
+  fill: #166534;
   opacity: 1;
 }

@@ -1,14 +1,14 @@
-      <linearGradient 
-       id={{concat @person.id "-gradient"}}
-       x1="0%"
-       y1="100%"
-       x2="0%"
-       y2="0%"
-      >
-      {{#each this.stops as |thisStop|}}
-        <stop offset={{thisStop.offset}}
-          style={{thisStop.style}} />
-      {{/each}}
-      </linearGradient>
+<linearGradient 
+   id={{concat @person.id "-gradient"}}
+   x1="0%"
+   y1="100%"
+   x2="0%"
+   y2="0%"
+  >
+  {{#each this.stops as |thisStop|}}
+    <stop offset={{thisStop.offset}}
+      style={{thisStop.style}} />
+  {{/each}}
+</linearGradient>
 
 
