@@ -117,6 +117,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "d3-shape": "^3.1.0",
     "d3": "^7.3.0",
     "d3-axis": "^3.0.0",
     "d3-format": "^3.1.0",
