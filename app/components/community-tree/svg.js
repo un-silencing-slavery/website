@@ -26,6 +26,12 @@ export default class CommunityTreeSvgComponent extends Component {
     return scaleLinear().domain([0, this.maxAge]).range([0, 1]);
   }
 
+  get ageScale() {
+    return scaleLinear()
+      .domain([0, this.maxAge])
+      .range([0, this.svg.ageScaleBarWidth]);
+  }
+
   maxYear = 1834;
 
   minYear = 1813;

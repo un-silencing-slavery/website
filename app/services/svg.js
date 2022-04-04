@@ -13,6 +13,10 @@ export default class SvgService extends Service {
     right: this.width / 10,
   };
 
+  get ageScaleBarWidth() {
+    return 0.8 * this.width;
+  }
+
   get circleRadius() {
     if (this.height > this.width) {
       return 0.5 * (this.width - this.margins.left - this.margins.right);
