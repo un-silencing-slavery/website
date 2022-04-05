@@ -1,9 +1,11 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 
 export default class CommunityTreeContainerComponent extends Component {
   @service svg;
+
+  @service data;
 
   @action calculateSizes({ contentRect }) {
     if (contentRect) {
