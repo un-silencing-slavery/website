@@ -1,11 +1,13 @@
 /* eslint require-yield: "off" */
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import move from "ember-animated/motions/move";
 
 export default class PersonsListComponent extends Component {
   @service activePerson;
+
+  @service data;
 
   @action
   *transition({ keptSprites }) {
@@ -23,10 +25,10 @@ export default class PersonsListComponent extends Component {
     });
   }
 
-  get data() {
-    const people = this.args.people.toArray();
+  get personData() {
+    const people = this.data.people;
     if (this.activePerson.personId) {
-      const personIdsArray = this.args.people.mapBy("personId");
+      const personIdsArray = this.data.people.mapBy("personId");
       const data = [];
       const activeIndex = personIdsArray.indexOf(this.activePerson.personId);
       data.push(people[activeIndex]);

@@ -13,7 +13,7 @@
 
   <AnimatedContainer>
     <ul class="relative">
-      {{#animated-each this.data use=this.transition as |person|}}
+      {{#animated-each this.personData use=this.transition as |person|}}
       {{!#each this.data as |person|}}
         <PersonCard 
             @person={{person}} 

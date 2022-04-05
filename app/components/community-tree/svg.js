@@ -1,23 +1,21 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { scaleLinear } from "d3-scale";
 
 export default class CommunityTreeSvgComponent extends Component {
   @service svg;
 
+  @service data;
+
   @service activePerson;
 
-  personIdsArray = this.args.people.mapBy("id");
+  personIdsArray = this.data.people.mapBy("id");
 
-  dataLength = this.args.people.length;
+  dataLength = this.data.people.length;
 
   get maxAge() {
-    return Math.floor(
-      this.args.people
-        .map((person) => person.exitYear - person.birthYear)
-        .sort((a, b) => b - a)[0]
-    );
+    return this.data.maxAge;
   }
 
   get colorScale() {
