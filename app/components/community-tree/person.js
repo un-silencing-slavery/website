@@ -232,7 +232,7 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   get gradientUrl() {
-    return `url(#${this.args.person.id}-gradient)`;
+    return `url(#${this.args.person.personId}-gradient)`;
   }
 
   get color() {
@@ -273,7 +273,7 @@ export default class CommunityTreePersonComponent extends Component {
     const g = mouseEvent.fromElement.parentElement;
     if (g.classList.contains("person-petal")) {
       g.parentElement.appendChild(g);
-      this.setActivePerson(this.args.person.id);
+      this.setActivePerson(this.args.person.personId);
     }
   }
 

@@ -1,3 +1,4 @@
+/* eslint require-yield: "off" */
 import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
 import { action } from "@ember/object";
@@ -9,7 +10,7 @@ export default class PersonCardComponent extends Component {
   @service activePerson;
 
   get active() {
-    return this.activePerson.personId === this.args.person.id;
+    return this.activePerson.personId === this.args.person.personId;
   }
 
   @tracked hiddenBio = true;
@@ -23,11 +24,10 @@ export default class PersonCardComponent extends Component {
       fadeOut(sprite);
       // scale(sprite);
     });
-    yield;
   }
 
   @action
   setActivePerson() {
-    this.activePerson.personId = this.args.person.id;
+    this.activePerson.personId = this.args.person.personId;
   }
 }
