@@ -1,18 +1,18 @@
 import Service from "@ember/service";
-import people from "rose-hall/data/people";
 import { tracked } from "@glimmer/tracking";
+import people from "rose-hall/data/people";
 
 export default class DataService extends Service {
-  @tracked people = [];
+  @tracked people = people;
 
   maxAge = 80;
 
   constructor(args) {
     super(args);
-    this.sortByName(people);
+    this.sortByName();
   }
 
-  sortByName(data = this.people) {
-    this.people = data.sort((a, b) => a.name.localeCompare(b.name));
+  sortByName() {
+    this.people.sort((a, b) => a.name.localeCompare(b.name));
   }
 }
