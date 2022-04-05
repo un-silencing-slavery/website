@@ -1,5 +1,5 @@
 /* eslint node/no-missing-require: "off" */
-const env = process.env.EMBER_ENV || "development";
+// const env = process.env.EMBER_ENV || "development";
 
 const plugins = [
   // require("postcss-custom-media")({

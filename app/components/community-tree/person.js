@@ -1,3 +1,4 @@
+/* eslint ember/no-side-effects: "off" */
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
@@ -29,6 +30,10 @@ export default class CommunityTreePersonComponent extends Component {
     return (this.args.i * 360) / this.argsdataLength;
   }
 
+  setOffset(expression) {
+    this.offset = expression;
+  }
+
   get path() {
     const x = 0;
     const origin = {
@@ -39,7 +44,7 @@ export default class CommunityTreePersonComponent extends Component {
       x,
       y: -this.args.yearScale(this.exitYear),
     };
-    this.offset = 0.04 * (firstPoint.y - origin.y) * -1;
+    this.setOffset(0.04 * (firstPoint.y - origin.y) * -1);
 
     const theta = (2 * Math.PI) / this.argsdataLength;
     const secondPoint = {
@@ -101,7 +106,7 @@ export default class CommunityTreePersonComponent extends Component {
         i
       );
 
-      const [q, controlPointX, controlPointY] = newSegment.split(" ");
+      const [_, controlPointX, controlPointY] = newSegment.split(" ");
 
       linePSegments.push([
         parseFloat(controlPointX.replace(",", "")),
@@ -194,7 +199,7 @@ export default class CommunityTreePersonComponent extends Component {
     const wedgeWidth = Math.PI / 5;
     // (2 * Math.PI / this.argsdataLength)
     // 2pi / number of people
-    const angle = Math.PI / 2 - wedgeWidth;
+    // const angle = Math.PI / 2 - wedgeWidth;
     const x = Math.sin(wedgeWidth) * top;
     const y = Math.cos(wedgeWidth) * top;
 
@@ -202,8 +207,8 @@ export default class CommunityTreePersonComponent extends Component {
     // 3. return to center
     // Let's draw one line and make it curvy. this is too complicated with the fact that this line is returning to the center on an angle. It's too hard to tell if we're doing the right thing.
     // This is a point midway down the line.
-    const midX = x / 2;
-    const midY = y / 2;
+    // const midX = x / 2;
+    // const midY = y / 2;
     // This is the distance we want our perpendicular bisector to be from the line
     const controlLength = 100;
     // This is the hypoteneuse of the triangle going from the perpendicular bisector's endpoint to the center of the circle

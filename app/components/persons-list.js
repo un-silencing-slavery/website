@@ -20,6 +20,7 @@ export default class PersonsListComponent extends Component {
       }
       move(sprite);
     });
+    yield;
   }
 
   get data() {

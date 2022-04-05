@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { htmlSafe } from "@ember/template";
 import { scaleLinear } from "d3-scale";
-import { interpolateRdPu, interpolateWarm } from "d3-scale-chromatic";
+import { interpolateRdPu } from "d3-scale-chromatic";
 
 export default class CommunityTreeAgeScaleBarGradientComponent extends Component {
   colorScale() {
