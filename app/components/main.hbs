@@ -1,13 +1,11 @@
-<article class="w-full flex flex-row h-full flex-grow overflow-hidden">
+<article class="text-slate-700 w-full flex flex-row
+overflow-hidden
+">
 <h1 class="sr-only">Rose Hall Project</h1>
-<h2 class="sr-only">Community Tree</h2>
 
 <CommunityTreeContainer/>
 
-<section id="information" class="bg-green-100 w-full md:w-96 overflow-auto">
-  <PersonsList>
+<Information>
   {{yield}}
-  </PersonsList>
-</section>
-
+</Information>
 </article>

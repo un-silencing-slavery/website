@@ -1,0 +1,14 @@
+<div
+ class="w-full bg-slate-50 shadow-md my-3 px-3 py-4">
+  <h2 class="text-3xl pb-4">
+    {{this.person.name}}
+  </h2>
+  {{#let (if (eq this.person.gender "Male") "He" "She") as |pronoun|}}
+      <p>
+        {{this.person.name}} was born in or around {{this.person.birthYear}}.
+        {{pronoun}} left Rose Hall in {{this.person.exitYear}}. {{pronoun}}
+        was classified as “{{this.person.color}}” in color and
+        “{{this.person.country}}” in origin.
+      </p>
+  {{/let}}
+</div>

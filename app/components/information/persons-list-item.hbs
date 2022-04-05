@@ -1,0 +1,18 @@
+<li class="
+text-sm
+rounded-sm
+px-2
+hover:underline
+font-bold
+truncate
+{{if this.active "bg-green-200 shadow-inner" "hover:bg-green-200 bg-green-100"}}
+  "
+  data-person-id={{@person.personId}}
+>
+  <LinkTo @route="index.person" @model={{@person.personId}}>
+    <p
+      {{on "click" this.setActivePerson}} role="button">
+      {{@person.name}}
+    </p>
+  </LinkTo>
+</li>

@@ -27,7 +27,18 @@ const tailwindConfig = {
       black: "#000",
       white: "#fff",
       columbiaBlue: "#b9d9eb",
-      green: colors.green,
+      slate: colors.slate,
+      green: {
+        100: "#BAD4C0",
+        200: "#A2C4AA",
+        300: "#89b593",
+        400: "#71a67d",
+        500: "#5c9369",
+        600: "#4d7a57",
+        700: "#3d6246",
+        800: "#2e4934",
+        900: "#1f3123",
+      },
     },
     extend: {
       // typography: (theme) => ({
