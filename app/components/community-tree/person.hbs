@@ -12,7 +12,7 @@
     }}
     d={{this.path}}
     role="button"
-    {{on "click" (fn this.setActivePerson @person.personId)}}
+    {{on "click" this.handleClick}}
     />
   <path 
     class="pointer-events-none highlighter

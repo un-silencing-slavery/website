@@ -4,7 +4,7 @@ import { action } from "@ember/object";
 import { service } from "@ember/service";
 import move from "ember-animated/motions/move";
 
-export default class PersonsListComponent extends Component {
+export default class InformationPersonsListComponent extends Component {
   @service activePerson;
 
   @service data;

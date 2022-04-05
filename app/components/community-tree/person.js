@@ -8,11 +8,17 @@ import { line, curveBundle } from "d3";
 import { inject as service } from "@ember/service";
 
 export default class CommunityTreePersonComponent extends Component {
+  @service router;
+
   @service activePerson;
 
   @tracked firstPoint = { x: 0, y: 0 };
 
   @tracked secondPoint = { x: 0, y: 0 };
+
+  @action handleClick() {
+    this.router.transitionTo("index.person", this.args.person.personId);
+  }
 
   get exitYear() {
     if (this.args.person.exitYear >= 1832) {
@@ -79,7 +85,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             n.y +
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-            (Math.abs(n.y) - Math.abs(m.y)),
+              (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     } else {
@@ -89,7 +95,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             m.y -
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-            (Math.abs(n.y) - Math.abs(m.y)),
+              (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     }
@@ -133,7 +139,7 @@ export default class CommunityTreePersonComponent extends Component {
 
   centripetal = false;
 
-  controlPoint = function([m, n], perpendicularSlope, index) {
+  controlPoint = function ([m, n], perpendicularSlope, index) {
     let offset = this.jitterOffset;
     const midpoint = {
       x: (m.x + n.x) / 2,
@@ -262,11 +268,6 @@ export default class CommunityTreePersonComponent extends Component {
 
   get jitterOffset() {
     return randomNormal(this.offset, 0.2 * this.offset)();
-  }
-
-  @action
-  setActivePerson(personId) {
-    this.activePerson.personId = personId;
   }
 
   /*

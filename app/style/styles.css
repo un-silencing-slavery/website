@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Mirza&family=Hina+Mincho&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-serif h-full;
+}
+
+html {
+  @apply h-full;
+}
 
 .menu-slide-enter,
 .menu-slide-leave-to {
@@ -20,11 +27,15 @@
 }
 
 g.person-petal > .highlighter {
-  fill: #166534;
+  fill: #4d7a57;
   opacity: 0;
 }
 
 g.person-petal > .highlighter.active {
-  fill: #166534;
+  fill: #4d7a57;
   opacity: 1;
+}
+
+text {
+  fill: #334155;
 }
