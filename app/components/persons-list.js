@@ -1,3 +1,4 @@
+/* eslint require-yield: "off" */
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
@@ -20,13 +21,12 @@ export default class PersonsListComponent extends Component {
       }
       move(sprite);
     });
-    yield;
   }
 
   get data() {
     const model = this.args.model.toArray();
     if (this.activePerson.personId) {
-      const personIdsArray = this.args.model.mapBy("id");
+      const personIdsArray = this.args.model.mapBy("personId");
       const data = [];
       const activeIndex = personIdsArray.indexOf(this.activePerson.personId);
       data.push(model[activeIndex]);

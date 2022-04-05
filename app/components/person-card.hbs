@@ -2,7 +2,7 @@
 {{if this.active "bg-green-200 shadow-md mb-2" "bg-green-100"}}
   
 "
-  data-person-id={{@person.id}}>
+  data-person-id={{@person.personId}}>
   <h4 class="
     {{if this.active "pl-2 pt-2 text-3xl" "hover:underline font-bold"}}" 
     {{on "click" this.setActivePerson}} role="button">
@@ -15,7 +15,7 @@
         <p>
           {{@person.name}} was born in or around {{@person.birthYear}}. {{pronoun}} left
           Rose Hall in {{@person.exitYear}}. {{pronoun}} was classified as
-          “{{@person.colour}}” in color and “{{@person.country}}” in origin.
+          “{{@person.color}}” in color and “{{@person.country}}” in origin.
         </p>
       </div>
       {{/let}}
