@@ -1,9 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import { scaleLinear } from "d3-scale";
-import { interpolateCool } from "d3-scale-chromatic";
 
 export default class CommunityTreeSvgComponent extends Component {
   @service svg;

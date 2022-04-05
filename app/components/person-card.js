@@ -23,6 +23,7 @@ export default class PersonCardComponent extends Component {
       fadeOut(sprite);
       // scale(sprite);
     });
+    yield;
   }
 
   @action

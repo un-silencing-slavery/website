@@ -1,4 +1,5 @@
 # unconventional js
+/app/data/
 /blueprints/*/files/
 /vendor/
 
