@@ -24,19 +24,19 @@ export default class PersonsListComponent extends Component {
   }
 
   get data() {
-    const model = this.args.model.toArray();
+    const people = this.args.people.toArray();
     if (this.activePerson.personId) {
-      const personIdsArray = this.args.model.mapBy("personId");
+      const personIdsArray = this.args.people.mapBy("personId");
       const data = [];
       const activeIndex = personIdsArray.indexOf(this.activePerson.personId);
-      data.push(model[activeIndex]);
+      data.push(people[activeIndex]);
       if (activeIndex > 0) {
-        for (const person of model.slice(0, activeIndex)) {
+        for (const person of people.slice(0, activeIndex)) {
           data.push(person);
         }
       }
-      if (activeIndex < model.length - 1) {
-        for (const person of model.slice(activeIndex + 1, model.length - 1)) {
+      if (activeIndex < people.length - 1) {
+        for (const person of people.slice(activeIndex + 1, people.length - 1)) {
           data.push(person);
         }
       }
@@ -44,6 +44,6 @@ export default class PersonsListComponent extends Component {
       return data;
     }
 
-    return model;
+    return people;
   }
 }

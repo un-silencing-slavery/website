@@ -8,13 +8,13 @@ export default class CommunityTreeSvgComponent extends Component {
 
   @service activePerson;
 
-  personIdsArray = this.args.data.mapBy("id");
+  personIdsArray = this.args.people.mapBy("id");
 
-  dataLength = this.args.data.length;
+  dataLength = this.args.people.length;
 
   get maxAge() {
     return Math.floor(
-      this.args.data
+      this.args.people
         .map((person) => person.exitYear - person.birthYear)
         .sort((a, b) => b - a)[0]
     );

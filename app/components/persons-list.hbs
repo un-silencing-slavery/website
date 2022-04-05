@@ -1,5 +1,16 @@
 <div id="list-of-enslaved-persons" class="py-2 px-4">
   <h3 class="text-2xl py-2 font-title text-green-900">List of Enslaved Persons</h3>
+  <div class="flex flex-row">
+    <button type="button">Name</button>
+    <button type="button">Age</button>
+    <button type="button">Race</button>
+    <button type="button">Origin</button>
+    <button type="button">Gender</button>
+    <button type="button">Family</button>
+  </div>
+
+  {{yield}}
+
   <AnimatedContainer>
     <ul class="relative">
       {{#animated-each this.data use=this.transition as |person|}}

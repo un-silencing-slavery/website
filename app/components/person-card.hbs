@@ -1,10 +1,12 @@
-<li class="overflow-y-hidden 
-{{if this.active "bg-green-200 shadow-md mb-2" "bg-green-100"}}
-  
-"
-  data-person-id={{@person.personId}}>
+<li class="overflow-y-hidden overflow-x-clip
+{{if this.active "bg-green-200 shadow-md mb-2" "w-24 border-black border border-solid bg-green-100"}}
+  "
+  data-person-id={{@person.personId}}
+>
   <h4 class="
-    {{if this.active "pl-2 pt-2 text-3xl" "hover:underline font-bold"}}" 
+    {{if this.active 
+      "pl-2 pt-2 text-3xl" 
+      "hover:underline font-bold"}}" 
     {{on "click" this.setActivePerson}} role="button">
     {{@person.name}}
   </h4>

@@ -1,0 +1,13 @@
+<article class="w-full flex flex-row h-full flex-grow overflow-hidden">
+<h1 class="sr-only">Rose Hall Project</h1>
+<h2 class="sr-only">Community Tree</h2>
+
+<CommunityTreeContainer @people={{this.people}} />
+
+<section id="information" class="bg-green-100 md:w-1/4 overflow-auto">
+  <PersonsList @people={{this.people}}>
+  {{yield}}
+  </PersonsList>
+</section>
+
+</article>
