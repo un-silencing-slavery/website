@@ -1,5 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import { interpolateWarm } from "d3-scale-chromatic";
 
 export default class SvgService extends Service {
   @tracked width = 200;
@@ -15,6 +16,10 @@ export default class SvgService extends Service {
 
   get ageScaleBarWidth() {
     return 0.8 * this.width;
+  }
+
+  gradient(value) {
+    return interpolateWarm(-(value - 1));
   }
 
   get circleRadius() {

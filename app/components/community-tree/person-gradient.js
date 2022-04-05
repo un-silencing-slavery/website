@@ -1,9 +1,11 @@
 import Component from "@glimmer/component";
 import { htmlSafe } from "@ember/template";
 import { scaleLinear } from "d3-scale";
-import { interpolateRdPu } from "d3-scale-chromatic";
+import { service } from "@ember/service";
 
 export default class CommunityTreePersonGradientComponent extends Component {
+  @service svg;
+
   // this should be passed in by the parent component.
   colorScale() {
     return scaleLinear().domain([0, 80]).range([0, 1]);
@@ -24,7 +26,7 @@ export default class CommunityTreePersonGradientComponent extends Component {
       return {
         offset: `${element}%`,
         style: htmlSafe(`stop-opacity: 1; 
-        stop-color: ${interpolateRdPu(
+        stop-color: ${this.svg.gradient(
           this.colorScale()(stopScale(element))
         )};`),
       };

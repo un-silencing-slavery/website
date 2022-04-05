@@ -30,13 +30,13 @@
          style="stop-color:rgb(255,255,255); stop-opacity:1" />
       </radialGradient>
       <CommunityTree::AgeScaleBarGradient />
-      {{#each @people as |person|}}
+      {{#each this.data.people as |person|}}
         <CommunityTree::PersonGradient @person={{person}} />
       {{/each}}
     </defs>
     <g 
       transform="translate({{add this.svg.margins.left this.svg.circleRadius}},{{add this.svg.margins.top this.svg.circleRadius}})">
-      {{#each @people as |person i|}}
+      {{#each this.data.people as |person i|}}
       <CommunityTree::Person 
         @person={{person}}
         @i={{i}} 

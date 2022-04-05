@@ -15,6 +15,4 @@ export default class DataService extends Service {
   sortByName(data = this.people) {
     this.people = data.sort((a, b) => a.name.localeCompare(b.name));
   }
-
-  sortByAge(data = this.people;
 }
