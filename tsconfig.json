@@ -22,8 +22,8 @@
     "experimentalDecorators": true,
     "typeRoots": ["types/*"],
     "paths": {
-      "antirubbersheeter/tests/*": ["tests/*"],
-      "antirubbersheeter/*": ["app/*"],
+      "rose-hall/tests/*": ["tests/*"],
+      "rose-hall/*": ["app/*"],
       "*": ["types/*"]
     }
   },

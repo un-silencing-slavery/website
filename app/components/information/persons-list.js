@@ -26,9 +26,9 @@ export default class InformationPersonsListComponent extends Component {
   }
 
   get personData() {
-    const people = this.data.people;
+    const people = this.data.sortedData();
     if (this.activePerson.personId) {
-      const personIdsArray = this.data.people.mapBy("personId");
+      const personIdsArray = this.data.sortedData().mapBy("personId");
       const data = [];
       const activeIndex = personIdsArray.indexOf(this.activePerson.personId);
       data.push(people[activeIndex]);

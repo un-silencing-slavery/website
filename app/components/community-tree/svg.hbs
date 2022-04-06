@@ -37,7 +37,7 @@
     <g 
       id="community-tree-circle"
       transform="translate({{div this.svg.width 2}},{{add this.svg.margins.top this.svg.circleRadius}})">
-      {{#each this.data.people as |person i|}}
+      {{#each this.data.sortedData as |person i|}}
       <CommunityTree::Person 
         @person={{person}}
         @i={{i}} 
