@@ -2,12 +2,6 @@ import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import people from "rose-hall/data/people";
 
-type PersonId = string | null;
-interface Family {
-  mother: PersonId;
-  children: (PersonId | Family)[];
-}
-
 export default class DataService extends Service {
   @tracked people = people as Person[];
 
@@ -52,9 +46,33 @@ export default class DataService extends Service {
   }
 
   sortByFamily() {
+    const moveItem = (fromIndex: number, toIndex: number) => {
+      const element = this.people[fromIndex];
+      this.people.splice(fromIndex, 1);
+      this.people.splice(toIndex, 0, element);
+    };
+
     this.people.sort((a, b) =>
       (a.motherId || "unknown").localeCompare(b.motherId || "unknown")
     );
+
+    let index = this.people.length - 1;
+    while (index >= 0) {
+      const person = this.people[index];
+      const children = this.people.filter(
+        (child) => child.motherId === person.personId
+      );
+      if (children.length > 0) {
+        const firstChildIndex = this.people.indexOf(children[0]);
+        if (index !== firstChildIndex - 1) {
+          moveItem(index, firstChildIndex);
+        } else {
+          index -= 1;
+        }
+      } else {
+        index -= 1;
+      }
+    }
   }
 }
 
