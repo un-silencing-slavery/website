@@ -1,4 +1,4 @@
-type SortKey = "name" | "age" | "gender" | "race" | "family";
+type SortKey = "name" | "age" | "gender" | "race" | "family" | "origin";
 
 interface Person {
   personId: string;

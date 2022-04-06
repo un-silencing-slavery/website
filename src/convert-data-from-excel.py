@@ -60,6 +60,6 @@ df.drop([i for i in range(208,221)], inplace=True)
 json_string = df.to_json(orient="records")
 
 output = "export default " + json_string + ";"
-f = open("app/data.sortedData().js", "w")
+f = open("app/data/people.js", "w")
 f.write(output)
 f.close()
