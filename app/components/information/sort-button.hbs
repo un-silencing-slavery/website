@@ -1,0 +1,9 @@
+<button {{on "click" this.sort}}
+  class="border rounded-sm px-2
+    {{if this.isActive
+    "shadow-inner border-green-800 bg-green-800 text-slate-50"
+    "border-green-900 bg-green-200 hover:bg-green-800 hover:text-slate-50"
+    }}"
+  type="button">
+  {{yield}}
+</button>
