@@ -4,15 +4,18 @@ pb-0.5
 rounded-sm
 px-2
 hover:underline
-font-bold
 truncate
-{{if this.active "bg-green-200 shadow-inner" "hover:bg-green-200 bg-green-100"}}
+{{if this.active "italic bg-green-200 shadow-inner" "hover:bg-green-200 bg-green-100"}}
   "
   data-person-id={{@person.personId}}
 >
   <LinkTo @route="index.person" @model={{@person.personId}}>
     <p
+      class="{{if this.familyIndent this.familyIndent.class}} {{if (and this.familyIndent this.isMother) "italic" ""}}"
       {{on "click" this.setActivePerson}} role="button">
+      {{#if this.familyIndent}}
+        <span class="not-italic">{{this.familyIndent.text}}</span>
+      {{/if}}
       {{@person.name}}
     </p>
   </LinkTo>
