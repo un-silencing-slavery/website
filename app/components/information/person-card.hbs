@@ -1,14 +1,36 @@
 <div
- class="w-full bg-slate-50 shadow-md my-3 px-3 py-4">
+ class="w-full bg-slate-50 shadow-md px-3 py-4
+   leading-tight">
   <h2 class="text-3xl pb-4">
     {{this.person.name}}
   </h2>
   {{#let (if (eq this.person.gender "Male") "He" "She") as |pronoun|}}
-      <p>
-        {{this.person.name}} was born in or around {{this.person.birthYear}}.
-        {{pronoun}} left Rose Hall in {{this.person.exitYear}}. {{pronoun}}
-        was classified as “{{this.person.color}}” in color and
-        “{{this.person.country}}” in origin.
+      <p class="pb-3">
+
+        {{if this.birthYear 
+          (concat this.person.name " was born in or around " this.birthYear)
+          (concat "We do not know when " this.person.name " was born")
+        }}.
+        {{if this.exitYear
+          (concat pronoun " left Rose Hall in " this.exitYear)
+          (concat "We do not know when " this.person.name " left Rose Hall")
+        }}.
+        {{if this.color
+          (concat pronoun " was classified as “" this.color "” in colour")
+          (concat "We do not know how " this.person.name " was classified in colour")
+        }}.
+        {{if this.origin
+          (concat pronoun " was classified as “" this.origin "” in origin")
+          (concat "We do not know how " this.person.name " was classified in origin")
+        }}.
       </p>
-  {{/let}}
+      <p>
+        {{this.person.name}}’s mother {{if this.mother
+          (concat "was " this.mother)
+          "is unknown"
+          }}. {{if this.children
+          (concat "She had " this.childrenNumber this.children)
+          (concat pronoun " had no children recorded")}}.
+      </p>
+   {{/let}}
 </div>
