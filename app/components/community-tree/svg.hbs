@@ -36,7 +36,7 @@
     </defs>
     <g 
       id="community-tree-circle"
-      transform="translate({{div this.svg.width 2}},{{add this.svg.margins.top this.svg.circleRadius}})">
+      transform={{this.svg.circleTransform}}>
       {{#each this.data.sortedData as |person i|}}
       <CommunityTree::Person 
         @person={{person}}
@@ -66,7 +66,7 @@
           />
       </g>
     </g>
-    <g transform="translate({{mult this.svg.width 0.1}},{{sub this.svg.height 100}})">
-        <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}} @width={{this.svg.ageScaleBarWidth}}/>
-    </g>
+    <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}} @width={{this.svg.ageScaleBarWidth}}/>
+    <rect x={{this.svg.margins.left}} width={{sub this.svg.width this.svg.margins.left this.svg.margins.right}} 
+      y={{this.svg.margins.top}} height={{sub this.svg.height this.svg.margins.top this.svg.margins.bottom}} fill="none" stroke="none" />
   </svg>

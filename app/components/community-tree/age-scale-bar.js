@@ -5,8 +5,6 @@ import { service } from "@ember/service";
 export default class CommunityTreeAgeScaleBarComponent extends Component {
   @service svg;
 
-  tickLength = 10;
-
   get barLong() {
     if (this.svg.isLandscape) {
       return 0.6 * this.svg.height;
@@ -15,39 +13,64 @@ export default class CommunityTreeAgeScaleBarComponent extends Component {
     return 0.8 * this.svg.width;
   }
 
-  barShort = 20;
+  get barShort() {
+    return 1 * this.svg.rem;
+  }
 
-  tickOffset = 4;
+  get tickOffset() {
+    return this.svg.rem / 4;
+  }
+
+  get tickLength() {
+    return 0.5 * this.svg.rem;
+  }
 
   get settings() {
-    console.log("is landscape", this.svg.isLandscape);
     const settings = {
       width: this.barLong,
       height: this.barShort,
       textAnchor: "middle",
-      transform: `translate(${0.1 * this.svg.width}, ${this.svg.height - 100})`,
+      transform: `translate(${0.1 * this.svg.width}, ${
+        this.svg.height - 5 * this.svg.rem
+      })`,
       axisTransform: `translate(0, ${this.barShort})`,
       axisX1: 0,
       axisX2: this.barLong,
       axisY1: this.tickOffset,
       axisY2: this.tickOffset,
+      textTitleTransform: `translate(${this.barLong / 2}, ${
+        2.75 * this.svg.rem
+      })`,
+      tickX1: 0,
+      tickX2: 0,
+      tickY1: this.tickOffset,
+      tickY2: this.tickLength + this.tickOffset,
+      tickTextTransform: `translate(0, ${1.5 * this.svg.rem})`,
     };
 
     if (this.svg.isLandscape) {
       settings.width = this.barShort;
       settings.height = this.barLong;
-      settings.transform = `translate(${this.svg.width - 100}, ${
+      settings.transform = `translate(${this.svg.width - 5 * this.svg.rem}, ${
         0.2 * this.svg.height
       })`;
       settings.textAnchor = "left";
+      settings.textTitleTransform = `translate(${
+        2 * this.tickOffset + this.tickLength
+      }, -${this.svg.rem})`;
       settings.axisTransform = `translate(${this.barShort}, 0)`;
       settings.axisX1 = this.tickOffset;
       settings.axisX2 = this.tickOffset;
       settings.axisY1 = 0;
-      settings.axisY1 = this.barLong;
+      settings.axisY2 = this.barLong;
+      settings.tickX1 = this.tickOffset;
+      settings.tickX2 = this.tickOffset + this.tickLength;
+      settings.tickY1 = 0;
+      settings.tickY2 = 0;
+      settings.tickTextTransform = `translate(${
+        2 * this.tickOffset + this.tickLength
+      }, ${0.35 * this.svg.rem})`;
     }
-
-    console.log(settings);
 
     return settings;
   }

@@ -7,26 +7,55 @@ export default class SvgService extends Service {
 
   @tracked height = 200;
 
-  get isLandscape() {
-    return this.width - this.height;
+  get rem() {
+    return parseFloat(
+      window
+        .getComputedStyle(document.documentElement)
+        .fontSize.replace("px", ""),
+      10
+    );
   }
 
-  margins = {
-    top: this.height / 10,
-    left: this.width / 10,
-    bottom: this.height / 10,
-    right: this.width / 10,
-  };
+  get isLandscape() {
+    return this.width > this.height;
+  }
+
+  get margins() {
+    const base = 1 * this.rem;
+    const margins = {
+      top: base,
+      left: base,
+      bottom: base + 3 * this.rem,
+      right: base,
+    };
+
+    if (this.isLandscape) {
+      margins.bottom = base;
+      margins.right = base + 3 * this.rem;
+    }
+
+    return margins;
+  }
 
   gradient(value) {
     return interpolateWarm(-(value - 1));
   }
 
+  get circleTransform() {
+    return `translate(${
+      (this.width - this.margins.right - this.margins.left) / 2 +
+      this.margins.left
+    }, ${
+      (this.height - this.margins.top - this.margins.bottom) / 2 +
+      this.margins.top
+    })`;
+  }
+
   get circleRadius() {
-    if (this.height > this.width) {
-      return 0.5 * (this.width - this.margins.left - this.margins.right);
+    if (this.isLandscape) {
+      return (this.height - this.margins.top - this.margins.bottom) / 2;
     }
 
-    return 0.375 * (this.height - this.margins.top - this.margins.bottom);
+    return (this.width - this.margins.right - this.margins.left) / 2;
   }
 }
