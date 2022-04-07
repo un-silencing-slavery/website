@@ -10,6 +10,10 @@ export default class CommunityTreeSvgComponent extends Component {
 
   @service activePerson;
 
+  get circleTransform() {
+    return `translate(${this.svg.width / 2}, ${this.svg.height / 2})`;
+  }
+
   personIdsArray = this.data.people.mapBy("id");
 
   dataLength = this.data.people.length;
