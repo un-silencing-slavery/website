@@ -26,13 +26,13 @@ export default class InformationPersonsListItemComponent extends Component {
       const mother = this.data.people.filter(
         (person) => person.personId === this.args.person.motherId
       )[0];
-      indent.text = "└ ";
-      indent.class = "pl-1";
+      indent.text = "└";
+      indent.class = "pl-2";
       if (mother.motherId) {
         const grandmothers = this.data.people.filter(
           (person) => person.personId === mother.motherId
         );
-        indent.class = "pl-3";
+        indent.class = "pl-4";
 
         if (grandmothers.length > 0) {
           const grandmother = grandmothers[0];
@@ -40,7 +40,7 @@ export default class InformationPersonsListItemComponent extends Component {
             (person) => person.personId === grandmother.motherId
           );
           if (greatgrandmothers.length > 0) {
-            indent.class = "pl-5";
+            indent.class = "pl-6";
           }
         }
       }

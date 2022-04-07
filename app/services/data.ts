@@ -46,88 +46,39 @@ export default class DataService extends Service {
   }
 
   sortByFamily() {
+    const movePerson = (fromIndex: number, toIndex: number) => {
+      const element = this.people[fromIndex];
+      this.people.splice(fromIndex, 1);
+      this.people.splice(toIndex, 0, element);
+    };
+
     this.people.sort((a, b) => {
-      if (a.personId === b.motherId) {
-        return -1;
-      } else if (b.personId === a.motherId) {
-        return 1;
+      // Matriarchs to the front.
+      if (a.motherId === null && b.motherId === null) {
+        return (
+          this.people.filter((person) => person.motherId === b.personId)
+            .length -
+          this.people.filter((person) => person.motherId === a.personId).length
+        );
       }
 
-      return 0;
+      return (a.motherId || "").localeCompare(b.motherId || "");
     });
 
-    // const moveItem = (fromIndex: number, toIndex: number) => {
-    //   const element = this.people[fromIndex];
-    //   this.people.splice(fromIndex, 1);
-    //   this.people.splice(toIndex, 0, element);
-    // };
-
-    /*
-    const generationsOfDescendents = (person: Person) => {
-      let generations = 0;
-      let descendants = 0;
+    for (let i = 0; i < this.people.length; i += 1) {
+      const person = this.people[i];
       const children = this.people.filter(
         (child) => child.motherId === person.personId
       );
+      console.log(
+        `Working ${person.name} (${i}), who has ${children.length} kids.`
+      );
       if (children.length > 0) {
-        generations += 1;
-        descendants += children.length;
-        const grandchildren = this.people.filter(
-          (grandchild) =>
-            grandchild.motherId &&
-            children
-              .map((child) => child.personId)
-              .includes(grandchild.motherId)
-        );
-        if (grandchildren.length > 0) {
-          generations += 1;
-          descendants += grandchildren.length;
-          const greatgrandchildren = this.people.filter(
-            (greatgrandchild) =>
-              greatgrandchild.motherId &&
-              grandchildren
-                .map((grandchild) => grandchild.personId)
-                .includes(greatgrandchild.motherId)
-          );
-          if (greatgrandchildren.length > 0) {
-            generations += 1;
-            descendants += greatgrandchildren.length;
-          }
+        for (const child of children) {
+          movePerson(this.people.indexOf(child), i + 1);
         }
       }
-  
-      return { generations, descendants };
-    };
-  
-    this.people.sort((a, b) => {
-      const aFamily = generationsOfDescendents(a);
-      const bFamily = generationsOfDescendents(b);
-  
-      if (aFamily.generations === bFamily.generations) {
-        return bFamily.descendants - aFamily.descendants;
-      }
-  
-      return bFamily.generations - aFamily.generations;
-    });
-    */
-
-    // let index = this.people.length - 1;
-    // while (index >= 0) {
-    //   const person = this.people[index];
-    //   const children = this.people.filter(
-    //     (child) => child.motherId === person.personId
-    //   );
-    //   if (children.length > 0) {
-    //     const firstChildIndex = this.people.indexOf(children[0]);
-    //     if (index !== firstChildIndex - 1) {
-    //       moveItem(index, firstChildIndex);
-    //     } else {
-    //       index -= 1;
-    //     }
-    //   } else {
-    //     index -= 1;
-    //   }
-    // }
+    }
   }
 }
 
