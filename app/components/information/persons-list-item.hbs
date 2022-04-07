@@ -11,7 +11,10 @@ truncate
 >
   <LinkTo @route="index.person" @model={{@person.personId}}>
     <p
-      class="{{if this.familyIndent this.familyIndent.class}} {{if (and this.familyIndent this.isMother) "italic" ""}}"
+      class="truncate
+        {{if this.familyIndent this.familyIndent.class}} 
+        {{if (and this.familyIndent this.isMother) "italic" ""}}
+      "
       {{on "click" this.setActivePerson}} role="button">
       {{#if this.familyIndent}}
         <span class="not-italic">{{this.familyIndent.text}}</span>
