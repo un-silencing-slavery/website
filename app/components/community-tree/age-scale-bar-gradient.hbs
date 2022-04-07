@@ -2,8 +2,8 @@
    id="age-scale-bar-gradient"
    x1="0%"
    y1="0%"
-   x2="100%"
-   y2="0%"
+   x2={{if this.svg.isLandscape "0%" "100%"}}
+   y2={{if this.svg.isLandscape "100%" "0%"}}
   >
   {{#each this.stops as |thisStop|}}
     <stop offset={{thisStop.offset}}

@@ -39,3 +39,7 @@ g.person-petal > .highlighter.active {
 text {
   fill: #334155;
 }
+
+line {
+  stroke: #334155;
+}

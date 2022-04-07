@@ -3,9 +3,13 @@ import { tracked } from "@glimmer/tracking";
 import { interpolateWarm } from "d3-scale-chromatic";
 
 export default class SvgService extends Service {
-  @tracked width = 200;
+  @tracked width = 201;
 
   @tracked height = 200;
+
+  get isLandscape() {
+    return this.width - this.height;
+  }
 
   margins = {
     top: this.height / 10,
@@ -13,10 +17,6 @@ export default class SvgService extends Service {
     bottom: this.height / 10,
     right: this.width / 10,
   };
-
-  get ageScaleBarWidth() {
-    return 0.8 * this.width;
-  }
 
   gradient(value) {
     return interpolateWarm(-(value - 1));
