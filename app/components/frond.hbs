@@ -1,0 +1,10 @@
+<g class="frond" ...attributes>
+  <path class="frond-stem" d={{this.path}} stroke="black"
+    {{did-insert this.setStem}}
+    {{did-update this.setStem}}
+    />
+    {{#each this.dots as |dot|}}
+      <circle r="5" cx={{dot.x}} cy={{dot.y}} />
+    {{/each}}
+</g>
+
