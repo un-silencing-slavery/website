@@ -39,11 +39,11 @@ export default class SvgService extends Service {
   }
 
   gradient(value) {
-    interpolateWarm(-(value - 1));
-    const colorScale = scaleLinear()
-      .domain([0, 0.4, 0.8, 1])
-      .range(["#009b3a", "#FED100", "#cc0000", "#000000"]);
-    return colorScale(value);
+    return interpolateWarm(-(value - 1));
+    // const colorScale = scaleLinear()
+    //   .domain([0, 0.4, 0.8, 1])
+    //   .range(["#009b3a", "#FED100", "#cc0000", "#000000"]);
+    // return colorScale(value);
   }
 
   get circleTransform() {

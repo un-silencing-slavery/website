@@ -31,7 +31,7 @@ export default class CommunityTreePersonGradientComponent extends Component<Comm
       return offsets.map((element) => {
         return {
           offset: `${element}%`,
-          style: htmlSafe(`stop-opacity: 1; 
+          style: htmlSafe(`stop-opacity: ${1 - Math.random() / 2.5}; 
         stop-color: ${this.svg.gradient(
           this.colorScale()(stopScale(element))
         )};`),
