@@ -14,19 +14,19 @@ export default class BuildStemModifier extends Modifier {
     const d = path();
     const curve = curveBasis(d);
     const line = [[0.1 * this.svg.width, 0.5 * this.svg.height]];
-    const numberOfControls = randomInt(3, 5)();
-    for (let i = 1; i < numberOfControls; i += 1) {
+    const numberOfControls = randomInt(4, 6)();
+    for (let i = 2; i < numberOfControls; i += 1) {
       const xFactor = (i / numberOfControls) * 0.6 * this.svg.width;
       const xJitter = randomNormal()() * 0.05 * this.svg.width;
       const x = xFactor + 0.1 * this.svg.width + xJitter;
-      const yFactor = randomNormal(0, 0.125)();
+      const yFactor = randomNormal(0, 0.04)();
       let y = (0.5 - yFactor) * this.svg.height;
       if (i % 2 === 1) {
         y = (0.5 + yFactor) * this.svg.height;
       }
       line.push([x, y]);
     }
-    line.push([0.9 * this.svg.width, 0.5 * this.svg.height]);
+    line.push([0.8 * this.svg.width, 0.5 * this.svg.height]);
     curve.lineStart();
     for (const [x, y] of line) curve.point(x, y);
     curve.lineEnd();
