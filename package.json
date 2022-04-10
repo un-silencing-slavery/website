@@ -82,6 +82,7 @@
     "ember-keyboard": "^8.0.0",
     "ember-load-initializers": "^2.1.2",
     "ember-math-helpers": "^2.18.1",
+    "ember-modifier": "^3.2.7",
     "ember-on-resize-modifier": "^1.0.0",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^5.1.5",
