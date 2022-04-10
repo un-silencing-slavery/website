@@ -32,65 +32,61 @@
         </feMerge>
       </filter>
 
-      <radialGradient id="community-tree-inner-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <radialGradient id="community-tree-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
         <stop 
           offset="{{mult 0.9 this.gradient1817}}%" 
-          style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
+          style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
         <stop 
         offset="{{this.gradient1817}}%"
           style="stop-color:rgb(248, 250, 252); stop-opacity:0.5" />
         <stop 
         offset="{{mult 1.09 this.gradient1817}}%" 
-         style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
-      </radialGradient>
-      <radialGradient id="community-tree-outer-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+         style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
         <stop 
           offset="{{mult 0.95 this.gradient1832}}%" 
-          style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
+          style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
         <stop 
         offset="{{this.gradient1832}}%"
           style="stop-color:rgb(248, 250, 252); stop-opacity:0.5" />
         <stop 
         offset="{{mult 1.04 this.gradient1832}}%" 
-         style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
+         style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
       </radialGradient>
+      <mask id="gradient-mask">
+        <rect 
+          x="-{{this.svg.circleRadius}}"
+          y="-{{this.svg.circleRadius}}"
+          width={{mult 2 this.svg.circleRadius}} 
+          height={{mult 2 this.svg.circleRadius}} 
+          fill="url(#community-tree-gradient)" 
+          />
+      </mask>
       <CommunityTree::AgeScaleBarGradient />
       {{#each this.data.people as |person|}}
         <CommunityTree::PersonGradient @person={{person}} />
       {{/each}}
     </defs>
-    <Frond />
+    <CommunityTree::Background />
     <g 
+      mask="url(#gradient-mask)"
       id="community-tree-circle"
       transform={{this.svg.circleTransform}}>
-      {{#each this.data.sortedData as |person i|}}
-      <CommunityTree::Person 
-        @person={{person}}
-        @i={{i}} 
-        @dataLength={{this.dataLength}}
-        @yearScale={{this.yearScale}}
-        @colorScale={{this.colorScale}}
-        @minYear={{this.minYear}}
-      />
-      {{/each}}
-      <ellipse cx="0" cy="0" 
-        class="pointer-events-none"
-        rx={{this.svg.circleRadius}} 
-        ry={{this.svg.circleRadius}} 
-        fill="url(#community-tree-inner-gradient)" 
-      />
-      <ellipse cx="0" cy="0" 
-        class="pointer-events-none"
-        rx={{this.svg.circleRadius}} 
-        ry={{this.svg.circleRadius}} 
-        fill="url(#community-tree-outer-gradient)" 
-      />
-      <g>
-        <CommunityTree::YearScale
-          @yearScale={{this.yearScale}} 
-          @width={{this.svg.circleRadius}}
+        {{#each this.data.sortedData as |person i|}}
+          <CommunityTree::Person 
+            @person={{person}}
+            @i={{i}} 
+            @dataLength={{this.dataLength}}
+            @yearScale={{this.yearScale}}
+            @colorScale={{this.colorScale}}
+            @minYear={{this.minYear}}
           />
-      </g>
+        {{/each}}
+    </g>
+    <g transform={{this.svg.circleTransform}} >
+      <CommunityTree::YearScale
+        @yearScale={{this.yearScale}} 
+        @width={{this.svg.circleRadius}}
+        />
     </g>
     <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}} @width={{this.svg.ageScaleBarWidth}}/>
     <rect x={{this.svg.margins.left}} width={{sub this.svg.width this.svg.margins.left this.svg.margins.right}} 

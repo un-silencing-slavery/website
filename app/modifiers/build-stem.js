@@ -11,22 +11,22 @@ export default class BuildStemModifier extends Modifier {
   }
 
   path() {
+    const stemHeight = 0.7 * this.svg.height;
     const d = path();
     const curve = curveBasis(d);
-    const line = [[0.1 * this.svg.width, 0.5 * this.svg.height]];
+    const line = [[0, 0]];
     const numberOfControls = randomInt(4, 6)();
-    for (let i = 2; i < numberOfControls; i += 1) {
-      const xFactor = (i / numberOfControls) * 0.6 * this.svg.width;
-      const xJitter = randomNormal()() * 0.05 * this.svg.width;
-      const x = xFactor + 0.1 * this.svg.width + xJitter;
-      const yFactor = randomNormal(0, 0.04)();
-      let y = (0.5 - yFactor) * this.svg.height;
+    for (let i = 1; i < numberOfControls; i += 1) {
+      let x = randomNormal(0.12, 0.04)() * stemHeight;
+      const y =
+        -(i / numberOfControls) * stemHeight +
+        randomNormal(0, 0.02)() * stemHeight;
       if (i % 2 === 1) {
-        y = (0.5 + yFactor) * this.svg.height;
+        x = -x;
       }
       line.push([x, y]);
     }
-    line.push([0.8 * this.svg.width, 0.5 * this.svg.height]);
+    line.push([0, -stemHeight]);
     curve.lineStart();
     for (const [x, y] of line) curve.point(x, y);
     curve.lineEnd();

@@ -8,7 +8,8 @@ import {
   curveCatmullRom,
   curveCatmullRomClosed,
   randomNormal,
-  randomInt,
+  interpolateYlGn,
+  hsl,
 } from "d3";
 
 export default class FrondComponent extends Component {
@@ -19,9 +20,25 @@ export default class FrondComponent extends Component {
   @tracked declare leafs: { d: any; stemD: any; transform: string }[];
 
   @action setStemAndLeaves(stem: SVGPathElement) {
-    console.log("insetstem");
     this.stem = stem;
     this.leafs = this.buildLeaves();
+  }
+
+  get color() {
+    // const green = "#BAD4c0";
+    // const green = "#BDD6C9";
+    const green = hsl(interpolateYlGn(randomNormal(0.5, 0.3)()));
+    green.s -= 0.25;
+    return green.brighter(randomNormal(1.15, 0.04)()).formatHex();
+    // return green.formatHex();
+  }
+
+  get transform() {
+    const scaleFactor = randomNormal(2.5, 0.5)();
+    return `translate(${randomNormal(0.5, 0.28)() * this.svg.width}, ${
+      scaleFactor * 0.75 * this.svg.height
+    })
+      scale(${scaleFactor})`;
   }
 
   pointAtLength(segmentPct: number) {
@@ -29,7 +46,6 @@ export default class FrondComponent extends Component {
   }
 
   buildLeaves() {
-    console.log("in buildleaves");
     const leafStems = Math.floor(randomNormal(8, 1)());
     const leafs = [];
     for (let i = 2; i <= leafStems; i += 1) {
@@ -38,11 +54,11 @@ export default class FrondComponent extends Component {
         const segmentPct = i / (leafStems + 1);
         const { stemD, end, start } = this.buildLeafStem(segmentPct, even);
         const d = this.buildLeaf(end);
-        const stemAngle = randomNormal(30, 2)();
+        const stemAngle = 20; //randomNormal(10, 2)();
         let rotation = this.tangentTransform(i / (leafStems + 1)) + stemAngle;
-        if (even) rotation = rotation + 180 - 2 * stemAngle;
-        let leafRotation = 20;
-        if (even) leafRotation = -20;
+        if (even) rotation = rotation - 2 * stemAngle;
+        let leafRotation = stemAngle + 10;
+        if (even) leafRotation = 90 + leafRotation * 2;
         leafs.push({
           d,
           stemD,
@@ -61,24 +77,30 @@ export default class FrondComponent extends Component {
       })`,
     });
 
-    console.log(leafs);
     return leafs;
   }
 
   buildLeafStem(segmentPct: number, even: boolean) {
-    const stemLength = randomNormal(20, 3)();
+    const stemLength = randomNormal(0.035 * this.svg.height, 0.007)();
     const stemD = path();
     const curve = curveCatmullRom(stemD);
     const start = this.pointAtLength(segmentPct);
-    const end: [number, number] = [start.x, start.y - stemLength];
+    const end: [number, number] = [start.x - stemLength, start.y];
+    if (even) end[0] = start.x + stemLength;
     curve.lineStart();
     curve.point(start.x, start.y);
     if (even) {
-      curve.point(start.x + 0.15 * stemLength, start.y - stemLength / 2);
+      curve.point(
+        start.x + randomNormal(0.5, 0.1)() * stemLength,
+        start.y + randomNormal(0.12, 0.03)() * stemLength
+      );
     } else {
-      curve.point(start.x - 0.15 * stemLength, start.y - stemLength / 2);
+      curve.point(
+        start.x - randomNormal(0.5, 0.1)() * stemLength,
+        start.y + randomNormal(0.12, 0.03)() * stemLength
+      );
     }
-    curve.point(end[0], end[1]);
+    curve.point(1.2 * end[0], end[1]);
     curve.lineEnd();
     return { stemD, end, start };
   }
@@ -87,27 +109,27 @@ export default class FrondComponent extends Component {
     const d = path();
     const curve = curveCatmullRomClosed(d);
     const line = [[x, y]];
-    const height = randomNormal(0.22, 0.015)() * this.svg.height;
+    const height = randomNormal(0.18, 0.015)() * this.svg.height;
     const widthFactor = 0.15;
     const bulgePoint = 0.25;
     const tipFactor = 0.03;
     const tipPoint = 0.88;
     line.push([
-      x - randomNormal(widthFactor, 0.02)() * height,
-      y - randomNormal(bulgePoint, 0.05)() * height,
+      x - randomNormal(bulgePoint, 0.05)() * height,
+      y + randomNormal(widthFactor, 0.02)() * height,
     ]);
     line.push([
-      x - randomNormal(tipFactor, 0.01)() * height,
-      y - randomNormal(tipPoint, 0.04)() * height,
+      x - randomNormal(tipPoint, 0.04)() * height,
+      y + randomNormal(tipFactor, 0.01)() * height,
     ]);
-    line.push([x, y - height]);
+    line.push([x - height, y]);
     line.push([
-      x + randomNormal(tipFactor, 0.01)() * height,
-      y - randomNormal(tipPoint, 0.04)() * height,
+      x - randomNormal(tipPoint, 0.04)() * height,
+      y - randomNormal(tipFactor, 0.01)() * height,
     ]);
     line.push([
-      x + randomNormal(widthFactor, 0.02)() * height,
-      y - randomNormal(bulgePoint, 0.05)() * height,
+      x - randomNormal(bulgePoint, 0.05)() * height,
+      y - randomNormal(widthFactor, 0.02)() * height,
     ]);
     curve.lineStart();
     for (const [n, m] of line) curve.point(n, m);
@@ -115,14 +137,12 @@ export default class FrondComponent extends Component {
     return d;
   }
 
-  get color() {
-    return "#BAD4C0";
-  }
-
   tangentTransform(segmentPct: number) {
     const pointA = this.pointAtLength(segmentPct);
     const pointB = this.pointAtLength(1.001 * segmentPct);
     const slope = (pointB.y - pointA.y) / (pointB.x - pointA.x);
-    return (Math.atan(slope) * 180) / Math.PI;
+    let theta = (Math.atan(slope) * 180) / Math.PI + 90;
+    if (theta > 90) return theta - 180;
+    return theta;
   }
 }
