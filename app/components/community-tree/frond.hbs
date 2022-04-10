@@ -1,23 +1,21 @@
-{{#let this.color as |color|}}
-  <g class="frond" opacity="0.8">
-    <path class="frond-stem" stroke={{color}}
-      stroke-width=".5rem"
-      fill="none" {{build-stem this.setStemAndLeaves}}
-      />
-    <text transform="translate(150, 150)">{{this.svg.width}} ||</text>
-    {{#each this.leafs as |leaf|}}
-      <g class="frond-leaf" transform={{leaf.transform}}>
-        <path class="frond-leaf-stem" stroke={{color}}
-        stroke-width=".25rem"
-        fill="none" d={{leaf.stemD}} />
-        <path class="frond-leaf" d={{leaf.d}} 
-        transform={{leaf.leafRotation}}
-        fill={{color}}
-        stroke="none"/>
-      </g>
-    {{/each}}
-  </g>
-{{/let}}
+<g class="frond" opacity="0.8"
+  transform={{this.transform}}>
+  <path class="frond-stem" stroke={{this.color}}
+    stroke-width=".75rem"
+    fill="none" {{build-stem this.setStemAndLeaves}}
+    />
+  {{#each this.leafs as |leaf|}}
+    <g class="frond-leaf" transform={{leaf.transform}}>
+      <path class="frond-leaf-stem" stroke={{this.color}}
+      stroke-width=".4rem"
+      fill="none" d={{leaf.stemD}} />
+      <path class="frond-leaf" d={{leaf.d}} 
+      transform={{leaf.leafRotation}}
+      stroke="none"
+      fill={{this.color}}/>
+    </g>
+  {{/each}}
+</g>
 
 
 

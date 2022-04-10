@@ -39,11 +39,22 @@ export default class SvgService extends Service {
   }
 
   gradient(value) {
-    return interpolateWarm(-(value - 1));
+    return interpolateWarm(-0.8 * (value - 1));
     // const colorScale = scaleLinear()
     //   .domain([0, 0.4, 0.8, 1])
     //   .range(["#009b3a", "#FED100", "#cc0000", "#000000"]);
     // return colorScale(value);
+  }
+
+  get circleCenter() {
+    return {
+      x:
+        (this.width - this.margins.right - this.margins.left) / 2 +
+        this.margins.left,
+      y:
+        (this.height - this.margins.top - this.margins.bottom) / 2 +
+        this.margins.top,
+    };
   }
 
   get circleTransform() {

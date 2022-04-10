@@ -3,7 +3,6 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { randomNormal } from "d3-random";
-import { interpolateCool } from "d3-scale-chromatic";
 import { line, curveBundle } from "d3";
 import { inject as service } from "@ember/service";
 
@@ -239,21 +238,6 @@ export default class CommunityTreePersonComponent extends Component {
 
   get gradientUrl() {
     return `url(#${this.args.person.personId}-gradient)`;
-  }
-
-  get color() {
-    /* Potential color schemes:
-     *
-     * Do we even need to color by these values? Are they important
-     * to us? Why?
-     *
-     * Age.
-     * Gender (2 val)
-     * Origin (4 val)
-     * Color (4 val)
-     *
-     */
-    return interpolateCool(Math.random());
   }
 
   get scaledArrivalYear() {
