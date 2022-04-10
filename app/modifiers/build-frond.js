@@ -5,6 +5,14 @@ import { path, curveBasis, randomNormal, randomInt } from "d3";
 export default class BuildFrondModifier extends Modifier {
   @service svg;
 
+  modify(element, positional) {
+    const width = this.svg.width;
+    let [stem, leaves] = positional;
+    const path = element.firstElementChild;
+    path.setAttribute("d", this.path(width));
+    stem = path;
+  }
+
   path(width) {
     const d = path();
     const curve = curveBasis(d);
@@ -31,23 +39,4 @@ export default class BuildFrondModifier extends Modifier {
     curve.lineEnd();
     return d;
   }
-
-  modify(element, positional) {
-    const width = this.svg.width;
-    let [stem, leaves] = positional;
-    const path = element.firstElementChild;
-    path.setAttribute("d", this.path(width));
-    this.svg.frond = path;
-    // this.svg.frondLength = path.getTotalLength();
-    // this.svg.frondCalc = path.getPointAtLength;
-    leaves = [1, 2, 3].map((i) => ({
-      x: i * 0.25 * this.svg.width,
-      y: i * 0.25 * this.svg.height,
-    }));
-  }
-
-  // constructor(owner, args) {
-  //   super(owner, args);
-  //   registerDestructor(this, cleanup);
-  // }
 }
