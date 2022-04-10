@@ -1,13 +1,12 @@
-<g class="frond" {{build-frond this.stem this.leaves}}>
+<g class="frond">
   <path class="frond-stem" stroke="black"
-    fill="none"
+    fill="none" {{build-stem this.setStemAndLeaves}}
     />
-  <g id="frondpoints"/>
-  <g class="dots">
-    {{#each this.leaves as |dot|}}
-      <circle r="5" cx={{dot.x}} cy={{dot.y}} />
-    {{/each}}
-  </g>
-  <text transform="translate(150, 150)">{{this.svg.width}} || {{this.svg.frondLength}}</text>
+  <text transform="translate(150, 150)">{{this.svg.width}} ||</text>
+  {{#each this.leafs as |leaf|}}
+    <path class="frond-leaf" stroke="black" d={{leaf.d}} transform={{leaf.transform}} fill="none"/>
+  {{/each}}
 </g>
+
+
 
