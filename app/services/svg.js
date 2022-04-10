@@ -47,11 +47,13 @@ export default class SvgService extends Service {
   }
 
   get circleTransform() {
-    return `translate(${(this.width - this.margins.right - this.margins.left) / 2 +
+    return `translate(${
+      (this.width - this.margins.right - this.margins.left) / 2 +
       this.margins.left
-      }, ${(this.height - this.margins.top - this.margins.bottom) / 2 +
+    }, ${
+      (this.height - this.margins.top - this.margins.bottom) / 2 +
       this.margins.top
-      })`;
+    })`;
   }
 
   get circleRadius() {
