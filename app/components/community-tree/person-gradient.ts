@@ -18,12 +18,13 @@ export default class CommunityTreePersonGradientComponent extends Component<Comm
 
   get stops() {
     const birthYear = this.args.person.birthYear;
-    if (birthYear !== null) {
+    const exitYear = this.args.person.exitYear;
+    if (birthYear !== null && exitYear !== null) {
       let ageAtStart = 0;
       if (birthYear < 1817) {
         ageAtStart = 1817 - birthYear;
       }
-      const ageAtExit = this.args.person.exitYear - this.args.person.birthYear;
+      const ageAtExit = exitYear - birthYear;
       const stopScale = scaleLinear()
         .domain([0, 100])
         .range([ageAtStart, ageAtExit]);
@@ -41,17 +42,13 @@ export default class CommunityTreePersonGradientComponent extends Component<Comm
       return [
         {
           offset: "90%",
-          style: htmlSafe(`stop-opacity: 1;
-                          stop-color: #94a3b8;`),
+          style: htmlSafe(`stop-opacity: 1; stop-color: #94a3b8;`),
         },
         {
           offset: "100%",
-          style: htmlSafe(`stop-opacity: 1;
-                          stop-color: #475569;`),
+          style: htmlSafe(`stop-opacity: 1; stop-color: #475569;`),
         },
       ];
     }
   }
-
-  //   const endingStop = interpolateRdPu(this.colorScale()(
 }
