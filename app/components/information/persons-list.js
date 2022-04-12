@@ -8,22 +8,6 @@ export default class InformationPersonsListComponent extends Component {
 
   @service data;
 
-  @action
-  *transition({ keptSprites }) {
-    keptSprites.forEach((sprite) => {
-      if (sprite.element.dataset.personId === this.activePerson.personId) {
-        sprite.applyStyles({
-          "z-index": "100",
-        });
-      } else {
-        sprite.applyStyles({
-          "z-index": "0",
-        });
-      }
-      move(sprite);
-    });
-  }
-
   get personData() {
     const people = this.data.sortedData();
     if (this.activePerson.personId) {

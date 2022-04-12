@@ -4,6 +4,7 @@ import SvgService from "rose-hall/services/svg";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
 import {
+  type Path,
   path,
   curveCatmullRom,
   curveCatmullRomClosed,
@@ -17,7 +18,11 @@ export default class FrondComponent extends Component {
 
   @tracked declare stem: SVGPathElement;
 
-  @tracked declare leafs: { d: any; stemD: any; transform: string }[];
+  @tracked declare leafs: {
+    d: Path | string;
+    stemD: Path | string;
+    transform: string;
+  }[];
 
   @action setStemAndLeaves(stem: SVGPathElement) {
     this.stem = stem;
@@ -141,7 +146,7 @@ export default class FrondComponent extends Component {
     const pointA = this.pointAtLength(segmentPct);
     const pointB = this.pointAtLength(1.001 * segmentPct);
     const slope = (pointB.y - pointA.y) / (pointB.x - pointA.x);
-    let theta = (Math.atan(slope) * 180) / Math.PI + 90;
+    const theta = (Math.atan(slope) * 180) / Math.PI + 90;
     if (theta > 90) return theta - 180;
     return theta;
   }

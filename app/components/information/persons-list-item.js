@@ -8,10 +8,14 @@ export default class InformationPersonsListItemComponent extends Component {
 
   @service data;
 
+  setIsMother(newValue) {
+    this.isMother = newValue;
+  }
+
   get familyIndent() {
     let indent = { class: "", text: "" };
     if (this.data.sortKey !== "family") {
-      this.isMother = false;
+      this.setIsMother(false);
       return "";
     }
 
@@ -19,7 +23,7 @@ export default class InformationPersonsListItemComponent extends Component {
       (person) => person.motherId === this.args.person.personId
     );
     if (children.length > 0) {
-      this.isMother = true;
+      this.setIsMother(true);
     }
 
     if (this.args.person.motherId) {
