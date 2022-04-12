@@ -6,13 +6,13 @@ import { hbs } from "ember-cli-htmlbars";
 module("Integration | Component | information/sort-button", function (hooks) {
   setupRenderingTest(hooks);
 
-  test.skip("it renders", async function (assert) {
+  test("it renders", async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`<Information::SortButton />`);
 
-    assert.dom().containsText("");
+    assert.dom().includesText("");
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module("Integration | Component | information/sort-button", function (hooks) {
       </Information::SortButton>
     `);
 
-    assert.dom().containsText("template block text");
+    assert.dom().includesText("template block text");
   });
 });

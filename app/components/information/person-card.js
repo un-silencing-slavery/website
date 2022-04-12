@@ -18,17 +18,21 @@ export default class InformationPersonCardComponent extends Component {
     } else {
       const names = children.map((child) => child.name);
       if (names.length === 1) {
-        this.childrenNumber = "one child, ";
+        this.setChildrenNumber("one child, ");
         return names[0];
       } else if (names.length === 2) {
-        this.childrenNumber = `a pair of children, `;
+        this.setChildrenNumber(`a pair of children, `);
         return names.map((name) => name).join(" and ");
       } else {
-        this.childrenNumber = `${names.length} children, `;
+        this.setChildrenNumber(`${names.length} children, `);
         names[names.length - 1] = `and ${names[names.length - 1]}`;
         return names.map((name) => name.trim()).join(", ");
       }
     }
+  }
+
+  setChildrenNumber(string) {
+    this.childrenNumber = string;
   }
 
   get mother() {
