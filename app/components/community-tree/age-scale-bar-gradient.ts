@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { htmlSafe } from "@ember/template";
-import { scaleLinear } from "d3-scale";
+import { scaleLinear } from "d3";
 import { service } from "@ember/service";
 import SvgService from "rose-hall/services/svg";
 

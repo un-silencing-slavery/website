@@ -1,8 +1,6 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { select } from "d3-selection";
-import { axisBottom } from "d3-axis";
-import { format } from "d3-format";
+import { select, axisBottom, format } from "d3";
 
 export default class CommunityTreeYearScaleBarComponent extends Component {
   @action callAxis(element) {
