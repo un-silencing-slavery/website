@@ -2,9 +2,8 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
-import { randomNormal } from "d3-random";
-import { line, curveBundle } from "d3";
-import { inject as service } from "@ember/service";
+import { randomNormal, line, curveBundle } from "d3";
+import { service } from "@ember/service";
 
 export default class CommunityTreePersonComponent extends Component {
   @service router;

@@ -1,7 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
-import { interpolateWarm } from "d3-scale-chromatic";
-import { scaleLinear } from "d3-scale";
+import { interpolateWarm, scaleLinear } from "d3";
 
 export default class SvgService extends Service {
   @tracked width = 201;

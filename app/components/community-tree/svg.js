@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
-import { scaleLinear } from "d3-scale";
+import { scaleLinear } from "d3";
 
 export default class CommunityTreeSvgComponent extends Component {
   @service svg;
