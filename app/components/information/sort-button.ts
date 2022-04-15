@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
-import type DataService from "rose-hall/services/data";
+import type DataService from "un-silencing-slavery-at-rose-hall/services/data";
 
 interface SortButtonComponentArgs {
   sortKey: SortKey;
