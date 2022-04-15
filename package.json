@@ -1,9 +1,9 @@
 {
-  "name": "rose-hall",
+  "name": "un-silencing-slavery-at-rose-hall",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for rose-hall goes here",
-  "repository": "",
+  "description": "The Purpose of the (Un)Silencing Slavery at Rose Hall Project is to respectfully and lovingly remember and hold space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica. ",
+  "repository": "https://github.com/un-silencing-slavery-at-rose-hall/project-website.git",
   "license": "MIT",
   "author": "",
   "directories": {
