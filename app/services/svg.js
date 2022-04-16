@@ -3,9 +3,9 @@ import { tracked } from "@glimmer/tracking";
 import { interpolateWarm, scaleLinear } from "d3";
 
 export default class SvgService extends Service {
-  @tracked width = 201;
+  @tracked width = 375;
 
-  @tracked height = 200;
+  @tracked height = 350;
 
   get rem() {
     return parseFloat(
@@ -57,13 +57,11 @@ export default class SvgService extends Service {
   }
 
   get circleTransform() {
-    return `translate(${
-      (this.width - this.margins.right - this.margins.left) / 2 +
+    return `translate(${(this.width - this.margins.right - this.margins.left) / 2 +
       this.margins.left
-    }, ${
-      (this.height - this.margins.top - this.margins.bottom) / 2 +
+      }, ${(this.height - this.margins.top - this.margins.bottom) / 2 +
       this.margins.top
-    })`;
+      })`;
   }
 
   get circleRadius() {
