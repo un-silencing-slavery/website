@@ -1,18 +1,13 @@
-<div class="flex flex-col w-screen h-screen relative">
-  <header class="bg-green-600 w-full pt-4">
-    <LinkTo @route="index">
-      <span class="text-4xl font-title text-slate-50 px-2">(Un)Silencing Slavery at Rose Hall Project</span>
-    </LinkTo>
-    <NavBar />
-  </header>
+<div class="flex flex-col w-screen h-full md:h-screen relative">
+  <Header />
   {{outlet}}
-  <footer class="p-2 bg-green-600 text-slate-50 w-full">
-    © 2020
+  <footer class="p-1 md:p-2 bg-green-600 text-slate-50 w-full">
+    <p class="text-xs md:text-base">© 2020</p>
   </footer>
   <div class="z-10 absolute top-0 right-0 h-full flex flex-row">
-    <div class="w-8 bg-rh-gold">&nbsp;</div>
-    <div class="w-8 bg-rh-black">&nbsp;</div>
-    <div class="w-8 bg-rh-red">&nbsp;</div>
+    <div class="w-2 md:w-8 bg-rh-gold">&nbsp;</div>
+    <div class="w-2 md:w-8 bg-rh-black">&nbsp;</div>
+    <div class="w-2 md:w-8 bg-rh-red">&nbsp;</div>
   </div>
 </div>
 <EpmModalContainer />
