@@ -1,5 +1,5 @@
   <svg 
-    class="community-tree" 
+    class="text-xs md:text-base community-tree bg-transparent" 
     width={{this.svg.width}} height={{this.svg.height}}
     {{on-key "ArrowRight" (fn this.selectPerson "forward")}}
     {{on-key "ArrowLeft" (fn this.selectPerson "backward")}}
@@ -88,7 +88,5 @@
         @width={{this.svg.circleRadius}}
         />
     </g>
-    <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}} @width={{this.svg.ageScaleBarWidth}}/>
-    <rect x={{this.svg.margins.left}} width={{sub this.svg.width this.svg.margins.left this.svg.margins.right}} 
-      y={{this.svg.margins.top}} height={{sub this.svg.height this.svg.margins.top this.svg.margins.bottom}} fill="none" stroke="none" />
+    <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}}/>
   </svg>

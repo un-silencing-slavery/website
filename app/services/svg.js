@@ -34,6 +34,10 @@ export default class SvgService extends Service {
       margins.right = base + 3 * this.rem;
     }
 
+    // if (this.isLandscape && this.width < 768) {
+    //   margins.right = base;
+    // }
+
     return margins;
   }
 

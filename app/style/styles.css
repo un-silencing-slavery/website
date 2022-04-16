@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-serif h-full;
+  @apply font-serif h-full bg-slate-50;
 }
 
 html {
