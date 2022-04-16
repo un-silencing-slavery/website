@@ -1,9 +1,9 @@
-<header class="bg-green-600 w-full relative">
+<header class="bg-green-600" ...attributes>
   <div class="flex flex-row justify-between text-slate-50">
-    <LinkTo @route="index">
+    <LinkTo @route="index" {{on "click" this.hideNavbar}}>
       <p class="text-xl md:text-4xl font-title text-slate-50 px-2 pt-2 md:pt-4">(Un)Silencing Slavery at Rose Hall <span class="hidden md:inline">Project</span></p>
     </LinkTo>
-    <button class="md:hidden block mr-6 px-2" {{on "click" this.toggleNavbar}}>
+    <button class="md:hidden block px-2" {{on "click" this.toggleNavbar}}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0
       24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather
@@ -11,5 +11,5 @@
       x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
     </button>
   </div>
-  <NavBar @visible={{this.navbarVisible}} @action={{this.toggleNavbar}} />
+  <NavBar @visible={{this.navbarVisible}} @action={{this.hideNavbar}} />
 </header>

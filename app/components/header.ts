@@ -8,4 +8,8 @@ export default class HeaderComponent extends Component {
   @action toggleNavbar() {
     this.navbarVisible = !this.navbarVisible;
   }
+
+  @action hideNavbar() {
+    this.navbarVisible = false;
+  }
 }
