@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mirza&family=Hina+Mincho&display=swap");
+@import "./ember-promise-modals.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,4 +44,12 @@ text {
 
 line {
   stroke: #334155;
+}
+
+svg.feather-menu line {
+  @apply stroke-slate-50;
+}
+
+nav a.active {
+  @apply pointer-events-none;
 }
