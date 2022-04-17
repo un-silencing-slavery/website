@@ -7,6 +7,6 @@ export default class MainComponent extends Component {
   @service modals;
 
   @action showModal() {
-    // this.modals.open(ModalsIndexComponent);
+    this.modals.open(ModalsIndexComponent);
   }
 }

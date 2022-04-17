@@ -1,6 +1,13 @@
-<header class="bg-green-600" ...attributes>
-  <div class="flex flex-row justify-between text-slate-50">
-    <LinkTo @route="index" {{on "click" this.hideNavbar}}>
+<header class="z-50 md:z-0 
+  fixed top-0 left-0 md:relative 
+  h-9 md:h-auto 
+  md:mr-24
+  w-[calc(100%-1.5rem)]
+  md:w-auto
+  bg-green-600 
+  ">
+  <div class="w-full flex flex-row justify-between text-slate-50">
+    <LinkTo @route="index" {{on "click" this.hideNavbar}} class="w-full flex-grow">
       <p class="text-xl md:text-4xl font-title text-slate-50 px-2 pt-2 md:pt-4">(Un)Silencing Slavery at Rose Hall <span class="hidden md:inline">Project</span></p>
     </LinkTo>
     <button class="md:hidden block px-2" type="button" {{on "click" this.toggleNavbar}}>
