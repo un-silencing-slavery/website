@@ -5,6 +5,7 @@
     {{on-key "ArrowLeft" (fn this.selectPerson "backward")}}
     {{did-insert @calculateSizes}}
     {{did-update @calculateSizes}}
+    {{zoom}}
     >
     <defs>
       <filter id="white-glow" filterUnits="userSpaceOnUse"
@@ -67,26 +68,28 @@
       {{/each}}
     </defs>
     <CommunityTree::Background />
-    <g 
-      mask="url(#gradient-mask)"
-      id="community-tree-circle"
-      transform={{this.svg.circleTransform}}>
-        {{#each this.data.sortedData as |person i|}}
-          <CommunityTree::Person 
-            @person={{person}}
-            @i={{i}} 
-            @dataLength={{this.dataLength}}
-            @yearScale={{this.yearScale}}
-            @colorScale={{this.colorScale}}
-            @minYear={{this.minYear}}
+    <g class="zoomable">
+      <g 
+        mask="url(#gradient-mask)"
+        id="community-tree-circle"
+        transform={{this.svg.circleTransform}}>
+          {{#each this.data.sortedData as |person i|}}
+            <CommunityTree::Person 
+              @person={{person}}
+              @i={{i}} 
+              @dataLength={{this.dataLength}}
+              @yearScale={{this.yearScale}}
+              @colorScale={{this.colorScale}}
+              @minYear={{this.minYear}}
+            />
+          {{/each}}
+      </g>
+      <g transform={{this.svg.circleTransform}} >
+        <CommunityTree::YearScale
+          @yearScale={{this.yearScale}} 
+          @width={{this.svg.circleRadius}}
           />
-        {{/each}}
-    </g>
-    <g transform={{this.svg.circleTransform}} >
-      <CommunityTree::YearScale
-        @yearScale={{this.yearScale}} 
-        @width={{this.svg.circleRadius}}
-        />
+      </g>
     </g>
     <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}}/>
   </svg>
