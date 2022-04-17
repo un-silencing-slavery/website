@@ -4,6 +4,7 @@ import { action } from "@ember/object";
 import type DataService from "un-silencing-slavery-at-rose-hall/services/data";
 
 interface SortButtonComponentArgs {
+  close: () => void;
   sortKey: SortKey;
 }
 
@@ -11,6 +12,7 @@ export default class SortButtonComponent extends Component<SortButtonComponentAr
   @service declare data: DataService;
 
   @action sort() {
+    this.args.close();
     this.data.sortKey = this.args.sortKey;
   }
 
