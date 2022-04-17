@@ -6,7 +6,12 @@ import ModalsIndexComponent from "un-silencing-slavery-at-rose-hall/components/m
 export default class MainComponent extends Component {
   @service modals;
 
+  @service data;
+
   @action showModal() {
-    this.modals.open(ModalsIndexComponent);
+    if (!this.data.modalSeen) {
+      this.data.modalSeen = true;
+      this.modals.open(ModalsIndexComponent);
+    }
   }
 }

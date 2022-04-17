@@ -3,6 +3,8 @@ import { tracked } from "@glimmer/tracking";
 import people from "un-silencing-slavery-at-rose-hall/data/people";
 
 export default class DataService extends Service {
+  @tracked modalSeen = false;
+
   @tracked people = people as Person[];
 
   @tracked sortKey: SortKey = "name";
