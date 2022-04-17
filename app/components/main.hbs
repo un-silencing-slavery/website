@@ -1,12 +1,13 @@
-<article class="text-slate-700 w-full flex flex-col md:flex-row
-  overflow-hidden
-  "
+<article class="text-slate-700 w-full flex flex-col md:flex-row h-full"
   {{did-insert this.showModal}}
 >
   <h1 class="sr-only">(Un)Silencing Slavery at Rose Hall Project</h1>
 
   <CommunityTreeContainer/>
 
+  <div class="block md:hidden h-80 w-full">
+    <p>&nbsp;</p>
+  </div>
   <Information>
     {{yield}}
   </Information>

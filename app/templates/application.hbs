@@ -1,13 +1,13 @@
-<div class="flex flex-col w-screen h-full md:h-screen relative">
-  <Header class="mr-6 md:mr-24"/>
-  {{outlet}}
-  <footer class="p-1 md:p-2 bg-green-600 text-slate-50 mr-6 md:mr-24">
-    <p class="text-xs md:text-base">© 2020</p>
-  </footer>
-  <div class="-z-10 absolute top-0 right-0 h-full flex flex-row">
-    <div class="w-2 md:w-8 bg-rh-gold">&nbsp;</div>
-    <div class="w-2 md:w-8 bg-rh-black">&nbsp;</div>
-    <div class="w-2 md:w-8 bg-rh-red">&nbsp;</div>
+<div class="overflow-auto md:overflow-hidden h-full md:h-screen md:flex md:flex-col w-screen">
+  <Header/>
+  <div class="w-screen relative overflow-auto md:overflow-hidden mt-9 md:mt-0 md:flex-grow">
+    {{outlet}}
   </div>
+  <Footer/>
+</div>
+<div class="-z-10 fixed top-0 right-0 h-screen flex flex-row">
+  <div class="w-2 md:w-8 bg-rh-gold">&nbsp;</div>
+  <div class="w-2 md:w-8 bg-rh-black">&nbsp;</div>
+  <div class="w-2 md:w-8 bg-rh-red">&nbsp;</div>
 </div>
 <EpmModalContainer />
