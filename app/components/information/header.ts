@@ -6,7 +6,6 @@ export default class InformationHeaderComponent extends Component {
   @tracked sortmenuVisible = false;
 
   @action toggleSortmenu() {
-    console.log("toggin");
     this.sortmenuVisible = !this.sortmenuVisible;
   }
 
