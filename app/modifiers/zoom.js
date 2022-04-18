@@ -18,7 +18,6 @@ export default class ZoomModifier extends Modifier {
   }
 
   zoomed({ transform }) {
-    console.log(transform);
     select("g.zoomable").attr("transform", transform);
   }
 }

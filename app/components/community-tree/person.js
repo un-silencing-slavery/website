@@ -66,7 +66,6 @@ export default class CommunityTreePersonComponent extends Component {
       Z
     `;
 
-    // console.log(thePath);
     return thePath;
   }
 
@@ -83,7 +82,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             n.y +
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-              (Math.abs(n.y) - Math.abs(m.y)),
+            (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     } else {
@@ -93,7 +92,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             m.y -
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-              (Math.abs(n.y) - Math.abs(m.y)),
+            (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     }
@@ -123,7 +122,6 @@ export default class CommunityTreePersonComponent extends Component {
     linePSegments.push([n.x, n.y]);
 
     const lineP = line().curve(curveBundle)(linePSegments);
-    // console.log(lineP);
 
     return lineP;
   }
@@ -137,7 +135,7 @@ export default class CommunityTreePersonComponent extends Component {
 
   centripetal = false;
 
-  controlPoint = function ([m, n], perpendicularSlope, index) {
+  controlPoint = function([m, n], perpendicularSlope, index) {
     let offset = this.jitterOffset;
     const midpoint = {
       x: (m.x + n.x) / 2,
@@ -255,7 +253,6 @@ export default class CommunityTreePersonComponent extends Component {
 
   /*
   @action raisePetal(element){
-    console.log(`raising ${this.args.person.id}`);
   }
   */
 }

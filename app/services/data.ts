@@ -37,9 +37,11 @@ export default class DataService extends Service {
         );
         break;
       case "family":
-        // const people = [];
         this.sortByFamily();
         break;
+      // case "duties":
+      // Duties requires a macro grouping of the various duties.
+      //   break;
       default:
         break;
     }
@@ -71,9 +73,6 @@ export default class DataService extends Service {
       const person = this.people[i];
       const children = this.people.filter(
         (child) => child.motherId === person.personId
-      );
-      console.log(
-        `Working ${person.name} (${i}), who has ${children.length} kids.`
       );
       if (children.length > 0) {
         for (const child of children) {

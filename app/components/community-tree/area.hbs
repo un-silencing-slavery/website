@@ -1,0 +1,23 @@
+<g 
+  class="community-tree-area" 
+  transform={{this.svg.circleTransform}}
+  >
+  {{log this.clusters}}
+  {{#each this.clusters as |arc|}}
+    <path 
+      mask="url(#gradient-mask)"
+      id="{{arc.title}}-title-path"
+      opacity="0.3"
+      fill={{if arc.fill "#555" "none"}}
+      d={{arc.d}}
+    />
+
+    <text>
+      <textPath href="#{{arc.title}}-title-path">
+        {{arc.title}}
+      </textPath>
+    </text>
+
+    {{/each}}
+</g>
+
