@@ -14,4 +14,5 @@ Router.map(function () {
   this.route("bibliography");
   this.route("essay");
   this.route("credits");
+  this.route("documents");
 });
