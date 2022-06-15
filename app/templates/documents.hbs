@@ -1,230 +1,42 @@
 <Text>
+
   <h1 class="mb-10 prose-xl">Documents</h1>
-  {{! CARD RH01 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l border-t lg:border-r-0 border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh01-thumb.jpg')"
-      title="Woman holding a mug"
-    >
 
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1817</h3>
+  {{#each @model as |document|}}
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the National Archives of the
-        United Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh01.pdf" target="_blank">[Download]</a></p>
+    <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
+      <div
+        class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l border-t lg:border-r-0 border-gray-400 lg:border-t lg:border-gray-400 p-4"
+        style="background-image: url('/assets/images/{{document.id}}-thumb.jpg')"
+        title="{{document.title}}"
+      >
 
-    </div>
-    <hr />
+      </div>
+      <div
+        class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+      >
+        <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
 
-  </div>
-  {{! CARD RH02 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l lg:border-r-0 border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh02-thumb.jpg')"
-      title="Woman holding a mug"
-    >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p class="doc-location">Currently held at {{document.location}}</p>
+        <p><a
+            href="/assets/images/{{document.id}}.{{document.file}}"
+            target="_blank"
+          >[Download]</a></p>
 
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1820</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the Jamaica Archives and Records
-        Department, Spanish Town, Jamaica and National Archives of the United
-        Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh02.tif" target="_blank">[Download]</a></p>
-
-    </div>
-    <hr />
-
-  </div>
-  {{! CARD RH03 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b lg:border-r-0 border-l border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh03-thumb.jpg')"
-      title="Woman holding a mug"
-    >
-
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1823</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the Jamaica Archives and Records
-        Department, Spanish Town, Jamaica and National Archives of the United
-        Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh03.pdf" target="_blank">[Download]</a></p>
-
-    </div>
-    <hr />
-
-  </div>
-  {{! CARD RH04 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b lg:border-r-0 border-l border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh04-thumb.jpg')"
-      title="Woman holding a mug"
-    >
-
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1826</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the Jamaica Archives and Records
-        Department, Spanish Town, Jamaica and National Archives of the United
-        Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh04.pdf" target="_blank">[Download]</a></p>
-
-    </div>
-    <hr />
-
-  </div>
-  {{! CARD RH05 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b lg:border-r-0 border-l border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh05-thumb.jpg')"
-      title="Woman holding a mug"
-    >
-
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1829</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the Jamaica Archives and Records
-        Department, Spanish Town, Jamaica and National Archives of the United
-        Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh05.pdf" target="_blank">[Download]</a></p>
+      </div>
+      <hr />
 
     </div>
 
-  </div>
-  {{! CARD RH06 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b lg:border-r-0 border-l border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh06-thumb.jpg')"
-      title="Woman holding a mug"
-    >
-
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall Slave Register
-        1832</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the National Archives of the
-        United Kingdom, Kew, England</p>
-      <p><a href="/assets/images/rh06.tif" target="_blank">[Download]</a></p>
-
-    </div>
-    <hr />
-
-  </div>
-  {{! CARD RH07 }}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-    <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b lg:border-r-0 border-l border-gray-400 lg:border-t lg:border-gray-400 p-4"
-      style="background-image: url('/assets/images/rh07-thumb.jpg')"
-      title="Woman holding a mug"
-    >
-
-    </div>
-    <div
-      class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-    >
-      <h3 class="md:prose-md lg:prose-lg font-black">Rose Hall State (1820-1821)</h3>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="doc-location">Currently held at the University College London,
-        Special Collections, England</p>
-      <p><a href="/assets/images/rh07.jpg" target="_blank">[Download]</a></p>
-
-    </div>
-    <hr />
-
-  </div>
+  {{/each}}
 
 </Text>
