@@ -8,6 +8,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1817",
         date: 1817,
         type: "manuscript",
+        file: "pdf",
         location: "National Archives of the United Kingdom, Kew, England",
         artist: "",
       },
@@ -16,6 +17,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1820",
         date: 1820,
         type: "manuscript",
+        file: "tif",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         artist: "",
@@ -25,6 +27,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1823",
         date: 1823,
         type: "manuscript",
+        file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         artist: "",
@@ -34,6 +37,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1826",
         date: 1826,
         type: "manuscript",
+        file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         artist: "",
@@ -43,6 +47,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1829",
         date: 1829,
         type: "manuscript",
+        file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         artist: "",
@@ -52,6 +57,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Slave Register 1832",
         date: 1832,
         type: "manuscript",
+        file: "tif",
         location: "National Archives of the United Kingdom, Kew, England",
         artist: "",
       },
@@ -60,6 +66,7 @@ export default class DocumentsRoute extends Route {
         title: "Rose Hall Estate",
         date: "1820-1821",
         type: "drawing",
+        file: "jpg",
         location: "University College London, Special Collections, England",
         artist: "James Hakewill",
       },
