@@ -13,9 +13,9 @@ interface Person {
   otherNames: string | null;
   christianNames: string | null;
   familyNames: string | null;
-  country: string | null;
-  color: string | null;
-  gender: string | null;
+  country: string;
+  color: string;
+  gender: string;
   age1817List: string | null;
   familyNotes: string | null;
   mother: string | null;

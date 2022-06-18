@@ -1,23 +1,36 @@
-<g 
-  class="community-tree-area" 
-  transform={{this.svg.circleTransform}}
-  >
-  {{log this.clusters}}
-  {{#each this.clusters as |arc|}}
-    <path 
-      mask="url(#gradient-mask)"
-      id="{{arc.title}}-title-path"
-      opacity="0.3"
-      fill={{if arc.fill "#555" "none"}}
-      d={{arc.d}}
-    />
+<g class="community-tree-sorters">
+  <g 
+    class="community-tree-area" 
+    transform={{this.svg.circleTransform}}
+    >
+    {{#each this.clusters as |arc|}}
+      <path 
+        mask="url(#gradient-mask)"
+        fill-opacity="0.4"
+        fill={{arc.color}}
+        stroke={{arc.color}}
+        stroke-width="0"
+        stroke-opacity="1"
+        d={{arc.d}}
+      />
 
-    <text>
-      <textPath href="#{{arc.title}}-title-path">
-        {{arc.title}}
-      </textPath>
-    </text>
-
+      <path 
+        id="{{arc.title}}-title-path"
+        fill="none"
+        stroke={{arc.color}}
+        stroke-width="4"
+        stroke-opacity="1"
+        d={{arc.border}}
+        />
+      {{/each}}
+  </g>
+  <g class="community-tree-area-legend" transform="translate({{mult 0.8 this.svg.width}}, {{mult 0.8 this.svg.height}})">
+    {{#each this.clusters as |arc index|}}
+    <g transform="translate(0, {{mult index 22}})">
+      <rect x=0 y=0 width="1rem" height="1rem" stroke={{arc.color}} fill-opacity="0.4" fill={{arc.color}} />
+      <text transform="translate(28, 16)">{{arc.title}}</text>
+    </g>
     {{/each}}
+  </g>
 </g>
 

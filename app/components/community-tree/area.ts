@@ -1,14 +1,21 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
-import { action } from "@ember/object";
 import SvgService from "un-silencing-slavery-at-rose-hall/services/svg";
 import DataService from "un-silencing-slavery-at-rose-hall/services/data";
-import { arc } from "d3";
+import { schemeAccent, arc } from "d3";
 
 interface CommunityTreeAreaComponentArgs {
   yearScale(year: number): number;
 }
+
+// type ColumnMap = Record<SortKey, keyof Person>;
+interface ColumnMap {
+  race: keyof Person;
+  origin: keyof Person;
+  gender: keyof Person;
+}
+
+type GroupedPeople = Record<string, Person[]>;
 
 export default class CommunityTreeAreaComponent extends Component<CommunityTreeAreaComponentArgs> {
   @service declare svg: SvgService;
@@ -16,26 +23,17 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
   @service declare data: DataService;
 
   get clusters() {
-    const returnClusters = [];
-
-    if (this.data.sortKey === "name") {
-      const arcGenerator = arc();
+    const groups: Person[] | GroupedPeople = this.splitIntoGroups();
+    if (groups instanceof Array) {
+      return [];
+    } else {
+      let i = 0;
       const clusters = [];
-      clusters.push(
-        this.data.people.filter((person) => /^[ABCDEFG]/.test(person.name))
-      );
-      clusters.push(
-        this.data.people.filter((person) => /^[HIJKLMNOP]/.test(person.name))
-      );
-      clusters.push(
-        this.data.people.filter((person) => /^[QRSTUVWXYZ]/.test(person.name))
-      );
-
+      const arcGenerator = arc();
       let startAngle = 0;
-
-      for (const [i, cluster] of clusters.entries()) {
-        const titles = ["A–G", "H–P", "Q–Z"];
-        const theta = (cluster.length / this.data.people.length) * 2 * Math.PI;
+      for (const title in groups) {
+        const people = groups[title];
+        const theta = (people.length / this.data.people.length) * 2 * Math.PI;
         const d = arcGenerator({
           innerRadius: this.args.yearScale(1817),
           outerRadius: this.svg.circleRadius,
@@ -45,13 +43,35 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
 
         startAngle += theta;
 
-        returnClusters.push({
-          title: titles[i],
-          fill: i % 2 === 0,
+        clusters.push({
+          border: d?.split("L")[0],
+          title,
+          color: schemeAccent[i],
           d,
         });
+
+        i += 1;
       }
-      return returnClusters;
+      return clusters;
+    }
+  }
+
+  splitIntoGroups() {
+    if ("race origin gender".split(" ").includes(this.data.sortKey)) {
+      const sortKey = this.data.sortKey as keyof ColumnMap;
+      const columnMap: ColumnMap = {
+        race: "color",
+        origin: "country",
+        gender: "gender",
+      };
+      return this.data.people.reduce((group: GroupedPeople, person: Person) => {
+        const column = person[columnMap[sortKey]] ?? "";
+        group[column] = group[column] ?? [];
+        group[column].push(person);
+        return group;
+      }, {});
+    } else {
+      return [];
     }
   }
 }
