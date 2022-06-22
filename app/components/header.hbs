@@ -1,21 +1,30 @@
 <header class="z-50 md:z-0 
   fixed top-0 left-0 md:relative 
-  h-9 md:h-auto 
-  md:mr-24
-  w-[calc(100%-1.5rem)]
-  md:w-auto
+  h-9 md:h-24
+  w-full
   bg-green-600 
   ">
-  <div class="w-full flex flex-row justify-between text-slate-50">
+  <div class="w-full h-9 md:h-16 flex flex-row justify-between text-slate-50
+  bg-no-repeat
+  bg-right
+  bg-contain
+  flag-background
+  py-2
+  px-4
+  ">
     <LinkTo @route="index" {{on "click" this.hideNavbar}} class="w-full flex-grow">
-      <p class="text-xl md:text-4xl font-title text-slate-50 px-2 pt-2 md:pt-4">(Un)Silencing Slavery at Rose Hall <span class="hidden md:inline">Project</span></p>
+      <p class="text-xl md:text-4xl font-title text-slate-50 md:pt-4">(Un)Silencing Slavery at Rose Hall</p>
     </LinkTo>
-    <button class="md:hidden block px-2" type="button" {{on "click" this.toggleNavbar}}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0
+    <button class="h-full md:hidden block shadow-lg border-white border rounded-sm" type="button" {{on "click" this.toggleNavbar}}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
       24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather
-      feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6"
-      x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      stroke-linecap="round" stroke-linejoin="round" 
+      class="h-full feather feather-menu">
+        <rect width="24" height="24" stroke-width="0" fill="#404040" fill-opacity=".5"/>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
     </button>
   </div>
   <NavBar @visible={{this.navbarVisible}} @action={{this.hideNavbar}} />

@@ -8,4 +8,8 @@ export default class ActivePersonService extends Service {
   @action setActivePerson(personId) {
     this.personId = personId;
   }
+
+  @action clearActivePerson() {
+    this.personId = null;
+  }
 }
