@@ -10,7 +10,8 @@ export default class DocumentsRoute extends Route {
         type: "manuscript",
         file: "pdf",
         location: "National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The first slave register of Rose Hall in 1817 lists all enslaved individuals at Rose Hall as of June 30, 1817. The register is separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh02",
@@ -20,7 +21,8 @@ export default class DocumentsRoute extends Route {
         file: "tif",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh03",
@@ -30,7 +32,8 @@ export default class DocumentsRoute extends Route {
         file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh04",
@@ -40,7 +43,8 @@ export default class DocumentsRoute extends Route {
         file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh05",
@@ -50,7 +54,8 @@ export default class DocumentsRoute extends Route {
         file: "pdf",
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh06",
@@ -59,7 +64,8 @@ export default class DocumentsRoute extends Route {
         type: "manuscript",
         file: "tif",
         location: "National Archives of the United Kingdom, Kew, England",
-        artist: "",
+        description:
+          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
       },
       {
         id: "rh07",
@@ -68,7 +74,8 @@ export default class DocumentsRoute extends Route {
         type: "drawing",
         file: "jpg",
         location: "University College London, Special Collections, England",
-        artist: "James Hakewill",
+        description:
+          "This drawing of the Rose Hall Great House was created by James Hakewill (1778-1843). Hakewill was an English architect and illustrator. While travelling in Jamaica in the early 1820s, Jamaican plantation owners commissioned him to create drawings of their respective estates and surrounding landscapes. His drawings are highlighted in his book, A Picturesque Tour of the Island of Jamaica, which was published in London in 1825.",
       },
     ];
   }

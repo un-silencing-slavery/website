@@ -1,6 +1,36 @@
 <Text>
 
-  <h1 class="mb-10 prose-xl">Documents</h1>
+  <h1 class="mb-10 prose-xl">The Slave Registers</h1>
+
+  <p class="prose-l" style="margin-bottom: 3rem;">The Registers of Returns of
+    Slaves (also referred to simply as the slave registers) for Rose Hall
+    Plantation are available at the Jamaica Archives in Spanish Town and the
+    National Archives in Kew, England. They provide specific information about
+    individual enslaved people at Rose Hall. Following the Abolition of the
+    Slave Trade Act in 1807 in Great Britain and responding to heightened
+    pressures from abolitionists, the British government agreed to consider the
+    enactment of a bill requiring a registration of enslaved people. Such a
+    registration process was proposed to alleviate the possibility of illegal
+    trafficking of African captives to British colonies. After implementing this
+    registration in the Crown Colony of Trinidad in 1812, the British Parliament
+    attempted to establish this slave registration process throughout its
+    colonies. Some colonial legislative bodies in the British Caribbean,
+    including the House of Assembly of Jamaica (also referred to as the Jamaican
+    Assembly), initially resisted the Registry Bill. However, the Jamaican
+    Assembly adopted this slave registration bill in 1816 and required these
+    returns from enslavers in Jamaica beginning in 1817. This registration
+    procedure generally transpired on a triennial basis in the British Empire;
+    however, this was not consistent for all of the British colonies. In
+    Jamaica, slave registers began in 1817, and they continued on a triennial
+    basis until 1832. Once instituted in Jamaica, the Registry Bill was not
+    primarily utilized as a way to eliminate the illegal trafficking of African
+    captives; rather, the Jamaican Assembly deployed it as a tool to apply
+    heightened pressure on enslavers to achieve natural increase, or the
+    increase in the number of live births, on their plantations and throughout
+    Jamaica. Proprietors received tax breaks if they demonstrated they had
+    achieved natural increase in their triennial registers. At the same time,
+    however, penalties and fees related to incomplete registers did not result
+    in complete compliance. (from the book)</p>
 
   {{#each @model as |document|}}
 
@@ -18,13 +48,7 @@
         <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          {{document.description}}
         </p>
         <p class="doc-location">Currently held at {{document.location}}</p>
         <p><a
