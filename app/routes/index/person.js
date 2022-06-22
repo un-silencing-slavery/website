@@ -7,4 +7,9 @@ export default class IndexPersonRoute extends Route {
   model({ person_id }) {
     this.activePerson.setActivePerson(person_id);
   }
+
+  willTransition() {
+    console.log("nulling out activeperson");
+    this.activePerson.clearActivePerson();
+  }
 }

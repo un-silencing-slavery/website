@@ -71,11 +71,12 @@ export default class SvgService extends Service {
   }
 
   get circleRadius() {
+    const factor = 2.1;
     if (this.isLandscape) {
-      return (this.height - this.margins.top - this.margins.bottom) / 2;
+      return (this.height - this.margins.top - this.margins.bottom) / factor;
     }
 
-    return (this.width - this.margins.right - this.margins.left) / 2;
+    return (this.width - this.margins.right - this.margins.left) / factor;
   }
 
   @tracked frond = null;

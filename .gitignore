@@ -1,6 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 /.ipynb_checkpoints
 *.csv
+*.ai
 .~lock*
 
 # compiled output
@@ -12,6 +13,7 @@
 /node_modules/
 
 # misc
+.DS_Store
 /.env*
 /.pnp*
 /.sass-cache
