@@ -12,6 +12,6 @@ module("Integration | Component | community-tree-container", function (hooks) {
 
     await render(hbs`<CommunityTreeContainer />`);
 
-    assert.dom(this.element).includesText("");
+    assert.dom().includesText("");
   });
 });

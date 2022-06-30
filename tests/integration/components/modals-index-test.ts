@@ -12,7 +12,7 @@ module("Integration | Component | modals-index", function (hooks) {
 
     await render(hbs`<ModalsIndex />`);
 
-    assert.dom(this.element).hasText("");
+    assert.dom().hasText("");
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module("Integration | Component | modals-index", function (hooks) {
       </ModalsIndex>
     `);
 
-    assert.dom(this.element).hasText("template block text");
+    assert.dom().hasText("template block text");
   });
 });
