@@ -82,7 +82,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             n.y +
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-            (Math.abs(n.y) - Math.abs(m.y)),
+              (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     } else {
@@ -92,7 +92,7 @@ export default class CommunityTreePersonComponent extends Component {
           y:
             m.y -
             ((Math.pow(2, i) - 1) / Math.pow(2, i)) *
-            (Math.abs(n.y) - Math.abs(m.y)),
+              (Math.abs(n.y) - Math.abs(m.y)),
         });
       }
     }
@@ -135,7 +135,7 @@ export default class CommunityTreePersonComponent extends Component {
 
   centripetal = false;
 
-  controlPoint = function([m, n], perpendicularSlope, index) {
+  controlPoint = function ([m, n], perpendicularSlope, index) {
     let offset = this.jitterOffset;
     const midpoint = {
       x: (m.x + n.x) / 2,
