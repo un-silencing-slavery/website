@@ -4,12 +4,13 @@
   w-1/2 md:w-full
   ">
   <ul class="flex flex-col md:flex-row md:w-full">
-    <li><LinkTo class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @action}} @route="about">About</LinkTo></li>
-    <li><LinkTo class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @action}} @route="essay">Essay</LinkTo></li>
-    <li><LinkTo class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @action}} @route="documents">Documents</LinkTo></li>
-    <li><LinkTo class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @action}} @route="credits">Credits</LinkTo></li>
-    <li><LinkTo class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @action}} @route="bibliography">Bibliography</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="index">Home</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="about">About</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="essay">Essay</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="documents">Documents</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="credits">Credits</LinkTo></li>
+    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="bibliography">Bibliography</LinkTo></li>
     <li><a href="https://ugapress.org/book/9780820362151/unsilencing-slavery/" 
-      class="px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title">The Book</a></li>
+      class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title">The Book</a></li>
   </ul>
 </nav>

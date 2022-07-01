@@ -51,7 +51,7 @@ svg.feather-menu line {
 }
 
 nav a.active {
-  @apply pointer-events-none;
+  @apply pointer-events-none bg-green-100 text-green-900;
 }
 
 .flag-background {
