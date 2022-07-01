@@ -6,9 +6,19 @@
   prose-a:text-green-800 hover:prose-a:bg-green-100 
   prose-h1:text-2xl prose-h1:leading-7 prose-h1:pt-8 prose-h1:pb-1 
   overflow-auto
-  columns-1 md:columns-2 xl:columns-3"
+  "
   ...attributes
   {{stop-modal}}
 >
-  {{yield}}
+  <header class="w-full text-2xl">
+    <h1>
+      {{yield to="header"}}
+    </h1>
+  </header>
+
+  <section class="
+  columns-1 md:columns-2 xl:columns-3
+  ">
+  {{yield to="content"}}
+  </section>
 </article>
