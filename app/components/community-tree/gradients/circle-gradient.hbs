@@ -1,0 +1,30 @@
+<radialGradient id="community-tree-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+  <stop 
+    offset="{{mult 0.9 @gradient1817}}%" 
+    style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
+  <stop 
+  offset="{{@gradient1817}}%"
+    style="stop-color:rgb(248, 250, 252); stop-opacity:0.5" />
+  <stop 
+  offset="{{mult 1.09 @gradient1817}}%" 
+   style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
+  <stop 
+    offset="{{mult 0.95 @gradient1832}}%" 
+    style="stop-color:rgb(248, 250, 252); stop-opacity:1" />
+  <stop 
+  offset="{{@gradient1832}}%"
+    style="stop-color:rgb(248, 250, 252); stop-opacity:0.5" />
+  <stop 
+  offset="{{mult 1.04 @gradient1832}}%" 
+   style="stop-color:rgb(248, 250, 252); stop-opacity:0" />
+</radialGradient>
+<mask id="gradient-mask">
+  <rect 
+    x="-{{@circleRadius}}"
+    y="-{{@circleRadius}}"
+    width={{mult 2 @circleRadius}} 
+    height={{mult 2 @circleRadius}} 
+    fill="url(#community-tree-gradient)" 
+    />
+</mask>
+
