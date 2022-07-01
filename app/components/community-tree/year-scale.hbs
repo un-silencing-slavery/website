@@ -1,16 +1,18 @@
-{{#each this.years as |year|}}
-  <ellipse cx="0" cy="0"
-    class="pointer-events-none"
-    fill="none"
-    stroke="black"
-    stroke-width="1"
-    stroke-dasharray="1 4"
-    ry={{year.radius}}
-    rx={{year.radius}}
-  />
-  <text 
-  filter="url(#white-glow)"
-  text-anchor="middle"
-  transform="translate(0, -{{add 5 year.radius}})"
-  >{{year.year}}</text>
-{{/each}}
+<g transform={{@circleTransform}} >
+  {{#each this.years as |year|}}
+    <ellipse cx="0" cy="0"
+      class="pointer-events-none"
+      fill="none"
+      stroke="black"
+      stroke-width="1"
+      stroke-dasharray="1 4"
+      ry={{year.radius}}
+      rx={{year.radius}}
+    />
+    <text 
+    filter="url(#white-glow)"
+    text-anchor="middle"
+    transform="translate(0, -{{add 5 year.radius}})"
+    >{{year.year}}</text>
+  {{/each}}
+</g>

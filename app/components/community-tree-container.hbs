@@ -43,13 +43,12 @@
               />
             {{/each}}
         </g>
-        <g transform={{this.svg.circleTransform}} >
-          <CommunityTree::YearScale
-            @yearScale={{this.yearScale}} 
-            @width={{this.svg.circleRadius}}
-            />
-        </g>
+        <CommunityTree::YearScale
+          @circleTransform={{this.svg.circleTransform}}
+          @yearScale={{this.yearScale}} 
+          @width={{this.svg.circleRadius}}
+          />
       </g>
-      <CommunityTree::AgeScaleBar @ageScale={{this.ageScale}}/>
+      <CommunityTree::Legend @ageScale={{this.ageScale}}/>
     </svg>
 </section>
