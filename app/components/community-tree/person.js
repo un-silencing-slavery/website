@@ -23,6 +23,10 @@ export default class CommunityTreePersonComponent extends Component {
       return 1833.7;
     }
 
+    if (!this.args.person.exitYear) {
+      return 1833.7;
+    }
+
     return this.args.person.exitYear;
   }
 

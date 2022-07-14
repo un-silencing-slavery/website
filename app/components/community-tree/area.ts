@@ -41,10 +41,17 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
           endAngle: startAngle + theta,
         });
 
+        const border = arcGenerator({
+          innerRadius: 0.99 * this.svg.circleRadius,
+          outerRadius: 1.01 * this.svg.circleRadius,
+          startAngle,
+          endAngle: startAngle + theta,
+        });
+
         startAngle += theta;
 
         clusters.push({
-          border: d?.split("L")[0],
+          border,
           title,
           color: schemeAccent[i],
           d,
