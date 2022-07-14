@@ -1,0 +1,19 @@
+<filter id="area-glow"
+  height="300%" width="300%"
+  x="-75%" y="-75%">
+  <feMorphology operator="dilate" radius="4"
+    in="SourceAlpha" result="thicken" />
+  <feGaussianBlur in="thicken" stDeviation="10"
+    result="blurred" />
+  <feFlood flood-color="rgb(0, 186, 255)"
+    result="glowColor" />
+  <feComposite in="glowColor" in2="blurred" 
+    operator="in" result="softGlow_colored" />
+  <feMerge>
+    <feMergeNode in="softGlow_colored"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+
+
+  

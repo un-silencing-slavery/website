@@ -3,7 +3,7 @@
     class="community-tree-area" 
     transform={{this.svg.circleTransform}}
     >
-    {{#each this.clusters as |arc|}}
+    {{#each this.clusters as |arc index|}}
       <path 
         mask="url(#gradient-mask)"
         fill-opacity="0.4"
@@ -12,15 +12,17 @@
         stroke-width="0"
         stroke-opacity="1"
         d={{arc.d}}
+        filter={{if this.active (concat "url(#area-glow-" index ")") "none"}}
       />
 
       <path 
         id="{{arc.title}}-title-path"
-        fill="none"
+        fill={{arc.color}}
         stroke={{arc.color}}
-        stroke-width="4"
+        stroke-width="0"
         stroke-opacity="1"
         d={{arc.border}}
+        filter={{concat "url(#area-glow)"}}
         />
       {{/each}}
   </g>
