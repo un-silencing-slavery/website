@@ -46,23 +46,13 @@ column_mapping = {
     'individual_profile': "profile"
     }
 
-new_columns = [
-    "birthYear",
-    "arrivalYear",
-    "exitYear",
-    "ageAtExit",
-    "calcAgeDiff",
-    "arrivalReason",
-    "exitReason",
-    "dob",
-    "dod"
-    ]
-
 columns = [c for c in column_mapping.keys() if column_mapping[c] != None]
 # Rename columns.
 df = df[columns].rename(columns=column_mapping)
 # Drop supplemental rows that include information prof. Naylor added that will break the website.
 df.drop([i for i in range(208,221)], inplace=True)
+# Set index to personId
+df = df.set_index("personId")
 
 # Convert these impossible age columns to strings.
 for column in ["age1820", "age1823", "age1826", "age1829", "age1832", "age1832List"]:
@@ -150,7 +140,7 @@ df['duty_category'] = df['duties'].apply(lambda x: duties_dictionary[x])
 def numTest(value):
   return value.replace(".0", "").isnumeric()
 
-# Parse birth year
+# Parse arrival year
 def arrivalYearHunter(row):
   if row["age1817List"] > 0:
     return 1817
@@ -167,14 +157,141 @@ def arrivalYearHunter(row):
   else:
     return 0
 
+# Parse birth year
+def birthYearHunter(row):
+  if row["arrivalYear"] == 1817.0:
+    return 1817 - row["age1817List"]
+  else:
+    return row["arrivalYear"]
 
-testdf = df
-testdf["arrivalYear"] = testdf.apply(arrivalYearHunter, axis=1)
+
+df["arrivalYear"] = df.apply(arrivalYearHunter, axis=1)
+df["birthYear"] = df.apply(birthYearHunter, axis=1)
+df["exitYear"] = 1833.0
+
+manual_matrix = {
+    "P4": {"arrivalYear": 1820, "exitYear": 1821},
+    "P5": {"arrivalYear": 1829, "exitYear": 1832},
+    "P6": {"exitYear": 1832},
+    "P8": {"exitYear": 1818},
+    "P9": {"exitYear": 1826},
+    "P10": {"arrivalYear": 0, "exitYear": 1819},
+    "P15": {"exitYear": 1818},
+    "P17": {"exitYear": 1826},
+    "P18": {"exitYear": 1829},
+    "P19": {"exitYear": 1831},
+    "P20": {"exitYear": 1826},
+    "P21": {"exitYear": 1820},
+    "P22": {"exitYear": 1823},
+    "P24": {"exitYear": 1827},
+    "P25": {"exitYear": 1830},
+    "P28": {"exitYear": 1827},
+    "P29": {"exitYear": 1819},
+    "P33": {"exitYear": 1829},
+    "P34": {"arrivalYear": 1826, "exitYear": 1828},
+    "P37": {"exitYear": 1830},
+    "P38": {"arrivalYear": 0, "exitYear": 1818},
+    "P40": {"arrivalYear": 0, "exitYear": 0},
+    "P43": {"exitYear": 1826},
+    "P44": {"arrivalYear": 1826},
+    "P46": {"arrivalYear": 1820, "exitYear": 1821},
+    "P49": {"exitYear": 1824},
+    "P50": {"exitYear": 1819},
+    "P52": {"exitYear": 1818},
+    "P53": {"exitYear": 1828},
+    "P54": {"exitYear": 1824},
+    "P55": {"exitYear": 1829},
+    "P56": {"exitYear": 1828},
+    "P57": {"exitYear": 1821},
+    "P59": {"arrivalYear": 1827, "exitYear": 1829},
+    "P61": {"arrivalYear": 1828, "exitYear": 1829},
+    "P62": {"exitYear": 1821},
+    "P63": {"arrivalYear": 1818, "exitYear": 1820},
+    "P64": {"exitYear": 1820},
+    "P65": {"exitYear": 1820},
+    "P67": {"arrivalYear": 1832},
+    "P68": {"exitYear": 1827},
+    "P72": {"exitYear": 1820},
+    "P74": {"exitYear": 1819},
+    "P75": {"exitYear": 1824},
+    "P76": {"exitYear": 1828},
+    "P78": {"exitYear": 1828},
+    "P82": {"exitYear": 1824},
+    "P83": {"exitYear": 1824},
+    "P86": {"exitYear": 1819},
+    "P88": {"exitYear": 1827},
+    "P90": {"arrivalYear": 1832},
+    "P93": {"arrivalYear": 0},
+    "P99": {"arrivalYear": 1821, "exitYear": 1822},
+    "P100": {"exitYear": 1825},
+    "P102": {"exitYear": 1819},
+    "P105": {"exitYear": 1827},
+    "P106": {"exitYear": 1826},
+    "P113": {"exitYear": 1829},
+    "P119": {"arrivalYear": 1822, "exitYear": 1823},
+    "P122": {"arrivalYear": 1829, "exitYear": 1829},
+    "P125": {"exitYear": 1819},
+    "P129": {"exitYear": 1832},
+    "P130": {"exitYear": 1818},
+    "P136": {"exitYear": 1823},
+    "P137": {"exitYear": 1820},
+    "P138": {"exitYear": 1826},
+    "P140": {"exitYear": 1826},
+    "P142": {"exitYear": 1821},
+    "P146": {"exitYear": 1825},
+    "P148": {"exitYear": 1820},
+    "P149": {"exitYear": 1828},
+    "P155": {"exitYear": 1821},
+    "P157": {"exitYear": 1821},
+    "P162": {"arrivalYear": 1826, "exitYear": 1827},
+    "P163": {"exitYear": 1822},
+    "P164": {"exitYear": 1831},
+    "P165": {"arrivalYear": 1825},
+    "P166": {"exitYear": 1831},
+    "P167": {"arrivalYear": 0},
+    "P168": {"arrivalYear": 1826, "exitYear": 1826},
+    "P170": {"arrivalYear": 0},
+    "P171": {"arrivalYear": 1828},
+    "P176": {"exitYear": 1822},
+    "P177": {"exitYear": 1824},
+    "P181": {"exitYear": 1832},
+    "P182": {"exitYear": 1822},
+    "P185": {"exitYear": 1818},
+    "P186": {"exitYear": 1820},
+    "P187": {"arrivalYear": 1820, "exitYear": 1822},
+    "P189": {"exitYear": 1822},
+    "P190": {"exitYear": 1826},
+    "P191": {"exitYear": 1823},
+    "P192": {"exitYear": 1822},
+    "P193": {"exitYear": 1829},
+    "P194": {"arrivalYear": 1829, "exitYear": 1832},
+    "P195": {"exitYear": 1827},
+    "P200": {"exitYear": 1824},
+    "P201": {"exitYear": 1829},
+    "P202": {"arrivalYear": 1826},
+    "P203": {"arrivalYear": 0, "exitYear": 1831}
+}
+
+def setArrivalYearManually(row):
+  if row.name in manual_matrix and "arrivalYear" in manual_matrix[row.name]:
+    return manual_matrix[row.name]["arrivalYear"]
+  else:
+    return row["arrivalYear"]
+
+def setExitYearManually(row):
+  if row.name in manual_matrix and "exitYear" in manual_matrix[row.name]:
+      return manual_matrix[row.name]["exitYear"]
+  else:
+    return row["exitYear"]
+
+df["arrivalYear"] = df.apply(setArrivalYearManually, axis=1)
+df["exitYear"] = df.apply(setExitYearManually, axis=1)
+df["birthYear"] = df.apply(birthYearHunter, axis=1)
 
 # Cell 8
-import time
-now = time.strftime("%Y-%m-%d-%H:%M")
-df.to_csv(f"{now}-data.csv")
+# import time
+# now = time.strftime("%Y-%m-%d-%H:%M")
+# df.to_csv(f"{now}-data.csv")
 
 # Cell 9
 json_string = df.to_json(orient="records")
