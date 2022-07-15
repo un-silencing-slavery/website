@@ -6,59 +6,71 @@ from numpy import nan
 file_url = "https://github.com/muziejus/rose-hall/blob/main/data/Comprehensive%20List%20of%20Enslaved%20People%20at%20Rose%20Hall%20Estate,%201817-1832.xlsx?raw=true"
 # create a list of values prof. Naylor used as "N/A"
 na_values = ["not_applicable", "not_specified", "--", " "]
+
 # Read in Excel file.
 df = pd.read_excel(
     file_url, 
     na_values=na_values)
 # create a new list of column names that are easier to type
 column_mapping = {
-    'personId': "personId",
+    'id_for_digital_project': "personId",
     'name': "name",
-    'otherNames': "otherNames",
-    'christianNames': "christianNames",
-    'familyNames': "familyNames",
+    'other_versions_of_name_in_the_records': "otherNames",
+    'christian_names_often_combined_with_surname_in_1832_list_in_old_st_james_book': "christianNames",
+    'names_of_married_women_and_surnames_for_children_listed_in_1832_list_in_old_st_james_book': "familyNames",
     'country': "country",
-    'color': "color",
+    'colour': "colour",
     'gender': "gender",
-    'age1817List': "age1817List",
-    'familyNotes': "familyNotes",
+    'age_on_1817_list': "age1817List",
+    'familial_connections': "familyNotes",
     'mother': "mother",
-    'motherId': "motherId",
+    'id_of_mother': "motherId",
     'grandmother': "grandmother",
-    'grandmotherId': "grandmotherId",
-    'greatgrandmother': "greatgrandmother",
-    'greatgrandmotherId': "greatgrandmotherId",
-    'comments': "comments",
-    'journalInfo': "journalInfo",
-    'age1817': "age1817",
-    'age1820': "age1820",
-    'age1823': "age1823",
-    'age1826': "age1826",
-    'age1829': "age1829",
-    'age1832': "age1832",
-    'age1832List': "age1832List",
-    'duties': "duties",
-    'condition': "condition",
-    'disposition': "disposition",
-    'valuation': "valuation",
-    'birthYear': "birthYear",
-    'arrivalYear': "arrivalYear",
-    'exitYear': "exitYear",
-    'ageAtExit': "ageAtExit",
-    'calcAgeDiff': "calcAgeDiff",
-    'arrivalReason': "arrivalReason",
-    'exitReason': "exitReason",
-    'dob': "dob",
-    'dod': "dod",
-}
+    'id_of_grandmother': "grandmotherId",
+    'great grandmother': "greatgrandmother",
+    'id_of_great_grandmother': "greatgrandmotherId",
+    'my_additional_comments': "comments",
+    '_rose_hall_journal_info': "journalInfo",
+    'age_1817_registry': "age1817",
+    'age_1820_registry': "age1820",
+    'age_1823_registry': "age1823",
+    'age_1826_registry': "age1826",
+    'age_1829_registry': "age1829", 
+    'age_1832_registry': "age1832",
+    'age_1832_list_in_old_st_james_book': "age1832List",
+    'primary_duties_and_positions_1832_list_in_old_st_james_book': "duties",
+    'condition_1832_list_in_old_st_james_book': "condition",
+    'disposition_1832_list_in_old_st_james_book': "disposition",
+    'valuation_1832_list_in_old_st_james_book': "valuation",
+    'display_name': "displayName",
+    'individual_profile': "profile"
+    }
+
+new_columns = [
+    "birthYear",
+    "arrivalYear",
+    "exitYear",
+    "ageAtExit",
+    "calcAgeDiff",
+    "arrivalReason",
+    "exitReason",
+    "dob",
+    "dod"
+    ]
+
 columns = [c for c in column_mapping.keys() if column_mapping[c] != None]
 # Rename columns.
 df = df[columns].rename(columns=column_mapping)
 # Drop supplemental rows that include information prof. Naylor added that will break the website.
 df.drop([i for i in range(208,221)], inplace=True)
 
+# Convert these impossible age columns to strings.
+for column in ["age1820", "age1823", "age1826", "age1829", "age1832", "age1832List"]:
+  df[column] = pd.Series(df[column], dtype="string")
+  df[column] = df[column].fillna("")
+
 # Cell 3
-for column in ["name", "country", "color", "gender", "duties"]:
+for column in ["name", "country", "colour", "gender", "duties", "displayName", "profile"]:
   df[column] = df[column].str.strip()
 
 # Cell 4
@@ -82,7 +94,7 @@ def countryNan(x):
 df["country"] = df["country"].apply(countryNan)
 
 # Cell 6
-def colorNan(x):
+def colourNan(x):
   if x == "Negro/Sambo?" or x == "Sambo/Mulatto?":
     return "Inconsistent"
   elif x is nan:
@@ -90,7 +102,7 @@ def colorNan(x):
   else:
     return x
 
-df["color"] = df["color"].apply(colorNan)
+df["colour"] = df["colour"].apply(colourNan)
 
 # Cell 7
 duties_dictionary = {'At Palmyra': "Craft Workers",
@@ -134,7 +146,37 @@ duties_dictionary = {'At Palmyra': "Craft Workers",
 
 df['duty_category'] = df['duties'].apply(lambda x: duties_dictionary[x])
 
+# Parse ages
+def numTest(value):
+  return value.replace(".0", "").isnumeric()
+
+# Parse birth year
+def arrivalYearHunter(row):
+  if row["age1817List"] > 0:
+    return 1817
+  elif numTest(row["age1820"]):
+    return 1820 - float(row["age1820"])
+  elif numTest(row["age1823"]):
+    return 1823 - float(row["age1823"])
+  elif numTest(row["age1826"]):
+    return 1826 - float(row["age1826"])
+  elif numTest(row["age1829"]):
+    return 1829 - float(row["age1829"])
+  elif numTest(row["age1832List"]):
+    return 1832 - float(row["age1832List"])
+  else:
+    return 0
+
+
+testdf = df
+testdf["arrivalYear"] = testdf.apply(arrivalYearHunter, axis=1)
+
 # Cell 8
+import time
+now = time.strftime("%Y-%m-%d-%H:%M")
+df.to_csv(f"{now}-data.csv")
+
+# Cell 9
 json_string = df.to_json(orient="records")
 
 output = "export default " + json_string + ";"
