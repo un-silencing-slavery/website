@@ -14,7 +14,7 @@ interface Person {
   christianNames: string | null;
   familyNames: string | null;
   country: string;
-  color: string;
+  colour: string;
   gender: string;
   age1817List: string | null;
   familyNotes: string | null;
@@ -40,10 +40,6 @@ interface Person {
   birthYear: number | null;
   arrivalYear: number | null;
   exitYear: number | null;
-  ageAtExit: number | null;
-  calcAgeDiff: number | null;
-  arrivalReason: string | null;
-  exitReason: string | null;
-  dob: string | null;
-  dod: string | null;
+  displayName: string | null;
+  profile: string | null;
 }

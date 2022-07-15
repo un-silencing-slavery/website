@@ -4,44 +4,18 @@
    relative"
    {{stop-modal}}
    >
-  <button class="absolute top-0 right-0 p-1 md:p-4" type="button" {{on "click" this.goBack}}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-      <line x1="18" y1="6" x2="6" y2="18">
-    </line>
-    <line x1="6" y1="6" x2="18" y2="18">
-    </line>
-    </svg>
-  </button>
-  <h2 class="text-3xl pb-4">
-    {{this.person.name}}
-  </h2>
-  {{#let (if (eq this.person.gender "Male") "He" "She") as |pronoun|}}
-      <p class="pb-3">
-
-        {{if this.birthYear 
-          (concat this.person.name " was born in or around " this.birthYear)
-          (concat "We do not know when " this.person.name " was born")
-        }}.
-        {{if this.exitYear
-          (concat pronoun " left Rose Hall in " this.exitYear)
-          (concat "We do not know when " this.person.name " left Rose Hall")
-        }}.
-        {{if this.color
-          (concat pronoun " was classified as “" this.color "” in colour")
-          (concat "We do not know how " this.person.name " was classified in colour")
-        }}.
-        {{if this.origin
-          (concat pronoun " was classified as “" this.origin "” in origin")
-          (concat "We do not know how " this.person.name " was classified in origin")
-        }}.
-      </p>
-      <p>
-        {{this.person.name}}’s mother {{if this.mother
-          (concat "was " this.mother)
-          "is unknown"
-          }}. {{if this.children
-          (concat "She had " this.childrenNumber this.children)
-          (concat pronoun " had no children recorded")}}.
-      </p>
-   {{/let}}
+  <header class="flex flex-row items-start">
+    <h2 class="text-3xl pb-4">
+      {{this.person.displayName}}
+    </h2>
+    <button type="button" {{on "click" this.goBack}}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+        <line x1="18" y1="6" x2="6" y2="18">
+      </line>
+      <line x1="6" y1="6" x2="18" y2="18">
+      </line>
+      </svg>
+    </button>
+  </header>
+  <p>{{this.person.profile}}</p>
 </div>
