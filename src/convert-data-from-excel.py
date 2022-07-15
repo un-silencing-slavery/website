@@ -59,6 +59,11 @@ for column in ["age1820", "age1823", "age1826", "age1829", "age1832", "age1832Li
   df[column] = pd.Series(df[column], dtype="string")
   df[column] = df[column].fillna("")
 
+# Convert these impossible age columns to strings.
+for column in ["age1820", "age1823", "age1826", "age1829", "age1832", "age1832List"]:
+  df[column] = pd.Series(df[column], dtype="string")
+  df[column] = df[column].fillna("")
+
 # Cell 3
 for column in ["name", "country", "colour", "gender", "duties", "displayName", "profile"]:
   df[column] = df[column].str.strip()
@@ -314,6 +319,31 @@ def isGreatgrandmother(row):
 df["isMother"] = df.apply(isMother, axis=1)
 df["isGrandmother"] = df.apply(isGrandmother, axis=1)
 df["isGreatgrandmother"] = df.apply(isGreatgrandmother, axis=1)
+
+# Parse ages
+def numTest(value):
+  return value.replace(".0", "").isnumeric()
+
+# Parse birth year
+def arrivalYearHunter(row):
+  if row["age1817List"] > 0:
+    return 1817
+  elif numTest(row["age1820"]):
+    return 1820 - float(row["age1820"])
+  elif numTest(row["age1823"]):
+    return 1823 - float(row["age1823"])
+  elif numTest(row["age1826"]):
+    return 1826 - float(row["age1826"])
+  elif numTest(row["age1829"]):
+    return 1829 - float(row["age1829"])
+  elif numTest(row["age1832List"]):
+    return 1832 - float(row["age1832List"])
+  else:
+    return 0
+
+
+testdf = df
+testdf["arrivalYear"] = testdf.apply(arrivalYearHunter, axis=1)
 
 # Cell 8
 # import time
