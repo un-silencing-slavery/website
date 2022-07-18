@@ -21,7 +21,7 @@ export default class DataService extends Service {
         break;
       case "race":
         this.people.sort((a, b) =>
-          (a.color || "z").localeCompare(b.color || "z")
+          (a.colour || "z").localeCompare(b.colour || "z")
         );
         break;
       case "origin":
