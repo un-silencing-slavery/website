@@ -1,10 +1,15 @@
 <div
- class="w-full bg-slate-50 shadow-md px-3 py-4
+ class="w-full bg-slate-50 shadow-md pl-3 py-4
    leading-tight
-   relative"
+   relative
+   flex flex-col
+   max-h-[50vh]
+   "
    {{stop-modal}}
    >
-  <header class="flex flex-row items-start">
+  <header class="flex flex-row items-start
+  pr-3
+  ">
     <h2 class="flex-grow text-3xl pb-4">
       {{this.person.displayName}}
     </h2>
@@ -17,5 +22,5 @@
       </svg>
     </button>
   </header>
-  <Information::PersonCardProfile @profile={{this.person.profile}} />
+  <Information::PersonCardProfile @profile={{this.person.profile}}/>
 </div>
