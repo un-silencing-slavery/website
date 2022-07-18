@@ -67,7 +67,7 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     if ("race origin gender".split(" ").includes(this.data.sortKey)) {
       const sortKey = this.data.sortKey as keyof ColumnMap;
       const columnMap: ColumnMap = {
-        race: "color",
+        race: "colour",
         origin: "country",
         gender: "gender",
       };
