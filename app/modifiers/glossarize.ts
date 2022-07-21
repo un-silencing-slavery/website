@@ -1,37 +1,20 @@
 import Modifier from "ember-modifier";
-import { registerDestructor } from "@ember/destroyable";
-import { tracked } from "@glimmer/tracking";
+import { htmlSafe } from "@ember/template";
+import { dasherize } from "@ember/string";
 import { service } from "@ember/service";
+import { registerDestructor } from "@ember/destroyable";
 import DataService from "un-silencing-slavery-at-rose-hall/services/data";
-
-function cleanup(instance: GlossarizeModifier) {
-  let { elements, event, handler } = instance;
-
-  if (elements && event && handler) {
-    console.log("cleaning up");
-    for (const element of elements) {
-      element.removeEventListener(event, handler);
-    }
-    instance.elements = [];
-    instance.event = null;
-    instance.handler = null;
-  }
-}
 
 export default class GlossarizeModifier extends Modifier {
   @service declare data: DataService;
 
-  @tracked declare elements: NodeListOf<HTMLSpanElement>;
+  cleanup = () => {
+    console.log("doing some glossarize cleanup");
+  };
 
-  event: null | string = "click";
-
-  handler(event: Event) {
-    alert(event.target.dataset.glossaryDefinition);
-  }
-
-  constructor(owner: unknown, args: unknown) {
+  constructor(owner, args) {
     super(owner, args);
-    registerDestructor(this, cleanup);
+    registerDestructor(this, this.cleanup);
   }
 
   modify(element: Element, [profile]: [string]) {
@@ -39,16 +22,22 @@ export default class GlossarizeModifier extends Modifier {
     for (const term in glossary) {
       profile = profile.replaceAll(
         term,
-        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" data-glossary-definition="${glossary[term]}">${term}</span>`
+        `<span class="underline decoration-green-100 decoration-2
+          glossary-term
+          glossary-term-${dasherize(term)}
+          ">${term}</span>`
       );
     }
 
-    element.innerHTML = profile;
+    while (element.firstChild) {
+      if (element.lastChild) {
+        element.removeChild(element.lastChild);
+      }
+    }
 
-    this.elements = element.querySelectorAll("span.glossary-term");
+    const profileElement = document.createElement("p");
+    profileElement.innerHTML = htmlSafe(profile);
 
-    this.elements.forEach((element) => {
-      element.addEventListener("click", this.handler);
-    });
+    element.appendChild(profileElement);
   }
 }

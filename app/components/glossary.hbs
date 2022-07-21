@@ -1,0 +1,26 @@
+<TippySingleton @placement={{this.data.tippyPlacement}}
+
+  @onSingletonDidUpdate={{this.onSingletonDidUpdate}}
+  as |tippySingleton|>
+  <span {{tippy 
+    "snotdriana miss" 
+    singleton=tippySingleton
+    onInstancesCreate=this.onInstancesCreate
+    onInstancesDidUpdate=this.onInstancesDidUpdate
+    target=".adriana"}}></span>
+
+  <span {{tippy 
+    "snotdriana" 
+    singleton=tippySingleton
+    onInstancesCreate=this.onInstancesCreate
+    onInstancesDidUpdate=this.onInstancesDidUpdate
+    target=".glossary-term"}}></span>
+
+  {{#each this.data.glossaryArrayy as |entry|}}
+    <span 
+      {{tippy "entry.definition"
+        singleton=tippySingleton 
+        target=(concat ".glossary-term-" entry.slug)}}
+    ></span>
+  {{/each}}
+</TippySingleton>

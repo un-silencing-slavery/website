@@ -1,5 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import { dasherize } from "@ember/string";
 import people from "un-silencing-slavery-at-rose-hall/data/people";
 
 interface GlossaryEntry {
@@ -19,6 +20,8 @@ interface ThesaurusEntry {
 }
 
 export default class DataService extends Service {
+  @tracked finishGlossarize = false;
+
   airtableKey = "keybjUbsLJQQ77ZJ0";
 
   async fetchFromAirtable(table: string) {
@@ -30,6 +33,22 @@ export default class DataService extends Service {
     });
     const data = await response.json();
     return data.records;
+  }
+
+  get glossaryArray() {
+    const glossaryArray = [];
+    if (!this.staticGlossary) {
+      this.buildGlossary();
+    }
+
+    for (const term in this.staticGlossary) {
+      glossaryArray.push({
+        term,
+        slug: dasherize(term),
+        definition: this.staticGlossary[term],
+      });
+    }
+    return glossaryArray;
   }
 
   get glossary() {
