@@ -14,7 +14,7 @@ export default class IndexPersonRoute extends Route {
   }
 
   afterModel(model) {
-    this._super(...arguments);
+    super.afterModel(...arguments);
 
     this.metaInfo = {
       title: `${model.name} | (Un)Silencing Slavery`,

@@ -12,7 +12,8 @@ Router.map(function () {
   });
   this.route("about");
   this.route("bibliography");
-  this.route("essay");
+  this.route("reflections");
   this.route("credits");
   this.route("documents");
+  this.route("glossary");
 });
