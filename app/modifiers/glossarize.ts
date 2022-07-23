@@ -5,7 +5,7 @@ import { service } from "@ember/service";
 import DataService from "un-silencing-slavery/services/data";
 
 function cleanup(instance: GlossarizeModifier) {
-  let { elements, event, handler } = instance;
+  const { elements, event, handler } = instance;
 
   if (elements && event && handler) {
     console.log("cleaning up");
