@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { htmlSafe } from "@ember/template";
 import { scaleLinear } from "d3";
 import { service } from "@ember/service";
-import SvgService from "un-silencing-slavery-at-rose-hall/services/svg";
+import SvgService from "un-silencing-slavery/services/svg";
 
 export default class CommunityTreeAgeScaleBarGradientComponent extends Component {
   @service declare svg: SvgService;

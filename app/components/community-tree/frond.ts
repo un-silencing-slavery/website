@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
-import SvgService from "un-silencing-slavery-at-rose-hall/services/svg";
+import SvgService from "un-silencing-slavery/services/svg";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
 import {
