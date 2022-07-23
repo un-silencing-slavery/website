@@ -2,6 +2,12 @@
 
 module.exports = function (environment) {
   let ENV = {
+    "ember-meta": {
+      title: "(Un)Silencing Slavery",
+      siteName: "(Un)Silencing Slavery",
+      description:
+        "(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica.",
+    },
     modulePrefix: "un-silencing-slavery",
     environment,
     rootURL: "/",

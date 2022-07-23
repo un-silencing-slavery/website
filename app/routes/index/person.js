@@ -13,6 +13,14 @@ export default class IndexPersonRoute extends Route {
     )[0];
   }
 
+  afterModel(model) {
+    this._super(...arguments);
+
+    this.metaInfo = {
+      title: `${model.name} | (Un)Silencing Slavery`,
+    };
+  }
+
   willTransition() {
     this.activePerson.clearActivePerson();
   }
