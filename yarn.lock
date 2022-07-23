@@ -5946,17 +5946,6 @@ ember-cli-lodash-subset@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
   integrity sha1-IMtop5D+D94kiN39jvu332/nZvI=
 
-ember-cli-meta-tags@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-meta-tags/-/ember-cli-meta-tags-7.0.0.tgz#26e2f8f524a5c90b0092746d731c1367ce04e481"
-  integrity sha512-fvfNB3TNVwNQOHWJ0vd+I1kFiRHcamEDJ9iNTtU9oxX1JIusSrp7JPb/t3DojMQUfEze/eiWQ98VE/zsFar31g==
-  dependencies:
-    "@glimmer/component" "^1.1.2"
-    ember-cli-babel "^7.26.11"
-    ember-cli-head "^2.0.0"
-    ember-cli-htmlbars "^6.0.1"
-    ember-element-helper "^0.6.1"
-
 ember-cli-netlify@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/ember-cli-netlify/-/ember-cli-netlify-0.4.1.tgz#d0ffcbad42b43209ba344d778556d1d9f823a4fa"
@@ -6282,15 +6271,6 @@ ember-destroyable-polyfill@^2.0.3:
     ember-cli-babel "^7.26.11"
     ember-cli-htmlbars "^6.0.1"
 
-ember-element-helper@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/ember-element-helper/-/ember-element-helper-0.6.1.tgz#a6fbc5be5f875b5c864ae61bf5c5f81d6de6d936"
-  integrity sha512-YiOdAMlzYul4ulkIoNp8z7iHDfbT1fbut/9xGFRfxDwU/FmF8HtAUB2f1veu/w50HTeZNopa1OV2PCloZ76XlQ==
-  dependencies:
-    "@embroider/util" "^0.39.1 || ^0.40.0 || ^0.41.0 || ^1.0.0"
-    ember-cli-babel "^7.26.11"
-    ember-cli-htmlbars "^6.0.1"
-
 ember-export-application-global@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
@@ -6361,6 +6341,16 @@ ember-math-helpers@^2.18.1:
     ember-cli-babel "^7.26.11"
     ember-cli-htmlbars "^6.0.1"
 
+ember-meta@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-meta/-/ember-meta-2.0.0.tgz#1e314eea4d1fe05a4afdf3bd4cf2bd04027a7971"
+  integrity sha512-6CDkAsIuoGK4CDyWCVbJ3VNcr8ONl61c0F57/daebK2Sha+bmHfg4VV9M9m9qmvvc/iX5VHBEY9zaMAyiPXSAQ==
+  dependencies:
+    ember-cli-babel "^7.26.3"
+    ember-cli-head "^2.0.0"
+    ember-cli-htmlbars "^5.7.1"
+    ember-truth-helpers "^3.0.0"
+
 ember-modifier-manager-polyfill@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-modifier-manager-polyfill/-/ember-modifier-manager-polyfill-1.2.0.tgz#cf4444e11a42ac84f5c8badd85e635df57565dda"
@@ -6390,13 +6380,6 @@ ember-on-resize-modifier@^1.0.0:
     ember-cli-htmlbars "^5.7.1"
     ember-modifier "^3.0.0"
     ember-resize-observer-service "^1.0.0"
-
-ember-page-title@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/ember-page-title/-/ember-page-title-7.0.0.tgz#11bebd4901d80757646c9006954a13e4fc187421"
-  integrity sha512-oq6+HYbeVD/BnxIO5AkP4gWlsatdgW2HFO10F8+XQiJZrwa7cC7Wm54JNGqQkavkDQTgNSiy1Fe2NILJ14MmAg==
-  dependencies:
-    ember-cli-babel "^7.26.6"
 
 ember-promise-modals@^3.0.1:
   version "3.0.1"

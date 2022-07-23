@@ -1,6 +1,10 @@
 import Route from "@ember/routing/route";
 
 export default class DocumentsRoute extends Route {
+  metaInfo = {
+    title: "Documents | (Un)Silencing Slavery",
+  };
+
   model() {
     return [
       {
