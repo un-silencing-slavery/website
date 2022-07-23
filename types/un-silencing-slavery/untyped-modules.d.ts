@@ -1,5 +1,5 @@
 declare module "ember-promise-modals" {
-  import ModalsIndexComponent from "un-silencing-slavery-at-rose-hall/components/modals-index";
+  import ModalsIndexComponent from "un-silencing-slavery/components/modals-index";
 
   interface OpenModalOptions {
     close(component: ModalsIndexComponent): void;

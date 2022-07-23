@@ -2,7 +2,7 @@ import Modifier from "ember-modifier";
 import { registerDestructor } from "@ember/destroyable";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
-import DataService from "un-silencing-slavery-at-rose-hall/services/data";
+import DataService from "un-silencing-slavery/services/data";
 
 function cleanup(instance: GlossarizeModifier) {
   let { elements, event, handler } = instance;

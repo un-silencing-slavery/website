@@ -1,6 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
-import people from "un-silencing-slavery-at-rose-hall/data/people";
+import people from "un-silencing-slavery/data/people";
 
 interface GlossaryEntry {
   fields: {

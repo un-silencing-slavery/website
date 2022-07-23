@@ -22,8 +22,8 @@
     "experimentalDecorators": true,
     "typeRoots": ["types/*"],
     "paths": {
-      "un-silencing-slavery-at-rose-hall/tests/*": ["tests/*"],
-      "un-silencing-slavery-at-rose-hall/*": ["app/*"],
+      "un-silencing-slavery/tests/*": ["tests/*"],
+      "un-silencing-slavery/*": ["app/*"],
       "*": ["types/*"]
     }
   },

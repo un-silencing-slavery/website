@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import SvgService from "un-silencing-slavery-at-rose-hall/services/svg";
-import DataService from "un-silencing-slavery-at-rose-hall/services/data";
+import SvgService from "un-silencing-slavery/services/svg";
+import DataService from "un-silencing-slavery/services/data";
 import { schemeAccent, arc } from "d3";
 
 interface CommunityTreeAreaComponentArgs {

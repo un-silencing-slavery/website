@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: "un-silencing-slavery-at-rose-hall",
+    modulePrefix: "un-silencing-slavery",
     environment,
     rootURL: "/",
     locationType: "history",
