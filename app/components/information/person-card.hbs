@@ -11,7 +11,7 @@
   pr-3
   ">
     <h2 class="flex-grow text-3xl pb-4">
-      {{this.person.displayName}}
+      {{@person.displayName}}
     </h2>
     <button type="button" {{on "click" this.goBack}}>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
@@ -22,5 +22,5 @@
       </svg>
     </button>
   </header>
-  <Information::PersonCardProfile @profile={{this.person.profile}}/>
+  <Information::PersonCardProfile @profile={{@person.profile}}/>
 </div>
