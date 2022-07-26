@@ -42,4 +42,5 @@ interface Person {
   exitYear: number | null;
   displayName: string | null;
   profile: string | null;
+  personSlug: string;
 }

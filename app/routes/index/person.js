@@ -14,11 +14,12 @@ export default class IndexPersonRoute extends Route {
     };
   }
 
-  model({ person_id }) {
-    this.activePerson.setActivePerson(person_id);
-    return this.data.people.filter(
-      (person) => person.personId === person_id
+  model({ person_slug }) {
+    const person = this.data.people.filter(
+      (person) => person.personSlug === person_slug
     )[0];
+    this.activePerson.setActivePerson(person.personId);
+    return person;
   }
 
   willTransition() {
