@@ -1,5 +1,6 @@
 import Modifier from "ember-modifier";
 import { registerDestructor } from "@ember/destroyable";
+import { htmlSafe } from "@ember/template";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import DataService from "un-silencing-slavery/services/data";
@@ -26,7 +27,7 @@ export default class GlossarizeModifier extends Modifier {
   event: null | string = "click";
 
   handler(event: Event) {
-    alert(event.target.dataset.glossaryDefinition);
+    alert(decodeURIComponent(atob(event.target.dataset.glossaryDefinition)));
   }
 
   constructor(owner: unknown, args: unknown) {
@@ -39,11 +40,24 @@ export default class GlossarizeModifier extends Modifier {
     for (const term in glossary) {
       profile = profile.replaceAll(
         term,
-        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" data-glossary-definition="${glossary[term]}">${term}</span>`
+        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" data-glossary-definition="${btoa(
+          encodeURIComponent(glossary[term])
+        )}">${term}</span>`
       );
     }
 
-    element.innerHTML = profile;
+    while (element.firstChild) {
+      if (element.lastChild) {
+        element.removeChild(element.lastChild);
+      }
+    }
+
+    for (const paragraph of profile.split("###")) {
+      const paragraphElement = document.createElement("p");
+      paragraphElement.innerHTML = htmlSafe(paragraph) as unknown as string;
+
+      element.appendChild(paragraphElement);
+    }
 
     this.elements = element.querySelectorAll("span.glossary-term");
 
