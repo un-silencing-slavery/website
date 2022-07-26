@@ -294,7 +294,7 @@ df["birthYear"] = df.apply(birthYearHunter, axis=1)
 # df.to_csv(f"{now}-data.csv")
 
 # Cell 9
-json_string = df.reset_index().to_json(orient="records")
+json_string = df.reset_index().to_json(orient="records", indent=2)
 
 output = "export default " + json_string + ";"
 f = open("app/data/people.js", "w")
