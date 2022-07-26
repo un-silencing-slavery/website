@@ -15,7 +15,7 @@ export default class CommunityTreePersonComponent extends Component {
   @tracked secondPoint = { x: 0, y: 0 };
 
   @action handleClick() {
-    this.router.transitionTo("index.person", this.args.person.personId);
+    this.router.transitionTo("index.person", this.args.person.personSlug);
   }
 
   get exitYear() {

@@ -9,7 +9,7 @@ truncate
   "
   data-person-id={{@person.personId}}
 >
-  <LinkTo @route="index.person" @model={{@person.personId}}>
+  <LinkTo @route="index.person" @model={{@person.personSlug}}>
     <p
       class="truncate
         {{if this.familyIndent this.familyIndent.class}} 

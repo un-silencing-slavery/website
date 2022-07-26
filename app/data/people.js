@@ -34,7 +34,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Aaron-P1"
   },
   {
     "personId":"P2",
@@ -71,7 +72,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1825.0,
     "birthYear":1825.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Adam-P2"
   },
   {
     "personId":"P3",
@@ -108,7 +110,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Adonis-P3"
   },
   {
     "personId":"P4",
@@ -145,7 +148,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1820.0,
     "birthYear":1820.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Allick-P4"
   },
   {
     "personId":"P5",
@@ -182,7 +186,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1829.0,
     "birthYear":1829.0,
-    "exitYear":1832.0
+    "exitYear":1832.0,
+    "personSlug":"Alick-P5"
   },
   {
     "personId":"P6",
@@ -219,7 +224,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1757.0,
-    "exitYear":1832.0
+    "exitYear":1832.0,
+    "personSlug":"Andrew-P6"
   },
   {
     "personId":"P7",
@@ -256,7 +262,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1810.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Anthony-P7"
   },
   {
     "personId":"P8",
@@ -293,7 +300,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1781.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Apollo-P8"
   },
   {
     "personId":"P9",
@@ -330,7 +338,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Archy-P9"
   },
   {
     "personId":"P10",
@@ -367,7 +376,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Arteris-P10"
   },
   {
     "personId":"P11",
@@ -404,7 +414,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1800.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ben-P11"
   },
   {
     "personId":"P12",
@@ -441,7 +452,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1769.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bolton-P12"
   },
   {
     "personId":"P13",
@@ -478,7 +490,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1785.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bryan-P13"
   },
   {
     "personId":"P14",
@@ -515,7 +528,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bush-P14"
   },
   {
     "personId":"P15",
@@ -552,7 +566,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Caesar-P15"
   },
   {
     "personId":"P16",
@@ -589,7 +604,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Charles-P16"
   },
   {
     "personId":"P17",
@@ -626,7 +642,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Charlie-P17"
   },
   {
     "personId":"P18",
@@ -663,7 +680,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Colin-P18"
   },
   {
     "personId":"P19",
@@ -700,7 +718,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1831.0
+    "exitYear":1831.0,
+    "personSlug":"Craigie-P19"
   },
   {
     "personId":"P20",
@@ -737,7 +756,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1779.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Damon-P20"
   },
   {
     "personId":"P21",
@@ -774,7 +794,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1789.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Daniel-P21"
   },
   {
     "personId":"P22",
@@ -811,7 +832,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1823.0
+    "exitYear":1823.0,
+    "personSlug":"Dublin-P22"
   },
   {
     "personId":"P23",
@@ -848,7 +870,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1830.0,
     "birthYear":1830.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Edward-Hill-P23"
   },
   {
     "personId":"P24",
@@ -885,7 +908,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1800.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Exeter-P24"
   },
   {
     "personId":"P25",
@@ -922,7 +946,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1765.0,
-    "exitYear":1830.0
+    "exitYear":1830.0,
+    "personSlug":"Fox-P25"
   },
   {
     "personId":"P26",
@@ -959,7 +984,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Garrick-P26"
   },
   {
     "personId":"P27",
@@ -996,7 +1022,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"George-P27"
   },
   {
     "personId":"P28",
@@ -1033,7 +1060,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1762.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Gibbes-P28"
   },
   {
     "personId":"P29",
@@ -1070,7 +1098,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Glasgow-P29"
   },
   {
     "personId":"P30",
@@ -1107,7 +1136,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1809.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Gloster-P30"
   },
   {
     "personId":"P31",
@@ -1144,7 +1174,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Hannibal-P31"
   },
   {
     "personId":"P32",
@@ -1181,7 +1212,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1796.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Harry-P32"
   },
   {
     "personId":"P33",
@@ -1218,7 +1250,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Hazard-P33"
   },
   {
     "personId":"P34",
@@ -1255,7 +1288,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1826.0,
     "birthYear":1826.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"Henry-P34"
   },
   {
     "personId":"P35",
@@ -1292,7 +1326,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1825.0,
     "birthYear":1825.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Henry-McLean-P35"
   },
   {
     "personId":"P36",
@@ -1329,7 +1364,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1808.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Hercules-P36"
   },
   {
     "personId":"P37",
@@ -1366,7 +1402,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1759.0,
-    "exitYear":1830.0
+    "exitYear":1830.0,
+    "personSlug":"Hyde-P37"
   },
   {
     "personId":"P38",
@@ -1403,7 +1440,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Isaac-P38"
   },
   {
     "personId":"P39",
@@ -1440,7 +1478,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1819.0,
     "birthYear":1819.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Isaac-P39"
   },
   {
     "personId":"P40",
@@ -1477,7 +1516,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":0.0
+    "exitYear":0.0,
+    "personSlug":"Jack-P40"
   },
   {
     "personId":"P41",
@@ -1514,7 +1554,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1813.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"James-P41"
   },
   {
     "personId":"P42",
@@ -1551,7 +1592,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1831.0,
     "birthYear":1831.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"James-Watson-P42"
   },
   {
     "personId":"P43",
@@ -1588,7 +1630,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1775.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"January-P43"
   },
   {
     "personId":"P44",
@@ -1625,7 +1668,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1826.0,
     "birthYear":1826.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Jemmy-P44"
   },
   {
     "personId":"P45",
@@ -1662,7 +1706,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1785.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Joe-P45"
   },
   {
     "personId":"P46",
@@ -1699,7 +1744,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1820.0,
     "birthYear":1820.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"John-P46"
   },
   {
     "personId":"P47",
@@ -1736,7 +1782,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1830.0,
     "birthYear":1830.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"John-P47"
   },
   {
     "personId":"P48",
@@ -1773,7 +1820,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"John-Kerr-P48"
   },
   {
     "personId":"P49",
@@ -1810,7 +1858,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"John-Parish-P49"
   },
   {
     "personId":"P50",
@@ -1847,7 +1896,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Johnny-P50"
   },
   {
     "personId":"P51",
@@ -1884,7 +1934,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1813.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"July-P51"
   },
   {
     "personId":"P52",
@@ -1921,7 +1972,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Lewis-P52"
   },
   {
     "personId":"P53",
@@ -1958,7 +2010,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"Lewis-P53"
   },
   {
     "personId":"P54",
@@ -1995,7 +2048,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1747.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Lewis-ney-P54"
   },
   {
     "personId":"P55",
@@ -2032,7 +2086,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1757.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Luke-P55"
   },
   {
     "personId":"P56",
@@ -2069,7 +2124,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1798.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"MacGuire-P56"
   },
   {
     "personId":"P57",
@@ -2106,7 +2162,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Mackay-P57"
   },
   {
     "personId":"P58",
@@ -2143,7 +2200,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"March-P58"
   },
   {
     "personId":"P59",
@@ -2180,7 +2238,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1827.0,
     "birthYear":1827.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Marcus-P59"
   },
   {
     "personId":"P60",
@@ -2217,7 +2276,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1810.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Mark-P60"
   },
   {
     "personId":"P61",
@@ -2254,7 +2314,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Maxwell-P61"
   },
   {
     "personId":"P62",
@@ -2291,7 +2352,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Mercury-P62"
   },
   {
     "personId":"P63",
@@ -2328,7 +2390,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Morris-P63"
   },
   {
     "personId":"P64",
@@ -2365,7 +2428,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Nab-P64"
   },
   {
     "personId":"P65",
@@ -2402,7 +2466,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Neath-P65"
   },
   {
     "personId":"P66",
@@ -2439,7 +2504,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ned-P66"
   },
   {
     "personId":"P67",
@@ -2476,7 +2542,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1832.0,
     "birthYear":1832.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ned-P67"
   },
   {
     "personId":"P68",
@@ -2513,7 +2580,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Nestor-P68"
   },
   {
     "personId":"P69",
@@ -2550,7 +2618,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1811.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"North-P69"
   },
   {
     "personId":"P70",
@@ -2587,7 +2656,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1815.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Oliver-P70"
   },
   {
     "personId":"P71",
@@ -2624,7 +2694,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Orpheus-P71"
   },
   {
     "personId":"P72",
@@ -2661,7 +2732,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Osirus-P72"
   },
   {
     "personId":"P73",
@@ -2698,7 +2770,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1816.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Othello-P73"
   },
   {
     "personId":"P74",
@@ -2735,7 +2808,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1813.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Parish-P74"
   },
   {
     "personId":"P75",
@@ -2772,7 +2846,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1767.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Paton-P75"
   },
   {
     "personId":"P76",
@@ -2809,7 +2884,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"Patrick-P76"
   },
   {
     "personId":"P77",
@@ -2846,7 +2922,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Patrick-P77"
   },
   {
     "personId":"P78",
@@ -2883,7 +2960,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"Penryn-P78"
   },
   {
     "personId":"P79",
@@ -2920,7 +2998,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1762.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Perth-P79"
   },
   {
     "personId":"P80",
@@ -2957,7 +3036,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1799.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Peter-P80"
   },
   {
     "personId":"P81",
@@ -2994,7 +3074,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Pitt-P81"
   },
   {
     "personId":"P82",
@@ -3031,7 +3112,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Plato-P82"
   },
   {
     "personId":"P83",
@@ -3068,7 +3150,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1747.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Prague-P83"
   },
   {
     "personId":"P84",
@@ -3105,7 +3188,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1804.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Quaco-P84"
   },
   {
     "personId":"P85",
@@ -3142,7 +3226,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ralph-P85"
   },
   {
     "personId":"P86",
@@ -3179,7 +3264,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1774.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Richard-P86"
   },
   {
     "personId":"P87",
@@ -3216,7 +3302,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Richard-P87"
   },
   {
     "personId":"P88",
@@ -3253,7 +3340,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1821.0,
     "birthYear":1821.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Robert-P88"
   },
   {
     "personId":"P89",
@@ -3290,7 +3378,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Robert-P89"
   },
   {
     "personId":"P90",
@@ -3327,7 +3416,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1832.0,
     "birthYear":1832.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Robert-P90"
   },
   {
     "personId":"P91",
@@ -3364,7 +3454,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1780.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ross-P91"
   },
   {
     "personId":"P92",
@@ -3401,7 +3492,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sam-P92"
   },
   {
     "personId":"P93",
@@ -3438,7 +3530,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sam-P93"
   },
   {
     "personId":"P94",
@@ -3475,7 +3568,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sambo-P94"
   },
   {
     "personId":"P95",
@@ -3512,7 +3606,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1802.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Scipio-P95"
   },
   {
     "personId":"P96",
@@ -3549,7 +3644,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Scott-P96"
   },
   {
     "personId":"P97",
@@ -3586,7 +3682,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1789.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Shamoun-P97"
   },
   {
     "personId":"P98",
@@ -3623,7 +3720,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1794.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Smith-P98"
   },
   {
     "personId":"P99",
@@ -3660,7 +3758,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1821.0,
     "birthYear":1821.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Surry-P99"
   },
   {
     "personId":"P100",
@@ -3697,7 +3796,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1816.0,
-    "exitYear":1825.0
+    "exitYear":1825.0,
+    "personSlug":"Thomas-P100"
   },
   {
     "personId":"P101",
@@ -3734,7 +3834,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Thomas-P101"
   },
   {
     "personId":"P102",
@@ -3771,7 +3872,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1762.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Titus-P102"
   },
   {
     "personId":"P103",
@@ -3808,7 +3910,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ulysses-P103"
   },
   {
     "personId":"P104",
@@ -3845,7 +3948,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Washington-P104"
   },
   {
     "personId":"P105",
@@ -3882,7 +3986,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Watt-P105"
   },
   {
     "personId":"P106",
@@ -3919,7 +4024,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"William-P106"
   },
   {
     "personId":"P107",
@@ -3956,7 +4062,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1798.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"William-P107"
   },
   {
     "personId":"P108",
@@ -3993,7 +4100,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1815.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Wm.-Kerr-P108"
   },
   {
     "personId":"P109",
@@ -4030,7 +4138,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"William-Scott-P109"
   },
   {
     "personId":"P110",
@@ -4067,7 +4176,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Amelia-P110"
   },
   {
     "personId":"P111",
@@ -4104,7 +4214,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1782.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Arabella-P111"
   },
   {
     "personId":"P112",
@@ -4141,7 +4252,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1779.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Augusta-P112"
   },
   {
     "personId":"P113",
@@ -4178,7 +4290,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Beck-P113"
   },
   {
     "personId":"P114",
@@ -4215,7 +4328,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bell-P114"
   },
   {
     "personId":"P115",
@@ -4252,7 +4366,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1825.0,
     "birthYear":1825.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bess-P115"
   },
   {
     "personId":"P116",
@@ -4289,7 +4404,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1804.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Bessy-P116"
   },
   {
     "personId":"P117",
@@ -4326,7 +4442,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Brown-P117"
   },
   {
     "personId":"P118",
@@ -4363,7 +4480,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1769.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Cecelia-P118"
   },
   {
     "personId":"P119",
@@ -4400,7 +4518,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1823.0
+    "exitYear":1823.0,
+    "personSlug":"Cecelia-P119"
   },
   {
     "personId":"P120",
@@ -4437,7 +4556,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Celia-P120"
   },
   {
     "personId":"P121",
@@ -4474,7 +4594,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1798.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Chance-P121"
   },
   {
     "personId":"P122",
@@ -4511,7 +4632,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1829.0,
     "birthYear":1829.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Charity-P122"
   },
   {
     "personId":"P123",
@@ -4548,7 +4670,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Charlotte-P123"
   },
   {
     "personId":"P124",
@@ -4585,7 +4708,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1811.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Christianna-P124"
   },
   {
     "personId":"P125",
@@ -4622,7 +4746,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1819.0
+    "exitYear":1819.0,
+    "personSlug":"Clara-P125"
   },
   {
     "personId":"P126",
@@ -4659,7 +4784,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1812.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Clarinda-P126"
   },
   {
     "personId":"P127",
@@ -4696,7 +4822,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Cowslip-P127"
   },
   {
     "personId":"P128",
@@ -4733,7 +4860,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Cynthia-P128"
   },
   {
     "personId":"P129",
@@ -4770,7 +4898,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1832.0
+    "exitYear":1832.0,
+    "personSlug":"Daisy-P129"
   },
   {
     "personId":"P130",
@@ -4807,7 +4936,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Daphney-P130"
   },
   {
     "personId":"P131",
@@ -4844,7 +4974,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Delia-P131"
   },
   {
     "personId":"P132",
@@ -4881,7 +5012,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1812.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Dianna-P132"
   },
   {
     "personId":"P133",
@@ -4918,7 +5050,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1817.0,
     "birthYear":1814.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Doll-P133"
   },
   {
     "personId":"P134",
@@ -4955,7 +5088,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Dorinda-P134"
   },
   {
     "personId":"P135",
@@ -4992,7 +5126,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Dorothy-P135"
   },
   {
     "personId":"P136",
@@ -5029,7 +5164,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1797.0,
-    "exitYear":1823.0
+    "exitYear":1823.0,
+    "personSlug":"Doshy-P136"
   },
   {
     "personId":"P137",
@@ -5066,7 +5202,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Dove-P137"
   },
   {
     "personId":"P138",
@@ -5103,7 +5240,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Eliza-P138"
   },
   {
     "personId":"P139",
@@ -5140,7 +5278,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Eliza-Hill-P139"
   },
   {
     "personId":"P140",
@@ -5177,7 +5316,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Ellen-P140"
   },
   {
     "personId":"P141",
@@ -5214,7 +5354,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1821.0,
     "birthYear":1821.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Eve-P141"
   },
   {
     "personId":"P142",
@@ -5251,7 +5392,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Fanny-P142"
   },
   {
     "personId":"P143",
@@ -5288,7 +5430,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1805.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Flora-P143"
   },
   {
     "personId":"P144",
@@ -5325,7 +5468,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1819.0,
     "birthYear":1819.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Frances-P144"
   },
   {
     "personId":"P145",
@@ -5362,7 +5506,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1799.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Frankey-P145"
   },
   {
     "personId":"P146",
@@ -5399,7 +5544,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1793.0,
-    "exitYear":1825.0
+    "exitYear":1825.0,
+    "personSlug":"Giss-P146"
   },
   {
     "personId":"P147",
@@ -5436,7 +5582,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Glister-P147"
   },
   {
     "personId":"P148",
@@ -5473,7 +5620,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1815.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Helen-P148"
   },
   {
     "personId":"P149",
@@ -5510,7 +5658,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1828.0
+    "exitYear":1828.0,
+    "personSlug":"Hope-P149"
   },
   {
     "personId":"P150",
@@ -5547,7 +5696,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Hope-P150"
   },
   {
     "personId":"P151",
@@ -5584,7 +5734,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1814.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Jane-Cranston-P151"
   },
   {
     "personId":"P152",
@@ -5621,7 +5772,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1831.0,
     "birthYear":1831.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Jane-P152"
   },
   {
     "personId":"P153",
@@ -5658,7 +5810,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Janet-P153"
   },
   {
     "personId":"P154",
@@ -5695,7 +5848,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1797.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Jeany-P154"
   },
   {
     "personId":"P155",
@@ -5732,7 +5886,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1751.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Jreen-P155"
   },
   {
     "personId":"P156",
@@ -5769,7 +5924,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1798.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Joan-P156"
   },
   {
     "personId":"P157",
@@ -5806,7 +5962,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1815.0,
-    "exitYear":1821.0
+    "exitYear":1821.0,
+    "personSlug":"Julian-P157"
   },
   {
     "personId":"P158",
@@ -5843,7 +6000,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1782.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Julina-P158"
   },
   {
     "personId":"P159",
@@ -5880,7 +6038,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1791.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Juno-P159"
   },
   {
     "personId":"P160",
@@ -5917,7 +6076,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1793.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Kate-P160"
   },
   {
     "personId":"P161",
@@ -5954,7 +6114,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1811.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Kitty-P161"
   },
   {
     "personId":"P162",
@@ -5991,7 +6152,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1826.0,
     "birthYear":1826.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Leddy-P162"
   },
   {
     "personId":"P163",
@@ -6028,7 +6190,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Lenora-P163"
   },
   {
     "personId":"P164",
@@ -6065,7 +6228,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1831.0
+    "exitYear":1831.0,
+    "personSlug":"Liddy-P164"
   },
   {
     "personId":"P165",
@@ -6102,7 +6266,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1825.0,
     "birthYear":1825.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Lizzy-Elizabeth-P165"
   },
   {
     "personId":"P166",
@@ -6139,7 +6304,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1789.0,
-    "exitYear":1831.0
+    "exitYear":1831.0,
+    "personSlug":"Lucretia-P166"
   },
   {
     "personId":"P167",
@@ -6176,7 +6342,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Lydia-P167"
   },
   {
     "personId":"P168",
@@ -6213,7 +6380,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1826.0,
     "birthYear":1826.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Lydie-P168"
   },
   {
     "personId":"P169",
@@ -6250,7 +6418,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1772.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Maphe-P169"
   },
   {
     "personId":"P170",
@@ -6287,7 +6456,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Mariah-P170"
   },
   {
     "personId":"P171",
@@ -6324,7 +6494,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1828.0,
     "birthYear":1828.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Marinda-P171"
   },
   {
     "personId":"P172",
@@ -6361,7 +6532,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1794.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Mary-P172"
   },
   {
     "personId":"P173",
@@ -6398,7 +6570,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Mary-James-P173"
   },
   {
     "personId":"P174",
@@ -6435,7 +6608,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1799.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Matilda-P174"
   },
   {
     "personId":"P175",
@@ -6472,7 +6646,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1773.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"May-P175"
   },
   {
     "personId":"P176",
@@ -6509,7 +6684,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Memmy-Jun-P176"
   },
   {
     "personId":"P177",
@@ -6546,7 +6722,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1757.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Memmy-Sen-P177"
   },
   {
     "personId":"P178",
@@ -6583,7 +6760,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Miranda-P178"
   },
   {
     "personId":"P179",
@@ -6620,7 +6798,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1797.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Molly-Spence-P179"
   },
   {
     "personId":"P180",
@@ -6657,7 +6836,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Nancy-P180"
   },
   {
     "personId":"P181",
@@ -6694,7 +6874,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1832.0
+    "exitYear":1832.0,
+    "personSlug":"Nelly-P181"
   },
   {
     "personId":"P182",
@@ -6731,7 +6912,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1794.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Panella-P182"
   },
   {
     "personId":"P183",
@@ -6768,7 +6950,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1797.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Parthenia-P183"
   },
   {
     "personId":"P184",
@@ -6805,7 +6988,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1806.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Pastora-P184"
   },
   {
     "personId":"P185",
@@ -6842,7 +7026,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1757.0,
-    "exitYear":1818.0
+    "exitYear":1818.0,
+    "personSlug":"Peachy-P185"
   },
   {
     "personId":"P186",
@@ -6879,7 +7064,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1803.0,
-    "exitYear":1820.0
+    "exitYear":1820.0,
+    "personSlug":"Peggy-P186"
   },
   {
     "personId":"P187",
@@ -6916,7 +7102,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1820.0,
     "birthYear":1820.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Peggy-P187"
   },
   {
     "personId":"P188",
@@ -6953,7 +7140,8 @@ export default [
     "duty_category":"Livestock Workers",
     "arrivalYear":1818.0,
     "birthYear":1818.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Phillis-P188"
   },
   {
     "personId":"P189",
@@ -6990,7 +7178,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Phoeba-P189"
   },
   {
     "personId":"P190",
@@ -7027,7 +7216,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1826.0
+    "exitYear":1826.0,
+    "personSlug":"Polly-P190"
   },
   {
     "personId":"P191",
@@ -7064,7 +7254,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1819.0,
     "birthYear":1819.0,
-    "exitYear":1823.0
+    "exitYear":1823.0,
+    "personSlug":"Prue-P191"
   },
   {
     "personId":"P192",
@@ -7101,7 +7292,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1755.0,
-    "exitYear":1822.0
+    "exitYear":1822.0,
+    "personSlug":"Rachel-P192"
   },
   {
     "personId":"P193",
@@ -7138,7 +7330,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1765.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Rebecca-P193"
   },
   {
     "personId":"P194",
@@ -7175,7 +7368,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1829.0,
     "birthYear":1829.0,
-    "exitYear":1832.0
+    "exitYear":1832.0,
+    "personSlug":"Rosanna-P194"
   },
   {
     "personId":"P195",
@@ -7212,7 +7406,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1787.0,
-    "exitYear":1827.0
+    "exitYear":1827.0,
+    "personSlug":"Rosannah-P195"
   },
   {
     "personId":"P196",
@@ -7249,7 +7444,8 @@ export default [
     "duty_category":"Craft Workers",
     "arrivalYear":1817.0,
     "birthYear":1808.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Rose-P196"
   },
   {
     "personId":"P197",
@@ -7286,7 +7482,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Ruth-P197"
   },
   {
     "personId":"P198",
@@ -7323,7 +7520,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1799.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sabina-P198"
   },
   {
     "personId":"P199",
@@ -7360,7 +7558,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1822.0,
     "birthYear":1822.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sally-Rose-P199"
   },
   {
     "personId":"P200",
@@ -7397,7 +7596,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1777.0,
-    "exitYear":1824.0
+    "exitYear":1824.0,
+    "personSlug":"Sarah-P200"
   },
   {
     "personId":"P201",
@@ -7434,7 +7634,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":1817.0,
     "birthYear":1785.0,
-    "exitYear":1829.0
+    "exitYear":1829.0,
+    "personSlug":"Stella-P201"
   },
   {
     "personId":"P202",
@@ -7471,7 +7672,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1826.0,
     "birthYear":1826.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Suckey-P202"
   },
   {
     "personId":"P203",
@@ -7508,7 +7710,8 @@ export default [
     "duty_category":"Unknown",
     "arrivalYear":0.0,
     "birthYear":0.0,
-    "exitYear":1831.0
+    "exitYear":1831.0,
+    "personSlug":"Susan-P203"
   },
   {
     "personId":"P204",
@@ -7545,7 +7748,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1792.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Susannah-Johnston-P204"
   },
   {
     "personId":"P205",
@@ -7582,7 +7786,8 @@ export default [
     "duty_category":"Domestic Workers",
     "arrivalYear":1817.0,
     "birthYear":1789.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Susannah-Scott-P205"
   },
   {
     "personId":"P206",
@@ -7619,7 +7824,8 @@ export default [
     "duty_category":"\u201cNot at Work\u201d",
     "arrivalYear":1831.0,
     "birthYear":1831.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Sylvia-P206"
   },
   {
     "personId":"P207",
@@ -7656,7 +7862,8 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1825.0,
     "birthYear":1825.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Venus-P207"
   },
   {
     "personId":"P208",
@@ -7693,6 +7900,7 @@ export default [
     "duty_category":"Field Workers",
     "arrivalYear":1817.0,
     "birthYear":1789.0,
-    "exitYear":1833.0
+    "exitYear":1833.0,
+    "personSlug":"Zebra-P208"
   }
 ];

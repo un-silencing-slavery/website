@@ -288,6 +288,8 @@ df["arrivalYear"] = df.apply(setArrivalYearManually, axis=1)
 df["exitYear"] = df.apply(setExitYearManually, axis=1)
 df["birthYear"] = df.apply(birthYearHunter, axis=1)
 
+df["personSlug"] = df.apply(lambda row: f"{row['name'].replace(' ', '-')}-{row.name}", axis=1)
+
 # Cell 8
 # import time
 # now = time.strftime("%Y-%m-%d-%H:%M")
