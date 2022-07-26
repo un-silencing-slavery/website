@@ -1,24 +1,26 @@
-<article
-  class="w-screen md:w-full h-full 
-  p-8 md:p-12 
-  bg-slate-50/80 md:bg-slate-50 
-  prose-p:mb-4 prose-h2:text-xl 
-  prose-a:text-green-800 hover:prose-a:bg-green-100 
-  prose-h1:text-2xl prose-h1:leading-7 prose-h1:pt-8 prose-h1:pb-1 
-  overflow-auto
-  "
-  ...attributes
-  {{stop-modal}}
->
-  <header class="w-full text-2xl">
-    <h1>
-      {{yield to="header"}}
-    </h1>
-  </header>
+<article class="flex flex-row justify-center overflow-auto h-full py-4 px-8">
+  <section
+    class="
+    bg-slate-50/80 md:bg-slate-50 
+    prose
+    prose-xl
+    prose-h1:text-4xl
+    prose-h2:text-3xl 
+    prose-h3:text-2xl 
+    prose-a:text-green-800 hover:prose-a:bg-green-100 
+    "
+    ...attributes
+    {{stop-modal}}
+  >
+    <header class="w-full">
+      <h1>
+        {{yield to="header"}}
+      </h1>
+    </header>
 
-  <section class="
-  columns-1 md:columns-2 xl:columns-3
-  ">
-  {{yield to="content"}}
+    <section class="
+    text-justify overflow-auto">
+    {{yield to="content"}}
+    </section>
   </section>
 </article>

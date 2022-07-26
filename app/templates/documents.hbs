@@ -1,82 +1,117 @@
+<div class="flex flex-col md:flex-row w-full h-full md:space-x-4">
+  <Text class="">
+    <:header>The Slave Registers</:header>
 
-<Text>
+    <:content>
 
-<:header>The Slave Registers</:header>
+      <p> The slave register of 1817 as well as the subsequent triennial
+      registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the
+      enslaved women, men, and children at Rose Hall. The first slave register of
+      Rose Hall in 1817 lists all enslaved individuals at Rose Hall as of June
+      30, 1817; the subsequent registers list only those enslaved people who had
+      been born and those who had passed in the three-year period between slave
+      registers.</p>
 
-<:content>
-<p>
-  A NOTE ON THE SLAVE REGISTERS:
-</p>
+      <h2>Collected Information</h2>
+      <h3>Gender</h3>
 
-<p>
-  The slave register of 1817 as well as the subsequent triennial registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. The first slave register of Rose Hall in 1817 lists all enslaved individuals at Rose Hall as of June 30, 1817; the subsequent registers list only those enslaved people who had been born and those who had passed in the three-year period between slave registers. Separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).  These slave registers present and reinforce this binary of males and females without any flexibility possible in the written records. It is important to point out that the absence of this fluidity in the archival documents should not erase the possibility of some sense of flexibility embraced by individual enslaved persons at that time. Although not utilizing the terminology “queer,” we can certainly hold the imaginative space for some enslaved persons who might have recognized their resistance to this sharply defined gendered construct and imagined more expansive gender identities—and what Nadia Ellis (in “Out and Bad: Toward a Queer Performance Hermeneutic in Jamaican Dancehall”) describes as “a break in the line of gender.”
-</p>
+      <p>Separated into two sub-lists—grouped under “Males” and “Females”
+      (with males consistently listed first), these slave registers present and
+      reinforce this binary of males and females without any flexibility possible
+      in the written records. It is important to point out that the absence of
+      this fluidity in the archival documents should not erase the possibility of
+      some sense of flexibility embraced by individual enslaved persons at that
+      time. Although not utilizing the terminology “queer,” we can certainly hold
+      the imaginative space for some enslaved persons who might have recognized
+      their resistance to this sharply defined gendered construct and imagined
+      more expansive gender identities—and what Nadia Ellis (in “<a href="https://muse.jhu.edu/article/446631">Out and Bad:
+      Toward a Queer Performance Hermeneutic in Jamaican Dancehall</a>”) describes as
+      “a break in the line of gender.” </p>
 
- 
+      <h3>“Colour” and Nativity</h3>
 
-<p>
-  These slave registers also include an identification of each individual’s “colour” (specifically noted as negro, sambo, mulatto, or quadroon).  These terms are included with particular meanings in regard to blackness and whiteness or lightness: “negro”—someone of African and/or Creole negro parentage who is not identified as being racially mixed; “mulatto”—someone who has one negro parent and one white parent; “quadroon”—someone who has one mulatto parent and one white parent; and “sambo”—someone who has one negro parent and one mulatto parent. There are other racial- and color-centered terms that are neither utilized in the Rose Hall Journal nor in the slave registers for Rose Hall but appear in other plantation and general records during this time (e.g., quinteroon and octoroon). Also included in these lists are each enslaved person’s estimated age and their “country”—their place of birth in Africa or the Americas, as “African” or “Creole,” respectively.
-</p>
+      <p> These slave registers also include an identification of each
+      individual’s “colour.” These terms are included with particular meanings in regard
+      to blackness and whiteness or lightness: </p>
 
-  <p class="prose-l" style="margin-bottom: 3rem;">The Registers of Returns of
-    Slaves (also referred to simply as the slave registers) for Rose Hall
-    Plantation are available at the Jamaica Archives in Spanish Town and the
-    National Archives in Kew, England. They provide specific information about
-    individual enslaved people at Rose Hall. Following the Abolition of the
-    Slave Trade Act in 1807 in Great Britain and responding to heightened
-    pressures from abolitionists, the British government agreed to consider the
-    enactment of a bill requiring a registration of enslaved people. Such a
-    registration process was proposed to alleviate the possibility of illegal
-    trafficking of African captives to British colonies. After implementing this
-    registration in the Crown Colony of Trinidad in 1812, the British Parliament
-    attempted to establish this slave registration process throughout its
-    colonies. Some colonial legislative bodies in the British Caribbean,
-    including the House of Assembly of Jamaica (also referred to as the Jamaican
-    Assembly), initially resisted the Registry Bill. However, the Jamaican
-    Assembly adopted this slave registration bill in 1816 and required these
-    returns from enslavers in Jamaica beginning in 1817. This registration
-    procedure generally transpired on a triennial basis in the British Empire;
-    however, this was not consistent for all of the British colonies. In
-    Jamaica, slave registers began in 1817, and they continued on a triennial
-    basis until 1832. Once instituted in Jamaica, the Registry Bill was not
-    primarily utilized as a way to eliminate the illegal trafficking of African
-    captives; rather, the Jamaican Assembly deployed it as a tool to apply
-    heightened pressure on enslavers to achieve natural increase, or the
-    increase in the number of live births, on their plantations and throughout
-    Jamaica. Proprietors received tax breaks if they demonstrated they had
-    achieved natural increase in their triennial registers. At the same time,
-    however, penalties and fees related to incomplete registers did not result
-    in complete compliance. (from the book)</p>
+      <ul>
+      <li>“Negro”: someone of African
+      and/or Creole negro parentage who is not identified as being racially
+      mixed</li>
+      <li>“Mulatto”: someone who has one negro parent and one white parent</li>
+      <li>“Quadroon”: someone who has one mulatto parent and one white parent</li>
+      <li>“Sambo”: someone who has one negro parent and one mulatto parent</li>
+      </ul>
 
-  {{#each @model as |document|}}
+      <p>There are other racial- and color-centered terms that are neither
+      utilized in the Rose Hall Journal nor in the slave registers for Rose
+      Hall but appear in other plantation and general records during this time
+      (e.g., “quinteroon” and “octoroon”). Also included in these lists are each
+      enslaved person’s estimated age and their “country”—their place of birth
+      in Africa or the Americas, as “African” or “Creole,” respectively. </p>
 
-    <div class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
-      <div
-        class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l border-t lg:border-r-0 border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
-        style="background-image: url('/assets/images/{{document.id}}-thumb.jpg')"
-        title="{{document.title}}"
-      >
+      <h2>Purpose</h2>
 
-      </div>
-      <div
-        class="border-r border-b border-l border-emerald-900 lg:border-t lg:border-emerald-900 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-      >
-        <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
+      <p>The Registers of Returns of
+        Slaves (also referred to simply as the slave registers) for Rose Hall
+        Plantation are available at the Jamaica Archives in Spanish Town and the
+        National Archives in Kew, England. They provide specific information about
+        individual enslaved people at Rose Hall. Following the Abolition of the
+        Slave Trade Act in 1807 in Great Britain and responding to heightened
+        pressures from abolitionists, the British government agreed to consider the
+        enactment of a bill requiring a registration of enslaved people. Such a
+        registration process was proposed to alleviate the possibility of illegal
+        trafficking of African captives to British colonies. After implementing this
+        registration in the Crown Colony of Trinidad in 1812, the British Parliament
+        attempted to establish this slave registration process throughout its
+        colonies. Some colonial legislative bodies in the British Caribbean,
+        including the House of Assembly of Jamaica (also referred to as the Jamaican
+        Assembly), initially resisted the Registry Bill. However, the Jamaican
+        Assembly adopted this slave registration bill in 1816 and required these
+        returns from enslavers in Jamaica beginning in 1817. This registration
+        procedure generally transpired on a triennial basis in the British Empire;
+        however, this was not consistent for all of the British colonies. In
+        Jamaica, slave registers began in 1817, and they continued on a triennial
+        basis until 1832. Once instituted in Jamaica, the Registry Bill was not
+        primarily utilized as a way to eliminate the illegal trafficking of African
+        captives; rather, the Jamaican Assembly deployed it as a tool to apply
+        heightened pressure on enslavers to achieve natural increase, or the
+        increase in the number of live births, on their plantations and throughout
+        Jamaica. Proprietors received tax breaks if they demonstrated they had
+        achieved natural increase in their triennial registers. At the same time,
+        however, penalties and fees related to incomplete registers did not result
+        in complete compliance. (from the book) <b>should be blockquote?</b></p>
+    </:content>
+  </Text>
 
-        <p>
-          {{document.description}}
-        </p>
-        <p class="doc-location">Currently held at {{document.location}}</p>
-        <p><a
-            href="/assets/images/{{document.id}}.{{document.file}}"
-            target="_blank" rel="noopener noreferrer"
-          >[Download]</a></p>
+  <ul class="md:w-1/2 block py-4 overflow-auto">
+    {{#each @model as |document|}}
+      <li class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
+        <div
+          class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l border-t lg:border-r-0 border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
+          style="background-image: url('/assets/images/{{document.id}}-thumb.jpg')"
+          title="{{document.title}}"
+        >
 
-      </div>
-      <hr />
+        </div>
+        <div
+          class="border-r border-b border-l border-emerald-900 lg:border-t lg:border-emerald-900 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+        >
+          <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
 
-    </div>
+          <p>
+            {{document.description}}
+          </p>
+          <p class="doc-location">Currently held at {{document.location}}</p>
+          <p><a
+              href="/assets/images/{{document.id}}.{{document.file}}"
+              target="_blank" rel="noopener noreferrer"
+            >[Download]</a></p>
 
-  {{/each}}
-</:content>
-</Text>
+        </div>
+        <hr />
+
+      </li>
+    {{/each}}
+  </ul>
+</div>
