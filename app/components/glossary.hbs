@@ -1,23 +1,18 @@
-  <div>
-    <div id="snotdriana" role="tooltip" class="glossary-tooltip
-    bg-green-100 font-bold
+<div>
+  {{#each this.data.glossaryArray as |entry|}}
+    <div class="glossary-tooltip
+    bg-green-800 font-bold
     py-2 px-4
     rounded-lg
+    text-slate-50
+    shadow-lg
     hidden
-    ">
-      Snotdriana
-      <div id="snotriana-arrow" data-popper-arrow></div>
+    " id={{concat "glossary-definition-" entry.slug}} role="tooltip">
+      {{entry.definition}}
+      <div 
+        id={{concat "glossary-definition-" entry.slug "-arrow"}} data-popper-arrow
+        class="arrow"
+      ></div>
     </div>
-
-    {{#each this.data.glossaryArray as |entry|}}
-      <div class="glossary-tooltip
-      bg-green-100 font-bold
-      py-2 px-4
-      rounded-lg
-      hidden
-      " id={{concat "glossary-definition-" entry.slug}} role="tooltip">
-        {{entry.definition}}
-        <div id={{concat "glossary-definition-" entry.slug "-arrow"}} data-popper-arrow></div>
-     </div>
-   {{/each}}
+  {{/each}}
  </div>
