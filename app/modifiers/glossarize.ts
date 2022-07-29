@@ -1,68 +1,94 @@
 import Modifier from "ember-modifier";
 import { registerDestructor } from "@ember/destroyable";
-import { htmlSafe } from "@ember/template";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import DataService from "un-silencing-slavery/services/data";
+import { createPopper } from "@popperjs/core";
 
-function cleanup(instance: GlossarizeModifier) {
-  const { elements, event, handler } = instance;
+// function cleanup(instance: GlossarizeModifier) {
+//   const { elements, event, handler } = instance;
 
-  if (elements && event && handler) {
-    console.log("cleaning up");
-    for (const element of elements) {
-      element.removeEventListener(event, handler);
-    }
-    instance.elements = [];
-    instance.event = null;
-    instance.handler = null;
-  }
+//   if (elements && event && handler) {
+//     console.log("cleaning up");
+//     for (const element of elements) {
+//       element.removeEventListener(event, handler);
+//     }
+//     instance.elements = [];
+//     instance.event = null;
+//     instance.handler = null;
+//   }
+// }
+
+type ShowEvents = ["mouseenter", "focus"];
+type HideEvents = ["mouseleave", "blur"];
+
+interface ElementWithListeners {
+  element: Element;
+  showEvents: ShowEvents;
+  hideEvents: HideEvents;
+  showHandler: Function;
+  hideHandler: Function;
 }
 
 export default class GlossarizeModifier extends Modifier {
   @service declare data: DataService;
 
-  @tracked declare elements: NodeListOf<HTMLSpanElement>;
+  @tracked declare elements: NodeListOf<Element>;
 
-  event: null | string = "click";
+  @tracked declare elementsWithListeners: ElementWithListeners[];
 
-  handler(event: Event) {
-    alert(decodeURIComponent(atob(event.target.dataset.glossaryDefinition)));
-  }
+  // constructor(owner: unknown, args: unknown) {
+  //   // super(owner, args);
+  //   // registerDestructor(this, cleanup);
+  // }
 
-  constructor(owner: unknown, args: unknown) {
-    super(owner, args);
-    registerDestructor(this, cleanup);
-  }
+  modify(element: Element, [htmlProfile]: [string]) {
+    if (htmlProfile) {
+      this.elements = element.querySelectorAll(".glossary-term");
 
-  modify(element: Element, [profile]: [string]) {
-    const glossary = this.data.glossary;
-    for (const term in glossary) {
-      profile = profile.replaceAll(
-        term,
-        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" data-glossary-definition="${btoa(
-          encodeURIComponent(glossary[term])
-        )}">${term}</span>`
-      );
-    }
+      for (const termElement of this.elements) {
+        const slug = this.data.glossaryArray.filter(
+          (term) => term.term === termElement.textContent
+        )[0].slug;
 
-    while (element.firstChild) {
-      if (element.lastChild) {
-        element.removeChild(element.lastChild);
+        const tooltip = document.querySelector(
+          `#glossary-definition-${slug}`
+        ) as HTMLElement;
+
+        if (tooltip) {
+          const popperInstance = createPopper(termElement, tooltip, {
+            modifiers: [
+              {
+                name: "offset",
+                options: {
+                  offset: [0, 8],
+                },
+              },
+            ],
+          });
+
+          function show() {
+            tooltip.setAttribute("data-show", "");
+            popperInstance.update();
+          }
+
+          function hide() {
+            tooltip.removeAttribute("data-show");
+          }
+
+          ["mouseenter", "focus"].forEach((event) =>
+            termElement.addEventListener(event, show)
+          );
+
+          ["mouseleave", "blur"].forEach((event) =>
+            termElement.addEventListener(event, hide)
+          );
+
+          // this.elementsWithListeners.push({
+          //   element: termElement,
+          // });
+        }
       }
     }
-
-    for (const paragraph of profile.split("###")) {
-      const paragraphElement = document.createElement("p");
-      paragraphElement.innerHTML = htmlSafe(paragraph) as unknown as string;
-
-      element.appendChild(paragraphElement);
-    }
-
-    this.elements = element.querySelectorAll("span.glossary-term");
-
-    this.elements.forEach((element) => {
-      element.addEventListener("click", this.handler);
-    });
   }
 }

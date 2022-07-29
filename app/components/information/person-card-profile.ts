@@ -10,22 +10,26 @@ export default class InformationPersonCardProfileComponent extends Component<Inf
   @service declare data: DataService;
 
   get htmlProfile() {
-    let profile = this.args.profile
-      .split("###")
-      .map((paragraph) => `<p>${paragraph}</p>`)
-      .join("\n");
+    let profile = this.args.profile;
 
-    for (const term in this.data.glossary) {
+    for (const entry of this.data.glossaryArray) {
       profile = profile.replaceAll(
-        term,
-        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" 
-          aria-describedBy="${term}-definition"
-          data-glossary-definition="${btoa(
-          encodeURIComponent(this.data.glossary[term])
-        )}">${term}</span>`
+        entry.term,
+        `<strong class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" 
+            aria-describedBy="${entry.slug}-definition"
+            data-glossary-definition="${btoa(
+          encodeURIComponent(entry.definition)
+        )}">${entry.term}</strong>`
       );
+      // console.log(entry.term);
     }
 
-    return htmlSafe(profile);
+    // this.updater = Date.now();
+    return htmlSafe(
+      profile
+        .split("###")
+        .map((paragraph) => `<p>${paragraph}</p>`)
+        .join("\n")
+    );
   }
 }
