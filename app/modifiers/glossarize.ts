@@ -5,42 +5,45 @@ import { service } from "@ember/service";
 import DataService from "un-silencing-slavery/services/data";
 import { createPopper } from "@popperjs/core";
 
-// function cleanup(instance: GlossarizeModifier) {
-//   const { elements, event, handler } = instance;
+function cleanup(instance: GlossarizeModifier) {
+  const { elements, elementsWithListeners, showEvents, hideEvents } = instance;
 
-//   if (elements && event && handler) {
-//     console.log("cleaning up");
-//     for (const element of elements) {
-//       element.removeEventListener(event, handler);
-//     }
-//     instance.elements = [];
-//     instance.event = null;
-//     instance.handler = null;
-//   }
-// }
-
-type ShowEvents = ["mouseenter", "focus"];
-type HideEvents = ["mouseleave", "blur"];
+  if (elements && elementsWithListeners && showEvents && hideEvents) {
+    for (const elementWithListeners of elementsWithListeners) {
+      const { element, showHandler, hideHandler } = elementWithListeners;
+      for (const hideEvent of hideEvents) {
+        element.removeEventListener(hideEvent, hideHandler);
+      }
+      for (const showEvent of showEvents) {
+        element.removeEventListener(showEvent, showHandler);
+      }
+    }
+    instance.elements = [];
+    instance.elementsWithListeners = [];
+  }
+}
 
 interface ElementWithListeners {
   element: Element;
-  showEvents: ShowEvents;
-  hideEvents: HideEvents;
-  showHandler: Function;
-  hideHandler: Function;
+  showHandler: any;
+  hideHandler: any;
 }
 
 export default class GlossarizeModifier extends Modifier {
   @service declare data: DataService;
 
-  @tracked declare elements: NodeListOf<Element>;
+  @tracked declare elements: NodeListOf<Element> | [];
 
-  @tracked declare elementsWithListeners: ElementWithListeners[];
+  @tracked elementsWithListeners: ElementWithListeners[] = [];
 
-  // constructor(owner: unknown, args: unknown) {
-  //   // super(owner, args);
-  //   // registerDestructor(this, cleanup);
-  // }
+  showEvents = ["mouseenter", "focus"];
+
+  hideEvents = ["mouseleave", "blur"];
+
+  constructor(owner, args) {
+    super(owner, args);
+    registerDestructor(this, cleanup);
+  }
 
   modify(element: Element, [htmlProfile]: [string]) {
     if (htmlProfile) {
@@ -76,17 +79,26 @@ export default class GlossarizeModifier extends Modifier {
             tooltip.removeAttribute("data-show");
           }
 
-          ["mouseenter", "focus"].forEach((event) =>
+          this.showEvents.forEach((event) =>
             termElement.addEventListener(event, show)
           );
 
-          ["mouseleave", "blur"].forEach((event) =>
+          this.hideEvents.forEach((event) =>
             termElement.addEventListener(event, hide)
           );
 
-          // this.elementsWithListeners.push({
-          //   element: termElement,
-          // });
+          if (
+            this.elementsWithListeners.filter(
+              (elementWithListener) =>
+                elementWithListener.element === termElement
+            ).length === 0
+          ) {
+            this.elementsWithListeners.push({
+              element: termElement,
+              showHandler: show,
+              hideHandler: hide,
+            });
+          }
         }
       }
     }

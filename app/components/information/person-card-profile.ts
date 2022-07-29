@@ -6,6 +6,7 @@ import DataService from "un-silencing-slavery/services/data";
 interface InformationPersonCardProfileComponentArgs {
   profile: string;
 }
+
 export default class InformationPersonCardProfileComponent extends Component<InformationPersonCardProfileComponentArgs> {
   @service declare data: DataService;
 
@@ -15,16 +16,11 @@ export default class InformationPersonCardProfileComponent extends Component<Inf
     for (const entry of this.data.glossaryArray) {
       profile = profile.replaceAll(
         entry.term,
-        `<strong class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" 
-            aria-describedBy="${entry.slug}-definition"
-            data-glossary-definition="${btoa(
-          encodeURIComponent(entry.definition)
-        )}">${entry.term}</strong>`
+        `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" 
+          aria-describedBy="${entry.slug}-definition">${entry.term}</span>`
       );
-      // console.log(entry.term);
     }
 
-    // this.updater = Date.now();
     return htmlSafe(
       profile
         .split("###")
