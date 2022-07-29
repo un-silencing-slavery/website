@@ -1,4 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Mirza&family=Hina+Mincho&display=swap");
+
+@font-face {
+  font-family: "Junction";
+  src: url("/assets/fonts/Junction-regular-webfont.eot");
+  src: url("/assets/fonts/Junction-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/Junction-regular-webfont.woff") format("woff"),
+    url("/assets/fonts/Junction-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Junction";
+  src: url("/assets/fonts/Junction-bold-webfont.eot");
+  src: url("/assets/fonts/Junction-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/Junction-bold-webfont.woff") format("woff"),
+    url("/assets/fonts/Junction-bold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 @import "./ember-promise-modals.css";
 
 @tailwind base;
@@ -6,7 +29,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-serif h-full bg-slate-50;
+  @apply font-sans h-full bg-slate-50;
 }
 
 html {

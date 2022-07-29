@@ -13,6 +13,7 @@ const tailwindConfig = {
     fontFamily: {
       title: ["Mirza", "sans-serif"],
       serif: ["Hina Mincho", "ui-serif", "Times New Roman", "serif"],
+      sans: ["Junction", "ui-sans-serif", "Helvetica", "sans-serif"],
     },
     screens: {
       sm: "640px",
