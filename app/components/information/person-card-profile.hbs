@@ -1,9 +1,13 @@
 <article class="overflow-hidden" ...attributes>
+
+  <button aria-describedby="snotdriana-tooltip" id="snotdriana" class="snotdriana">Snotdriana</button>
+
   <section class="
     prose
     overflow-auto h-full" 
-    {{glossarize @profile}}
+    {{glossarize}}
     >
-    <p>Loading information…</p>
+    {{this.htmlProfile}}
+    <Glossary />
   </section>
 </article>
