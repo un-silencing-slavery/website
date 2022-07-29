@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
 import type DataService from "un-silencing-slavery/services/data";
+import RouterService from "@ember/routing/router-service";
 
 interface SortButtonComponentArgs {
   close: () => void;
@@ -9,6 +10,8 @@ interface SortButtonComponentArgs {
 }
 
 export default class SortButtonComponent extends Component<SortButtonComponentArgs> {
+  @service declare router: RouterService;
+
   @service declare data: DataService;
 
   @action sort() {

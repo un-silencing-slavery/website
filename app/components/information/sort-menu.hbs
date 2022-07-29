@@ -6,13 +6,11 @@
   flex-row md:flex-col
 ">
   <p class="flex-grow px-2 text-sm md:text-base">Sort by:</p>
-  <div class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 space-y-1 md:pt-2">
-    <Information::SortButton @close={{@action}} @sortKey="name">Name</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="age">Age</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="origin">Nativity</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="race">Colour</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="gender">Gender</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="family">Family</Information::SortButton/>
-    <Information::SortButton @close={{@action}} @sortKey="duties">Duties</Information::SortButton/>
-  </div>
+  <ul class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 space-y-1 md:pt-2">
+    {{#each @sortKeys as |key|}}
+      <li>
+        <LinkTo @route={{@route}} @query={{hash sort=key}}>{{key}}</LinkTo>
+      </li>
+      {{/each}}
+  </ul>
 </div>

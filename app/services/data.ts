@@ -20,8 +20,6 @@ interface ThesaurusEntry {
 }
 
 export default class DataService extends Service {
-  @tracked finishGlossarize = false;
-
   airtableKey = "keybjUbsLJQQ77ZJ0";
 
   async fetchFromAirtable(table: string) {
@@ -87,8 +85,9 @@ export default class DataService extends Service {
 
   maxAge = 80;
 
-  get sortedData() {
-    switch (this.sortKey) {
+  sortedPersons(sortKey: SortKey) {
+    this.sortKey = sortKey;
+    switch (sortKey) {
       case "name":
         this.people.sort((a, b) => a.name.localeCompare(b.name));
         break;
@@ -97,12 +96,12 @@ export default class DataService extends Service {
           (a, b) => (a.birthYear || 1833) - (b.birthYear || 1833)
         );
         break;
-      case "race":
+      case "colour":
         this.people.sort((a, b) =>
           (a.colour || "z").localeCompare(b.colour || "z")
         );
         break;
-      case "origin":
+      case "nativity":
         this.people.sort((a, b) =>
           (a.country || "z").localeCompare(b.country || "z")
         );
@@ -112,12 +111,14 @@ export default class DataService extends Service {
           (a.gender || "z").localeCompare(b.gender || "z")
         );
         break;
-      case "family":
+      case "matrilineage":
         this.sortByFamily();
         break;
-      // case "duties":
-      // Duties requires a macro grouping of the various duties.
-      //   break;
+      case "duties":
+        this.people.sort((a, b) =>
+          (a.dutyCategory || "z").localeCompare(b.dutyCategory || "z")
+        );
+        break;
       default:
         break;
     }
