@@ -117,6 +117,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
     "d3": "^7.3.0"
   }
 }
