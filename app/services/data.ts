@@ -20,70 +20,58 @@ interface ThesaurusEntry {
 }
 
 export default class DataService extends Service {
-  airtableKey = "keybjUbsLJQQ77ZJ0";
-
-  async fetchFromAirtable(table: string) {
-    const url = `https://api.airtable.com/v0/appp15gSecfp0vBPk/${table}`;
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${this.airtableKey}`,
-      },
-    });
-    const data = await response.json();
-    return data.records;
-  }
-
-  get glossaryArray() {
-    const glossaryArray = [];
-    if (!this.staticGlossary) {
-      this.buildGlossary();
-    }
-
-    for (const term in this.staticGlossary) {
-      glossaryArray.push({
-        term,
-        slug: dasherize(term),
-        definition: this.staticGlossary[term],
-      });
-    }
-    return glossaryArray;
-  }
-
-  get glossary() {
-    if (!this.staticGlossary) {
-      this.buildGlossary();
-      return this.staticGlossary;
-    }
-
-    return this.staticGlossary;
-  }
-
-  @tracked declare staticGlossary: Record<string, string>;
-
-  async buildGlossary() {
-    const glossary: Record<string, string> = {};
-    const glossaryTable: GlossaryEntry[] = await this.fetchFromAirtable(
-      "glossary"
-    );
-    const thesaurusTable: ThesaurusEntry[] = await this.fetchFromAirtable(
-      "thesaurus"
-    );
-
-    for (const entry of thesaurusTable) {
-      const headword = entry.fields["glossary-headword"][0];
-      glossary[entry.fields.synonym] = glossaryTable.filter(
-        (entry) => entry.id === headword
-      )[0].fields.definition;
-    }
-
-    this.staticGlossary = glossary;
-  }
-
   @tracked people = people as Person[];
 
   @tracked sortKey: SortKey = "name";
 
   maxAge = 80;
+
+  sortOrders = {
+    colour: [
+      "Negro",
+      "Mulatto",
+      "Sambo",
+      "Quadroon",
+      "Inconsistent",
+      "Unknown",
+    ],
+    duties: [
+      "Field Workers",
+      "Craft Workers",
+      "Domestic Workers",
+      "Livestock Workers",
+      "“Not at Work”",
+      "Unknown",
+    ],
+    nativity: ["African", "Creole", "Inconsistent", "Unknown"],
+    gender: ["Female", "Male", "Unknown"],
+  };
+
+  customSort() {
+    const columnMapping: Record<"colour" | "duties" | "nativity" | "gender", keyof<Person> = {
+      colour: "colour",
+      duties: "dutyCategory",
+      nativity: "country",
+      gender: "gender",
+    };
+    const customSortKeys = Object.keys(this.sortOrders);
+    if (customSortKeys.includes(this.sortKey)) {
+      const customSort = this.sortKey as
+        | "colour"
+        | "duties"
+        | "nativity"
+        | "gender";
+      const ordering = new Map(
+        this.sortOrders[customSort].map((v: string, i: number) => [v, i])
+      );
+
+      this.people.sort(
+        (a, b) =>
+          ordering.get(a[columnMapping[customSort]]) -
+          ordering.get(b[columnMapping[customSort]])
+      );
+    }
+  }
 
   sortedPersons(sortKey: SortKey) {
     this.sortKey = sortKey;
@@ -97,27 +85,19 @@ export default class DataService extends Service {
         );
         break;
       case "colour":
-        this.people.sort((a, b) =>
-          (a.colour || "z").localeCompare(b.colour || "z")
-        );
+        this.customSort();
         break;
       case "nativity":
-        this.people.sort((a, b) =>
-          (a.country || "z").localeCompare(b.country || "z")
-        );
+        this.customSort();
         break;
       case "gender":
-        this.people.sort((a, b) =>
-          (a.gender || "z").localeCompare(b.gender || "z")
-        );
+        this.customSort();
         break;
       case "matrilineage":
         this.sortByFamily();
         break;
       case "duties":
-        this.people.sort((a, b) =>
-          (a.dutyCategory || "z").localeCompare(b.dutyCategory || "z")
-        );
+        this.customSort();
         break;
       default:
         break;
