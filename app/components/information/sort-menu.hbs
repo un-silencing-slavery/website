@@ -1,15 +1,16 @@
 <div class="{{if @visible "flex" "hidden"}}
   {{if @visible "absolute right-3 z-50"}}
   w-72 md:w-32
+  rounded
   bg-green-800 text-slate-50
-  py-2 md:pt-2 md:pb-0
+  py-2
   flex-row md:flex-col
 ">
-  <p class="flex-grow px-2 text-sm md:text-base">Sort by:</p>
+  <p class="flex-grow text-sm md:text-base px-2">Sort by:</p>
   <ul class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 space-y-1 md:pt-2">
     {{#each @sortKeys as |key|}}
-      <li>
-        <LinkTo @route={{@route}} @query={{hash sort=key}}>{{key}}</LinkTo>
+      <li class="px-2 {{if (eq key this.data.sortKey) "text-slate-700 bg-green-200 shadow-inner" "hover:text-slate-700 hover:bg-green-200 hover:shadow-inner"}}">
+        <LinkTo @route={{@route}} @query={{hash sort=key}} {{on "click" @close}}>{{capitalize key}}</LinkTo>
       </li>
       {{/each}}
   </ul>

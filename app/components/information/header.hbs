@@ -3,12 +3,14 @@
     <h3 class="text-xl md:text-2xl pt-3 font-title">Enslaved Persons of Rose Hall</h3>
     <button class="border border-green-900 rounded-sm px-2" type="button" {{on "click" this.toggleSortmenu}}>
       <span class="hidden">Sort</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0
-      24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather
-      feather-sort"><line x1="3" y1="12" x2="14" y2="12"></line><line x1="3" y1="6"
-      x2="21" y2="6"></line><line x1="3" y1="18" x2="7" y2="18"></line></svg>
+      {{svg-jar "sort"}}
     </button>
   </div>
-  <Information::SortMenu @route={{this.route}} @visible={{this.sortmenuVisible}} @action={{this.hideSortmenu}} @sortKeys={{this.sortKeys}}/>
+  <Information::SortMenu 
+    @route={{this.route}} 
+    @visible={{this.sortmenuVisible}} 
+    @sortKeys={{this.sortKeys}}
+    @sortKey={{this.data.sortKey}}
+    @close={{this.hideSortmenu}} 
+    />
 </header>
