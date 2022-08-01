@@ -1,19 +1,19 @@
 import { htmlSafe } from "@ember/template";
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import DataService from "un-silencing-slavery/services/data";
+import GlossaryService from "un-silencing-slavery/services/glossary";
 
 interface InformationPersonCardProfileComponentArgs {
   profile: string;
 }
 
 export default class InformationPersonCardProfileComponent extends Component<InformationPersonCardProfileComponentArgs> {
-  @service declare data: DataService;
+  @service declare glossary: GlossaryService;
 
   get htmlProfile() {
     let profile = this.args.profile;
 
-    for (const entry of this.data.glossaryArray) {
+    for (const entry of this.glossary.glossaryArray) {
       profile = profile.replaceAll(
         entry.term,
         `<span class="underline decoration-green-100 decoration-2 cursor-pointer glossary-term" 

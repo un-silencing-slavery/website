@@ -1,7 +1,18 @@
 <div class="overflow-auto">
-<ul class="columns-3 gap-1">
-  {{#each this.data.sortedData as |person|}}
-    <Information::PersonsListItem @person={{person}} />
-  {{/each}}
-</ul>
+  {{#if this.clustered}}
+    <div class="columns-3 gap-1 space-y-1">
+      {{#each this.clusters as |persons index|}}
+        <Information::Cluster 
+          @persons={{persons}} 
+          @index={{index}} 
+          @clusterKey={{this.clusterKey}} />
+      {{/each}}
+    </div>
+  {{else}}
+    <ul class="columns-3 gap-1">
+      {{#each @sortedPersons as |person|}}
+        <Information::PersonsListItem @person={{person}} />
+      {{/each}}
+    </ul>
+  {{/if}}
 </div>
