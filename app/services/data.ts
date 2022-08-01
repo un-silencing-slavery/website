@@ -1,23 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
-import { dasherize } from "@ember/string";
 import people from "un-silencing-slavery/data/people";
-
-interface GlossaryEntry {
-  fields: {
-    headword: string;
-    definition: string;
-  };
-  id: string;
-}
-
-interface ThesaurusEntry {
-  fields: {
-    synonym: string;
-    "glossary-headword": string[];
-  };
-  id: string;
-}
 
 export default class DataService extends Service {
   @tracked people = people as Person[];
@@ -47,28 +30,25 @@ export default class DataService extends Service {
     gender: ["Female", "Male", "Unknown"],
   };
 
+  clusterColumnMapping: Record<ClusterKey, keyof Person> = {
+    colour: "colour",
+    duties: "dutyCategory",
+    nativity: "country",
+    gender: "gender",
+  };
+
   customSort() {
-    const columnMapping: Record<"colour" | "duties" | "nativity" | "gender", keyof<Person> = {
-      colour: "colour",
-      duties: "dutyCategory",
-      nativity: "country",
-      gender: "gender",
-    };
     const customSortKeys = Object.keys(this.sortOrders);
     if (customSortKeys.includes(this.sortKey)) {
-      const customSort = this.sortKey as
-        | "colour"
-        | "duties"
-        | "nativity"
-        | "gender";
+      const customSort = this.sortKey as ClusterKey;
       const ordering = new Map(
         this.sortOrders[customSort].map((v: string, i: number) => [v, i])
       );
 
       this.people.sort(
         (a, b) =>
-          ordering.get(a[columnMapping[customSort]]) -
-          ordering.get(b[columnMapping[customSort]])
+          ordering.get(a[this.clusterColumnMapping[customSort]]) -
+          ordering.get(b[this.clusterColumnMapping[customSort]])
       );
     }
   }
