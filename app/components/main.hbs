@@ -3,12 +3,12 @@
 >
   <h1 class="sr-only">(Un)Silencing Slavery at Rose Hall Project</h1>
 
-  <CommunityTreeContainer/>
+  <CommunityTreeContainer @sortedPersons={{@sortedPersons}}/>
 
   <div class="block md:hidden h-80 w-full">
     <p>&nbsp;</p>
   </div>
-  <Information>
+  <Information @sortedPersons={{@sortedPersons}}>
     {{yield}}
   </Information>
 </main>

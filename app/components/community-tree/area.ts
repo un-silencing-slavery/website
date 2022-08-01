@@ -64,21 +64,26 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
   }
 
   splitIntoGroups() {
-    if ("race origin gender".split(" ").includes(this.data.sortKey)) {
-      const sortKey = this.data.sortKey as keyof ColumnMap;
-      const columnMap: ColumnMap = {
-        race: "colour",
-        origin: "country",
-        gender: "gender",
-      };
-      return this.data.people.reduce((group: GroupedPeople, person: Person) => {
-        const column = person[columnMap[sortKey]] ?? "";
-        group[column] = group[column] ?? [];
-        group[column].push(person);
-        return group;
-      }, {});
-    } else {
-      return [];
-    }
+    // if (
+    //   "colour nativity duties gender".split(" ").includes(this.data.sortKey)
+    // ) {
+    //   const sortKey = this.data.sortKey as keyof ColumnMap;
+    //   const columnMap: ColumnMap = {
+    //     race: "colour",
+    //     origin: "country",
+    //     gender: "gender",
+    //   };
+    //   return this.args.sortedPersons.reduce(
+    //     (group: GroupedPeople, person: Person) => {
+    //       const column = person[columnMap[sortKey]] ?? "";
+    //       group[column] = group[column] ?? [];
+    //       group[column].push(person);
+    //       return group;
+    //     },
+    //     {}
+    //   );
+    // } else {
+    //   return [];
+    // }
   }
 }

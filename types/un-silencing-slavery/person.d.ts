@@ -2,10 +2,21 @@ type SortKey =
   | "name"
   | "age"
   | "gender"
-  | "race"
-  | "family"
-  | "origin"
+  | "colour"
+  | "matrilineage"
+  | "nativity"
   | "duties";
+
+type ClusterKey = "gender" | "colour" | "nativity" | "duties";
+
+type DutyCategory =
+  | "Craft Workers"
+  | "Livestock Workers"
+  | "Domestic Workers"
+  | "Craft Workers"
+  | "Field Workers"
+  | "“Not at Work”"
+  | "Unknown";
 
 interface Person {
   personId: string;
@@ -38,9 +49,10 @@ interface Person {
   disposition: string | null;
   valuation: string | null;
   birthYear: number | null;
-  arrivalYear: number | null;
-  exitYear: number | null;
-  displayName: string | null;
-  profile: string | null;
+  arrivalYear: number;
+  exitYear: number;
+  displayName: string;
+  profile: string;
   personSlug: string;
+  dutyCategory: DutyCategory;
 }
