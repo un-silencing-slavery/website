@@ -17,7 +17,7 @@
 
       <p>Separated into two sub-lists—grouped under “Males” and “Females”
       (with males consistently listed first), these slave registers present and
-      reinforce this binary of males and females without any flexibility possible
+      reinforce the binary of males and females without any flexibility possible
       in the written records. It is important to point out that the absence of
       this fluidity in the archival documents should not erase the possibility of
       some sense of flexibility embraced by individual enslaved persons at that
@@ -86,7 +86,7 @@
 
   <ul class="md:w-1/2 block py-4 overflow-auto">
     {{#each @model as |document|}}
-      <li class="max-w-sm w-full lg:max-w-full lg:flex mb-10">
+      <li class="max-w-sm w-full lg:max-w-full lg:flex mb-7 pr-8 h-48">
         <div
           class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden border-r border-b border-l border-t lg:border-r-0 border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
           style="background-image: url('/assets/images/{{document.id}}-thumb.jpg')"
@@ -100,11 +100,11 @@
           <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
 
 
-          <p class="doc-location">Currently held at {{document.location}}</p>
-          <p><a
+          <p class="doc-location text-sm pb-3">Currently held at {{document.location}}</p>
+          <p class="font-medium"><a
               href="/assets/images/{{document.id}}.{{document.file}}"
-              target="_blank" rel="noopener noreferrer"
-            >[Download]</a></p>
+              target="_blank" style="color: #2E4934;" rel="noopener noreferrer"
+            >Download Document</a> ({{document.size}})</p>
 
         </div>
         <hr />
