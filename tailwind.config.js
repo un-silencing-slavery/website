@@ -55,6 +55,16 @@ const tailwindConfig = {
         800: "#2e4934",
         900: "#1f3123",
       },
+      category: {
+        0: "#7fc97f",
+        1: "#beaed4",
+        2: "#fdc086",
+        3: "#ffff99",
+        4: "#386cb0",
+        5: "#f0027f",
+        6: "#bf5b17",
+        7: "#666666",
+      },
     },
     extend: {
       // typography: (theme) => ({
