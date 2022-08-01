@@ -15,7 +15,7 @@ export default class DocumentsRoute extends Route {
         file: "pdf",
         location: "National Archives of the United Kingdom, Kew, England",
         description:
-          "The first slave register of Rose Hall in 1817 lists all enslaved individuals at Rose Hall as of June 30, 1817. The register is separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The first slave register of Rose Hall in 1817 lists all enslaved individuals at Rose Hall as of June 30, 1817.",
       },
       {
         id: "rh02",
@@ -26,7 +26,7 @@ export default class DocumentsRoute extends Route {
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         description:
-          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The register of 1820 offers specific names of the enslaved women, men, and children at Rose Hall. This register lists only those enslaved persons who had been born and those who had passed in the three-year period between slave registers.",
       },
       {
         id: "rh03",
@@ -37,7 +37,7 @@ export default class DocumentsRoute extends Route {
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         description:
-          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The register of 1823 offers specific names of the enslaved women, men, and children at Rose Hall. This register lists only those enslaved persons who had been born and those who had passed in the three-year period between slave registers.",
       },
       {
         id: "rh04",
@@ -48,7 +48,7 @@ export default class DocumentsRoute extends Route {
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         description:
-          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The registers of 1826 offers specific names of the enslaved women, men, and children at Rose Hall. This register lists only those enslaved persons who had been born and those who had passed in the three-year period between slave registers.",
       },
       {
         id: "rh05",
@@ -59,7 +59,7 @@ export default class DocumentsRoute extends Route {
         location:
           "Jamaica Archives and Records Department, Spanish Town, Jamaica and National Archives of the United Kingdom, Kew, England",
         description:
-          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The registers of 1829 offers specific names of the enslaved women, men, and children at Rose Hall. This register lists only those enslaved persons who had been born and those who had passed in the three-year period between slave registers.",
       },
       {
         id: "rh06",
@@ -69,7 +69,7 @@ export default class DocumentsRoute extends Route {
         file: "tif",
         location: "National Archives of the United Kingdom, Kew, England",
         description:
-          "The registers of 1820, 1823, 1826, 1829, and 1832 offer specific names of the enslaved women, men, and children at Rose Hall. These registers list only those enslaved persons who had been born and those who had passed in the three-year period between slave registers. The registers are separated into two sub-lists—grouped under “Males” and “Females” (with males consistently listed first).",
+          "The registers of 1832 offers specific names of the enslaved women, men, and children at Rose Hall. This register lists only those enslaved persons who had been born and those who had passed in the three-year period between slave registers.",
       },
       {
         id: "rh07",
