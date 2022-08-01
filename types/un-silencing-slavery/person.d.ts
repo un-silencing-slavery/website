@@ -7,6 +7,8 @@ type SortKey =
   | "nativity"
   | "duties";
 
+type ClusterKey = "gender" | "colour" | "nativity" | "duties";
+
 type DutyCategory =
   | "Craft Workers"
   | "Livestock Workers"

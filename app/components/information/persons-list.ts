@@ -1,34 +1,45 @@
 import Component from "@glimmer/component";
-import { action } from "@ember/object";
 import { service } from "@ember/service";
-import move from "ember-animated/motions/move";
+import ActivePersonService from "un-silencing-slavery/services/active-person";
+import DataService from "un-silencing-slavery/services/data";
 
-export default class InformationPersonsListComponent extends Component {
-  @service activePerson;
+interface InformationPersonsListComponentSignature {
+  Element: HTMLElement;
+  Args: {
+    sortedPersons: Person[];
+  };
+}
 
-  @service data;
+export default class InformationPersonsListComponent extends Component<InformationPersonsListComponentSignature> {
+  @service declare activePerson: ActivePersonService;
 
-  get personData() {
-    const people = this.data.sortedData();
-    if (this.activePerson.personId) {
-      const personIdsArray = this.data.sortedData().mapBy("personId");
-      const data = [];
-      const activeIndex = personIdsArray.indexOf(this.activePerson.personId);
-      data.push(people[activeIndex]);
-      if (activeIndex > 0) {
-        for (const person of people.slice(0, activeIndex)) {
-          data.push(person);
-        }
-      }
-      if (activeIndex < people.length - 1) {
-        for (const person of people.slice(activeIndex + 1, people.length - 1)) {
-          data.push(person);
-        }
-      }
+  @service declare data: DataService;
 
-      return data;
-    }
+  groupBy = <T>(array: T[], predicate: (v: T) => string) =>
+    array.reduce((acc, value) => {
+      (acc[predicate(value)] ||= []).push(value);
+      return acc;
+    }, {} as { [key: string]: T[] });
 
-    return people;
+  get clusterKey(): ClusterKey {
+    return this.data.sortKey as ClusterKey;
+  }
+
+  get clustered() {
+    return ["gender", "colour", "nativity", "duties"].includes(
+      this.data.sortKey
+    );
+  }
+
+  get clusters() {
+    const key = this.clusterKey;
+    const clusteredPersons = this.groupBy(
+      this.args.sortedPersons,
+      (person) => person[this.data.clusterColumnMapping[key]]
+    );
+
+    return this.data.sortOrders[key].map(
+      (category) => clusteredPersons[category]
+    );
   }
 }
