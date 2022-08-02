@@ -1,9 +1,22 @@
-import Modifier from "ember-modifier";
+import Modifier, { ArgsFor } from "ember-modifier";
 import { registerDestructor } from "@ember/destroyable";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
-import DataService from "un-silencing-slavery/services/data";
+import GlossaryService from "un-silencing-slavery/services/glossary";
 import { createPopper } from "@popperjs/core";
+
+interface GlossarizeModifierSignature {
+  Element: HTMLElement;
+  Args: {
+    Positional: [string];
+  };
+}
+
+interface ElementWithListeners {
+  element: Element;
+  showHandler: any;
+  hideHandler: any;
+}
 
 function cleanup(instance: GlossarizeModifier) {
   const { elements, elementsWithListeners, showEvents, hideEvents } = instance;
@@ -23,14 +36,8 @@ function cleanup(instance: GlossarizeModifier) {
   }
 }
 
-interface ElementWithListeners {
-  element: Element;
-  showHandler: any;
-  hideHandler: any;
-}
-
-export default class GlossarizeModifier extends Modifier {
-  @service declare data: DataService;
+export default class GlossarizeModifier extends Modifier<GlossarizeModifierSignature> {
+  @service declare glossary: GlossaryService;
 
   @tracked declare elements: NodeListOf<Element> | [];
 
@@ -40,7 +47,7 @@ export default class GlossarizeModifier extends Modifier {
 
   hideEvents = ["mouseleave", "blur"];
 
-  constructor(owner, args) {
+  constructor(owner: unknown, args: ArgsFor<GlossarizeModifierSignature>) {
     super(owner, args);
     registerDestructor(this, cleanup);
   }
@@ -50,7 +57,7 @@ export default class GlossarizeModifier extends Modifier {
       this.elements = element.querySelectorAll(".glossary-term");
 
       for (const termElement of this.elements) {
-        const slug = this.data.glossaryArray.filter(
+        const slug = this.glossary.glossaryArray.filter(
           (term) => term.term === termElement.textContent
         )[0].slug;
 

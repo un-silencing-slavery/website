@@ -134,7 +134,7 @@ duties_dictionary = {'At Palmyra': "Craft Workers",
  'With Mrs. Palmer': "Domestic Workers",
  nan: "Unknown"}
 
-df['duty_category'] = df['duties'].apply(lambda x: duties_dictionary[x])
+df['dutyCategory'] = df['duties'].apply(lambda x: duties_dictionary[x])
 
 # Parse ages
 def numTest(value):

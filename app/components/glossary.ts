@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
-import DataService from "un-silencing-slavery/services/data";
+import GlossaryService from "un-silencing-slavery/services/glossary";
 
 export default class GlossaryComponent extends Component {
-  @service declare data: DataService;
+  @service declare glossary: GlossaryService;
 }
