@@ -1,0 +1,12 @@
+<dl>
+  {{#each this.glossary.glossaryArray as |entry|}}
+    <dt class="font-bold text-2xl">
+      <a name="glossary-entry-{{entry.slug}}"
+        class="bg-none hover:bg-none no-underline">
+        {{capitalize entry.term}}
+      </a>
+    </dt>
+    <dd>{{display-glossary-definition entry.definition}}</dd>
+  {{/each}}
+</dl>
+
