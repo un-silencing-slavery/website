@@ -1,8 +1,7 @@
 <div class="{{get this.colors @index}} bg-opacity-30 rounded">
   <button 
     class="px-2 flex flex-row justify-between w-full" 
-    disabled={{this.containsActivePerson}}
-    {{on "click" this.toggleCluster}}
+    disabled={{this.containsActivePerson}} type="button" {{on "click" this.toggleCluster}}
     >
     <p class="flex-grow text-left">
     {{get this.categories @index}}
