@@ -2,11 +2,13 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import ActivePersonService from "un-silencing-slavery/services/active-person";
 import DataService from "un-silencing-slavery/services/data";
+import groupBy from "un-silencing-slavery/utils/group-by";
 
 interface InformationPersonsListComponentSignature {
   Element: HTMLElement;
   Args: {
     sortedPersons: Person[];
+    sortKey: SortKey;
   };
 }
 
@@ -15,25 +17,19 @@ export default class InformationPersonsListComponent extends Component<Informati
 
   @service declare data: DataService;
 
-  groupBy = <T>(array: T[], predicate: (v: T) => string) =>
-    array.reduce((acc, value) => {
-      (acc[predicate(value)] ||= []).push(value);
-      return acc;
-    }, {} as { [key: string]: T[] });
-
-  get clusterKey(): ClusterKey {
-    return this.data.sortKey as ClusterKey;
-  }
-
   get clustered() {
     return ["gender", "colour", "nativity", "duties"].includes(
-      this.data.sortKey
+      this.args.sortKey
     );
+  }
+
+  get clusterKey(): ClusterKey {
+    return this.args.sortKey as ClusterKey;
   }
 
   get clusters() {
     const key = this.clusterKey;
-    const clusteredPersons = this.groupBy(
+    const clusteredPersons = groupBy(
       this.args.sortedPersons,
       (person) => person[this.data.clusterColumnMapping[key]]
     );

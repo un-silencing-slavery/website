@@ -1,38 +1,32 @@
 <g class="community-tree-sorters">
-  <g 
-    class="community-tree-area" 
-    transform={{this.svg.circleTransform}}
-    >
-    {{#each this.clusters as |arc index|}}
-      <path 
-        mask="url(#gradient-mask)"
-        fill-opacity="0.4"
-        fill={{arc.color}}
-        stroke={{arc.color}}
-        stroke-width="0"
-        stroke-opacity="1"
-        d={{arc.d}}
-        filter={{if this.active (concat "url(#area-glow-" index ")") "none"}}
-      />
-
-      <path 
-        id="{{arc.title}}-title-path"
-        fill={{arc.color}}
-        stroke={{arc.color}}
-        stroke-width="0"
-        stroke-opacity="1"
-        d={{arc.border}}
-        filter={{concat "url(#area-glow)"}}
+  {{#if this.clustered}}
+    <g 
+      class="community-tree-area" 
+      transform={{this.svg.circleTransform}}
+      >
+      {{#each this.clusters as |arc index|}}
+        <path 
+          mask="url(#gradient-mask)"
+          fill-opacity="0.25"
+          fill={{arc.color}}
+          stroke={{arc.color}}
+          stroke-width="0"
+          stroke-opacity="1"
+          d={{arc.d}}
+          filter={{if this.active (concat "url(#area-glow-" index ")") "none"}}
         />
-      {{/each}}
-  </g>
-  <g class="community-tree-area-legend" transform="translate({{mult 0.8 this.svg.width}}, {{mult 0.8 this.svg.height}})">
-    {{#each this.clusters as |arc index|}}
-    <g transform="translate(0, {{mult index 22}})">
-      <rect x=0 y=0 width="1rem" height="1rem" stroke={{arc.color}} fill-opacity="0.4" fill={{arc.color}} />
-      <text transform="translate(28, 16)">{{arc.title}}</text>
+
+        <path 
+          id="{{arc.title}}-title-path"
+          fill={{arc.color}}
+          fill-opacity="0.5"
+          stroke={{arc.color}}
+          stroke-width="0"
+          stroke-opacity="1"
+          d={{arc.border}}
+          />
+        {{/each}}
     </g>
-    {{/each}}
-  </g>
+  {{/if}}
 </g>
 
