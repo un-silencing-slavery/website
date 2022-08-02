@@ -6,79 +6,69 @@ import { schemeAccent, arc } from "d3";
 
 interface CommunityTreeAreaComponentArgs {
   yearScale(year: number): number;
+  sortedPersons: Person[];
+  sortKey: SortKey;
 }
-
-// type ColumnMap = Record<SortKey, keyof Person>;
-interface ColumnMap {
-  race: keyof Person;
-  origin: keyof Person;
-  gender: keyof Person;
-}
-
-type GroupedPeople = Record<string, Person[]>;
 
 export default class CommunityTreeAreaComponent extends Component<CommunityTreeAreaComponentArgs> {
   @service declare svg: SvgService;
 
   @service declare data: DataService;
 
-  get clusters() {
-    const groups: Person[] | GroupedPeople = this.splitIntoGroups();
-    if (groups instanceof Array) {
-      return [];
-    } else {
-      let i = 0;
-      const clusters = [];
-      const arcGenerator = arc();
-      let startAngle = 0;
-      for (const title in groups) {
-        const people = groups[title];
-        const theta = (people.length / this.data.people.length) * 2 * Math.PI;
-        const d = arcGenerator({
-          innerRadius: this.args.yearScale(1817),
-          outerRadius: this.svg.circleRadius,
-          startAngle,
-          endAngle: startAngle + theta,
-        });
-
-        const border = arcGenerator({
-          innerRadius: 0.99 * this.svg.circleRadius,
-          outerRadius: 1.01 * this.svg.circleRadius,
-          startAngle,
-          endAngle: startAngle + theta,
-        });
-
-        startAngle += theta;
-
-        clusters.push({
-          border,
-          title,
-          color: schemeAccent[i],
-          d,
-        });
-
-        i += 1;
-      }
-      return clusters;
-    }
+  get clusterKey(): ClusterKey {
+    return this.args.sortKey as ClusterKey;
   }
 
-  splitIntoGroups() {
-    if ("race origin gender".split(" ").includes(this.data.sortKey)) {
-      const sortKey = this.data.sortKey as keyof ColumnMap;
-      const columnMap: ColumnMap = {
-        race: "colour",
-        origin: "country",
-        gender: "gender",
+  get clustered() {
+    return ["gender", "colour", "nativity", "duties"].includes(
+      this.args.sortKey
+    );
+  }
+
+  get clusters() {
+    const key = this.clusterKey as ClusterKey;
+    const categories = this.data.sortOrders[key].map((category) => {
+      return {
+        category,
+        count: this.args.sortedPersons.filter(
+          (person) => person[this.data.clusterColumnMapping[key]] === category
+        ).length,
       };
-      return this.data.people.reduce((group: GroupedPeople, person: Person) => {
-        const column = person[columnMap[sortKey]] ?? "";
-        group[column] = group[column] ?? [];
-        group[column].push(person);
-        return group;
-      }, {});
-    } else {
-      return [];
-    }
+    });
+
+    console.log(categories);
+
+    const arcGenerator = arc();
+    let startAngle = 0;
+
+    return categories.map((categoryWithCount, index) => {
+      const title = categoryWithCount.category;
+      const theta =
+        (categoryWithCount.count / this.args.sortedPersons.length) *
+        2 *
+        Math.PI;
+      const d = arcGenerator({
+        innerRadius: this.args.yearScale(1817),
+        outerRadius: this.svg.circleRadius,
+        startAngle,
+        endAngle: startAngle + theta,
+      });
+
+      const border = arcGenerator({
+        innerRadius: 0.99 * this.svg.circleRadius,
+        outerRadius: 1.01 * this.svg.circleRadius,
+        startAngle,
+        endAngle: startAngle + theta,
+      });
+
+      startAngle += theta;
+
+      return {
+        border,
+        title,
+        d,
+        color: schemeAccent[index],
+      };
+    });
   }
 }

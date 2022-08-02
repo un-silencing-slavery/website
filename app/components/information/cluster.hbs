@@ -1,0 +1,19 @@
+<div class="{{get this.colors @index}} bg-opacity-30 rounded">
+  <button 
+    class="px-2 flex flex-row justify-between w-full" 
+    disabled={{this.containsActivePerson}} type="button" {{on "click" this.toggleCluster}}
+    >
+    <p class="flex-grow text-left">
+    {{get this.categories @index}}
+    </p>
+    {{svg-jar (if this.isVisible "chevron-up" "chevron-down") role="img" title="Disclosure Icon" class=(if this.containsActivePerson "cursort-not-allowed text-slate-400")}}
+  </button>
+  {{#if this.isVisible}}
+    <ul>
+      {{#each @persons as |person|}}
+        <Information::PersonsListItem @person={{person}} />
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>
+

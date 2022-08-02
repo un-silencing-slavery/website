@@ -28,12 +28,12 @@
       </defs>
       <CommunityTree::Background />
       <g class="zoomable">
-        <CommunityTree::Area @yearScale={{this.yearScale}} />
+        <CommunityTree::Area @sortKey={{@sortKey}} @sortedPersons={{@sortedPersons}} @yearScale={{this.yearScale}} />
         <g 
           mask="url(#gradient-mask)"
           id="community-tree-circle"
           transform={{this.svg.circleTransform}}>
-            {{#each this.data.sortedData as |person i|}}
+            {{#each @sortedPersons as |person i|}}
               <CommunityTree::Person 
                 @person={{person}}
                 @i={{i}} 
