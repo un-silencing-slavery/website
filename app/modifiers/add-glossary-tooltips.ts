@@ -2,10 +2,10 @@ import Modifier, { ArgsFor } from "ember-modifier";
 import { registerDestructor } from "@ember/destroyable";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
-import GlossaryService from "un-silencing-slavery/services/glossary";
+import AnnotationsService from "un-silencing-slavery/services/annotations";
 import { createPopper } from "@popperjs/core";
 
-interface GlossarizeModifierSignature {
+interface AddGlossaryTooltipsModifierSignature {
   Element: HTMLElement;
   Args: {
     Positional: [string];
@@ -18,7 +18,7 @@ interface ElementWithListeners {
   hideHandler: any;
 }
 
-function cleanup(instance: GlossarizeModifier) {
+function cleanup(instance: AddGlossaryTooltipsModifier) {
   const { elements, elementsWithListeners, showEvents, hideEvents } = instance;
 
   if (elements && elementsWithListeners && showEvents && hideEvents) {
@@ -36,8 +36,8 @@ function cleanup(instance: GlossarizeModifier) {
   }
 }
 
-export default class GlossarizeModifier extends Modifier<GlossarizeModifierSignature> {
-  @service declare glossary: GlossaryService;
+export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryTooltipsModifierSignature> {
+  @service declare annotations: AnnotationsService;
 
   @tracked declare elements: NodeListOf<Element> | [];
 
@@ -47,22 +47,25 @@ export default class GlossarizeModifier extends Modifier<GlossarizeModifierSigna
 
   hideEvents = ["mouseleave", "blur"];
 
-  constructor(owner: unknown, args: ArgsFor<GlossarizeModifierSignature>) {
+  constructor(
+    owner: unknown,
+    args: ArgsFor<AddGlossaryTooltipsModifierSignature>
+  ) {
     super(owner, args);
     registerDestructor(this, cleanup);
   }
 
   modify(element: Element, [htmlProfile]: [string]) {
     if (htmlProfile) {
-      this.elements = element.querySelectorAll(".glossary-term");
+      this.elements = element.querySelectorAll(".thesaurus-term");
 
       for (const termElement of this.elements) {
-        const slug = this.glossary.glossaryArray.filter(
+        const slug = this.annotations.thesaurusArray.filter(
           (term) => term.term === termElement.textContent
         )[0].slug;
 
         const tooltip = document.querySelector(
-          `#glossary-definition-${slug}`
+          `#thesaurus-definition-${slug}`
         ) as HTMLElement;
 
         if (tooltip) {

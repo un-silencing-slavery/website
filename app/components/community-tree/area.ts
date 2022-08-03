@@ -36,8 +36,6 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
       };
     });
 
-    console.log(categories);
-
     const arcGenerator = arc();
     let startAngle = 0;
 

@@ -1,18 +1,13 @@
-<div>
-  {{#each this.glossary.glossaryArray as |entry|}}
-    <div class="glossary-tooltip
-    bg-green-800 font-bold
-    py-2 px-4
-    rounded-lg
-    text-slate-50
-    shadow-lg
-    hidden
-    " id={{concat "glossary-definition-" entry.slug}} role="tooltip">
-      {{entry.definition}}
-      <div 
-        id={{concat "glossary-definition-" entry.slug "-arrow"}} data-popper-arrow
-        class="arrow"
-      ></div>
-    </div>
+{{log this.annotations.glossary}}
+<dl>
+  {{#each this.annotations.glossary as |entry|}}
+    <dt class="font-bold text-2xl">
+      <a name="glossary-entry-{{entry.slug}}"
+        class="bg-none hover:bg-none no-underline">
+        {{capitalize entry.displayTerm}}
+      </a>
+    </dt>
+    <dd>{{display-glossary-definition entry.definition}}</dd>
   {{/each}}
- </div>
+</dl>
+
