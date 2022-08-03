@@ -19,12 +19,16 @@ export default class CommunityTreePersonComponent extends Component {
   }
 
   get exitYear() {
-    if (this.args.person.exitYear >= 1832) {
+    if (this.args.person.exitYear > 1832) {
       return 1833.7;
     }
 
-    if (!this.args.person.exitYear) {
+    if (!this.args.person.exitYear || this.args.person.exitYear === 0) {
       return 1833.7;
+    }
+
+    if (this.args.person.exitYear === this.args.person.arrivalYear) {
+      return this.args.person.exitYear + 0.5;
     }
 
     return this.args.person.exitYear;
