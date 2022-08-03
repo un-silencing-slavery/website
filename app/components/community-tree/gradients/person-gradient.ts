@@ -19,7 +19,7 @@ export default class CommunityTreePersonGradientComponent extends Component<Comm
   get stops() {
     const birthYear = this.args.person.birthYear;
     const exitYear = this.args.person.exitYear;
-    if (birthYear !== null && exitYear !== null) {
+    if (birthYear && exitYear) {
       let ageAtStart = 0;
       if (birthYear < 1817) {
         ageAtStart = 1817 - birthYear;
