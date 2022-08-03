@@ -77,7 +77,7 @@ nav a.active {
   @apply pointer-events-none bg-green-100 text-green-900;
 }
 
-.glossary-tooltip[data-show] {
+.thesaurus-tooltip[data-show] {
   display: block;
 }
 

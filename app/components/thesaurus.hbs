@@ -1,0 +1,18 @@
+<div>
+  {{#each this.annotations.thesaurusArray as |entry|}}
+    <div class="thesaurus-tooltip
+    bg-green-800 font-bold
+    py-2 px-4
+    rounded-lg
+    text-slate-50
+    shadow-lg
+    hidden
+    " id={{concat "thesaurus-definition-" entry.slug}} role="tooltip">
+      {{entry.definition}}
+      <div 
+        id={{concat "thesaurus-definition-" entry.slug "-arrow"}} data-popper-arrow
+        class="arrow"
+      ></div>
+    </div>
+  {{/each}}
+ </div>
