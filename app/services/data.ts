@@ -24,7 +24,7 @@ export default class DataService extends Service {
       "Domestic Workers",
       "Livestock Workers",
       "“Not at Work”",
-      "Unknown",
+      "Not at Rose Hall in 1832",
     ],
     nativity: ["African", "Creole", "Inconsistent", "Unknown"],
     gender: ["Female", "Male", "Unknown"],

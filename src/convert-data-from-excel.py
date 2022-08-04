@@ -132,7 +132,7 @@ duties_dictionary = {'At Palmyra': "Craft Workers",
  'Washerwoman': "Domestic Workers",
  'Watchman': "Craft Workers",
  'With Mrs. Palmer': "Domestic Workers",
- nan: "Unknown"}
+ nan: "Not at Rose Hall in 1832"}
 
 df['dutyCategory'] = df['duties'].apply(lambda x: duties_dictionary[x])
 
@@ -213,6 +213,7 @@ manual_matrix = {
     "P66": {"arrivalYear": 1817},
     "P67": {"arrivalYear": 1832},
     "P68": {"exitYear": 1827},
+    "P71": {"exitYear": 1819},
     "P72": {"exitYear": 1817.5},
     "P74": {"exitYear": 1819},
     "P75": {"exitYear": 1824},
