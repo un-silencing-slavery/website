@@ -65,7 +65,7 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
         border,
         title,
         d,
-        color: schemeAccent[index],
+        color: schemeAccent[index + 1],
       };
     });
   }
