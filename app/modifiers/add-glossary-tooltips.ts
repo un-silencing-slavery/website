@@ -60,7 +60,7 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
       this.elements = element.querySelectorAll(".thesaurus-term");
 
       for (const termElement of this.elements) {
-        const slug = this.annotations.thesaurusArray.filter(
+        const slug = this.annotations.thesaurus.filter(
           (term) => term.term === termElement.textContent
         )[0].slug;
 

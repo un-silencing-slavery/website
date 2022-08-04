@@ -1,5 +1,4 @@
-{{log this.annotations.glossary}}
-<dl>
+<dl class="space-y-2">
   {{#each this.annotations.glossary as |entry|}}
     <dt class="font-bold text-2xl">
       <a name="glossary-entry-{{entry.slug}}"
@@ -7,7 +6,6 @@
         {{capitalize entry.displayTerm}}
       </a>
     </dt>
-    <dd>{{display-glossary-definition entry.definition}}</dd>
+    <dd class="prose">{{display-glossary-definition entry.definition}}</dd>
   {{/each}}
 </dl>
-
