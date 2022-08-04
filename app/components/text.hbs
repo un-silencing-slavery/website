@@ -18,9 +18,14 @@
       </h1>
     </header>
 
-    <section class="
-    text-justify overflow-auto">
-    {{yield to="content"}}
-    </section>
+    <div class="flex flex-row space-x-4">
+      <aside class="flex-grow-0">
+        {{yield to="toc"}}
+      </aside>
+      <section class="
+      text-justify overflow-auto flex-grow">
+      {{yield to="content"}}
+      </section>
+    </div>
   </section>
 </article>
