@@ -30,19 +30,19 @@ export default class FrondComponent extends Component {
   }
 
   get color() {
-    // const green = "#BAD4c0";
-    // const green = "#BDD6C9";
+    // Also change bg-transparent in community-tree-container to bg-slate-600
+    // const green = hsl(interpolateYlGn(randomNormal(0.7, 0.3)()));
+    // green.s -= 0.25;
+    // return green.darker(randomNormal(1.95, 0.04)()).formatHex();
     const green = hsl(interpolateYlGn(randomNormal(0.5, 0.3)()));
     green.s -= 0.25;
     return green.brighter(randomNormal(1.15, 0.04)()).formatHex();
-    // return green.formatHex();
   }
 
   get transform() {
     const scaleFactor = randomNormal(2.5, 0.5)();
-    return `translate(${randomNormal(0.5, 0.28)() * this.svg.width}, ${
-      scaleFactor * 0.75 * this.svg.height
-    })
+    return `translate(${randomNormal(0.5, 0.28)() * this.svg.width}, ${scaleFactor * 0.75 * this.svg.height
+      })
       scale(${scaleFactor})`;
   }
 
@@ -77,9 +77,8 @@ export default class FrondComponent extends Component {
     leafs.push({
       d: this.buildLeaf([stemTip.x, stemTip.y]),
       stemD: "",
-      transform: `rotate(${this.tangentTransform(0.98) + 90}, ${stemTip.x}, ${
-        stemTip.y
-      })`,
+      transform: `rotate(${this.tangentTransform(0.98) + 90}, ${stemTip.x}, ${stemTip.y
+        })`,
     });
 
     return leafs;
