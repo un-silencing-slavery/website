@@ -1,5 +1,7 @@
-<Text>
+<Text @hasToc={{true}}>
   <:header>Glossary</:header>
+
+<:toc-title>Terms</:toc-title>
 
   <:toc>
     <ul>
@@ -12,15 +14,14 @@
   </:toc>
 
   <:content>
-    <dl class="space-y-2">
+    <dl class="">
       {{#each this.glossary as |entry|}}
-        <dt class="font-bold text-2xl">
-          <a id="glossary-entry-{{entry.slug}}"
-            class="bg-none hover:bg-none no-underline">
+        <dt class="font-bold text-3xl mt-6 first:mt-0 mb-3"
+          id="glossary-entry-{{entry.slug}}"
+        >
             {{capitalize entry.displayTerm}}
-          </a>
         </dt>
-        <dd class="prose">{{display-glossary-definition entry.definition}}</dd>
+        <dd class="prose mb-6 last:mb-0">{{display-glossary-definition entry.definition}}</dd>
       {{/each}}
     </dl>
   </:content>
