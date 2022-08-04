@@ -1,12 +1,18 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import { dasherize } from "@ember/string";
+import { htmlSafe } from "@ember/template";
 
 interface GlossaryEntry {
   displayTerm: string;
   slug: string;
   definition: string;
-  synonyms: string[];
+}
+
+interface ThesaurusEntry {
+  term: string;
+  slug: string;
+  definition: string;
 }
 
 interface AirtableGlossaryEntry {
@@ -41,25 +47,49 @@ export default class AnnotationsService extends Service {
     return data.records;
   }
 
-  get thesaurusArray() {
-    const thesaurusArray = [];
-    if (!this.staticThesaurus) {
+  get thesaurus() {
+    if (this.staticThesaurus.length < 1) {
       this.buildThesaurus();
     }
 
-    for (const term in this.staticThesaurus) {
-      thesaurusArray.push({
-        term,
-        slug: dasherize(term),
-        definition: this.staticThesaurus[term],
-      });
-    }
-    return thesaurusArray;
+    return this.staticThesaurus;
   }
 
+  tooltipize(fullDefinition: string) {
+    const [definition] = fullDefinition.split("[READ MORE HERE]");
+    if (/p>$/.test(definition)) {
+      return htmlSafe(definition);
+    }
+
+    return htmlSafe(`${definition}</p>`);
+  }
+
+  async buildThesaurus() {
+    if (this.glossary.length < 1) {
+      this.buildGlossary();
+    }
+    const airtableGlossary = await this.fetchFromAirtable("glossary");
+    const airtableThesaurus = await this.fetchFromAirtable("thesaurus");
+
+    // const thesaurus: Record<string, string> = airtableThesaurus.map(
+    this.staticThesaurus = airtableThesaurus.map(
+      (thesaurusEntry: AirtableThesaurusEntry) => ({
+        term: thesaurusEntry.fields.synonym,
+        slug: dasherize(thesaurusEntry.fields.synonym),
+        definition: this.tooltipize(
+          airtableGlossary.filter(
+            (glossaryEntry: AirtableGlossaryEntry) =>
+              glossaryEntry.id === thesaurusEntry.fields["glossary-headword"][0]
+          )[0].fields.definition
+        ),
+      })
+    );
+  }
+
+  @tracked staticThesaurus: ThesaurusEntry[] = [];
+
   get glossary() {
-    console.log("getting glossary");
-    if (!this.staticGlossary) {
+    if (this.staticGlossary.length < 1) {
       this.buildGlossary();
       return this.staticGlossary;
     }
@@ -67,66 +97,20 @@ export default class AnnotationsService extends Service {
     return this.staticGlossary;
   }
 
-  get thesaurus() {
-    if (!this.staticThesaurus) {
-      this.buildThesaurus();
-      return this.staticThesaurus;
-    }
-
-    return this.staticThesaurus;
-  }
-
-  declare staticThesaurus: Record<string, string>;
-
-  staticGlossary: GlossaryEntry[] = [];
-
-  @tracked airtableGlossary: AirtableGlossaryEntry[] = [];
-
-  @tracked airtableThesaurus: AirtableThesaurusEntry[] = [];
+  @tracked staticGlossary: GlossaryEntry[] = [];
 
   async buildGlossary() {
-    console.log("building glossary");
-    if (!this.airtableGlossary) {
-      this.airtableGlossary = await this.fetchFromAirtable("glossary");
-    }
-    if (!this.airtableThesaurus) {
-      this.airtableThesaurus = await this.fetchFromAirtable("thesaurus");
-    }
+    const airtableGlossary = await this.fetchFromAirtable("glossary");
 
-    this.staticGlossary = this.airtableGlossary.map((airtableEntry) => {
-      const synonyms = airtableEntry.fields.thesaurus.map(
-        (thesaurusId) =>
-          this.airtableThesaurus.filter(
-            (thesaurusEntry) => thesaurusId === thesaurusEntry.id
-          )[0].fields.synonym
-      );
-
-      return {
+    this.staticGlossary = airtableGlossary
+      .map((airtableEntry: AirtableGlossaryEntry) => ({
         displayTerm: airtableEntry.fields["display-term"],
         slug: airtableEntry.fields.headword,
         definition: airtableEntry.fields.definition,
-        synonyms,
-      };
-    });
-  }
-
-  async buildThesaurus() {
-    const thesaurus: Record<string, string> = {};
-    if (!this.airtableGlossary) {
-      this.airtableGlossary = await this.fetchFromAirtable("glossary");
-    }
-    if (!this.airtableThesaurus) {
-      this.airtableThesaurus = await this.fetchFromAirtable("thesaurus");
-    }
-
-    for (const entry of this.airtableThesaurus) {
-      const headword = entry.fields["glossary-headword"][0];
-      thesaurus[entry.fields.synonym] = this.airtableGlossary.filter(
-        (entry) => entry.id === headword
-      )[0].fields.definition;
-    }
-
-    this.staticThesaurus = thesaurus;
+      }))
+      .sort((a: GlossaryEntry, b: GlossaryEntry) =>
+        a.slug.localeCompare(b.slug)
+      );
   }
 }
 

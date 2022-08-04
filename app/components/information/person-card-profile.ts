@@ -13,7 +13,7 @@ export default class InformationPersonCardProfileComponent extends Component<Inf
   get htmlProfile() {
     let profile = this.args.profile;
 
-    for (const entry of this.annotations.thesaurusArray) {
+    for (const entry of this.annotations.thesaurus) {
       profile = profile.replaceAll(
         entry.term,
         `<span class="underline decoration-green-100 decoration-2 cursor-pointer thesaurus-term" 
