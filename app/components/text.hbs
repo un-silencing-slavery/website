@@ -2,28 +2,38 @@
   <section
     class="
     bg-slate-50/80 md:bg-slate-50 
-    prose
-    prose-xl
-    prose-h1:text-4xl
-    prose-h2:text-3xl 
-    prose-h3:text-2xl 
-    prose-a:text-green-800 hover:prose-a:bg-green-100 
     "
     ...attributes
     {{stop-modal}}
   >
-    <header class="w-full">
-      <h1>
+    <header class="w-full pb-5">
+      <h1 class="text-4xl">
         {{yield to="header"}}
       </h1>
     </header>
 
-    <div class="flex flex-row space-x-4">
-      <aside class="flex-grow-0">
-        {{yield to="toc"}}
-      </aside>
+    <div class="flex flex-col md:flex-row md:space-x-4">
+      {{#if @hasToc}}
+        <aside class="flex-grow-0 bg-green-100 p-4 
+        prose prose-ul:list-none prose-ul:pl-0
+        max-w-xs
+        ">
+          <h2 class="font-normal">{{yield to="toc-title"}}</h2>
+          <div class="sticky top-5">
+            {{yield to="toc"}}
+          </div>
+        </aside>
+      {{/if}}
       <section class="
-      text-justify overflow-auto flex-grow">
+        prose
+        prose-xl
+        prose-h1:text-4xl
+        prose-h2:text-3xl 
+        prose-h3:text-2xl 
+        prose-a:text-green-800 hover:prose-a:bg-green-100 
+        first:prose-h2:mt-0
+        text-justify overflow-auto flex-grow"
+      >
       {{yield to="content"}}
       </section>
     </div>
