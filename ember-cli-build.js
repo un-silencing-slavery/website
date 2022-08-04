@@ -34,7 +34,7 @@ module.exports = function (defaults) {
         module: {
           rules: [
             {
-              test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+              test: /\.(woff(2)?|ttf|jpg|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
               use: [
                 {
                   loader: "file-loader",
