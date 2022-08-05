@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function (environment) {
+module.exports = function(environment) {
   let ENV = {
     "ember-meta": {
       title: "(Un)Silencing Slavery",
@@ -8,6 +8,23 @@ module.exports = function (environment) {
       siteName: "(Un)Silencing Slavery",
       description:
         "(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica.",
+      publisher: "Columbia University Libraries",
+      creator:
+        "Naylor, C. E., K. Akey, M. Z. Choksi, A. Gil, M. P. de Sá Pereira, M. J. S. Williams",
+      creators: [
+        "Naylor, Celia E.",
+        "Akey, Kristen",
+        "Choksi, Madiha Zahrah",
+        "Gil, Alex",
+        "Sá Pereira, Moacir P. de",
+        "Williams, Monique J. S.",
+      ],
+      lcshSubjects: [
+        "Rose Hall Plantation (Jamaica)",
+        "Slaves--Jamaica--Montego Bay--Social conditions",
+        "Plantation life--Jamaica--Montego Bay--History",
+        "De Lisser, Herbert George, 1878-1944. The White Witch of Rosehall",
+      ],
     },
     modulePrefix: "un-silencing-slavery",
     environment,
