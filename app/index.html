@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{content-for "head"}}
 
-  {{content-for "head"}}
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css" />
+    <link
+      integrity=""
+      rel="stylesheet"
+      href="{{rootURL}}assets/un-silencing-slavery.css"
+    />
 
-  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css" />
-  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/un-silencing-slavery.css" />
+    {{content-for "head-footer"}}
+    <meta property="og:site_name" content="(Un)Silencing Slavery" />
+    <meta property="og:url" content="https://rose-hall.moacir.com" />
+    <meta
+      property="og:description"
+      content="(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://i.imgur.com/f8KALn2.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://i.imgur.com/f8KALn2.jpg" />
+    <meta name="twitter:title" content="(Un)Silencing Slavery" />
+    <meta name="twitter:url" content="https://rose-hall.moacir.com" />
+    <meta
+      name="twitter:description"
+      content="(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica."
+    />
+    <meta name="twitter:label1" content="Created by" />
+    <meta
+      name="twitter:data1"
+      content="Naylor, C. E., K. Akey, M. Z. Choksi, A. Gil, M. P. de Sá Pereira, M. J. S. Williams"
+    />
+  </head>
 
-  {{content-for "head-footer"}}
-</head>
+  <body>
+    {{content-for "body"}}
 
-<body>
-  {{content-for "body"}}
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/un-silencing-slavery.js"></script>
 
-  <script src="{{rootURL}}assets/vendor.js"></script>
-  <script src="{{rootURL}}assets/un-silencing-slavery.js"></script>
-
-  {{content-for "body-footer"}}
-</body>
-
+    {{content-for "body-footer"}}
+  </body>
 </html>
