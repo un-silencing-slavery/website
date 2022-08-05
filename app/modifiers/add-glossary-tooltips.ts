@@ -14,8 +14,8 @@ interface AddGlossaryTooltipsModifierSignature {
 
 interface ElementWithListeners {
   element: Element;
-  showHandler: any;
-  hideHandler: any;
+  showHandler: EventListener;
+  hideHandler: EventListener;
 }
 
 function cleanup(instance: AddGlossaryTooltipsModifier) {

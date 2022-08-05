@@ -5,27 +5,36 @@
       transform={{this.svg.circleTransform}}
       >
       {{#each this.clusters as |arc index|}}
-        <path 
-          mask="url(#gradient-mask)"
-          fill-opacity="0.25"
-          fill={{arc.color}}
-          stroke={{arc.color}}
-          stroke-width="0"
-          stroke-opacity="1"
-          d={{arc.d}}
-          filter={{if this.active (concat "url(#area-glow-" index ")") "none"}}
-        />
-
-        <path 
-          id="{{arc.title}}-title-path"
-          fill={{arc.color}}
-          fill-opacity="0.5"
-          stroke={{arc.color}}
-          stroke-width="0"
-          stroke-opacity="1"
-          d={{arc.border}}
+        <g 
+          class="community-tree-area-cluster"
+          >
+          <path 
+            mask="url(#gradient-mask)"
+            fill-opacity="0.25"
+            fill={{arc.color}}
+            stroke={{arc.color}}
+            stroke-width="0"
+            stroke-opacity="1"
+            d={{arc.d}}
+            filter={{if this.active (concat "url(#area-glow-" index ")") "none"}}
           />
-        {{/each}}
+
+            <path 
+              {{on "focus" this.showTooltip}}
+              {{on "blur" this.hideTooltip}}
+              {{on "mouseenter" this.showTooltip}}
+              {{on "mouseleave" this.hideTooltip}}
+              class="cursor-pointer {{arc.slug}}"
+              id={{arc.slug}}
+              fill={{arc.color}}
+              fill-opacity="0.6"
+              stroke="#4d7a57"
+              stroke-width="0"
+              stroke-opacity="1"
+              d={{arc.border}}
+              />
+        </g>
+      {{/each}}
     </g>
   {{/if}}
 </g>
