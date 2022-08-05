@@ -4,7 +4,7 @@ import { render } from "@ember/test-helpers";
 import { hbs } from "ember-cli-htmlbars";
 
 module(
-  "Integration | Component | community-tree/age-scale-bar-gradient",
+  "Integration | Component | community-tree/legend/age-scale-bar",
   function (hooks) {
     setupRenderingTest(hooks);
 
@@ -12,21 +12,11 @@ module(
       // Set any properties with this.set('myProperty', 'value');
       // Handle any actions with this.set('myAction', function(val) { ... });
 
-      await render(hbs`<CommunityTree::AgeScaleBarGradient />`);
+      await render(hbs`<CommunityTree::Legend::AgeScaleBar />`);
 
       assert.strictEqual(this.element.textContent.trim(), "");
 
       // Template block usage:
-      await render(hbs`
-      <CommunityTree::AgeScaleBarGradient>
-        template block text
-      </CommunityTree::AgeScaleBarGradient>
-    `);
-
-      assert.strictEqual(
-        this.element.textContent.trim(),
-        "template block text"
-      );
     });
   }
 );

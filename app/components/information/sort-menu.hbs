@@ -10,7 +10,7 @@
   flex-row md:flex-col
   md:items-start
 ">
-  <button {{on "click" (fn (mut @visible) (not @visible))}}
+  <button type="button" {{on "click" (fn (mut @visible) (not @visible))}}
     class="w-full flex justify-end">
     {{svg-jar "x" class="h-4"}}
   </button>

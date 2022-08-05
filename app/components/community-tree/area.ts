@@ -23,18 +23,18 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
 
   @service declare data: DataService;
 
-  @action hideTooltip(event: any) {
+  @action hideTooltip(event: MouseEvent) {
     const element = event.target as SVGPathElement;
     element.setAttribute("stroke-width", "0");
     this.svg.showTooltip = false;
   }
 
-  @action showTooltip(event: any) {
+  @action showTooltip(event: MouseEvent) {
     const element = event.target as SVGPathElement;
     element.setAttribute("stroke-width", "2");
 
     this.svg.tooltipContent =
-      this.tooltipTexts[event.target.id.replace("-trigger", "")];
+      this.tooltipTexts[element.id.replace("-trigger", "")];
     this.svg.showTooltip = true;
   }
 

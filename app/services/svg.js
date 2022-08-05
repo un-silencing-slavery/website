@@ -8,12 +8,16 @@ export default class SvgService extends Service {
   @tracked height = 320;
 
   get rem() {
-    return parseFloat(
-      window
-        .getComputedStyle(document.documentElement)
-        .fontSize.replace("px", ""),
-      10
-    );
+    if (document) {
+      return parseFloat(
+        window
+          .getComputedStyle(document.documentElement)
+          .fontSize.replace("px", ""),
+        10
+      );
+    }
+
+    return 16;
   }
 
   get isLandscape() {

@@ -3,24 +3,17 @@ import { setupRenderingTest } from "ember-qunit";
 import { render } from "@ember/test-helpers";
 import { hbs } from "ember-cli-htmlbars";
 
-module("Integration | Component | persons-list", function (hooks) {
+module("Integration | Component | frond", function (hooks) {
   setupRenderingTest(hooks);
 
   test.skip("it renders", async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<PersonsList />`);
+    await render(hbs`<CommunityTree::Frond />`);
 
-    assert.strictEqual(this.element.textContent.trim(), "");
+    assert.dom().hasText("");
 
     // Template block usage:
-    await render(hbs`
-      <PersonsList>
-        template block text
-      </PersonsList>
-    `);
-
-    assert.strictEqual(this.element.textContent.trim(), "template block text");
   });
 });

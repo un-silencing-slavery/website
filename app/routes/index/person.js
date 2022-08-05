@@ -8,10 +8,13 @@ export default class IndexPersonRoute extends Route {
 
   @service headData;
 
+  @service router;
+
   afterModel(model) {
     super.afterModel(...arguments);
 
     this.headData.title = `${model.name} | People | (Un)Silencing Slavery`;
+    this.headData.url = this.router.currentURL;
   }
 
   model({ person_slug }) {

@@ -20,12 +20,20 @@ module.exports = function (defaults) {
 
   const { Webpack } = require("@embroider/webpack");
   return require("@embroider/compat").compatBuild(app, Webpack, {
-    // staticAddonTestSupportTrees: true,
-    // staticAddonTrees: true,
-    // staticHelpers: true,
-    // staticModifiers: true,
-    // staticComponents: true,
-    // splitAtRoutes: ['route.name'], // can also be a RegExp
+    staticAddonTestSupportTrees: true,
+    staticAddonTrees: true,
+    staticHelpers: true,
+    staticModifiers: true,
+    staticComponents: true,
+    splitAtRoutes: [
+      "credits",
+      "documents",
+      "bibliography",
+      "glossary",
+      "reflections",
+      "about",
+      "index.person",
+    ], // can also be a RegExp
     packagerOptions: {
       cssLoaderOptions: {
         sourceMap: process.env.EMBER_ENV !== "production" ? true : false,

@@ -55,6 +55,15 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
     registerDestructor(this, cleanup);
   }
 
+  show(tooltip: Element, popperInstance: { update: () => void }) {
+    tooltip.setAttribute("data-show", "");
+    popperInstance.update();
+  }
+
+  hide(tooltip: Element) {
+    tooltip.removeAttribute("data-show");
+  }
+
   modify(element: Element, [htmlProfile]: [string]) {
     if (htmlProfile) {
       this.elements = element.querySelectorAll(".thesaurus-term");

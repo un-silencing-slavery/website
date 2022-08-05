@@ -4,7 +4,7 @@ import { render } from "@ember/test-helpers";
 import { hbs } from "ember-cli-htmlbars";
 
 module(
-  "Integration | Component | community-tree/age-scale-bar",
+  "Integration | Component | community-tree/gradients/person-gradient",
   function (hooks) {
     setupRenderingTest(hooks);
 
@@ -12,21 +12,11 @@ module(
       // Set any properties with this.set('myProperty', 'value');
       // Handle any actions with this.set('myAction', function(val) { ... });
 
-      await render(hbs`<CommunityTree::AgeScaleBar />`);
+      await render(hbs`<CommunityTree::Gradients::PersonGradient />`);
 
       assert.strictEqual(this.element.textContent.trim(), "");
 
       // Template block usage:
-      await render(hbs`
-      <CommunityTree::AgeScaleBar>
-        template block text
-      </CommunityTree::AgeScaleBar>
-    `);
-
-      assert.strictEqual(
-        this.element.textContent.trim(),
-        "template block text"
-      );
     });
   }
 );
