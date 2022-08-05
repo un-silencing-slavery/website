@@ -14,7 +14,9 @@ export default class HeadDataService extends Service {
 
   canonical = "https://rosehallproject.columbia.edu";
 
-  imgSrc = "/assets/images/open-graph.jpg";
+  // imgSrc = "/assets/images/open-graph.jpg";
+
+  imgSrc = "https://i.imgur.com/f8KALn2.jpg",
 
   type = "website";
 
