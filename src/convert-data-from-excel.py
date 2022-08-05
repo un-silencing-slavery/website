@@ -304,7 +304,7 @@ df["personSlug"] = df.apply(lambda row: f"{row['name'].replace(' ', '-')}-{row.n
 # df.to_csv(f"{now}-data.csv")
 
 # Cell 9
-trimmed = df[["name", "country", "colour", "gender", "displayName", "profile", "dutyCategory", "arrivalYear", "birthYear", "exitYear", "personSlug"]]
+trimmed = df[["name", "country", "colour", "gender", "motherId", "displayName", "profile", "dutyCategory", "arrivalYear", "birthYear", "exitYear", "personSlug"]]
 
 json_string = trimmed.reset_index().to_json(orient="records", indent=2)
 
