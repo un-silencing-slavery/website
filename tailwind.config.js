@@ -11,7 +11,7 @@ const tailwindConfig = {
   content,
   theme: {
     fontFamily: {
-      title: ["Mirza", "sans-serif"],
+      title: ["Lusitana", "sans-serif"],
       serif: ["Hina Mincho", "ui-serif", "Times New Roman", "serif"],
       sans: ["Junction", "ui-sans-serif", "Helvetica", "sans-serif"],
     },
