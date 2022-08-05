@@ -14,22 +14,16 @@ interface AddGlossaryTooltipsModifierSignature {
 
 interface ElementWithListeners {
   element: Element;
-  showHandler: EventListener;
-  hideHandler: EventListener;
+  clickHandler: EventListener;
 }
 
 function cleanup(instance: AddGlossaryTooltipsModifier) {
-  const { elements, elementsWithListeners, showEvents, hideEvents } = instance;
+  const { elements, elementsWithListeners } = instance;
 
-  if (elements && elementsWithListeners && showEvents && hideEvents) {
+  if (elements && elementsWithListeners) {
     for (const elementWithListeners of elementsWithListeners) {
-      const { element, showHandler, hideHandler } = elementWithListeners;
-      for (const hideEvent of hideEvents) {
-        element.removeEventListener(hideEvent, hideHandler);
-      }
-      for (const showEvent of showEvents) {
-        element.removeEventListener(showEvent, showHandler);
-      }
+      const { element, clickHandler } = elementWithListeners;
+      element.removeEventListener("click", clickHandler);
     }
     instance.elements = [];
     instance.elementsWithListeners = [];
@@ -42,10 +36,6 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
   @tracked declare elements: NodeListOf<Element> | [];
 
   @tracked elementsWithListeners: ElementWithListeners[] = [];
-
-  showEvents = ["mouseenter", "focus"];
-
-  hideEvents = ["mouseleave", "blur"];
 
   constructor(
     owner: unknown,
@@ -80,22 +70,16 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
             ],
           });
 
-          function show() {
-            tooltip.setAttribute("data-show", "");
-            popperInstance.update();
+          function handleClick() {
+            if (tooltip.hasAttribute("data-show")) {
+              tooltip.removeAttribute("data-show");
+            } else {
+              tooltip.setAttribute("data-show", "");
+              popperInstance.update();
+            }
           }
 
-          function hide() {
-            tooltip.removeAttribute("data-show");
-          }
-
-          this.showEvents.forEach((event) =>
-            termElement.addEventListener(event, show)
-          );
-
-          this.hideEvents.forEach((event) =>
-            termElement.addEventListener(event, hide)
-          );
+          termElement.addEventListener("click", handleClick);
 
           if (
             this.elementsWithListeners.filter(
@@ -105,8 +89,7 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
           ) {
             this.elementsWithListeners.push({
               element: termElement,
-              showHandler: show,
-              hideHandler: hide,
+              clickHandler: handleClick,
             });
           }
         }
