@@ -16,7 +16,7 @@ export default class HeadDataService extends Service {
 
   // imgSrc = "/assets/images/open-graph.jpg";
 
-  imgSrc = "https://i.imgur.com/f8KALn2.jpg",
+  imgSrc = "https://i.imgur.com/f8KALn2.jpg";
 
   type = "website";
 
