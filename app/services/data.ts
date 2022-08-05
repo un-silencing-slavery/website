@@ -9,7 +9,7 @@ export default class DataService extends Service {
 
   maxAge = 80;
 
-  sortOrders = {
+  sortOrders: Record<ClusterKey, string[]> = {
     colour: [
       "Negro",
       "Mulatto",

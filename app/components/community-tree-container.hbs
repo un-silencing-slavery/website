@@ -7,8 +7,6 @@
   <svg 
       class="text-xs md:text-base bg-transparent" 
       width={{this.svg.width}} height={{this.svg.height}}
-      {{on-key "ArrowRight" (fn this.selectPerson "forward")}}
-      {{on-key "ArrowLeft" (fn this.selectPerson "backward")}}
       {{did-insert this.calculateSizes}}
       {{did-update this.calculateSizes}}
       {{zoom}}
@@ -28,7 +26,15 @@
       </defs>
       <CommunityTree::Background />
       {{#if (not (eq @sortKey "name"))}}
-        <text x="3%" y="3%" class="text-2xl">Sorted by {{@sortKey}}</text>
+        <text x="3%" y="3%" class="text-2xl">
+          <tspan>Sorted by {{@sortKey}}</tspan>
+          {{#each this.svg.tooltipContent as |line|}}
+            <tspan x="3%" dy="1.325em" 
+            class="text-lg
+            {{if this.svg.showTooltip "duration-200 opacity-100" "duration-1000 opacity-0"}}
+            ">{{line}}</tspan>
+          {{/each}}
+        </text>
       {{/if}}
       <g class="zoomable">
         <CommunityTree::Area @sortKey={{@sortKey}} @sortedPersons={{@sortedPersons}} @yearScale={{this.yearScale}} />
