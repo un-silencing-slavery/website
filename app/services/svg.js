@@ -80,4 +80,8 @@ export default class SvgService extends Service {
   }
 
   @tracked frond = null;
+
+  @tracked showTooltip = false;
+
+  @tracked tooltipContent;
 }
