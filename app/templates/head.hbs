@@ -56,10 +56,6 @@
   <meta property="og:image:width" content="256">
   <meta property="og:image:height" content="256">
 {{/if}}
-
-{{#if this.model.locale}}
-  <meta property="og:locale" content={{this.model.locale}}>
-{{/if}}
 {{!-- End opengraph --}}
 
 {{!-- Begin Twitter --}}
@@ -134,18 +130,35 @@
   <meta name="DC.format" content={{this.model.format}}>
 {{/if}}
 
-{{#if this.model.siteName}}
-  <meta name="DC.title" content={{this.model.siteName}}>
-{{/if}}
 
-
-{{!-- Begin JSON-LD --}}
-{{#if this.model.jsonld}}
-  <script type="application/ld+json">
-    {{this.model.jsonld}}
-  </script>
-{{/if}}
-{{!-- End JSON-LD --}}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org", 
+    "@type": "WebSite", 
+    "url": "https://rosehallproject.columbia.edu", 
+    "name": "(Un)Silencing Slavery",
+    "author": [
+      { "@type": "Person", "name": "Celia E. Naylor", "url": "https://barnard.edu/profiles/celia-e-naylor" },
+      { "@type": "Person", "name": "Kristen Akey" },
+      { "@type": "Person", "name": "Madiha Zahrah Choksi", "url": "https://madihaz.com" },
+      { "@type": "Person", 
+        "name": "Alex Gil", 
+        "url": "https://twitter.com/elotroalex/" }
+        "@id": "https://dbpedia.org/page/Alex_Gil_(scholar)",
+      { 
+        "@type": "Person", 
+        "@id": "https://orcid.org/0000-0002-0365-5569",
+        "mainEntityOfPage": "https://orcid.org/0000-0002-0365-5569",
+        "name": "Moacir P. de Sá Pereira", 
+        "url": "https://moacir.com/" 
+      },
+      { "@type": "Person", "name": "Monique J. S. Williams"}
+    ],
+    "description": "(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica.",
+    "publisher": "Columbia University Libraries",
+    "datePublished": "2022-08-06"
+  }
+</script>
 
 <link rel="Shortcut Icon" type="image/x-icon" href="/favico/favicon-light.ico" media="(prefers-color-scheme: light)" />
 <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon-light.png" media="(prefers-color-scheme: light)" />

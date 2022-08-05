@@ -6,12 +6,12 @@ export default class IndexPersonRoute extends Route {
 
   @service data;
 
+  @service headData;
+
   afterModel(model) {
     super.afterModel(...arguments);
 
-    this.metaInfo = {
-      title: `${model.name} | People | (Un)Silencing Slavery`,
-    };
+    this.headData.title = `${model.name} | People | (Un)Silencing Slavery`;
   }
 
   model({ person_slug }) {
