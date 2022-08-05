@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mirza&family=Hina+Mincho&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lusitana&display=swap");
 
 @font-face {
   font-family: "Junction";
@@ -35,21 +35,6 @@ body {
 
 html {
   @apply h-full;
-}
-
-.menu-slide-enter,
-.menu-slide-leave-to {
-  @apply translate-x-full;
-}
-
-.menu-slide-enter-active,
-.menu-slide-leave-active {
-  @apply transition-all duration-500 ease-in-out;
-}
-
-.menu-slide-enter-to,
-.menu-slide-leave {
-  @apply translate-x-0;
 }
 
 g.person-petal > .highlighter {
@@ -122,6 +107,21 @@ nav a.active {
 
 .tooltip[data-popper-placement^="right"] > .arrow {
   left: -4px;
+}
+
+.opacity-enter-active,
+.opacity-leave-active {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+.opacity-enter,
+.opacity-leave-to {
+  @apply opacity-0;
+}
+
+.opacity-enter-to,
+.opacity-leave {
+  @apply opacity-100;
 }
 
 .flag-background {

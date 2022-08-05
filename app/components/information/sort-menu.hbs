@@ -1,11 +1,19 @@
-<div class="{{if @visible "flex" "hidden"}}
-  {{if @visible "absolute right-3 z-50"}}
+{{#if @visible}}
+<div 
+  {{css-transition "opacity"}}
+  class="
+  absolute top-16 right-3 z-50
   w-72 md:w-32
   rounded
   bg-green-800 text-slate-50
   py-2
   flex-row md:flex-col
+  md:items-start
 ">
+  <button {{on "click" (fn (mut @visible) (not @visible))}}
+    class="w-full flex justify-end">
+    {{svg-jar "x" class="h-4"}}
+  </button>
   <p class="flex-grow text-sm md:text-base px-2">Sort by:</p>
   <ul class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 space-y-1 md:pt-2">
     {{#each @sortKeys as |key|}}
@@ -15,3 +23,4 @@
       {{/each}}
   </ul>
 </div>
+{{/if}}

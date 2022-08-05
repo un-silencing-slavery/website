@@ -9,7 +9,7 @@
     {{svg-jar (if this.isVisible "chevron-up" "chevron-down") role="img" title="Disclosure Icon" class=(if this.containsActivePerson "cursort-not-allowed text-slate-400")}}
   </button>
   {{#if this.isVisible}}
-    <ul>
+    <ul {{css-transition "opacity"}}>
       {{#each @persons as |person|}}
         <Information::PersonsListItem @person={{person}} />
       {{/each}}
