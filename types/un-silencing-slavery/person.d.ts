@@ -32,4 +32,7 @@ interface Person {
   birthYear: number;
   exitYear: number;
   personSlug: string;
+  isMother: boolean;
+  isGrandmother: boolean;
+  isGreatgrandmother: boolean;
 }

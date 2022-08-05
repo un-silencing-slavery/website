@@ -12,7 +12,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1833.0,
-    "personSlug":"Aaron-P1"
+    "personSlug":"Aaron-P1",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P2",
@@ -27,7 +30,10 @@ export default [
     "arrivalYear":1825.0,
     "birthYear":1825.0,
     "exitYear":1833.0,
-    "personSlug":"Adam-P2"
+    "personSlug":"Adam-P2",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P3",
@@ -42,7 +48,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1833.0,
-    "personSlug":"Adonis-P3"
+    "personSlug":"Adonis-P3",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P4",
@@ -57,7 +66,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1821.0,
-    "personSlug":"Allick-P4"
+    "personSlug":"Allick-P4",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P5",
@@ -72,7 +84,10 @@ export default [
     "arrivalYear":1829.0,
     "birthYear":1829.0,
     "exitYear":1832.0,
-    "personSlug":"Alick-P5"
+    "personSlug":"Alick-P5",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P6",
@@ -87,7 +102,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1757.0,
     "exitYear":1822.0,
-    "personSlug":"Andrew-P6"
+    "personSlug":"Andrew-P6",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P7",
@@ -102,7 +120,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1810.0,
     "exitYear":1833.0,
-    "personSlug":"Anthony-P7"
+    "personSlug":"Anthony-P7",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P8",
@@ -117,7 +138,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1781.0,
     "exitYear":1818.0,
-    "personSlug":"Apollo-P8"
+    "personSlug":"Apollo-P8",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P9",
@@ -132,7 +156,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1826.0,
-    "personSlug":"Archy-P9"
+    "personSlug":"Archy-P9",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P10",
@@ -147,7 +174,10 @@ export default [
     "arrivalYear":0.0,
     "birthYear":0.0,
     "exitYear":1819.0,
-    "personSlug":"Arteris-P10"
+    "personSlug":"Arteris-P10",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P11",
@@ -162,7 +192,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1800.0,
     "exitYear":1833.0,
-    "personSlug":"Ben-P11"
+    "personSlug":"Ben-P11",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P12",
@@ -177,7 +210,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1769.0,
     "exitYear":1833.0,
-    "personSlug":"Bolton-P12"
+    "personSlug":"Bolton-P12",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P13",
@@ -192,7 +228,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1785.0,
     "exitYear":1833.0,
-    "personSlug":"Bryan-P13"
+    "personSlug":"Bryan-P13",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P14",
@@ -207,7 +246,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Bush-P14"
+    "personSlug":"Bush-P14",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P15",
@@ -222,7 +264,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1818.0,
-    "personSlug":"Caesar-P15"
+    "personSlug":"Caesar-P15",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P16",
@@ -237,7 +282,10 @@ export default [
     "arrivalYear":1818.0,
     "birthYear":1818.0,
     "exitYear":1833.0,
-    "personSlug":"Charles-P16"
+    "personSlug":"Charles-P16",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P17",
@@ -252,7 +300,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1826.0,
-    "personSlug":"Charlie-P17"
+    "personSlug":"Charlie-P17",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P18",
@@ -267,7 +318,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1828.0,
-    "personSlug":"Colin-P18"
+    "personSlug":"Colin-P18",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P19",
@@ -282,7 +336,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1831.0,
-    "personSlug":"Craigie-P19"
+    "personSlug":"Craigie-P19",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P20",
@@ -297,7 +354,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1779.0,
     "exitYear":1826.0,
-    "personSlug":"Damon-P20"
+    "personSlug":"Damon-P20",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P21",
@@ -312,7 +372,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1789.0,
     "exitYear":1818.0,
-    "personSlug":"Daniel-P21"
+    "personSlug":"Daniel-P21",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P22",
@@ -327,7 +390,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1823.0,
-    "personSlug":"Dublin-P22"
+    "personSlug":"Dublin-P22",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P23",
@@ -342,7 +408,10 @@ export default [
     "arrivalYear":1830.0,
     "birthYear":1830.0,
     "exitYear":1833.0,
-    "personSlug":"Edward-Hill-P23"
+    "personSlug":"Edward-Hill-P23",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P24",
@@ -357,7 +426,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1800.0,
     "exitYear":1827.0,
-    "personSlug":"Exeter-P24"
+    "personSlug":"Exeter-P24",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P25",
@@ -372,7 +444,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1765.0,
     "exitYear":1830.0,
-    "personSlug":"Fox-P25"
+    "personSlug":"Fox-P25",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P26",
@@ -387,7 +462,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Garrick-P26"
+    "personSlug":"Garrick-P26",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P27",
@@ -402,7 +480,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1833.0,
-    "personSlug":"George-P27"
+    "personSlug":"George-P27",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P28",
@@ -417,7 +498,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1762.0,
     "exitYear":1827.0,
-    "personSlug":"Gibbes-P28"
+    "personSlug":"Gibbes-P28",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P29",
@@ -432,7 +516,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1819.0,
-    "personSlug":"Glasgow-P29"
+    "personSlug":"Glasgow-P29",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P30",
@@ -447,7 +534,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1809.0,
     "exitYear":1833.0,
-    "personSlug":"Gloster-P30"
+    "personSlug":"Gloster-P30",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P31",
@@ -462,7 +552,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Hannibal-P31"
+    "personSlug":"Hannibal-P31",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P32",
@@ -477,7 +570,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1796.0,
     "exitYear":1833.0,
-    "personSlug":"Harry-P32"
+    "personSlug":"Harry-P32",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P33",
@@ -492,7 +588,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1829.0,
-    "personSlug":"Hazard-P33"
+    "personSlug":"Hazard-P33",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P34",
@@ -507,7 +606,10 @@ export default [
     "arrivalYear":1826.0,
     "birthYear":1826.0,
     "exitYear":1828.0,
-    "personSlug":"Henry-P34"
+    "personSlug":"Henry-P34",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P35",
@@ -522,7 +624,10 @@ export default [
     "arrivalYear":1825.0,
     "birthYear":1825.0,
     "exitYear":1833.0,
-    "personSlug":"Henry-McLean-P35"
+    "personSlug":"Henry-McLean-P35",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P36",
@@ -537,7 +642,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1808.0,
     "exitYear":1833.0,
-    "personSlug":"Hercules-P36"
+    "personSlug":"Hercules-P36",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P37",
@@ -552,7 +660,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1759.0,
     "exitYear":1830.0,
-    "personSlug":"Hyde-P37"
+    "personSlug":"Hyde-P37",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P38",
@@ -567,7 +678,10 @@ export default [
     "arrivalYear":0.0,
     "birthYear":0.0,
     "exitYear":1817.5,
-    "personSlug":"Isaac-P38"
+    "personSlug":"Isaac-P38",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P39",
@@ -582,7 +696,10 @@ export default [
     "arrivalYear":1819.0,
     "birthYear":1819.0,
     "exitYear":1833.0,
-    "personSlug":"Isaac-P39"
+    "personSlug":"Isaac-P39",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P40",
@@ -597,7 +714,10 @@ export default [
     "arrivalYear":0.0,
     "birthYear":0.0,
     "exitYear":0.0,
-    "personSlug":"Jack-P40"
+    "personSlug":"Jack-P40",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P41",
@@ -612,7 +732,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1813.0,
     "exitYear":1833.0,
-    "personSlug":"James-P41"
+    "personSlug":"James-P41",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P42",
@@ -627,7 +750,10 @@ export default [
     "arrivalYear":1831.0,
     "birthYear":1831.0,
     "exitYear":1833.0,
-    "personSlug":"James-Watson-P42"
+    "personSlug":"James-Watson-P42",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P43",
@@ -642,7 +768,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1775.0,
     "exitYear":1826.0,
-    "personSlug":"January-P43"
+    "personSlug":"January-P43",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P44",
@@ -657,7 +786,10 @@ export default [
     "arrivalYear":1826.0,
     "birthYear":1826.0,
     "exitYear":1833.0,
-    "personSlug":"Jemmy-P44"
+    "personSlug":"Jemmy-P44",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P45",
@@ -672,7 +804,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1785.0,
     "exitYear":1833.0,
-    "personSlug":"Joe-P45"
+    "personSlug":"Joe-P45",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P46",
@@ -687,7 +822,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1821.0,
-    "personSlug":"John-P46"
+    "personSlug":"John-P46",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P47",
@@ -702,7 +840,10 @@ export default [
     "arrivalYear":1829.0,
     "birthYear":1829.0,
     "exitYear":1833.0,
-    "personSlug":"John-P47"
+    "personSlug":"John-P47",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P48",
@@ -717,7 +858,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1833.0,
-    "personSlug":"John-Kerr-P48"
+    "personSlug":"John-Kerr-P48",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P49",
@@ -732,7 +876,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1824.0,
-    "personSlug":"John-Parish-P49"
+    "personSlug":"John-Parish-P49",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P50",
@@ -747,7 +894,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1819.0,
-    "personSlug":"Johnny-P50"
+    "personSlug":"Johnny-P50",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P51",
@@ -762,7 +912,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1813.0,
     "exitYear":1833.0,
-    "personSlug":"July-P51"
+    "personSlug":"July-P51",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P52",
@@ -777,7 +930,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1818.0,
-    "personSlug":"Lewis-P52"
+    "personSlug":"Lewis-P52",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P53",
@@ -792,7 +948,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1828.0,
-    "personSlug":"Lewis-P53"
+    "personSlug":"Lewis-P53",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P54",
@@ -807,7 +966,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1747.0,
     "exitYear":1824.0,
-    "personSlug":"Lewis-ney-P54"
+    "personSlug":"Lewis-ney-P54",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P55",
@@ -822,7 +984,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1757.0,
     "exitYear":1829.0,
-    "personSlug":"Luke-P55"
+    "personSlug":"Luke-P55",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P56",
@@ -837,7 +1002,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1798.0,
     "exitYear":1828.0,
-    "personSlug":"MacGuire-P56"
+    "personSlug":"MacGuire-P56",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P57",
@@ -852,7 +1020,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1821.0,
-    "personSlug":"Mackay-P57"
+    "personSlug":"Mackay-P57",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P58",
@@ -867,7 +1038,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1833.0,
-    "personSlug":"March-P58"
+    "personSlug":"March-P58",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P59",
@@ -882,7 +1056,10 @@ export default [
     "arrivalYear":1827.0,
     "birthYear":1827.0,
     "exitYear":1829.0,
-    "personSlug":"Marcus-P59"
+    "personSlug":"Marcus-P59",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P60",
@@ -897,7 +1074,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1810.0,
     "exitYear":1833.0,
-    "personSlug":"Mark-P60"
+    "personSlug":"Mark-P60",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P61",
@@ -912,7 +1092,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1829.0,
-    "personSlug":"Maxwell-P61"
+    "personSlug":"Maxwell-P61",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P62",
@@ -927,7 +1110,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1821.0,
-    "personSlug":"Mercury-P62"
+    "personSlug":"Mercury-P62",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P63",
@@ -942,7 +1128,10 @@ export default [
     "arrivalYear":1818.0,
     "birthYear":1818.0,
     "exitYear":1820.0,
-    "personSlug":"Morris-P63"
+    "personSlug":"Morris-P63",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P64",
@@ -957,7 +1146,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1820.0,
-    "personSlug":"Nab-P64"
+    "personSlug":"Nab-P64",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P65",
@@ -972,7 +1164,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1820.0,
-    "personSlug":"Neath-P65"
+    "personSlug":"Neath-P65",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P66",
@@ -987,7 +1182,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":null,
     "exitYear":1833.0,
-    "personSlug":"Ned-P66"
+    "personSlug":"Ned-P66",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P67",
@@ -1002,7 +1200,10 @@ export default [
     "arrivalYear":1832.0,
     "birthYear":1832.0,
     "exitYear":1833.0,
-    "personSlug":"Ned-P67"
+    "personSlug":"Ned-P67",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P68",
@@ -1017,7 +1218,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1827.0,
-    "personSlug":"Nestor-P68"
+    "personSlug":"Nestor-P68",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P69",
@@ -1032,7 +1236,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1811.0,
     "exitYear":1833.0,
-    "personSlug":"North-P69"
+    "personSlug":"North-P69",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P70",
@@ -1047,7 +1254,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1815.0,
     "exitYear":1833.0,
-    "personSlug":"Oliver-P70"
+    "personSlug":"Oliver-P70",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P71",
@@ -1062,7 +1272,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1819.0,
-    "personSlug":"Orpheus-P71"
+    "personSlug":"Orpheus-P71",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P72",
@@ -1077,7 +1290,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1817.5,
-    "personSlug":"Osirus-P72"
+    "personSlug":"Osirus-P72",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P73",
@@ -1092,7 +1308,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1816.0,
     "exitYear":1833.0,
-    "personSlug":"Othello-P73"
+    "personSlug":"Othello-P73",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P74",
@@ -1107,7 +1326,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1813.0,
     "exitYear":1819.0,
-    "personSlug":"Parish-P74"
+    "personSlug":"Parish-P74",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P75",
@@ -1122,7 +1344,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1767.0,
     "exitYear":1824.0,
-    "personSlug":"Paton-P75"
+    "personSlug":"Paton-P75",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P76",
@@ -1137,7 +1362,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1828.0,
-    "personSlug":"Patrick-P76"
+    "personSlug":"Patrick-P76",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P77",
@@ -1152,7 +1380,10 @@ export default [
     "arrivalYear":1818.0,
     "birthYear":1818.0,
     "exitYear":1833.0,
-    "personSlug":"Patrick-P77"
+    "personSlug":"Patrick-P77",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P78",
@@ -1167,7 +1398,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1828.0,
-    "personSlug":"Penryn-P78"
+    "personSlug":"Penryn-P78",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P79",
@@ -1182,7 +1416,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1762.0,
     "exitYear":1833.0,
-    "personSlug":"Perth-P79"
+    "personSlug":"Perth-P79",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P80",
@@ -1197,7 +1434,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1799.0,
     "exitYear":1833.0,
-    "personSlug":"Peter-P80"
+    "personSlug":"Peter-P80",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P81",
@@ -1212,7 +1452,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1833.0,
-    "personSlug":"Pitt-P81"
+    "personSlug":"Pitt-P81",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P82",
@@ -1227,7 +1470,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1824.0,
-    "personSlug":"Plato-P82"
+    "personSlug":"Plato-P82",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P83",
@@ -1242,7 +1488,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1747.0,
     "exitYear":1824.0,
-    "personSlug":"Prague-P83"
+    "personSlug":"Prague-P83",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P84",
@@ -1257,7 +1506,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1804.0,
     "exitYear":1833.0,
-    "personSlug":"Quaco-P84"
+    "personSlug":"Quaco-P84",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P85",
@@ -1272,7 +1524,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Ralph-P85"
+    "personSlug":"Ralph-P85",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P86",
@@ -1287,7 +1542,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1774.0,
     "exitYear":1819.0,
-    "personSlug":"Richard-P86"
+    "personSlug":"Richard-P86",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P87",
@@ -1302,7 +1560,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1833.0,
-    "personSlug":"Richard-P87"
+    "personSlug":"Richard-P87",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P88",
@@ -1317,7 +1578,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1827.0,
-    "personSlug":"Robert-P88"
+    "personSlug":"Robert-P88",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P89",
@@ -1332,7 +1596,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1833.0,
-    "personSlug":"Robert-P89"
+    "personSlug":"Robert-P89",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P90",
@@ -1347,7 +1614,10 @@ export default [
     "arrivalYear":1832.0,
     "birthYear":1832.0,
     "exitYear":1833.0,
-    "personSlug":"Robert-P90"
+    "personSlug":"Robert-P90",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P91",
@@ -1362,7 +1632,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1780.0,
     "exitYear":1833.0,
-    "personSlug":"Ross-P91"
+    "personSlug":"Ross-P91",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P92",
@@ -1377,7 +1650,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1833.0,
-    "personSlug":"Sam-P92"
+    "personSlug":"Sam-P92",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P93",
@@ -1392,7 +1668,10 @@ export default [
     "arrivalYear":1824.0,
     "birthYear":1824.0,
     "exitYear":1824.0,
-    "personSlug":"Sam-P93"
+    "personSlug":"Sam-P93",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P94",
@@ -1407,7 +1686,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1817.5,
-    "personSlug":"Sambo-P94"
+    "personSlug":"Sambo-P94",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P95",
@@ -1422,7 +1704,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1802.0,
     "exitYear":1833.0,
-    "personSlug":"Scipio-P95"
+    "personSlug":"Scipio-P95",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P96",
@@ -1437,7 +1722,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1823.0,
-    "personSlug":"Scott-P96"
+    "personSlug":"Scott-P96",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P97",
@@ -1452,7 +1740,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1789.0,
     "exitYear":1833.0,
-    "personSlug":"Shamoun-P97"
+    "personSlug":"Shamoun-P97",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P98",
@@ -1467,7 +1758,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1794.0,
     "exitYear":1833.0,
-    "personSlug":"Smith-P98"
+    "personSlug":"Smith-P98",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P99",
@@ -1482,7 +1776,10 @@ export default [
     "arrivalYear":1821.0,
     "birthYear":1821.0,
     "exitYear":1822.0,
-    "personSlug":"Surry-P99"
+    "personSlug":"Surry-P99",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P100",
@@ -1497,7 +1794,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1816.0,
     "exitYear":1825.0,
-    "personSlug":"Thomas-P100"
+    "personSlug":"Thomas-P100",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P101",
@@ -1512,7 +1812,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1833.0,
-    "personSlug":"Thomas-P101"
+    "personSlug":"Thomas-P101",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P102",
@@ -1527,7 +1830,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1762.0,
     "exitYear":1819.0,
-    "personSlug":"Titus-P102"
+    "personSlug":"Titus-P102",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P103",
@@ -1542,7 +1848,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Ulysses-P103"
+    "personSlug":"Ulysses-P103",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P104",
@@ -1557,7 +1866,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1833.0,
-    "personSlug":"Washington-P104"
+    "personSlug":"Washington-P104",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P105",
@@ -1572,7 +1884,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1827.0,
-    "personSlug":"Watt-P105"
+    "personSlug":"Watt-P105",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P106",
@@ -1587,7 +1902,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1826.0,
-    "personSlug":"William-P106"
+    "personSlug":"William-P106",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P107",
@@ -1602,7 +1920,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1798.0,
     "exitYear":1833.0,
-    "personSlug":"William-P107"
+    "personSlug":"William-P107",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P108",
@@ -1617,7 +1938,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1815.0,
     "exitYear":1833.0,
-    "personSlug":"Wm.-Kerr-P108"
+    "personSlug":"Wm.-Kerr-P108",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P109",
@@ -1632,7 +1956,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1833.0,
-    "personSlug":"William-Scott-P109"
+    "personSlug":"William-Scott-P109",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P110",
@@ -1647,7 +1974,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1833.0,
-    "personSlug":"Amelia-P110"
+    "personSlug":"Amelia-P110",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P111",
@@ -1662,7 +1992,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1782.0,
     "exitYear":1833.0,
-    "personSlug":"Arabella-P111"
+    "personSlug":"Arabella-P111",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P112",
@@ -1677,7 +2010,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1779.0,
     "exitYear":1833.0,
-    "personSlug":"Augusta-P112"
+    "personSlug":"Augusta-P112",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P113",
@@ -1692,7 +2028,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1829.0,
-    "personSlug":"Beck-P113"
+    "personSlug":"Beck-P113",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P114",
@@ -1707,7 +2046,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1833.0,
-    "personSlug":"Bell-P114"
+    "personSlug":"Bell-P114",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P115",
@@ -1722,7 +2064,10 @@ export default [
     "arrivalYear":1823.0,
     "birthYear":1823.0,
     "exitYear":1829.0,
-    "personSlug":"Bess-P115"
+    "personSlug":"Bess-P115",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P116",
@@ -1737,7 +2082,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1804.0,
     "exitYear":1833.0,
-    "personSlug":"Bessy-P116"
+    "personSlug":"Bessy-P116",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P117",
@@ -1752,7 +2100,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1833.0,
-    "personSlug":"Brown-P117"
+    "personSlug":"Brown-P117",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P118",
@@ -1767,7 +2118,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1769.0,
     "exitYear":1833.0,
-    "personSlug":"Cecelia-P118"
+    "personSlug":"Cecelia-P118",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P119",
@@ -1782,7 +2136,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1823.0,
-    "personSlug":"Cecelia-P119"
+    "personSlug":"Cecelia-P119",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P120",
@@ -1797,7 +2154,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1833.0,
-    "personSlug":"Celia-P120"
+    "personSlug":"Celia-P120",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":true
   },
   {
     "personId":"P121",
@@ -1812,7 +2172,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1798.0,
     "exitYear":1833.0,
-    "personSlug":"Chance-P121"
+    "personSlug":"Chance-P121",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P122",
@@ -1827,7 +2190,10 @@ export default [
     "arrivalYear":1829.0,
     "birthYear":1829.0,
     "exitYear":1829.0,
-    "personSlug":"Charity-P122"
+    "personSlug":"Charity-P122",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P123",
@@ -1842,7 +2208,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1833.0,
-    "personSlug":"Charlotte-P123"
+    "personSlug":"Charlotte-P123",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P124",
@@ -1857,7 +2226,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1811.0,
     "exitYear":1833.0,
-    "personSlug":"Christianna-P124"
+    "personSlug":"Christianna-P124",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P125",
@@ -1872,7 +2244,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1819.0,
-    "personSlug":"Clara-P125"
+    "personSlug":"Clara-P125",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P126",
@@ -1887,7 +2262,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1812.0,
     "exitYear":1833.0,
-    "personSlug":"Clarinda-P126"
+    "personSlug":"Clarinda-P126",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P127",
@@ -1902,7 +2280,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Cowslip-P127"
+    "personSlug":"Cowslip-P127",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P128",
@@ -1917,7 +2298,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1833.0,
-    "personSlug":"Cynthia-P128"
+    "personSlug":"Cynthia-P128",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P129",
@@ -1932,7 +2316,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":null,
     "exitYear":1833.0,
-    "personSlug":"Daisy-P129"
+    "personSlug":"Daisy-P129",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P130",
@@ -1947,7 +2334,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1818.0,
-    "personSlug":"Daphney-P130"
+    "personSlug":"Daphney-P130",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P131",
@@ -1962,7 +2352,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1833.0,
-    "personSlug":"Delia-P131"
+    "personSlug":"Delia-P131",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P132",
@@ -1977,7 +2370,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1812.0,
     "exitYear":1833.0,
-    "personSlug":"Dianna-P132"
+    "personSlug":"Dianna-P132",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P133",
@@ -1992,7 +2388,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1814.0,
     "exitYear":1833.0,
-    "personSlug":"Doll-P133"
+    "personSlug":"Doll-P133",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P134",
@@ -2007,7 +2406,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1833.0,
-    "personSlug":"Dorinda-P134"
+    "personSlug":"Dorinda-P134",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P135",
@@ -2022,7 +2424,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1833.0,
-    "personSlug":"Dorothy-P135"
+    "personSlug":"Dorothy-P135",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P136",
@@ -2037,7 +2442,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1797.0,
     "exitYear":1823.0,
-    "personSlug":"Doshy-P136"
+    "personSlug":"Doshy-P136",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P137",
@@ -2052,7 +2460,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1820.0,
-    "personSlug":"Dove-P137"
+    "personSlug":"Dove-P137",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P138",
@@ -2067,7 +2478,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1826.0,
-    "personSlug":"Eliza-P138"
+    "personSlug":"Eliza-P138",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P139",
@@ -2082,7 +2496,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1833.0,
-    "personSlug":"Eliza-Hill-P139"
+    "personSlug":"Eliza-Hill-P139",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P140",
@@ -2097,7 +2514,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1826.0,
-    "personSlug":"Ellen-P140"
+    "personSlug":"Ellen-P140",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P141",
@@ -2112,7 +2532,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1833.0,
-    "personSlug":"Eve-P141"
+    "personSlug":"Eve-P141",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P142",
@@ -2127,7 +2550,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1821.0,
-    "personSlug":"Fanny-P142"
+    "personSlug":"Fanny-P142",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P143",
@@ -2142,7 +2568,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1805.0,
     "exitYear":1833.0,
-    "personSlug":"Flora-P143"
+    "personSlug":"Flora-P143",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P144",
@@ -2157,7 +2586,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1833.0,
-    "personSlug":"Frances-P144"
+    "personSlug":"Frances-P144",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P145",
@@ -2172,7 +2604,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1799.0,
     "exitYear":1833.0,
-    "personSlug":"Frankey-P145"
+    "personSlug":"Frankey-P145",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P146",
@@ -2187,7 +2622,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1793.0,
     "exitYear":1825.0,
-    "personSlug":"Giss-P146"
+    "personSlug":"Giss-P146",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P147",
@@ -2202,7 +2640,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1833.0,
-    "personSlug":"Glister-P147"
+    "personSlug":"Glister-P147",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P148",
@@ -2217,7 +2658,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1815.0,
     "exitYear":1820.0,
-    "personSlug":"Helen-P148"
+    "personSlug":"Helen-P148",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P149",
@@ -2232,7 +2676,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1828.0,
-    "personSlug":"Hope-P149"
+    "personSlug":"Hope-P149",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P150",
@@ -2247,7 +2694,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1833.0,
-    "personSlug":"Hope-P150"
+    "personSlug":"Hope-P150",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P151",
@@ -2262,7 +2712,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1814.0,
     "exitYear":1833.0,
-    "personSlug":"Jane-Cranston-P151"
+    "personSlug":"Jane-Cranston-P151",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P152",
@@ -2277,7 +2730,10 @@ export default [
     "arrivalYear":1831.0,
     "birthYear":1831.0,
     "exitYear":1833.0,
-    "personSlug":"Jane-P152"
+    "personSlug":"Jane-P152",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P153",
@@ -2292,7 +2748,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Janet-P153"
+    "personSlug":"Janet-P153",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P154",
@@ -2307,7 +2766,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1797.0,
     "exitYear":1833.0,
-    "personSlug":"Jeany-P154"
+    "personSlug":"Jeany-P154",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P155",
@@ -2322,7 +2784,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1751.0,
     "exitYear":1821.0,
-    "personSlug":"Jreen-P155"
+    "personSlug":"Jreen-P155",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P156",
@@ -2337,7 +2802,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1798.0,
     "exitYear":1833.0,
-    "personSlug":"Joan-P156"
+    "personSlug":"Joan-P156",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P157",
@@ -2352,7 +2820,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1815.0,
     "exitYear":1821.0,
-    "personSlug":"Julian-P157"
+    "personSlug":"Julian-P157",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P158",
@@ -2367,7 +2838,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1782.0,
     "exitYear":1833.0,
-    "personSlug":"Julina-P158"
+    "personSlug":"Julina-P158",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P159",
@@ -2382,7 +2856,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1791.0,
     "exitYear":1833.0,
-    "personSlug":"Juno-P159"
+    "personSlug":"Juno-P159",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P160",
@@ -2397,7 +2874,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1793.0,
     "exitYear":1833.0,
-    "personSlug":"Kate-P160"
+    "personSlug":"Kate-P160",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P161",
@@ -2412,7 +2892,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1811.0,
     "exitYear":1833.0,
-    "personSlug":"Kitty-P161"
+    "personSlug":"Kitty-P161",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P162",
@@ -2427,7 +2910,10 @@ export default [
     "arrivalYear":1826.0,
     "birthYear":1826.0,
     "exitYear":1827.0,
-    "personSlug":"Leddy-P162"
+    "personSlug":"Leddy-P162",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P163",
@@ -2442,7 +2928,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1822.0,
-    "personSlug":"Lenora-P163"
+    "personSlug":"Lenora-P163",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P164",
@@ -2457,7 +2946,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1822.0,
-    "personSlug":"Liddy-P164"
+    "personSlug":"Liddy-P164",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P165",
@@ -2472,7 +2964,10 @@ export default [
     "arrivalYear":1825.0,
     "birthYear":1825.0,
     "exitYear":1833.0,
-    "personSlug":"Lizzy-Elizabeth-P165"
+    "personSlug":"Lizzy-Elizabeth-P165",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P166",
@@ -2487,7 +2982,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1789.0,
     "exitYear":1831.0,
-    "personSlug":"Lucretia-P166"
+    "personSlug":"Lucretia-P166",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P167",
@@ -2502,7 +3000,10 @@ export default [
     "arrivalYear":1824.0,
     "birthYear":1824.0,
     "exitYear":1826.0,
-    "personSlug":"Lydia-P167"
+    "personSlug":"Lydia-P167",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P168",
@@ -2517,7 +3018,10 @@ export default [
     "arrivalYear":1826.0,
     "birthYear":1826.0,
     "exitYear":1826.0,
-    "personSlug":"Lydie-P168"
+    "personSlug":"Lydie-P168",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P169",
@@ -2532,7 +3036,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1772.0,
     "exitYear":1833.0,
-    "personSlug":"Maphe-P169"
+    "personSlug":"Maphe-P169",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P170",
@@ -2547,7 +3054,10 @@ export default [
     "arrivalYear":0.0,
     "birthYear":0.0,
     "exitYear":1833.0,
-    "personSlug":"Mariah-P170"
+    "personSlug":"Mariah-P170",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P171",
@@ -2562,7 +3072,10 @@ export default [
     "arrivalYear":1828.0,
     "birthYear":1828.0,
     "exitYear":1833.0,
-    "personSlug":"Marinda-P171"
+    "personSlug":"Marinda-P171",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P172",
@@ -2577,7 +3090,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1794.0,
     "exitYear":1833.0,
-    "personSlug":"Mary-P172"
+    "personSlug":"Mary-P172",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P173",
@@ -2592,7 +3108,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1833.0,
-    "personSlug":"Mary-James-P173"
+    "personSlug":"Mary-James-P173",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P174",
@@ -2607,7 +3126,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1799.0,
     "exitYear":1833.0,
-    "personSlug":"Matilda-P174"
+    "personSlug":"Matilda-P174",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P175",
@@ -2622,7 +3144,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1773.0,
     "exitYear":1833.0,
-    "personSlug":"May-P175"
+    "personSlug":"May-P175",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P176",
@@ -2637,7 +3162,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1822.0,
-    "personSlug":"Memmy-Jun-P176"
+    "personSlug":"Memmy-Jun-P176",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P177",
@@ -2652,7 +3180,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1757.0,
     "exitYear":1824.0,
-    "personSlug":"Memmy-Sen-P177"
+    "personSlug":"Memmy-Sen-P177",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P178",
@@ -2667,7 +3198,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Miranda-P178"
+    "personSlug":"Miranda-P178",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P179",
@@ -2682,7 +3216,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1797.0,
     "exitYear":1833.0,
-    "personSlug":"Molly-Spence-P179"
+    "personSlug":"Molly-Spence-P179",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P180",
@@ -2697,7 +3234,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Nancy-P180"
+    "personSlug":"Nancy-P180",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P181",
@@ -2712,7 +3252,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1832.0,
-    "personSlug":"Nelly-P181"
+    "personSlug":"Nelly-P181",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P182",
@@ -2727,7 +3270,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1794.0,
     "exitYear":1822.0,
-    "personSlug":"Panella-P182"
+    "personSlug":"Panella-P182",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P183",
@@ -2742,7 +3288,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1797.0,
     "exitYear":1833.0,
-    "personSlug":"Parthenia-P183"
+    "personSlug":"Parthenia-P183",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P184",
@@ -2757,7 +3306,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1806.0,
     "exitYear":1833.0,
-    "personSlug":"Pastora-P184"
+    "personSlug":"Pastora-P184",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P185",
@@ -2772,7 +3324,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1757.0,
     "exitYear":1818.0,
-    "personSlug":"Peachy-P185"
+    "personSlug":"Peachy-P185",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P186",
@@ -2787,7 +3342,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1803.0,
     "exitYear":1820.0,
-    "personSlug":"Peggy-P186"
+    "personSlug":"Peggy-P186",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P187",
@@ -2802,7 +3360,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1822.0,
-    "personSlug":"Peggy-P187"
+    "personSlug":"Peggy-P187",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P188",
@@ -2817,7 +3378,10 @@ export default [
     "arrivalYear":1818.0,
     "birthYear":1818.0,
     "exitYear":1833.0,
-    "personSlug":"Phillis-P188"
+    "personSlug":"Phillis-P188",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P189",
@@ -2832,7 +3396,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1822.0,
-    "personSlug":"Phoeba-P189"
+    "personSlug":"Phoeba-P189",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P190",
@@ -2847,7 +3414,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1826.0,
-    "personSlug":"Polly-P190"
+    "personSlug":"Polly-P190",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P191",
@@ -2862,7 +3432,10 @@ export default [
     "arrivalYear":1820.0,
     "birthYear":1820.0,
     "exitYear":1823.0,
-    "personSlug":"Prue-P191"
+    "personSlug":"Prue-P191",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P192",
@@ -2877,7 +3450,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1755.0,
     "exitYear":1822.0,
-    "personSlug":"Rachel-P192"
+    "personSlug":"Rachel-P192",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P193",
@@ -2892,7 +3468,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1765.0,
     "exitYear":1828.0,
-    "personSlug":"Rebecca-P193"
+    "personSlug":"Rebecca-P193",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P194",
@@ -2907,7 +3486,10 @@ export default [
     "arrivalYear":1829.0,
     "birthYear":1829.0,
     "exitYear":1832.0,
-    "personSlug":"Rosanna-P194"
+    "personSlug":"Rosanna-P194",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P195",
@@ -2922,7 +3504,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1787.0,
     "exitYear":1827.0,
-    "personSlug":"Rosannah-P195"
+    "personSlug":"Rosannah-P195",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P196",
@@ -2937,7 +3522,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1808.0,
     "exitYear":1833.0,
-    "personSlug":"Rose-P196"
+    "personSlug":"Rose-P196",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P197",
@@ -2952,7 +3540,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1833.0,
-    "personSlug":"Ruth-P197"
+    "personSlug":"Ruth-P197",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P198",
@@ -2967,7 +3558,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1799.0,
     "exitYear":1833.0,
-    "personSlug":"Sabina-P198"
+    "personSlug":"Sabina-P198",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P199",
@@ -2982,7 +3576,10 @@ export default [
     "arrivalYear":1822.0,
     "birthYear":1822.0,
     "exitYear":1833.0,
-    "personSlug":"Sally-Rose-P199"
+    "personSlug":"Sally-Rose-P199",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P200",
@@ -2997,7 +3594,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1777.0,
     "exitYear":1824.0,
-    "personSlug":"Sarah-P200"
+    "personSlug":"Sarah-P200",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P201",
@@ -3012,7 +3612,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1785.0,
     "exitYear":1829.0,
-    "personSlug":"Stella-P201"
+    "personSlug":"Stella-P201",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P202",
@@ -3027,7 +3630,10 @@ export default [
     "arrivalYear":1826.0,
     "birthYear":1826.0,
     "exitYear":1833.0,
-    "personSlug":"Suckey-P202"
+    "personSlug":"Suckey-P202",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P203",
@@ -3042,7 +3648,10 @@ export default [
     "arrivalYear":1831.0,
     "birthYear":1831.0,
     "exitYear":1831.0,
-    "personSlug":"Susan-P203"
+    "personSlug":"Susan-P203",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P204",
@@ -3057,7 +3666,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1792.0,
     "exitYear":1833.0,
-    "personSlug":"Susannah-Johnston-P204"
+    "personSlug":"Susannah-Johnston-P204",
+    "isMother":true,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P205",
@@ -3072,7 +3684,10 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1789.0,
     "exitYear":1833.0,
-    "personSlug":"Susannah-Scott-P205"
+    "personSlug":"Susannah-Scott-P205",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P206",
@@ -3087,7 +3702,10 @@ export default [
     "arrivalYear":1831.0,
     "birthYear":1831.0,
     "exitYear":1833.0,
-    "personSlug":"Sylvia-P206"
+    "personSlug":"Sylvia-P206",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P207",
@@ -3102,7 +3720,10 @@ export default [
     "arrivalYear":1825.0,
     "birthYear":1825.0,
     "exitYear":1833.0,
-    "personSlug":"Venus-P207"
+    "personSlug":"Venus-P207",
+    "isMother":false,
+    "isGrandmother":false,
+    "isGreatgrandmother":false
   },
   {
     "personId":"P208",
@@ -3117,6 +3738,9 @@ export default [
     "arrivalYear":1817.0,
     "birthYear":1789.0,
     "exitYear":1833.0,
-    "personSlug":"Zebra-P208"
+    "personSlug":"Zebra-P208",
+    "isMother":true,
+    "isGrandmother":true,
+    "isGreatgrandmother":false
   }
 ];

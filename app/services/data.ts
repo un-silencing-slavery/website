@@ -1,6 +1,7 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import people from "un-silencing-slavery/data/people";
+import groupBy from "un-silencing-slavery/utils/group-by";
 
 export default class DataService extends Service {
   @tracked people = people as Person[];
@@ -87,6 +88,14 @@ export default class DataService extends Service {
   }
 
   sortByFamily() {
+    // cluster by moms
+    const motherClusters = groupBy(
+      this.people,
+      (person) => person.motherId ?? "None"
+    );
+
+    console.log(motherClusters);
+
     const movePerson = (fromIndex: number, toIndex: number) => {
       const element = this.people[fromIndex];
       this.people.splice(fromIndex, 1);

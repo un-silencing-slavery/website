@@ -14,7 +14,7 @@ export default class InformationPersonsListItemComponent extends Component {
 
   get familyIndent() {
     let indent = { class: "", text: "" };
-    if (this.data.sortKey !== "family") {
+    if (this.data.sortKey !== "matrilineage") {
       this.setIsMother(false);
       return "";
     }

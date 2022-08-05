@@ -19,6 +19,13 @@ truncate
       {{#if this.familyIndent}}
         <span class="not-italic">{{this.familyIndent.text}}</span>
       {{/if}}
+        
+        {{#if (eq @sortKey "matrilineage")}}
+          {{if @person.isGreatgrandmother "GGMother"
+            (if @person.isGrandmother "GMother"
+              (if @person.isMother "Mother" ""))
+          }}
+        {{/if}}
       {{@person.name}}
     </p>
   </LinkTo>

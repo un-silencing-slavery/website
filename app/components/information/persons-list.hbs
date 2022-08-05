@@ -11,7 +11,7 @@
   {{else}}
     <ul class="columns-3 gap-1">
       {{#each @sortedPersons as |person|}}
-        <Information::PersonsListItem @person={{person}} />
+        <Information::PersonsListItem @person={{person}} @sortKey={{@sortKey}}/>
       {{/each}}
     </ul>
   {{/if}}

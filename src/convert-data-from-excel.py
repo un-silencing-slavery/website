@@ -298,13 +298,30 @@ df["birthYear"] = df.apply(birthYearHunter, axis=1)
 
 df["personSlug"] = df.apply(lambda row: f"{row['name'].replace(' ', '-')}-{row.name}", axis=1)
 
+mothers = set(df["motherId"].values)
+grandmothers = set(df["grandmotherId"].values)
+greatgrandmothers = set(df["greatgrandmotherId"].values)
+
+def isMother(row):
+   return row.name in mothers
+
+def isGrandmother(row):
+   return row.name in grandmothers
+
+def isGreatgrandmother(row):
+   return row.name in greatgrandmothers
+
+df["isMother"] = df.apply(isMother, axis=1)
+df["isGrandmother"] = df.apply(isGrandmother, axis=1)
+df["isGreatgrandmother"] = df.apply(isGreatgrandmother, axis=1)
+
 # Cell 8
 # import time
 # now = time.strftime("%Y-%m-%d-%H:%M")
 # df.to_csv(f"{now}-data.csv")
 
 # Cell 9
-trimmed = df[["name", "country", "colour", "gender", "motherId", "displayName", "profile", "dutyCategory", "arrivalYear", "birthYear", "exitYear", "personSlug"]]
+trimmed = df[["name", "country", "colour", "gender", "motherId", "displayName", "profile", "dutyCategory", "arrivalYear", "birthYear", "exitYear", "personSlug", "isMother", "isGrandmother", "isGreatgrandmother"]]
 
 json_string = trimmed.reset_index().to_json(orient="records", indent=2)
 
