@@ -27,9 +27,7 @@
 {{!-- End Article --}}
 
 {{!-- Begin opengraph (Facebook, Slack, etc) --}}
-{{#if this.model.siteName}}
-  <meta property="og:site_name" content={{this.model.siteName}}>
-{{/if}}
+  <meta property="og:site_name" content="(Un)Silencing Slavery">
 
 {{#if (or this.model.articleTitle this.model.title)}}
   <meta
@@ -38,21 +36,14 @@
   >
 {{/if}}
 
-{{#if this.model.url}}
-  <meta property="og:url" content={{this.model.url}}>
-{{/if}}
+  <meta property="og:url" content="https://rose-hall.moacir.com">
 
-{{#if this.model.description}}
-  <meta property="og:description" content={{this.model.description}}>
-{{/if}}
+  <meta property="og:description" content=
+    "(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica.">
 
-{{#if this.model.type}}
-  <meta property="og:type" content={{this.model.type}}>
-{{/if}}
+  <meta property="og:type" content="website">
 
-{{#if this.model.imgSrc}}
-  <meta property="og:image" content={{this.model.imgSrc}}>
-{{/if}}
+  <meta property="og:image" content="https://i.imgur.com/f8KALn2.jpg">
 {{!-- End opengraph --}}
 
 {{!-- Begin Twitter --}}
@@ -64,28 +55,19 @@
 {{/if}}
 
 {{#if this.model.imgSrc}}
-  <meta name="twitter:image" content={{this.model.imgSrc}}>
+  <meta name="twitter:image" content="https://i.imgur.com/f8KALn2.jpg">
 {{/if}}
 
-{{#if (or this.model.articleTitle this.model.title)}}
-  <meta
-    name="twitter:title"
-    content={{if this.model.articleTitle this.model.articleTitle this.model.title}}
+  <meta name="twitter:title" content="(Un)Silencing Slavery"
   >
-{{/if}}
 
-{{#if this.model.url}}
-  <meta name="twitter:url" content={{this.model.url}}>
-{{/if}}
+  <meta name="twitter:url" content="https://rose-hall.moacir.com">
 
-{{#if this.model.description}}
-  <meta name="twitter:description" content={{this.model.description}}>
-{{/if}}
+  <meta name="twitter:description" content=
+    "(Un)Silencing Slavery respectfully and lovingly remembers and holds space for the enslaved Africans and their enslaved African-born and Caribbean-born descendants who lived and labored at Rose Hall Plantation in Jamaica.">
 
-{{#if this.model.creator}}
   <meta name="twitter:label1" content="Created by">
-  <meta name="twitter:data1" content={{this.model.creator}}>
-{{/if}}
+  <meta name="twitter:data1" content="Naylor, C. E., K. Akey, M. Z. Choksi, A. Gil, M. P. de Sá Pereira, M. J. S. Williams">
 
 {{#if this.model.keywords}}
   <meta name="twitter:label2" content="Filed under">
