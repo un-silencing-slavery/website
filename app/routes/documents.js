@@ -1,9 +1,12 @@
 import Route from "@ember/routing/route";
+import { service } from "@ember/service";
 
 export default class DocumentsRoute extends Route {
-  metaInfo = {
-    title: "Documents | (Un)Silencing Slavery",
-  };
+  @service headData;
+
+  beforeModel() {
+    this.headData.title = "Documents | (Un)Silencing Slavery";
+  }
 
   model() {
     return [
