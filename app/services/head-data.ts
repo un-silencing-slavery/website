@@ -4,7 +4,8 @@ import { tracked } from "@glimmer/tracking";
 export default class HeadDataService extends Service {
   @tracked title = "(Un)Silencing Slavery";
 
-  @tracked url = "https://rosehallproject.columbia.edu";
+  // @tracked url = "https://rosehallproject.columbia.edu";
+  @tracked url = "https://rose-hall.moacir.com";
 
   siteName = "(Un)Silencing Slavery";
 
@@ -12,10 +13,10 @@ export default class HeadDataService extends Service {
 
   locale = "en_US";
 
-  canonical = "https://rosehallproject.columbia.edu";
+  // canonical = "https://rosehallproject.columbia.edu";
+  canonical = "https://rose-hall.moacir.com";
 
   // imgSrc = "/assets/images/open-graph.jpg";
-
   imgSrc = "https://i.imgur.com/f8KALn2.jpg";
 
   type = "website";
