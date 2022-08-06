@@ -12,7 +12,7 @@ module("Integration | Component | community-tree/area", function (hooks) {
 
     await render(hbs`<CommunityTree::Area />`);
 
-    assert.dom(this.element).hasText("");
+    assert.dom().hasText("");
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module("Integration | Component | community-tree/area", function (hooks) {
       </CommunityTree::Area>
     `);
 
-    assert.dom(this.element).hasText("template block text");
+    assert.dom().hasText("template block text");
   });
 });

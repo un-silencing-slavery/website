@@ -31,11 +31,11 @@ export default class InformationPersonsListComponent extends Component<Informati
     const key = this.clusterKey;
     const clusteredPersons = groupBy(
       this.args.sortedPersons,
-      (person) => person[this.data.clusterColumnMapping[key]]
+      this.data.clusterColumnMapping[key]
     );
 
-    return this.data.sortOrders[key].map(
-      (category) => clusteredPersons[category]
+    return this.data.sortOrders[key].map((category) =>
+      clusteredPersons.get(category)
     );
   }
 }
