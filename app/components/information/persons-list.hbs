@@ -9,49 +9,11 @@
       {{/each}}
     </div>
   {{else if (eq @sortKey "matrilineage")}}
-    <p>matrilineage</p>
     <ul class="columns-3 gap-1">
-      {{#each this.data.matrilinealTree as |personId|}}
-        {{#if personId.length}}
-          <li>{{personId}}</li>
-          {{else}}
-            {{#each (entries personId) as |entry|}}
-              <li>{{get entry 0}}
-                <ul>
-                  {{#each (get entry 1) as |entry2|}}
-                    <li class="pl-4">
-                      {{#if entry2.length}}
-                        {{entry2}}
-                      {{else}}
-                        {{#each (entries entry2) as |entry3|}}
-                          {{get entry3 0}}
-                          <ul>
-                            {{#each (get entry3 1) as |entry4|}}
-                              <li class="pl-4">
-                                {{#if entry4.length}}
-                                  {{entry4}}
-                                {{else}}
-                                  {{#each (entries entry4) as |entry5|}}
-                                    {{get entry5 0}}
-                                    <ul>
-                                      {{#each (get entry5 1) as |entry6|}}
-                                        <li class="pl-4">{{entry6}}</li>
-                                      {{/each}}
-                                    </ul>
-                                  {{/each}}
-                                {{/if}}
-                              </li>
-                            {{/each}}
-                          </ul>
-                        {{/each}}
-                      {{/if}}
-                    </li>
-                  {{/each}}
-                </ul> 
-              </li>
-            {{/each}}
-          {{/if}}
-      {{/each}}
+      <Information::Generation 
+        @generation={{this.data.matrilinealTree}}
+        @liClass=""
+      />
     </ul>
   {{else}}
     <ul class="columns-3 gap-1">

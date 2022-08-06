@@ -10,6 +10,12 @@ export default class DataService extends Service {
 
   maxAge = 80;
 
+  get peopleAsObject() {
+    const peopleAsObject: Record<string, Person> = {};
+    this.people.map((person) => (peopleAsObject[person.personId] = person));
+    return peopleAsObject;
+  }
+
   sortOrders: Record<ClusterKey, string[]> = {
     colour: [
       "Negro",
@@ -89,13 +95,6 @@ export default class DataService extends Service {
 
   sortByFamily() {
     // cluster by moms
-    const motherClusters = groupBy(
-      this.people,
-      (person) => person.motherId ?? "None"
-    );
-
-    console.log(motherClusters);
-
     const movePerson = (fromIndex: number, toIndex: number) => {
       const element = this.people[fromIndex];
       this.people.splice(fromIndex, 1);
@@ -297,7 +296,7 @@ export default class DataService extends Service {
             "P206", // Sylvia 1831
           ],
         },
-        "P145,", // Frankey
+        "P145", // Frankey
       ],
     },
     {
@@ -505,5 +504,3 @@ declare module "@ember/service" {
     data: DataService;
   }
 }
-
-const familyIds = 

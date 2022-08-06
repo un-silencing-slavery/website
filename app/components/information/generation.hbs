@@ -1,0 +1,20 @@
+{{#each @generation as |entry index|}}
+  {{#if entry.length}}
+    <Information::PersonsListItem @person={{get-person entry}} class={{@liClasses}}/>
+  {{else}}
+    {{#each-in entry as |motherId offspring|}}
+      <li class={{@liClasses}}>
+        <Information::PersonsListItemContent 
+          @person={{get-person motherId}} 
+          @setActivePerson={{this.activePerson.setActivePerson}}
+        />
+        <ul>
+          <Information::Generation 
+            @generation={{offspring}} 
+            @liClasses="pl-3"
+            />
+        </ul>
+      </li>
+    {{/each-in}}
+  {{/if}}
+{{/each}}

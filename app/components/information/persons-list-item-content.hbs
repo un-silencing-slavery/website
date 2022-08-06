@@ -1,0 +1,18 @@
+<div
+class="text-sm
+pb-0.5
+rounded-sm
+px-2
+hover:underline
+truncate"
+>
+  <LinkTo @route="index.person" @model={{@person.personSlug}}>
+      <p
+        class="truncate"
+        {{on "click" @setActivePerson}} role="button">
+        {{@person.name}}
+      </p>
+  </LinkTo>
+  {{yield}}
+</div>
+
