@@ -6,7 +6,10 @@
     <p class="flex-grow text-left">
     {{get this.categories @index}}
     </p>
-    {{svg-jar (if this.isVisible "chevron-up" "chevron-down") role="img" title="Disclosure Icon" class=(if this.containsActivePerson "cursort-not-allowed text-slate-400")}}
+    <Information::PersonsListChevron
+      @dropdownVisible={{this.isVisible}}
+      @disabled={{this.containsActivePerson}}
+    />
   </button>
   {{#if this.isVisible}}
     <ul {{css-transition "opacity"}}>

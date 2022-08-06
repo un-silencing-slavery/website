@@ -2,12 +2,6 @@ import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import people from "un-silencing-slavery/data/people";
 
-type MotherWithChildren = Record<string, Generation>;
-
-type MotherOrChild = string | MotherWithChildren;
-
-type Generation = (MotherWithChildren | string)[];
-
 export default class DataService extends Service {
   @tracked people = people as Person[];
 
