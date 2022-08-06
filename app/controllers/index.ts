@@ -2,16 +2,22 @@ import Controller from "@ember/controller";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import DataService from "un-silencing-slavery/services/data";
+import ModalIndexService from "un-silencing-slavery/services/modal-index";
 
 export default class IndexController extends Controller {
+  @service declare modalIndex: ModalIndexService;
+
   @service declare data: DataService;
 
   queryParams = ["sort"];
 
-  @tracked sort: SortKey = "name";
+  @tracked declare sort: SortKey;
 
   get sortedPersons() {
-    return this.data.sortedPersons(this.sort);
+    // if there's a sort param, don't show the modal.
+    if (this.sort) this.modalIndex.showModal = false;
+    const sortKey = this.sort ?? "name";
+    return this.data.sortedPersons(sortKey);
   }
 }
 

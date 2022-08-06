@@ -1,32 +1,6 @@
-<li class="
-text-sm
-pb-0.5
-rounded-sm
-px-2
-hover:underline
-truncate
-{{if this.active "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10"}}
-  "
+<li class={{if this.active "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10"}}
   data-person-id={{@person.personId}}
+  ...attributes
 >
-  <LinkTo @route="index.person" @model={{@person.personSlug}}>
-    <p
-      class="truncate
-        {{if this.familyIndent this.familyIndent.class}} 
-        {{if (and this.familyIndent this.isMother) "italic" ""}}
-      "
-      {{on "click" this.setActivePerson}} role="button">
-      {{#if this.familyIndent}}
-        <span class="not-italic">{{this.familyIndent.text}}</span>
-      {{/if}}
-        
-        {{#if (eq @sortKey "matrilineage")}}
-          {{if @person.isGreatgrandmother "GGMother"
-            (if @person.isGrandmother "GMother"
-              (if @person.isMother "Mother" ""))
-          }}
-        {{/if}}
-      {{@person.name}}
-    </p>
-  </LinkTo>
+  <Information::PersonsListItemContent @person={{@person}} @setActivePerson={{this.setActivePerson}} />
 </li>

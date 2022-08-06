@@ -210,7 +210,7 @@ manual_matrix = {
     "P63": {"arrivalYear": 1818, "exitYear": 1820},
     "P64": {"exitYear": 1820},
     "P65": {"exitYear": 1820},
-    "P66": {"arrivalYear": 1817},
+    "P66": {"arrivalYear": 1817.1},
     "P67": {"arrivalYear": 1832},
     "P68": {"exitYear": 1827},
     "P71": {"exitYear": 1819},
@@ -329,3 +329,6 @@ output = "export default " + json_string + ";"
 f = open("app/data/people.js", "w")
 f.write(output)
 f.close()
+
+df.to_csv("data/post-processed.csv")
+

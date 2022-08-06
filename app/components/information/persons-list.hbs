@@ -8,6 +8,13 @@
           @clusterKey={{this.clusterKey}} />
       {{/each}}
     </div>
+  {{else if (eq @sortKey "matrilineage")}}
+    <ul class="columns-3 gap-1">
+      <Information::Generation 
+        @generation={{this.data.matrilinealTree}}
+        @liClass=""
+      />
+    </ul>
   {{else}}
     <ul class="columns-3 gap-1">
       {{#each @sortedPersons as |person|}}
