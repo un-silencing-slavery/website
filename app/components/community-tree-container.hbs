@@ -25,7 +25,7 @@
         {{/each}}
       </defs>
       <CommunityTree::Background />
-      {{#if (not (eq @sortKey "name"))}}
+      {{#if @sortKey}}
         <text x="3%" y="3%" class="text-2xl">
           <tspan>Sorted by {{@sortKey}}</tspan>
           {{#each this.svg.tooltipContent as |line|}}
