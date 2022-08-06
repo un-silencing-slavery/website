@@ -25,17 +25,6 @@
         {{/each}}
       </defs>
       <CommunityTree::Background />
-      {{#if @sortKey}}
-        <text x="3%" y="3%" class="text-2xl">
-          <tspan>Sorted by {{@sortKey}}</tspan>
-          {{#each this.svg.tooltipContent as |line|}}
-            <tspan x="3%" dy="1.325em" 
-            class="text-lg
-            {{if this.svg.showTooltip "duration-200 opacity-100" "duration-1000 opacity-0"}}
-            ">{{line}}</tspan>
-          {{/each}}
-        </text>
-      {{/if}}
       <g class="zoomable">
         <CommunityTree::Area @sortKey={{@sortKey}} @sortedPersons={{@sortedPersons}} @yearScale={{this.yearScale}} />
         <g 
@@ -60,5 +49,16 @@
           />
       </g>
       <CommunityTree::Legend @ageScale={{this.ageScale}}/>
+      {{#if @sortKey}}
+        <text x="3%" y="3%" class="text-2xl">
+          <tspan>Sorted by {{@sortKey}}</tspan>
+          {{#each this.svg.tooltipContent as |line|}}
+            <tspan x="3%" dy="1.325em" 
+            class="text-lg
+            {{if this.svg.showTooltip "duration-200 opacity-100" "duration-1000 opacity-0"}}
+            ">{{line}}</tspan>
+          {{/each}}
+        </text>
+      {{/if}}
     </svg>
 </section>
