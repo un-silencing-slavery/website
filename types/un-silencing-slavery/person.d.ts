@@ -1,3 +1,9 @@
+type MotherWithChildren = Record<string, Generation>;
+
+type MotherOrChild = string | MotherWithChildren;
+
+type Generation = (MotherWithChildren | string)[];
+
 type SortKey =
   | "name"
   | "age"

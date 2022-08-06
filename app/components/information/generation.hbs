@@ -1,20 +1,16 @@
 {{#each @generation as |entry index|}}
-  {{#if entry.length}}
-    <Information::PersonsListItem @person={{get-person entry}} class={{@liClasses}}/>
-  {{else}}
-    {{#each-in entry as |motherId offspring|}}
-      <li class={{@liClasses}}>
-        <Information::PersonsListItemContent 
-          @person={{get-person motherId}} 
-          @setActivePerson={{this.activePerson.setActivePerson}}
+  {{#let (if @motherBgClasses @motherBgClasses (concat "bg-category-" (mod index 7))) as |motherBgClasses|}}
+    {{#if entry.length}}
+      <Information::PersonsListItem @person={{get-person entry}} class="{{@liClasses}}"/>
+    {{else}}
+      {{#each-in entry as |motherId offspring|}}
+        <Information::Mother 
+          @motherId={{motherId}} 
+          @offspring={{offspring}}
+          @motherBgClasses={{motherBgClasses}}
+          @liClasses={{@liClasses}}
         />
-        <ul>
-          <Information::Generation 
-            @generation={{offspring}} 
-            @liClasses="pl-3"
-            />
-        </ul>
-      </li>
-    {{/each-in}}
-  {{/if}}
+      {{/each-in}}
+    {{/if}}
+  {{/let}}
 {{/each}}
