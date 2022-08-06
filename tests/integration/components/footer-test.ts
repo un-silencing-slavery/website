@@ -12,7 +12,7 @@ module("Integration | Component | footer", function (hooks) {
 
     await render(hbs`<Footer />`);
 
-    assert.dom(this.element).hasText("");
+    assert.dom().hasText("");
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module("Integration | Component | footer", function (hooks) {
       </Footer>
     `);
 
-    assert.dom(this.element).hasText("template block text");
+    assert.dom().hasText("template block text");
   });
 });
