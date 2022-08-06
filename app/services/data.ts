@@ -1,7 +1,12 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import people from "un-silencing-slavery/data/people";
-import groupBy from "un-silencing-slavery/utils/group-by";
+
+type MotherWithChildren = Record<string, Generation>;
+
+type MotherOrChild = string | MotherWithChildren;
+
+type Generation = (MotherWithChildren | string)[];
 
 export default class DataService extends Service {
   @tracked people = people as Person[];
@@ -81,8 +86,7 @@ export default class DataService extends Service {
         this.customSort();
         break;
       case "matrilineage":
-        this.sortByFamily();
-        break;
+        return this.sortByFamily();
       case "duties":
         this.customSort();
         break;
@@ -94,40 +98,34 @@ export default class DataService extends Service {
   }
 
   sortByFamily() {
-    // cluster by moms
-    const movePerson = (fromIndex: number, toIndex: number) => {
-      const element = this.people[fromIndex];
-      this.people.splice(fromIndex, 1);
-      this.people.splice(toIndex, 0, element);
-    };
-
-    this.people.sort((a, b) => {
-      // Matriarchs to the front.
-      if (a.motherId === null && b.motherId === null) {
-        return (
-          this.people.filter((person) => person.motherId === b.personId)
-            .length -
-          this.people.filter((person) => person.motherId === a.personId).length
-        );
-      }
-
-      return (a.motherId || "").localeCompare(b.motherId || "");
-    });
-
-    for (let i = 0; i < this.people.length; i += 1) {
-      const person = this.people[i];
-      const children = this.people.filter(
-        (child) => child.motherId === person.personId
-      );
-      if (children.length > 0) {
-        for (const child of children) {
-          movePerson(this.people.indexOf(child), i + 1);
-        }
-      }
-    }
+    return this.flatFamily(this.matrilinealTree).map(
+      (personId) => this.peopleAsObject[personId]
+    );
   }
 
-  matrilinealTree = [
+  childNotMother(test: MotherOrChild): test is string {
+    if (typeof (test as MotherWithChildren) === "string") {
+      return true;
+    }
+
+    return false;
+  }
+
+  flatFamily(generation: Generation): string[] {
+    const flatFamily = generation.map((member) => {
+      if (this.childNotMother(member)) {
+        return member;
+      }
+
+      const motherId = Object.keys(member)[0];
+
+      return [motherId, this.flatFamily(member[motherId])];
+    });
+
+    return flatFamily.flat(2);
+  }
+
+  matrilinealTree: Generation = [
     {
       P192: [
         // Rachel 62
@@ -160,7 +158,7 @@ export default class DataService extends Service {
                 "P152", // Jane
               ],
             },
-            "P152", // Patrick
+            "P77", // Patrick
           ],
         },
       ],
