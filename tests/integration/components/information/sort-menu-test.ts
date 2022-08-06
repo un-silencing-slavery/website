@@ -12,15 +12,6 @@ module("Integration | Component | information/sort-menu", function (hooks) {
 
     await render(hbs`<Information::SortMenu />`);
 
-    assert.dom().hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <Information::SortMenu>
-        template block text
-      </Information::SortMenu>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().includesText("");
   });
 });

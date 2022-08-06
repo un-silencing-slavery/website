@@ -117,7 +117,7 @@ export default class CommunityTreePersonComponent extends Component {
         i
       );
 
-      const [_, controlPointX, controlPointY] = newSegment.split(" ");
+      const [, controlPointX, controlPointY] = newSegment.split(" ");
 
       linePSegments.push([
         parseFloat(controlPointX.replace(",", "")),

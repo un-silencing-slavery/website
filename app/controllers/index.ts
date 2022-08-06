@@ -15,7 +15,7 @@ export default class IndexController extends Controller {
 
   get sortedPersons() {
     // if there's a sort param, don't show the modal.
-    if (this.sort) this.modalIndex.showModal = false;
+    if (this.sort) this.modalIndex.hideModal();
     const sortKey = this.sort ?? "name";
     return this.data.sortedPersons(sortKey);
   }

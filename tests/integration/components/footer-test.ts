@@ -12,15 +12,6 @@ module("Integration | Component | footer", function (hooks) {
 
     await render(hbs`<Footer />`);
 
-    assert.dom().hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <Footer>
-        template block text
-      </Footer>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().containsText("");
   });
 });

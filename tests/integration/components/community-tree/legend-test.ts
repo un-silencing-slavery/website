@@ -12,15 +12,6 @@ module("Integration | Component | community-tree/legend", function (hooks) {
 
     await render(hbs`<CommunityTree::Legend />`);
 
-    assert.dom().hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <CommunityTree::Legend>
-        template block text
-      </CommunityTree::Legend>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().containsText("");
   });
 });

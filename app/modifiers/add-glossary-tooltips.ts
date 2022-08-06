@@ -89,14 +89,14 @@ export default class AddGlossaryTooltipsModifier extends Modifier<AddGlossaryToo
             ],
           });
 
-          function show() {
+          const show = () => {
             tooltip.setAttribute("data-show", "");
             popperInstance.update();
-          }
+          };
 
-          function hide() {
+          const hide = () => {
             tooltip.removeAttribute("data-show");
-          }
+          };
 
           this.showEvents.forEach((event) =>
             termElement.addEventListener(event, show)

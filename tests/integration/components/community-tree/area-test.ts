@@ -12,15 +12,6 @@ module("Integration | Component | community-tree/area", function (hooks) {
 
     await render(hbs`<CommunityTree::Area />`);
 
-    assert.dom().hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <CommunityTree::Area>
-        template block text
-      </CommunityTree::Area>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().containsText("");
   });
 });

@@ -9,8 +9,8 @@ module("Integration | Helper | display-glossary-definition", function (hooks) {
   test("it renders", async function (assert) {
     this.set("inputValue", "1234");
 
-    await render(hbs`{{display-glossary-definition inputValue}}`);
+    await render(hbs`{{display-glossary-definition this.inputValue}}`);
 
-    assert.dom().hasText("1234");
+    assert.dom().containsText("1234");
   });
 });

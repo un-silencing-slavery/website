@@ -14,7 +14,7 @@ module(
 
       await render(hbs`<Information::PersonsListItem />`);
 
-      assert.dom().hasText("");
+      assert.dom().containsText("");
 
       // Template block usage:
       await render(hbs`
@@ -23,7 +23,7 @@ module(
       </Information::PersonsListItem>
     `);
 
-      assert.dom().hasText("template block text");
+      assert.dom().containsText("template block text");
     });
   }
 );

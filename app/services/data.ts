@@ -36,7 +36,7 @@ export default class DataService extends Service {
     gender: ["Female", "Male", "Unknown"],
   };
 
-  clusterColumnMapping: Record<ClusterKey, keyof Person> = {
+  clusterColumnMapping: Record<ClusterKey, keyof CustomSortedPerson> = {
     colour: "colour",
     duties: "dutyCategory",
     nativity: "country",
@@ -47,14 +47,12 @@ export default class DataService extends Service {
     const customSortKeys = Object.keys(this.sortOrders);
     if (customSortKeys.includes(this.sortKey)) {
       const customSort = this.sortKey as ClusterKey;
-      const ordering = new Map(
-        this.sortOrders[customSort].map((v: string, i: number) => [v, i])
-      );
+      const ordering = this.sortOrders[customSort];
 
       this.people.sort(
         (a, b) =>
-          ordering.get(a[this.clusterColumnMapping[customSort]]) -
-          ordering.get(b[this.clusterColumnMapping[customSort]])
+          ordering.indexOf(a[this.clusterColumnMapping[customSort]]) -
+          ordering.indexOf(b[this.clusterColumnMapping[customSort]])
       );
     }
   }

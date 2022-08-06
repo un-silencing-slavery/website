@@ -1,11 +1,10 @@
 <div class="persons-li-content flex flex-row justify-between text-sm pt-1 pb-0.5 rounded-sm px-2 hover:underline truncate" ...attributes>
-  <LinkTo @route="index.person" @model={{@person.personSlug}} class="truncate">
+  <LinkTo @route="index.person" @model={{@person.personSlug}} class="w-full truncate">
       <p
-        class="truncate"
+        class="truncate w-full"
         {{on "click" @setActivePerson}} role="button">
         {{@person.name}}
       </p>
   </LinkTo>
   {{yield}}
 </div>
-

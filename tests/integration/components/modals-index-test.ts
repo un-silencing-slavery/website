@@ -10,17 +10,10 @@ module("Integration | Component | modals-index", function (hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<ModalsIndex />`);
+    this.set("close", () => true);
 
-    assert.dom().hasText("");
+    await render(hbs`<ModalsIndex @close={{this.close}}/>`);
 
-    // Template block usage:
-    await render(hbs`
-      <ModalsIndex>
-        template block text
-      </ModalsIndex>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().containsText("");
   });
 });

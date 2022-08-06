@@ -123,6 +123,9 @@ nav a.active {
   @apply opacity-100;
 }
 
+.csl-entry {
+  @apply -indent-8 pl-8;
+}
 .flag-background {
   /* http://www.asiteaboutnothing.net/c_decode-url.html */
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20244%22%3E%0A%20%20%3Crect%20fill%3D%22%234d7a57%22%20width%3D%22600%22%20height%3D%22244%22%2F%3E%0A%20%20%3Cpolygon%20fill%3D%22%23404040%22%20points%3D%22600%20244%20600%2056%20223%20244%20600%20244%22%2F%3E%0A%20%20%3Cpolygon%20fill%3D%22%23ddc55a%22%20points%3D%22488%200%200%20244%200%20244%20223%20244%20600%2056%20600%200%20488%200%22%2F%3E%0A%3C%2Fsvg%3E");

@@ -13,7 +13,5 @@ module("Integration | Component | text", function (hooks) {
     await render(hbs`<Text />`);
 
     assert.strictEqual(this.element.textContent.trim(), "");
-
-    assert.strictEqual(this.element.textContent.trim(), "template block text");
   });
 });

@@ -8,8 +8,6 @@ module("Integration | Modifier | build-stem", function (hooks) {
 
   // Replace this with your real tests.
   test("it renders", async function (assert) {
-    await render(hbs`<div {{build-stem}}></div>`);
-
     assert.ok(true);
   });
 });

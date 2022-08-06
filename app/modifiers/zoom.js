@@ -5,8 +5,8 @@ import { select, zoom } from "d3";
 export default class ZoomModifier extends Modifier {
   @service svg;
 
-  modify(element) {
-    select("svg.community-tree").call(
+  modify() {
+    select("svg.zoomable").call(
       zoom()
         .extent([
           [0, 0],

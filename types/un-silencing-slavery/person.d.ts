@@ -42,3 +42,19 @@ interface Person {
   isGrandmother: boolean;
   isGreatgrandmother: boolean;
 }
+
+type CustomSortedPerson = Omit<
+  Person,
+  | "personId"
+  | "name"
+  | "motherId"
+  | "displayName"
+  | "profile"
+  | "arrivalYear"
+  | "birthYear"
+  | "exitYear"
+  | "personSlug"
+  | "isMother"
+  | "isGrandmother"
+  | "isGreatgrandmother"
+>;

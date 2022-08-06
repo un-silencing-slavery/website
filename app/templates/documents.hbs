@@ -88,12 +88,12 @@
     {{#each @model as |document|}}
       <li class="max-w-sm w-full lg:max-w-full lg:flex mb-7 pr-8 h-48">
         <img src="/assets/thumbnails/{{document.id}}-thumb.jpg"
-          class="h-48 w-36 flex-none bg-cover text-center overflow-hidden  border-b border-l border-t border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
+          class="h-48 w-36 flex-none bg-cover text-center overflow-hidden  border-b border-l border-t border-green-800 lg:border-t lg:border-green-800 p-4"
           alt="{{document.title}}"
         />
 
         <div
-          class="border-r border-b border-emerald-900 lg:border-t lg:border-emerald-900 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+          class="border-r border-b border-green-800 lg:border-t lg:border-green-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
         >
           <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
 
@@ -101,7 +101,9 @@
           <p class="doc-location text-sm pb-3">Currently held at {{document.location}}</p>
           <p class="font-medium"><a
               href="/assets/documents/{{document.id}}.{{document.file}}"
-              target="_blank" style="color: #2E4934;" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-green-800 hover:bg-green-100"
             >Download Document</a> ({{document.size}})</p>
 
         </div>

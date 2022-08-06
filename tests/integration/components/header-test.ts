@@ -12,15 +12,6 @@ module("Integration | Component | header", function (hooks) {
 
     await render(hbs`<Header />`);
 
-    assert.dom().hasText("");
-
-    // Template block usage:
-    await render(hbs`
-      <Header>
-        template block text
-      </Header>
-    `);
-
-    assert.dom().hasText("template block text");
+    assert.dom().containsText("");
   });
 });
