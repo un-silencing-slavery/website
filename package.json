@@ -90,7 +90,7 @@
     "ember-functions-as-helper-polyfill": "^2.0.1",
     "ember-keyboard": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
-    "ember-math-helpers": "^2.18.1",
+    "ember-math-helpers": "^2.18.2",
     "ember-modifier": "^3.2.7",
     "ember-on-resize-modifier": "^1.0.0",
     "ember-promise-modals": "^3.0.1",
