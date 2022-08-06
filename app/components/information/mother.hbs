@@ -1,0 +1,26 @@
+<li class="{{@liClasses}}
+mother-li bg-opacity-30 rounded
+{{@motherBgClasses}}"
+>
+  <Information::PersonsListItemContent 
+    @person={{get-person @motherId}} 
+    @setActivePerson={{this.activePerson.setActivePerson}}
+    class={{if (eq this.activePerson.personId @motherId) "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10"}}
+  >
+    <button {{on "click" this.toggleOffspring}} disabled={{this.descendantIsActive}} type="button">
+      <Information::PersonsListChevron
+        @dropdownVisible={{this.offspringVisible}}
+        @disabled={{this.descendantIsActive}}
+      />
+    </button>
+  </Information::PersonsListItemContent>
+  {{#if this.offspringVisible}}
+    <ul {{css-transition "opacity"}} class="pb-0.5">
+      <Information::Generation 
+        @generation={{@offspring}} 
+        @liClasses="pl-3"
+        @motherBgClasses={{@motherBgClasses}}
+        />
+    </ul>
+  {{/if}}
+</li>
