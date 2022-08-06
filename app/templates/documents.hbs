@@ -87,8 +87,8 @@
   <ul class="md:w-1/2 block py-4 overflow-auto">
     {{#each @model as |document|}}
       <li class="max-w-sm w-full lg:max-w-full lg:flex mb-7 pr-8 h-48">
-        <img src="/assets/images/{{document.id}}-thumb.jpg"
-          class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden  border-b border-l border-t border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
+        <img src="/assets/thumbnails/{{document.id}}-thumb.jpg"
+          class="h-48 w-36 flex-none bg-cover text-center overflow-hidden  border-b border-l border-t border-emerald-900 lg:border-t lg:border-emerald-900 p-4"
           alt="{{document.title}}"
         />
 
@@ -100,7 +100,7 @@
 
           <p class="doc-location text-sm pb-3">Currently held at {{document.location}}</p>
           <p class="font-medium"><a
-              href="/assets/pdfs/{{document.id}}.{{document.file}}"
+              href="/assets/documents/{{document.id}}.{{document.file}}"
               target="_blank" style="color: #2E4934;" rel="noopener noreferrer"
             >Download Document</a> ({{document.size}})</p>
 
