@@ -15,9 +15,15 @@
     {{svg-jar "x" class="h-4"}}
   </button>
   <p class="flex-grow text-sm md:text-base px-2">Sort by:</p>
-  <ul class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 space-y-1 md:pt-2">
+  <ul class="w-52 md:w-full columns-3 md:columns-1 gap-1 md:gap-0 md:pt-2">
     {{#each @sortKeys as |key|}}
-      <li class="px-2 {{if (eq key this.data.sortKey) "text-slate-700 bg-green-200 shadow-inner" "hover:text-slate-700 hover:bg-green-200 hover:shadow-inner"}}">
+      <li class={{concat
+        "px-2 py-1.5 " 
+        (if (eq key this.data.sortKey) 
+          "text-slate-700 bg-green-200 shadow-inner"
+          "transition-colors ease-in-out hover:text-slate-700 hover:bg-green-200 hover:shadow-inner"
+        )
+      }}>
         <LinkTo @route={{@route}} @query={{hash sort=key}} {{on "click" @close}}>{{capitalize key}}</LinkTo>
       </li>
       {{/each}}

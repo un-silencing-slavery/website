@@ -3,15 +3,19 @@
   {{if @visible "absolute right-6 z-50 md:relative md:right-0 md:z-auto"}}
   w-1/2 md:w-full
   ">
-  <ul class="flex flex-col md:flex-row md:w-full">
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="index">Home</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="about">About</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="reflections">Reflections</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="documents">Documents</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="credits">Credits</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="bibliography">Bibliography</LinkTo></li>
-    <li><LinkTo class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title" {{on "click" @hideNavDropdown}} @route="glossary">Glossary</LinkTo></li>
-    <li><a href="https://ugapress.org/book/9780820362151/unsilencing-slavery/" target="_blank" class="h-full block px-2 pt-2 hover:bg-green-100 hover:text-green-900 font-title"
-      rel="noopener noreferrer">The Book</a></li>
+  <ul class="flex flex-col md:flex-row md:h-full md:w-full">
+    {{#let "py-1 px-3 hover:bg-green-100 hover:text-green-900 transition-colors ease-in-out" as |navClasses|}}
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="index" @text="Home" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="about" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="reflections" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="documents" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="credits" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="bibliography" class={{navClasses}}/>
+      <NavBarItem @onClick={{@hideNavDropdown}} @route="glossary" class={{navClasses}}/>
+      <li class={{navClasses}}>
+        <a href="https://ugapress.org/book/9780820362151/unsilencing-slavery/" 
+          target="_blank" rel="noopener noreferrer">The Book</a>
+      </li>
+    {{/let}}
   </ul>
 </nav>

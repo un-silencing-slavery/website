@@ -1,0 +1,10 @@
+  <li>
+    <LinkTo
+      class="h-full block"
+      {{on "click" @onClick}} 
+      @route={{@route}}
+      ...attributes>
+        {{if @text @text (capitalize @route)}}
+    </LinkTo>
+  </li>
+

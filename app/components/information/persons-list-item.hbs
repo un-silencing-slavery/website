@@ -5,6 +5,8 @@
   <Information::PersonsListItemContent 
     @person={{@person}} 
     @setActivePerson={{this.setActivePerson}} 
-    class={{if this.active "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10"}}
+    class={{concat "transition-all ease-in-out "
+      (if this.active "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10")
+    }}
     />
 </li>

@@ -5,7 +5,9 @@ mother-li bg-opacity-30 rounded
   <Information::PersonsListItemContent 
     @person={{get-person @motherId}} 
     @setActivePerson={{this.activePerson.setActivePerson}}
-    class={{if (eq this.activePerson.personId @motherId) "italic bg-black shadow-inner bg-opacity-10" "hover:bg-black hover:bg-opacity-10"}}
+    class={{if (eq this.activePerson.personId @motherId) 
+      "italic bg-black shadow-inner bg-opacity-10" 
+      "transition-colors ease-in-out hover:bg-black hover:bg-opacity-10"}}
   >
     <button {{on "click" this.toggleOffspring}} disabled={{this.descendantIsActive}} type="button">
       <Information::PersonsListChevron
@@ -20,6 +22,7 @@ mother-li bg-opacity-30 rounded
         @generation={{@offspring}} 
         @liClasses="pl-3"
         @motherBgClasses={{@motherBgClasses}}
+        @matriarch={{@motherId}}
         />
     </ul>
   {{/if}}
