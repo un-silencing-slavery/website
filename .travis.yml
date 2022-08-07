@@ -14,7 +14,7 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ID # this references the encrypted $var you gave Travis
     secret_access_key: $AWS_SECRET_KEY # this references the encrypted $var you gave Travis
-    bucket: cul-s3-dlst-travis-rosehallproject-prod
+    bucket: cul-s3-rose-hall-project
     region: us-west-2
     skip_cleanup: true
     local_dir: dist
