@@ -1,10 +1,10 @@
 <header class="z-50 md:z-0 
   fixed top-0 left-0 md:relative 
-  h-9 md:h-24
   w-full
   bg-green-600 
   ">
-  <div class="w-full h-9 md:h-16 flex flex-row justify-between text-slate-50
+  <div class="w-full 
+  flex flex-row justify-between text-slate-50
   bg-no-repeat
   bg-right
   bg-contain
@@ -12,11 +12,11 @@
   py-2
   px-4
   ">
-    <div class="h-full flex flex-col md:flex-row align-center items-center">
+    <div class="h-full flex flex-col flex-grow space-y-1">
       <LinkTo @route="index" {{on "click" this.hideNavbar}}>
         <p class="text-xl md:text-4xl font-title text-slate-50">(Un)Silencing Slavery</p>
       </LinkTo>
-      <p class="text-md font-title">&nbsp;&nbsp;&nbsp;Remembering the Enslaved at Rose Hall Plantation, Jamaica</p>
+      <p class="text-lg font-title">Remembering the Enslaved at Rose Hall Plantation, Jamaica</p>
     </div>
     <button class="h-full md:hidden block shadow-lg border-white border rounded-sm" type="button" {{on "click" this.toggleNavbar}}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
