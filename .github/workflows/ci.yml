@@ -27,6 +27,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: yarn install --frozen-lockfile
       - run: yarn lint
 
   test:
@@ -37,6 +38,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: yarn install --frozen-lockfile
       - run: yarn test
 
   build:
@@ -47,6 +49,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: yarn install --frozen-lockfile
       - run: yarn build
 
   deploy:
@@ -59,6 +62,8 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DLST_SERV_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v3
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
       - name: Deploying to S3
         uses: reggionick/s3-deploy@v3
         with:
