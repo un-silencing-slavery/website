@@ -86,31 +86,31 @@
     </:content>
   </Text>
 
-  <ul class="md:w-1/2 block py-4 overflow-auto">
+  <ul class="w-full md:w-1/2 block py-4 overflow-auto space-y-4">
     {{#each @model as |document|}}
-      <li class="max-w-sm w-full lg:max-w-full lg:flex mb-7 pr-8 h-48">
-        <img src="/assets/thumbnails/{{document.id}}-thumb.jpg"
-          class="h-48 w-36 flex-none bg-cover text-center overflow-hidden  border-b border-l border-t border-green-800 lg:border-t lg:border-green-800 p-4"
-          alt="{{document.title}}"
-        />
+      <li class="w-full min-h-min px-4 md:px-0 md:pr-4">
+        <div class="flex flex-row rounded border border-green-600">
+          <img src="/assets/thumbnails/{{document.id}}-thumb.jpg"
+            class="h-48 w-36 flex-none bg-cover text-center overflow-hidden p-4"
+            alt="{{document.title}}"
+          />
 
-        <div
-          class="border-r border-b border-green-800 lg:border-t lg:border-green-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-        >
-          <h3 class="md:prose-md lg:prose-lg font-black">{{document.title}}</h3>
+          <div
+            class="p-4 pl-0 md:pl-4 flex flex-col justify-between leading-normal"
+          >
+            <h3 class="text-xl font-bold">{{document.title}}</h3>
 
 
-          <p class="doc-location text-sm pb-3">Currently held at {{document.location}}</p>
-          <p class="font-medium"><a
-              href="/assets/documents/{{document.id}}.{{document.file}}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="underline text-green-800 hover:bg-green-100"
-            >Download Document</a> ({{document.size}})</p>
+            <p class="doc-location text-sm pb-3">Currently held at {{document.location}}</p>
+            <p class="font-medium"><a
+                href="/assets/documents/{{document.id}}.{{document.file}}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline text-green-800 hover:bg-green-100"
+              >Download Document</a> ({{document.size}})</p>
 
+          </div>
         </div>
-        <hr />
-
       </li>
     {{/each}}
   </ul>
