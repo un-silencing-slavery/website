@@ -1140,7 +1140,7 @@
     ember-cli-version-checker "^5.1.2"
     semver "^7.3.5"
 
-"@embroider/addon-shim@^1.5.0":
+"@embroider/addon-shim@^1.5.0", "@embroider/addon-shim@^1.7.1":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.8.3.tgz#2368510b8ce42d50d02cb3289c32e260dfa34bd9"
   integrity sha512-7pyHwzT6ESXc3nZsB8rfnirLkUhQWdvj6CkYH+0MUPN74mX4rslf7pnBqZE/KZkW3uBIaBYvU8fxi0hcKC/Paw==
@@ -1620,7 +1620,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@popperjs/core@^2.11.5":
+"@popperjs/core@^2.11.1", "@popperjs/core@^2.11.5":
   version "2.11.5"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
@@ -7210,6 +7210,14 @@ ember-on-resize-modifier@^1.0.0:
     ember-cli-htmlbars "^5.7.1"
     ember-modifier "^3.2.7"
     ember-resize-observer-service "^1.1.0"
+
+ember-popperjs@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-popperjs/-/ember-popperjs-3.0.0.tgz#9f379302ccffda5bad694645a5a26c2e2bc97949"
+  integrity sha512-6adPoWNeV5Q97d6nf5gsEYy/AQ8V3HKtofNcxO0xCQ2coOWWhBUGEwI3i9LPeOcfikFB6sbsLvwbeqLmqXeSoQ==
+  dependencies:
+    "@embroider/addon-shim" "^1.7.1"
+    "@popperjs/core" "^2.11.1"
 
 ember-promise-modals@^3.0.1:
   version "3.0.1"
