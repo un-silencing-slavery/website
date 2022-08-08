@@ -6,15 +6,46 @@
     ...attributes
     {{stop-modal}}
   >
-    <header class="w-full pb-5">
+    <header class="w-full pb-5 pt-4 md:pt-0 flex flex-row justify-between items-start">
       <h1 class="font-title text-4xl">
         {{yield to="header"}}
       </h1>
+      {{#if (has-block "toc")}}
+        <Menu as |menu|>
+          <PopperJS as |reference popover|>
+            <menu.Button 
+              {{reference}}
+              class="shadow md:hidden p-2"
+              type="button">
+                {{svg-jar (if menu.isOpen "chevron-up" "chevron-down") }}
+            </menu.Button>
+            <menu.Items
+              {{popover}}
+              {{on "click" menu.close}}
+              class="bg-green-100 p-4 prose prose-sm
+                  prose prose-ul:list-none prose-ul:pl-0
+                  prose-a:no-underline
+              "
+              as |items|>
+                <h2 class="
+                ">
+              {{#if (has-block "tocTitle")}}
+                  {{yield to="tocTitle"}}
+              {{else}}
+                  Contents
+              {{/if}}
+                </h2>
+
+              {{yield to="toc"}}
+            </menu.Items>
+          </PopperJS>
+        </Menu>
+      {{/if}}
     </header>
 
-    <div class="flex flex-col md:flex-row md:space-x-4">
-      {{#if @hasToc}}
-        <aside class="flex-grow-0 bg-green-100 py-4
+    <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+      {{#if (has-block "toc")}}
+        <aside class="hidden md:block flex-grow-0 bg-green-100 py-4
         prose prose-ul:list-none prose-ul:pl-0
         prose-a:no-underline
         hover:prose-li:bg-green-300
@@ -22,7 +53,11 @@
         prose-li:px-4
         max-w-xs
         ">
-          <h2 class="font-normal px-4">{{yield to="tocTitle"}}</h2>
+          {{#if (has-block "tocTitle")}}
+            <h2 class="font-normal px-4">
+              {{yield to="tocTitle"}}
+            </h2>
+          {{/if}}
           <div class="sticky top-5">
             {{yield to="toc"}}
           </div>
@@ -30,7 +65,7 @@
       {{/if}}
       <section class="
         prose
-        prose-xl
+        md:prose-xl
         prose-h1:text-4xl
         prose-h2:text-3xl 
         prose-h3:text-2xl 
@@ -38,9 +73,9 @@
         prose-a:transition-colors prose-a:ease-in-out
         first:prose-h2:mt-0
         prose-img:my-0
-        text-justify overflow-auto flex-grow"
+        prose-p:text-justify overflow-auto flex-grow"
       >
-      {{yield to="content"}}
+        {{yield to="content"}}
       </section>
     </div>
   </section>
