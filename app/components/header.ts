@@ -1,15 +1,19 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
-import { action } from "@ember/object";
 
 export default class HeaderComponent extends Component {
-  @tracked navbarVisible = false;
-
-  @action toggleNavbar() {
-    this.navbarVisible = !this.navbarVisible;
-  }
-
-  @action hideNavbar() {
-    this.navbarVisible = false;
+  get navItems() {
+    return [
+      { route: "index", text: "Home" },
+      { route: "about" },
+      { route: "reflections" },
+      { route: "documents" },
+      { route: "credits" },
+      { route: "bibliography" },
+      { route: "glossary" },
+      {
+        href: "https://ugapress.org/book/9780820362151/unsilencing-slavery/",
+        text: "The Book",
+      },
+    ];
   }
 }

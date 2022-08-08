@@ -1,0 +1,35 @@
+<Menu as |menu|>
+  <PopperJS as |reference popover|>
+    <menu.Button 
+      {{reference}}
+      class="border rounded-sm p-1 h-full block md:hidden shadow-lg border-slate-50 bg-black bg-opacity-30" type="button">
+      {{svg-jar "menu" }}
+    </menu.Button>
+    <menu.Items
+      {{popover}}
+      class="
+      absolute right-6 z-50
+      origin-top-right
+      w-32
+      rounded
+      bg-green-800 text-slate-50
+      text-sm md:text-base
+      outline-none
+      pt-2
+      flex flex-col
+      space-y-2
+    " 
+    as |items|>
+      <nav>
+        <ul class="flex flex-col">
+          {{#each @navItems as |navMenuItem|}}
+            <items.Item as |item|>
+              <NavBarItem @item={{navMenuItem}} />
+            </items.Item>
+          {{/each}}
+        </ul>
+      </nav>
+    </menu.Items>
+  </PopperJS>
+</Menu>
+
