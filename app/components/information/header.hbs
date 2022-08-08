@@ -1,12 +1,12 @@
 <header>
-  <div class="flex flex-row justify-between text-green-900">
-    <h3 class="text-lg md:text-2xl pt-0 md:pt-3 font-title">Enslaved Persons of Rose Hall</h3>
+  <div class="flex flex-row items-center justify-between text-green-900 w-full">
+    <h3 class="text-2xl pt-2 font-title flex-grow">Enslaved Persons of Rose Hall</h3>
     <Menu as |menu|>
       <PopperJS as |reference popover|>
         <menu.Button 
           {{reference}}
-          class="border rounded-sm px-1 md:px-2
-          hover:bg-green-800 hover:text-slate-50 hover:border-slate-50 transition-colors ease-in-out"
+          class="border rounded-sm p-1 md:px-2
+          hover:bg-green-800 hover:text-slate-50 hover:border-slate-50 transition-colors ease-in-out h-full shadow-md"
           >
           {{svg-jar "sort" class="fill-current inline"}}
         </menu.Button>

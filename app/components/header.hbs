@@ -10,16 +10,17 @@
   bg-contain
   flag-background
   py-2
-  px-4
+  px-2
+  md:px-4
   ">
     <div class="h-full flex flex-col flex-grow space-y-1">
       <LinkTo @route="index" {{on "click" this.hideNavbar}}>
-        <p class="text-xl md:text-4xl font-title text-slate-50">(Un)Silencing Slavery</p>
+        <p class="text-2xl md:text-4xl font-title text-slate-50">(Un)Silencing Slavery</p>
       </LinkTo>
       <p class="hidden md:block text-lg font-title">Remembering the Enslaved at Rose Hall Plantation, Jamaica</p>
     </div>
-    <button class="h-full md:hidden block shadow-lg border-slate-50 border rounded-sm" type="button" {{on "click" this.toggleNavbar}}>
-      {{svg-jar "menu" class="bg-black bg-opacity-30"}}
+    <button class="border rounded-sm p-1 h-full block md:hidden shadow-lg border-slate-50 bg-black bg-opacity-30" type="button" {{on "click" this.toggleNavbar}}>
+      {{svg-jar "menu" }}
     </button>
   </div>
   <NavBar @visible={{this.navbarVisible}} @hideNavDropdown={{this.hideNavbar}} />
