@@ -112,10 +112,10 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     let dutiesDenominator;
 
     if (clusterKey === "duties") {
-      // const unknownDuties = this.data.people.filter(
-      //   (person) => person.dutyCategory === "Unknown"
-      // ).length;
-      const dutiesDenominator = denominator - 95; // = denominator - unknownDuties;
+      const unknownDuties = this.data.people.filter(
+        (person) => person.dutyCategory === "Not at Rose Hall in 1832"
+      ).length;
+      const dutiesDenominator = denominator - unknownDuties;
       percentage = `(${Math.floor((100 * count) / dutiesDenominator)}%)`;
       firstLine = `Of the ${dutiesDenominator} enslaved persons with duties recorded at Rose Hall in 1832,`;
     }

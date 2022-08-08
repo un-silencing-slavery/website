@@ -22,7 +22,7 @@ type DutyCategory =
   | "Craft Workers"
   | "Field Workers"
   | "“Not at Work”"
-  | "Unknown";
+  | "Not at Rose Hall in 1832";
 
 interface Person {
   personId: string;
