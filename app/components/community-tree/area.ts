@@ -106,8 +106,19 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     { category, count }: CategoryWithCount,
     tooltipId: string
   ) {
-    const denominator = this.data.people.length;
-    const percentage = `(${Math.floor((100 * count) / denominator)}%)`;
+    let denominator = this.data.people.length;
+    let percentage = `(${Math.floor((100 * count) / denominator)}%)`;
+    let firstLine = `Of the ${denominator} enslaved persons recorded at Rose Hall,`;
+    let dutiesDenominator;
+
+    if (clusterKey === "duties") {
+      // const unknownDuties = this.data.people.filter(
+      //   (person) => person.dutyCategory === "Unknown"
+      // ).length;
+      const dutiesDenominator = denominator - 95; // = denominator - unknownDuties;
+      percentage = `(${Math.floor((100 * count) / dutiesDenominator)}%)`;
+      firstLine = `Of the ${dutiesDenominator} enslaved persons with duties recorded at Rose Hall in 1832,`;
+    }
 
     let text = `${count} ${percentage} had their ${clusterKey} marked as “${category}.”`;
 
@@ -128,12 +139,10 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     }
 
     if (category === "Not at Rose Hall in 1832") {
-      text = `${count} ${percentage} were no longer at Rose Hall in 1832, when the duties were recorded.`;
+      firstLine = `Duties were only recorded for the ${dutiesDenominator} enslaved persons present in 1832.`;
+      text = `The other ${count} ${percentage} were no longer at Rose Hall, almost always because of death.`;
     }
 
-    this.tooltipTexts[tooltipId] = [
-      `Of the ${denominator} enslaved persons recorded at Rose Hall,`,
-      text,
-    ];
+    this.tooltipTexts[tooltipId] = [firstLine, text];
   }
 }
