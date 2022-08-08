@@ -65,6 +65,14 @@ const tailwindConfig = {
         6: "#666666",
       },
     },
+    ringColor: ({ theme }) => ({
+      DEFAULT: theme(`colors.green.600`, "#4d7a57"),
+      ...theme("colors"),
+    }),
+    ringOpacity: ({ theme }) => ({
+      DEFAULT: "0.3",
+      ...theme("opacity"),
+    }),
     extend: {
       // typography: (theme) => ({
       //   DEFAULT: {
