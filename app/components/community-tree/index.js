@@ -3,7 +3,7 @@ import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { scaleLinear } from "d3";
 
-export default class CommunityTreeContainerComponent extends Component {
+export default class CommunityTreeIndex extends Component {
   @service svg;
 
   @service data;

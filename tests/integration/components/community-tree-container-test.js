@@ -3,14 +3,14 @@ import { setupRenderingTest } from "ember-qunit";
 import { render } from "@ember/test-helpers";
 import { hbs } from "ember-cli-htmlbars";
 
-module("Integration | Component | community-tree-container", function (hooks) {
+module("Integration | Component | community-tree/index", function(hooks) {
   setupRenderingTest(hooks);
 
-  test.skip("it renders", async function (assert) {
+  test.skip("it renders", async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<CommunityTreeContainer />`);
+    await render(hbs`<CommunityTree />`);
 
     assert.dom().includesText("");
   });
