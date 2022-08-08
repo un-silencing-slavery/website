@@ -1,22 +1,48 @@
 <header>
   <div class="flex flex-row justify-between text-green-900">
     <h3 class="text-lg md:text-2xl pt-0 md:pt-3 font-title">Enslaved Persons of Rose Hall</h3>
-    <button 
-      class="
-      border rounded-sm px-2
-      {{if this.sortmenuVisible "bg-green-800 text-slate-50 border-slate-50" "border-green-900"}}
-      hover:bg-green-800 hover:text-slate-50 hover:border-slate-50 transition-colors ease-in-out" 
-      type="button" 
-      {{on "click" this.toggleSortmenu}}>
-      <span class="hidden">Sort</span>
-      {{svg-jar "sort" class="fill-current"}}
-    </button>
+    <Menu as |menu|>
+      <PopperJS as |reference popover|>
+        <menu.Button 
+          {{reference}}
+          class="border rounded-sm px-1 md:px-2
+          hover:bg-green-800 hover:text-slate-50 hover:border-slate-50 transition-colors ease-in-out"
+          >
+          {{svg-jar "sort" class="fill-current inline"}}
+        </menu.Button>
+        <menu.Items
+          {{popover}}
+          class="
+          absolute top-16 right-3 z-50
+          origin-top-right
+          w-80 md:w-32
+          rounded
+          bg-green-800 text-slate-50
+          text-sm md:text-base
+          outline-none
+          pt-2
+          flex flex-col
+          space-y-2
+        " 
+        as |items|>
+          <p class="flex-grow px-2">Sort by:</p>
+          <ul class="w-full grid grid-cols-3 md:grid-cols-1">
+            {{#each this.sortKeys as |key|}}
+              <items.Item as |item|>
+                <li class={{concat
+                  "px-2 py-1.5 last:rounded-b " 
+                  (if (eq key this.data.sortKey) 
+                    "text-slate-700 bg-green-100 shadow-inner"
+                    "transition-colors ease-in-out hover:text-slate-700 hover:bg-green-100 hover:shadow-inner"
+                  )
+                }}>
+                  <LinkTo @route={{this.route}} @query={{hash sort=key}}>{{capitalize key}}</LinkTo>
+                </li>
+              </items.Item>
+            {{/each}}
+          </ul>
+        </menu.Items>
+      </PopperJS>
+    </Menu>
   </div>
-  <Information::SortMenu 
-    @route={{this.route}} 
-    @visible={{this.sortmenuVisible}} 
-    @sortKeys={{this.sortKeys}}
-    @sortKey={{this.data.sortKey}}
-    @close={{this.hideSortmenu}} 
-    />
 </header>
