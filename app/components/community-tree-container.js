@@ -12,8 +12,8 @@ export default class CommunityTreeContainerComponent extends Component {
 
   @action calculateSizes({ contentRect }) {
     if (contentRect) {
-      this.svg.width = Math.floor(contentRect.width);
-      this.svg.height = Math.floor(contentRect.height);
+      this.svg.width = Math.ceil(contentRect.width);
+      this.svg.height = Math.ceil(contentRect.height);
     }
   }
 
