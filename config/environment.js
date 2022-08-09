@@ -6,6 +6,9 @@ module.exports = function (environment) {
     environment,
     rootURL: "/",
     locationType: "history",
+    routerScroll: {
+      scrollElement: "#person-card-profile",
+    },
     historySupportMiddleware: true, // for ember-router-scroll
     EmberENV: {
       FEATURES: {
