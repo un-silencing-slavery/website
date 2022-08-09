@@ -119,7 +119,7 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
         (100 * count) / dutiesDenominator
       )}%)`;
 
-      let line1 = `Only the ${dutiesDenominator} enslaved persons still at Rose Hall`;
+      const line1 = `Only the ${dutiesDenominator} enslaved persons still at Rose Hall`;
 
       let line2 = `in 1832 had duties recorded. Of those, ${count} ${dutiesPercentage}`;
 

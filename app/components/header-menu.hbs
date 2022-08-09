@@ -20,11 +20,12 @@
       flex flex-col
       space-y-2
     " 
-    as |items|>
+    as |items|
+    >
       <nav>
         <ul class="flex flex-col">
           {{#each @navItems as |navMenuItem|}}
-            <items.Item as |item|>
+            <items.Item>
               <NavBarItem @item={{navMenuItem}} />
             </items.Item>
           {{/each}}

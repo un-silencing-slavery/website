@@ -29,7 +29,7 @@
           <p class="flex-grow px-2">Sort by:</p>
           <ul class="w-full grid grid-cols-3 md:grid-cols-1">
             {{#each this.sortKeys as |key|}}
-              <items.Item as |item|>
+              <items.Item>
                 <li class={{concat
                   "px-2 py-1.5 last:rounded-b " 
                   (if (eq key this.data.sortKey) 
