@@ -10,15 +10,26 @@ export default class CommunityTreeIndex extends Component {
 
   @service activePerson;
 
-  @action calculateSizes({ contentRect }) {
-    if (contentRect) {
-      this.svg.width = Math.ceil(contentRect.width);
-      this.svg.height = Math.ceil(contentRect.height);
-    }
-  }
+  @action calculateSvgSizes({ contentRect }) {
+    const informationHeight =
+      document.getElementById("information")?.clientHeight;
+    const visualizationHeight =
+      document.getElementById("visualization")?.clientHeight;
+    const visualizationWidth =
+      document.getElementById("visualization")?.clientWidth;
 
-  get circleTransform() {
-    return `translate(${this.svg.width / 2}, ${this.svg.height / 2})`;
+    let width = visualizationWidth;
+    let height = 0; //informationHeight ?? visualizationHeight;
+
+    if (contentRect) {
+      width = Math.ceil(contentRect.width);
+      if (contentRect.height > height) {
+        height = contentRect.height;
+      }
+    }
+
+    this.svg.width = width;
+    this.svg.height = height;
   }
 
   personIdsArray = this.data.people.mapBy("id");

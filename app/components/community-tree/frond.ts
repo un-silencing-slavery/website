@@ -41,9 +41,8 @@ export default class FrondComponent extends Component {
 
   get transform() {
     const scaleFactor = randomNormal(2.5, 0.5)();
-    return `translate(${randomNormal(0.5, 0.28)() * this.svg.width}, ${
-      scaleFactor * 0.75 * this.svg.height
-    })
+    return `translate(${randomNormal(0.5, 0.28)() * this.svg.width}, ${scaleFactor * 0.75 * this.svg.height
+      })
       scale(${scaleFactor})`;
   }
 
@@ -78,9 +77,8 @@ export default class FrondComponent extends Component {
     leafs.push({
       d: this.buildLeaf([stemTip.x, stemTip.y]),
       stemD: "",
-      transform: `rotate(${this.tangentTransform(0.98) + 90}, ${stemTip.x}, ${
-        stemTip.y
-      })`,
+      transform: `rotate(${this.tangentTransform(0.98) + 90}, ${stemTip.x}, ${stemTip.y
+        })`,
     });
 
     return leafs;

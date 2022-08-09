@@ -1,14 +1,11 @@
 <section id="visualization" class="bg-slate-50/90 flex-grow block
-  w-screen md:w-full
+  w-screen md:w-full h-full
   fixed md:relative"
-  
-  {{on-resize this.calculateSizes}}
+  {{on-resize this.calculateSvgSizes}}
 >
   <svg 
       class="zoomable text-xs md:text-base bg-transparent" 
       width={{this.svg.width}} height={{this.svg.height}}
-      {{did-insert this.calculateSizes}}
-      {{did-update this.calculateSizes}}
       {{zoom}}
       >
       <defs>
@@ -51,12 +48,12 @@
       </g>
       <CommunityTree::Legend @ageScale={{this.ageScale}}/>
       {{#if @sortKey}}
-        <text x="3%" y="6%" class="text-2xl"
+        <text x="3%" y="4%" class="text-lg md:text-2xl"
           filter="url(#sort-heading)">
           <tspan>Sorted by {{@sortKey}}</tspan>
           {{#each this.svg.tooltipContent as |line|}}
             <tspan x="3%" dy="1.325em" 
-            class="text-lg
+            class="text-base md:text-lg
             {{if this.svg.showTooltip "duration-200 opacity-100" "duration-1000 opacity-0"}}
             ">{{line}}</tspan>
           {{/each}}

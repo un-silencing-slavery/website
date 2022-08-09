@@ -27,6 +27,7 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     const element = event.target as SVGPathElement;
     element.setAttribute("stroke-width", "0");
     this.svg.showTooltip = false;
+    this.svg.tooltipContent = "";
   }
 
   @action showTooltip(event: MouseEvent) {
@@ -99,50 +100,61 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
     });
   }
 
-  @tracked tooltipTexts: Record<string, [string, string]> = {};
+  @tracked tooltipTexts: Record<string, string[]> = {};
 
   buildTooltipText(
     clusterKey: ClusterKey,
     { category, count }: CategoryWithCount,
     tooltipId: string
   ) {
-    let denominator = this.data.people.length;
-    let percentage = `(${Math.floor((100 * count) / denominator)}%)`;
-    let firstLine = `Of the ${denominator} enslaved persons recorded at Rose Hall,`;
-    let dutiesDenominator;
+    const denominator = this.data.people.length;
+    const percentage = `(${Math.floor((100 * count) / denominator)}%)`;
 
     if (clusterKey === "duties") {
       const unknownDuties = this.data.people.filter(
         (person) => person.dutyCategory === "Not at Rose Hall in 1832"
       ).length;
       const dutiesDenominator = denominator - unknownDuties;
-      percentage = `(${Math.floor((100 * count) / dutiesDenominator)}%)`;
-      firstLine = `Of the ${dutiesDenominator} enslaved persons with duties recorded at Rose Hall in 1832,`;
+      const dutiesPercentage = `(${Math.floor(
+        (100 * count) / dutiesDenominator
+      )}%)`;
+
+      let line1 = `Only the ${dutiesDenominator} enslaved persons still at Rose Hall`;
+
+      let line2 = `in 1832 had duties recorded. Of those, ${count} ${dutiesPercentage}`;
+
+      let line3 = `had their duties fall into the general category of`;
+
+      let line4 = `“${category.toLowerCase()}.”`;
+
+      let text;
+
+      if (category === "“Not at Work”") {
+        line4 = `“Not at Work.”`;
+      }
+
+      if (category === "Not at Rose Hall in 1832") {
+        line2 = `in 1832 had duties recorded. The majority of the`;
+        line3 = `remaining ${count} ${percentage} persons had passed`;
+        line4 = "between 1817 and 1832.";
+      }
+
+      this.tooltipTexts[tooltipId] = [line1, line2, line3, line4];
+    } else {
+      let text = `${count} ${percentage} had their ${clusterKey} marked as “${category}.”`;
+
+      if (category === "Inconsistent") {
+        text = `${count} ${percentage} had their ${clusterKey} marked inconsistently.`;
+      }
+
+      if (category === "Unknown") {
+        text = `${count} ${percentage} did not have their ${clusterKey} recorded.`;
+      }
+
+      this.tooltipTexts[tooltipId] = [
+        `Of the ${denominator} enslaved persons recorded at Rose Hall,`,
+        text,
+      ];
     }
-
-    let text = `${count} ${percentage} had their ${clusterKey} marked as “${category}.”`;
-
-    if (category === "Inconsistent") {
-      text = `${count} ${percentage} had their ${clusterKey} marked inconsistently.`;
-    }
-
-    if (category === "Unknown") {
-      text = `${count} ${percentage} did not have their ${clusterKey} recorded.`;
-    }
-
-    if (clusterKey === "duties") {
-      text = `${count} ${percentage} had their ${clusterKey} fall into the general category of ${category}.`;
-    }
-
-    if (category === "“Not at Work”") {
-      text = `${count} ${percentage} had their ${clusterKey} fall into the general category of “Not at Work.”`;
-    }
-
-    if (category === "Not at Rose Hall in 1832") {
-      firstLine = `Duties were only recorded for the ${dutiesDenominator} enslaved persons present in 1832.`;
-      text = `The other ${count} ${percentage} were no longer at Rose Hall, almost always because of death.`;
-    }
-
-    this.tooltipTexts[tooltipId] = [firstLine, text];
   }
 }

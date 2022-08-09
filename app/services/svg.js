@@ -7,6 +7,15 @@ export default class SvgService extends Service {
 
   @tracked height = 320;
 
+  get spacerHeight() {
+    const spacer = document.getElementById("information-spacer");
+    if (spacer) {
+      return spacer.clientHeight;
+    }
+
+    return null;
+  }
+
   get rem() {
     if (document) {
       return parseFloat(
@@ -65,12 +74,12 @@ export default class SvgService extends Service {
   }
 
   get circleTransform() {
+    const height = this.spacerHeight || this.height;
     return `translate(${
       (this.width - this.margins.right - this.margins.left) / 2 +
       this.margins.left
     }, ${
-      (this.height - this.margins.top - this.margins.bottom) / 2 +
-      this.margins.top
+      (height - this.margins.top - this.margins.bottom) / 2 + this.margins.top
     })`;
   }
 

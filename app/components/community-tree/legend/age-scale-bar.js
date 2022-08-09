@@ -26,12 +26,13 @@ export default class CommunityTreeAgeScaleBarComponent extends Component {
   }
 
   get settings() {
+    let height = this.svg.spacerHeight || this.svg.height;
     const settings = {
       width: this.barLong,
       height: this.barShort,
       textAnchor: "middle",
       transform: `translate(${0.1 * this.svg.width}, ${
-        this.svg.height - 5 * this.svg.rem
+        height - 5 * this.svg.rem
       })`,
       axisTransform: `translate(0, ${this.barShort})`,
       axisX1: 0,
