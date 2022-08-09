@@ -60,6 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: [install_dependencies, test, build]
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     env: 
       AWS_ACCESS_KEY_ID: ${{ secrets.DLST_SERV_DEPLOY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DLST_SERV_DEPLOY_KEY }}
