@@ -16,8 +16,10 @@ export default class InformationPersonCardProfileComponent extends Component<Inf
     for (const entry of this.annotations.thesaurus) {
       profile = profile.replaceAll(
         entry.term,
-        `<span class="underline decoration-green-100 decoration-2 cursor-pointer thesaurus-term" 
-          aria-describedBy="${entry.slug}-definition">${entry.term}</span>`
+        `<span class="underline decoration-green-100 decoration-2 cursor-pointer thesaurus-term hidden md:inline" 
+          aria-describedBy="${entry.slug}-definition">${entry.term}</span>
+          <a class="not-prose underline decoration-green-100 decoration-2 cursor-pointer inline md:hidden" href="/glossary#glossary-entry-${entry.slug}">${entry.term}</a>
+        `
       );
     }
 
