@@ -127,8 +127,6 @@ export default class CommunityTreeAreaComponent extends Component<CommunityTreeA
 
       let line4 = `“${category.toLowerCase()}.”`;
 
-      let text;
-
       if (category === "“Not at Work”") {
         line4 = `“Not at Work.”`;
       }
