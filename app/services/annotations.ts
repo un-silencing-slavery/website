@@ -1,7 +1,9 @@
 import Service from "@ember/service";
-import { tracked } from "@glimmer/tracking";
 import { dasherize } from "@ember/string";
 import { htmlSafe } from "@ember/template";
+import glossary from "un-silencing-slavery/data/glossary.json";
+import thesaurus from "un-silencing-slavery/data/thesaurus.json";
+import { SafeString } from "@ember/template/-private/handlebars";
 
 interface GlossaryEntry {
   displayTerm: string;
@@ -12,47 +14,40 @@ interface GlossaryEntry {
 interface ThesaurusEntry {
   term: string;
   slug: string;
-  definition: string;
-}
-
-interface AirtableGlossaryEntry {
-  fields: {
-    "display-term": string;
-    headword: string;
-    definition: string;
-    thesaurus: string[];
-  };
-  id: string;
-}
-
-interface AirtableThesaurusEntry {
-  fields: {
-    synonym: string;
-    "glossary-headword": string[];
-  };
-  id: string;
+  definition: SafeString;
 }
 
 export default class AnnotationsService extends Service {
-  airtableKey = "keybjUbsLJQQ77ZJ0";
-
-  async fetchFromAirtable(table: string) {
-    const url = `https://api.airtable.com/v0/appp15gSecfp0vBPk/${table}`;
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${this.airtableKey}`,
-      },
-    });
-    const data = await response.json();
-    return data.records;
-  }
+  _glossary = glossary;
+  _thesaurus = thesaurus;
 
   get thesaurus() {
-    if (this.staticThesaurus.length < 1) {
-      this.buildThesaurus();
-    }
+    return this._thesaurus.map((thesaurusEntry): ThesaurusEntry => {
+      return {
+        term: thesaurusEntry.synonym,
+        slug: dasherize(thesaurusEntry.synonym),
+        definition: this.tooltipize(
+          this._glossary.filter(
+            (glossaryEntry) =>
+              glossaryEntry.headword === thesaurusEntry.glossaryId
+          )[0].definition
+        ),
+      };
+    });
+  }
 
-    return this.staticThesaurus;
+  get glossary() {
+    return this._glossary
+      .map(
+        (glossaryEntry): GlossaryEntry => ({
+          displayTerm: glossaryEntry.displayTerm,
+          slug: glossaryEntry.headword,
+          definition: glossaryEntry.definition,
+        })
+      )
+      .sort((a: GlossaryEntry, b: GlossaryEntry) =>
+        a.slug.localeCompare(b.slug)
+      );
   }
 
   tooltipize(fullDefinition: string) {
@@ -62,55 +57,6 @@ export default class AnnotationsService extends Service {
     }
 
     return htmlSafe(`${definition}</p>`);
-  }
-
-  async buildThesaurus() {
-    if (this.glossary.length < 1) {
-      this.buildGlossary();
-    }
-    const airtableGlossary = await this.fetchFromAirtable("glossary");
-    const airtableThesaurus = await this.fetchFromAirtable("thesaurus");
-
-    // const thesaurus: Record<string, string> = airtableThesaurus.map(
-    this.staticThesaurus = airtableThesaurus.map(
-      (thesaurusEntry: AirtableThesaurusEntry) => ({
-        term: thesaurusEntry.fields.synonym,
-        slug: dasherize(thesaurusEntry.fields.synonym),
-        definition: this.tooltipize(
-          airtableGlossary.filter(
-            (glossaryEntry: AirtableGlossaryEntry) =>
-              glossaryEntry.id === thesaurusEntry.fields["glossary-headword"][0]
-          )[0].fields.definition
-        ),
-      })
-    );
-  }
-
-  @tracked staticThesaurus: ThesaurusEntry[] = [];
-
-  get glossary() {
-    if (this.staticGlossary.length < 1) {
-      this.buildGlossary();
-      return this.staticGlossary;
-    }
-
-    return this.staticGlossary;
-  }
-
-  @tracked staticGlossary: GlossaryEntry[] = [];
-
-  async buildGlossary() {
-    const airtableGlossary = await this.fetchFromAirtable("glossary");
-
-    this.staticGlossary = airtableGlossary
-      .map((airtableEntry: AirtableGlossaryEntry) => ({
-        displayTerm: airtableEntry.fields["display-term"],
-        slug: airtableEntry.fields.headword,
-        definition: airtableEntry.fields.definition,
-      }))
-      .sort((a: GlossaryEntry, b: GlossaryEntry) =>
-        a.slug.localeCompare(b.slug)
-      );
   }
 }
 

@@ -325,9 +325,8 @@ trimmed = df[["name", "country", "colour", "gender", "motherId", "displayName", 
 
 json_string = trimmed.reset_index().to_json(orient="records", indent=2)
 
-output = "export default " + json_string + ";"
-f = open("app/data/people.js", "w")
-f.write(output)
+f = open("app/data/people.json", "w")
+f.write(json_string)
 f.close()
 
 df.to_csv("data/post-processed.csv")

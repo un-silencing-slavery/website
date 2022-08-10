@@ -1,6 +1,6 @@
 import Service from "@ember/service";
 import { tracked } from "@glimmer/tracking";
-import people from "un-silencing-slavery/data/people";
+import people from "un-silencing-slavery/data/people.json";
 
 export default class DataService extends Service {
   @tracked people = people as Person[];

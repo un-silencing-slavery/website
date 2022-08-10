@@ -1,4 +1,4 @@
-export default [
+[
   {
     "personId":"P1",
     "name":"Aaron",
@@ -3743,4 +3743,4 @@ export default [
     "isGrandmother":true,
     "isGreatgrandmother":false
   }
-];
+]
