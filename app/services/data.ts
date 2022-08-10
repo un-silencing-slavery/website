@@ -537,5 +537,3 @@ declare module "@ember/service" {
     data: DataService;
   }
 }
-
-const familyIds = 
