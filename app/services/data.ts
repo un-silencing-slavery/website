@@ -82,49 +82,6 @@ export default class DataService extends Service {
       case "duties":
         this.customSort();
         break;
-      case "race":
-        this.people.sort((a, b) => {
-          let aColor = "unknown";
-          let bColor = "unknown";
-          if (a.color) {
-            aColor = a.color;
-          }
-          if (b.color) {
-            bColor = b.color;
-          }
-          return aColor.localeCompare(bColor);
-        });
-        break;
-      case "origin":
-        this.people.sort((a, b) => {
-          let aCountry = "unknown";
-          let bCountry = "unknown";
-          if (a.country) {
-            aCountry = a.country;
-          }
-          if (b.country) {
-            bCountry = b.country;
-          }
-          return aCountry.localeCompare(bCountry);
-        });
-        break;
-      case "gender":
-        this.people.sort((a, b) => {
-          let aGender = "unknown";
-          let bGender = "unknown";
-          if (a.gender) {
-            aGender = a.gender;
-          }
-          if (b.gender) {
-            bGender = b.gender;
-          }
-          return aGender.localeCompare(bGender);
-        });
-        break;
-      case "family":
-        // const people = [];
-        this.sortByFamily();
-        break;
       default:
         break;
     }
